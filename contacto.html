@@ -17,7 +17,7 @@
 		
 		<h1>Formulario de contacto</h1>
 		
-		<form class="formulario" action="mailto:mbonet03@ucm.es">
+		<form class="formulario" action="mailto:mbonet03@ucm.es?subject=Contacto Hypefit" method="post" enctype="text/plain">
 		<ul>
 			<li>
 				<input type="text" placeholder="Nombre" required>
@@ -35,12 +35,12 @@
 				<label for="Evaluación">Críticas</label>
 			</li>
 			<li>
-				<input type="checkbox" id="terminos" value="terminosYcondiciones">
+				<input type="checkbox" id="terminos" value="terminosYcondiciones" required>
 				<label for="terminos">Marque esta casilla para verificar que ha leído nuestros
 				términos y condiciones de servicio</label>
 			</li>
 			<li>
-			<textarea placeholder="Mensaje"></textarea>
+			<textarea id="opinion" name="opinion" placeholder="Mensaje"></textarea>
 			</li>
 			<li>
 			<button type="submit">Enviar</button>
