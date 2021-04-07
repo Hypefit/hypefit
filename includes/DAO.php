@@ -1,7 +1,7 @@
 <?php
 
 
-class DAO
+abstract class DAO
 {
     private $conexionBD;
     private const servername = "localhost";
@@ -32,4 +32,9 @@ class DAO
         }
         else return null;
     }
+
+    abstract protected function insert($TO);
+    abstract protected function update($TO);
+    abstract protected function select($TO);
+    abstract protected function delete($TO);
 }
