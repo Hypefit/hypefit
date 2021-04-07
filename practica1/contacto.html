@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	 <meta charset="utf-8">
+    <title>Hypefit | Contacto</title>
+		<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.png">
+	</head>
+	<body>
+	<header>
+        <img src="img/logo.png" alt="Hypefit logo">
+        <a href="index.html">Inicio</a>
+        <a href="detalles.html">Detalles</a>
+        <a href="bocetos.html">Bocetos</a>
+        <a href="miembros.html">Miembros</a>
+        <a href="planificacion.html">Planificación</a>
+        <a href="contacto.html">Contacto</a>
+    </header>
+		
+		<h1>Formulario de contacto</h1>
+		
+		<form class="formulario" action="mailto:mbonet03@ucm.es?subject=Contacto%20Hypefit" method="post" enctype="text/plain">
+		<ul>
+			<li>
+				<input type="text" placeholder="Nombre" required>
+				<input type="text" placeholder="Apellidos" required>
+			</li>
+			<li>
+				<input type="text" placeholder="Correo electrónico" required>
+			</li>
+			<li>
+				<input type="radio" id="Evaluación" name="consulta" value="evaluación" checked>
+				<label for="Evaluación">Evaluación</label>
+				<input type="radio" id="Sugerencias" name="consulta" value="sugerencias">
+				<label for="Evaluación">Sugerencias</label>
+				<input type="radio" id="Críticas" name="consulta" value="críticas">
+				<label for="Evaluación">Críticas</label>
+			</li>
+			<li>
+				<input type="checkbox" id="terminos" value="terminosYcondiciones" required>
+				<label for="terminos">Marque esta casilla para verificar que ha leído nuestros
+				términos y condiciones de servicio</label>
+			</li>
+			<li>
+			<textarea id="opinion" name="opinion" placeholder="Mensaje"></textarea>
+			</li>
+			<li>
+			<button type="submit">Enviar</button>
+			<button type="reset">Restablecer</button>
+			</li>
+		</ul>
+		</form>
+	</body>
+</html>
