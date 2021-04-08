@@ -20,8 +20,9 @@
 		<form action="login.php" method="POST">
 		<fieldset>
 		<legend>Usuario y contraseña</legend>
-			<p><label>Name:</label> <input type="text" name="username" /></p>
+			<p><label>Name:</label> <input type="text" name="nombre" /></p>
 			<p><label>Password:</label> <input type="password" name="password" /></p>
+			<p><label>Email:</label> <input type="email" name="email" /></p>
 			<button type="submit">Entrar</button>
 		</fieldset>
 	</form>
