@@ -10,14 +10,14 @@ class PostsDAO extends DAO {
 
     public function getPost($id) {
         $query = "SELECT * from Rutinas where id = '$id'";
-        $fila = $this->insert($query);
+        $fila = $this->select($query);
 
         return $this->crearObjetoPost($fila);
     }
 
     public function getAllPosts() {
         $query = "SELECT * from posts";
-        $filas = $this->insert($query);
+        $filas = $this->select($query);
 
         $array_rutinas = array();
         foreach ($filas as $fila) {

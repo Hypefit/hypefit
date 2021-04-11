@@ -10,7 +10,7 @@ class ComentarioDAO extends DAO {
 
     public function getComentariosDelPost($id) {
         $query = "SELECT * from comentarios_post where idPost = '$id' order by fecha";
-        $filas = $this->insert($query);
+        $filas = $this->select($query);
 
         $comentarios = array();
         foreach($filas as $fila) {

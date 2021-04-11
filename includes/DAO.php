@@ -28,11 +28,6 @@ class DAO
         }
     }
 
-    protected function __destruct()
-    {
-        $this->mysqli->close();
-    }
-
     protected function select($sql) {
         if($sql != ""){
             $consulta = $this->mysqli->query($sql) or die ($this->mysqli->error. " en la línea ".(__LINE__-1));

@@ -10,14 +10,14 @@ class UsuarioDAO extends DAO
 
     public function getUsuario($id) {
         $query = "SELECT * from Usuarios where id = '$id'";
-        $fila = $this->insert($query);
+        $fila = $this->select($query);
 
         return $this->crearObjetoUsuario($fila);
     }
 
     public function getUsuarioPorEmail($email) {
         $query = "SELECT * from Usuarios where email = '$email'";
-        $fila = $this->insert($query);
+        $fila = $this->select($query);
 
         if (empty($fila)) { //No existe un usuario con ese email
             return NULL;
