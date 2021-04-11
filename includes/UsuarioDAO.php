@@ -38,12 +38,4 @@ class UsuarioDAO extends DAO
         return $usuario;
     }
 
-    /* De momento no queremos modificar usuarios
-    public function modificarUsuario(Usuario $u) {
-        $query = "UPDATE Usuarios (nombre, email, hashPassword, rol, aprobado) values
-                (''" . $u->getNombre() . "'','" . $u->getEmail() . "',''" . $u->getHashPassword() . "'',''" . $u->getRol() . "'',''" . $u->getAprobado() . "'') where id = '". $u->getId() ."' ";
-        return $this->modify($query);
-    } */
-
-
 }
