@@ -12,15 +12,7 @@ class UsuarioDAO extends DAO
         $query = "SELECT * from Usuarios where id = '$id'";
         $fila = $this->insert($query);
 
-        $usuario = new Usuario();
-        $usuario->setId($fila['id']);
-        $usuario->setNombre($fila['nombre']);
-        $usuario->setEmail($fila['email']);
-        $usuario->setHashPassword($fila['hashPassword']);
-        $usuario->setRol($fila['rol']);
-        $usuario->setAprobado($fila['aprobado']);
-
-        return $usuario;
+        return $this->crearObjetoUsuario($fila);
     }
 
     public function getUsuarioPorEmail($email) {
@@ -30,16 +22,20 @@ class UsuarioDAO extends DAO
         if (empty($fila)) { //No existe un usuario con ese email
             return NULL;
         } else {
-            $usuario = new Usuario();
-            $usuario->setId($fila['id']);
-            $usuario->setNombre($fila['nombre']);
-            $usuario->setEmail($fila['email']);
-            $usuario->setHashPassword($fila['hashPassword']);
-            $usuario->setRol($fila['rol']);
-            $usuario->setAprobado($fila['aprobado']);
-
-            return $usuario;
+            return $this->crearObjetoUsuario($fila);
         }
+    }
+
+    private function crearObjetoUsuario($fila) {
+        $usuario = new Usuario();
+        $usuario->setId($fila['id']);
+        $usuario->setNombre($fila['nombre']);
+        $usuario->setEmail($fila['email']);
+        $usuario->setHashPassword($fila['hashPassword']);
+        $usuario->setRol($fila['rol']);
+        $usuario->setAprobado($fila['aprobado']);
+
+        return $usuario;
     }
 
     /* De momento no queremos modificar usuarios
