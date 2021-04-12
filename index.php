@@ -1,13 +1,9 @@
-<?php session_start(); ?>
-	<html lang="es"> 
-		<head>
+<!DOCTYPE html>
+<html>
+	<head>
 		<link rel="stylesheet" type="text/css" href="estilo.css" />
-		<meta charset="utf-8">
-		<title>Hypefit | Login</title>
-
-		<link rel="icon" 
-		type="image/png" 
-		href="img/favicon.png">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Portada</title>
 	</head>
 	
 	<body>
@@ -17,14 +13,11 @@
 		?>
 		
 		<div id="contenido">
-			<p>  Bienvenido a HYPEFIT</p>
-			<img src="img/inicio.png" alt="Imagen principal pagina inicio">
-			<p> CALENDARIO ACTIVIDADES</p>
-			<img src="img/calendario-abril-2021.jpg" alt="Imagen calendario provisional">
-			
+			<h1>Página principal</h1>
+			<p> Aquí está el contenido público, visible para todos los usuarios. </p>
 		</div>
-		# <?php
-		# require("pie.php");
+		<?php
+		require("pie.php");
 		?>
 </div>
 </body>
