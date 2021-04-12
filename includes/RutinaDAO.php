@@ -2,9 +2,13 @@
 
 
 class RutinaDAO extends DAO {
+    public function __construct() {
+        parent::__construct();
+    }
+
     public function crearRutina(Rutina $u) {
-        $query = "INSERT into Rutinas (rutina, idEntrenador, categoria, imagen) values
-                (" . $u->getRutina() . "," . $u->getIdEntrenador() . "," . $u->getCategoria() . "," . $u->getImagen() . ")";
+        $query = "INSERT into Rutinas (rutina, idEntrenador, categoria, titulo) values
+                (" . $u->getRutina() . "," . $u->getIdEntrenador() . "," . $u->getCategoria() . "," . $u->getImagen() . "," . $u->getTitulo() . ")";
         return $this->insert($query);
     }
 
@@ -34,6 +38,7 @@ class RutinaDAO extends DAO {
         $rutina->setRutina($fila['rutina']);
         $rutina->setCategoria($fila['categoria']);
         $rutina->setImagen($fila['imagen']);
+        $rutina->setTitulo($fila['titulo']);
 
         return $rutina;
     }

@@ -2,6 +2,10 @@
 
 
 class ComentarioDAO extends DAO {
+    public function __construct() {
+        parent::__construct();
+    }
+
     public function crearComentario(Comentario $u) {
         $query = "INSERT into comentarios_post (idPost, idUsuario, fecha, comentario) values
                 (" . $u->getIdPost() . "," . $u->getIdUsuario() . "," . $u->getFecha() . "," . $u->getComentario() . ")";

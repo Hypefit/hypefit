@@ -7,6 +7,19 @@ class Rutina {
     private $categoria = "";
     private $imagen = "";
     private $id = 0;
+    private $titulo = "";
+
+    /**
+     * @return string
+     */
+    public function getTitulo(): string {
+        return $this->titulo;
+    }/**
+     * @param string $titulo
+     */
+    public function setTitulo(string $titulo): void {
+        $this->titulo = $titulo;
+    }
 
     /**
      * @return string

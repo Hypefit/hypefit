@@ -2,6 +2,10 @@
 
 
 class PostsDAO extends DAO {
+    public function __construct() {
+        parent::__construct();
+    }
+
     public function crearPost(Post $u) {
         $query = "INSERT into posts (creador, titulo) values
                 (" . $u->getIdCreador() . "," . $u->getTitulo() . ")";
