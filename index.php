@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 	<html lang="es"> 
 		<head>
-		<link rel="stylesheet" type="text/css" href="estilo.css" />
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 		<meta charset="utf-8">
 		<title>Hypefit | Login</title>
 

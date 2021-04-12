@@ -2,6 +2,10 @@
 
 class UsuarioDAO extends DAO
 {
+    public function __construct() {
+        parent::__construct();
+    }
+
     public function crearUsuario(Usuario $u) {
         $query = "INSERT into Usuarios (nombre, email, hashPassword, rol, aprobado) values
                 (" . $u->getNombre() . "," . $u->getEmail() . "," . $u->getHashPassword() . "," . $u->getRol() . "," . $u->getAprobado() . ")";
