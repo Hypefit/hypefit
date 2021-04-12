@@ -23,8 +23,8 @@
 			<img src="img/calendario-abril-2021.jpg" alt="Imagen calendario provisional">
 			
 		</div>
-		# <?php
-		# require("pie.php");
+		<?php
+			require("includes/comun/pie.php");
 		?>
 </div>
 </body>
