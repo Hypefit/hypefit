@@ -2,6 +2,12 @@
 	session_start();
 	$username = htmlspecialchars(trim(strip_tags($_REQUEST["username"])));
 	$password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));
+	$email = htmlspecialchars(trim(strip_tags($_REQUEST["email"])));
+
+	$dao = new UsuarioDAO();
+	$usuario = $dao->getUsuarioPorEmail($username);
+
+	$hash = $usuario->getHashPassword();
 	
 	if ($username == "user" && $password == "userkey") {
 		$_SESSION["login"] = true;
