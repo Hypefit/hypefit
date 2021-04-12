@@ -1,23 +1,6 @@
 <?php
 require_once __DIR__.'/includes/config.php';
 
-#<html lang="es">
- #<head>
-  # 	<link rel="stylesheet" type="text/css" href="estilo.css" />
-	#<meta charset="utf-8">
-	#<title>Hypefit | Login</title>
-
-    #<link rel="icon"
-    #type="image/png"
-    #href="img/favicon.png">
-#</head>
-#<body>
-
-#<div id="contenedor">
-#	<?php
-#	require("cabecera.php");
-
-
 $tituloPagina= 'Hypefit | Login';
 
 $contenidoPrincipal = <<<EOS
@@ -33,12 +16,5 @@ $contenidoPrincipal = <<<EOS
 	</form>
 	</div>
 EOS;
-	#<?php
-	  #include("sidebarDer.php");
-	  #include("pie.php");
-	#
-
-#</div> <!-- Fin del contenedor -->
-#</body>
-#</html>
+	
 require __DIR__.'/includes/comun/layout.php';
