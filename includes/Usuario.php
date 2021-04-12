@@ -2,43 +2,35 @@
 
 class Usuario
 {
-    private $email = "";
-    private $hashPassword = "";
+    private $username = "";
+    private $pass = "";
     private $rol = "";
-    private $nombre = "";
-    private $aprobado = 0;
-    private $id = 0;
+    private $id = "";
 
-    public function getEmail(): string {
-        return $this->email;
+    public function __construct($username, $pass)
+    {
+        $this->username = $username;
+        $this->pass = $pass;
     }
 
-    public function setEmail(string $email): void {
-        $this->email = $email;
+    public function getUsername()
+    {
+        return $this->username;
     }
 
-    public function getHashPassword(): string {
-        return $this->hashPassword;
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 
-    public function setHashPassword(string $hashPassword): void {
-        $this->hashPassword = $hashPassword;
+    public function getPass()
+    {
+        return $this->pass;
     }
 
-    public function getNombre(): string {
-        return $this->nombre;
-    }
-
-    public function setNombre(string $nombre): void {
-        $this->nombre = $nombre;
-    }
-
-    public function getAprobado(): int {
-        return $this->aprobado;
-    }
-
-    public function setAprobado(int $aprobado): void {
-        $this->aprobado = $aprobado;
+    public function setPass($pass)
+    {
+        $this->pass = $pass;
     }
 
     public function getRol()
@@ -54,10 +46,6 @@ class Usuario
     public function getId()
     {
         return $this->id;
-    }
-
-    public function setId(int $id): void {
-        $this->id = $id;
     }
 }
 

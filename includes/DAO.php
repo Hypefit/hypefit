@@ -1,9 +1,9 @@
 <?php
 
 
-class DAO
+abstract class DAO
 {
-    private $mysqli;
+    private $conexionBD;
     private const servername = "localhost";
     private const user = "admin";
     private const pass = "adminpass";
@@ -11,52 +11,30 @@ class DAO
 
     protected function __construct()
     {
-        if (!$this->mysqli) {
-            $this->mysqli = new mysqli(self::servername, self::user, self::pass, self::db);
-            if ($this->mysqli->connect_error) {
-                echo ("Fallo de conexión: " . $this->mysqli->connect_error);
+        if (!empty($this->conexionBD)) {
+            if (!$this->conexionBD) {
+                $this->conexionBD = new mysqli(self::servername, self::user, self::pass, self::db);
+                if ($this->conexionBD->connect_error) {
+                    die("Fallo de conexión: " . $this->conexionBD->connect_error);
+                }
             }
-            if(!$this->mysqli->set_charset("utf8")) {
-                printf("<hr>Error loading character set utf8 (Err. nº %d): %s\n<hr/>",  $this->mysqli->errno, $this->mysqli->error);
-                exit();
-            }
-
-            ini_set('default_charset', 'UTF-8');
-        }
-        if ( !$this->mysqli ) {
-            echo "fail";
         }
     }
 
-    protected function select($sql) {
-        if($sql != ""){
-            $consulta = $this->mysqli->query($sql) or die ($this->mysqli->error. " en la línea ".(__LINE__-1));
-            $tablaDatos = array();
-            while ($fila = mysqli_fetch_assoc($consulta)){
-                array_push($tablaDatos, $fila);
-            }
-            return $tablaDatos;
-        } else {
-            return 0;
-        }
+    protected function __destruct()
+    {
+        $this->conexionBD->close();
     }
 
-    protected function modify($sql) {
-        if($sql != ""){
-            $consulta = $this->mysqli->query($sql) or die ($this->mysqli->error. " en la línea ".(__LINE__-1));
-            return $this->mysqli->affected_rows;
-        } else {
-            return 0;
+    protected function query($sql) {
+        if ($sql != "") {
+            return $this->conexionBD->query($sql);
         }
+        else return null;
     }
 
-    protected function insert($sql) {
-        if($sql != ""){
-            $consulta = $this->mysqli->query($sql) or die ($this->mysqli->error. " en la línea ".(__LINE__-1));
-            return mysqli_insert_id($this->mysqli);
-        } else {
-            return NULL;
-        }
-    }
+    abstract protected function insert($TO);
+    abstract protected function update($TO);
+    abstract protected function select($TO);
+    abstract protected function delete($TO);
 }
-
