@@ -1,21 +1,26 @@
-<?php session_start(); ?>
-<html lang="es"> 
- <head>
-   	<link rel="stylesheet" type="text/css" href="estilo.css" />
-	<meta charset="utf-8">
-	<title>Hypefit | Login</title>
+<?php
+require_once __DIR__.'/includes/config.php';
 
-    <link rel="icon" 
-    type="image/png" 
-    href="img/favicon.png">
-</head>
-<body>
+#<html lang="es">
+ #<head>
+  # 	<link rel="stylesheet" type="text/css" href="estilo.css" />
+	#<meta charset="utf-8">
+	#<title>Hypefit | Login</title>
 
-<div id="contenedor">
-	<?php
-	require("cabecera.php");
-	?>
+    #<link rel="icon"
+    #type="image/png"
+    #href="img/favicon.png">
+#</head>
+#<body>
 
+#<div id="contenedor">
+#	<?php
+#	require("cabecera.php");
+
+
+$tituloPagina= 'Hypefit | Login';
+
+$contenidoPrincipal = <<<EOS
 	<div id="contenido">
 		<h1>Haz login en Hypefit</h1>
 		<form action="includes/procesarLogin.php" method="POST">
@@ -27,12 +32,13 @@
 		</fieldset>
 	</form>
 	</div>
-	
-	<?php
+EOS;
+	#<?php
 	  #include("sidebarDer.php");
 	  #include("pie.php");
-	?>
+	#
 
-</div> <!-- Fin del contenedor -->
-</body>
-</html>
+#</div> <!-- Fin del contenedor -->
+#</body>
+#</html>
+require __DIR__.'/includes/comun/layout.php';

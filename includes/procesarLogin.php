@@ -1,5 +1,6 @@
 <?php
-	session_start();
+require_once __DIR__.'/includes/config.php';
+
 	$email = htmlspecialchars(trim(strip_tags($_REQUEST["email"])));
 	$password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));
 
@@ -16,4 +17,4 @@
 	}
 
 	header("Location: ../perfil.php");
-?>
+
