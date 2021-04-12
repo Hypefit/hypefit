@@ -16,7 +16,10 @@ class RutinaDAO extends DAO {
         $query = "SELECT * from Rutinas where id = '$id'";
         $fila = $this->select($query);
 
-        return $this->crearObjetoRutina($fila);
+        if (empty($fila)) {
+            return NULL;
+        }
+        else return $this->crearObjetoRutina($fila);
     }
 
     public function getAllRutinas() {
