@@ -12,3 +12,25 @@ function crearListaRutinas(): string {
 
     return $html;
 }
+
+function mostrarRutina($id) {
+    $dao = new RutinaDAO();
+    $rutina = $dao->getRutina($id);
+
+    if ($rutina == NULL) {
+        return "No existe ninguna rutina con el id especificado.";
+    } else {
+        $dao = new UsuarioDAO();
+        $usuario = $dao->getUsuario($rutina->getIdEntrenador());
+        $nombreEntrenador = $usuario->getNombre();
+
+        $html = "<h1>" . $rutina->getTitulo() . "</h1><br>";
+        $html .= "Creada por " . $nombreEntrenador . "<br>";
+        $html .= "Categoria: " . $rutina->getCategoria() . "<br>";
+        $html .= "<p>" . $rutina->getRutina() . "</p>";
+
+        return $html;
+    }
+
+
+}
