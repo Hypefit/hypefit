@@ -1,19 +1,20 @@
 <div id="cabecera">
-	<img src="img/logo.png" alt="Hypefit logo">
+	<img src="<?=RUTA_IMGS.'/logo.png'?>" alt="Hypefit logo">
 	
 	<div class="saludo">
 		
-		<a href="index.php">Inicio</a>
-		<a href="rutinas.php">Rutinas</a>
-		<a href="recetas.php">Recetas</a>
-		<a href="comunidad.php">Comunidad</a>
+		<a href="<?=RUTA_APP.'/index.php'?>">Inicio</a>
+		<a href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a>
+		<a href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a>
+		<a href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a>
 			
 		<?php
 			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)) {
-				echo "Bienvenido, {$_SESSION['nombre']} <a href='logout.php'>(salir)</a>";
+				echo "Bienvenido, {$_SESSION['nombre']} <a href='".RUTA_APP."/logout.php'>(salir)</a>";
 			}
 			else {
-				echo "Usuario desconocido. <a href='login.php'>Login</a> <a href='registro.php'>Registro</a>";
+				echo "Usuario desconocido. <a href='".RUTA_APP."/login.php'>Login</a> 
+                                           <a href='".RUTA_APP."/registro.php'>Registro</a>";
 			}
 		?>
 	</div>
