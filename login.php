@@ -27,7 +27,11 @@
 		</fieldset>
 	</form>
 	</div>
-
+	
+	<?php
+	  #include("sidebarDer.php");
+	  #include("pie.php");
+	?>
 
 </div> <!-- Fin del contenedor -->
 </body>
