@@ -18,20 +18,15 @@
 
 	<div id="contenido">
 		<h1>Haz login en Hypefit</h1>
-		<form action="procesarLogin.php" method="POST">
+		<form action="includes/procesarLogin.php" method="POST">
 		<fieldset>
 		<legend>Usuario y contraseña</legend>
-			<p><label>Usuario:</label> <input type="text" name="username" /></p>
+			<p><label>Email:</label> <input type="email" name="email" /></p>
 			<p><label>Contraseña:</label> <input type="password" name="password" /></p>
 			<button type="submit">Entrar</button>
 		</fieldset>
 	</form>
 	</div>
-
-	<?php
-	  #include("sidebarDer.php");
-	  #include("pie.php");
-	?>
 
 
 </div> <!-- Fin del contenedor -->
