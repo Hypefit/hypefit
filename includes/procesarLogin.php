@@ -17,32 +17,3 @@
 
 	header("Location: ../perfil.php");
 ?>
-
-
-<body>
-<div id="contenedor">
-
-	<?php
-	require("cabecera.php");
-	?>
-
-<div id="contenido">
-	<?php
-		if (!isset($_SESSION["login"])) { //Usuario incorrecto
-			echo "<h1>ERROR</h1>";
-			echo "<p>El usuario o contraseña no son válidos.</p>";
-		}
-		else { //Usuario registrado
-			echo "<h1>Bienvenido {$_SESSION['nombre']}</h1>";
-			echo "<p>Usa el menú de Hypefit para navegar.</p>";
-		}
-	?>
-</div>
-
-    <?php
-	  #include("sidebarDer.php");
-	  #include("pie.php");
-	?>
-
-</div> <!-- Fin del contenedor -->
-</body></html>
