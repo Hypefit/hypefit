@@ -13,12 +13,12 @@
 	<body>
 		<div id="contenedor">
 		<?php
-		require("cabecera.php");
+		require("includes/comun/cabecera.php");
 		?>
 		
 		<div id="contenido">
 			<p>  Bienvenido a HYPEFIT</p>
-			<img src="img/inicio.png" alt="Imagen principal pagina inicio">
+			<img src="img/inicio.jpg" alt="Imagen principal pagina inicio">
 			<p> CALENDARIO ACTIVIDADES</p>
 			<img src="img/calendario-abril-2021.jpg" alt="Imagen calendario provisional">
 			
