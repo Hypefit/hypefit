@@ -1,37 +1,23 @@
 <?php
 	session_start();
-	$username = htmlspecialchars(trim(strip_tags($_REQUEST["username"])));
-	$password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));
 	$email = htmlspecialchars(trim(strip_tags($_REQUEST["email"])));
+	$password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));
 
 	$dao = new UsuarioDAO();
-	$usuario = $dao->getUsuarioPorEmail($username);
-
+	$usuario = $dao->getUsuarioPorEmail($email);
 	$hash = $usuario->getHashPassword();
-	
-	if ($username == "user" && $password == "userkey") {
+
+
+	if (password_verify($password, $hash)){
 		$_SESSION["login"] = true;
-		$_SESSION["nombre"] = "Usuario";
+		$_SESSION["nombre"] = $usuario->getNombre();
+		$_SESSION["rol"] = $usuario->getRol();
+		$_SESSION["aprobado"] = $usuario->getAprobado();
 	}
-	
-	else if ($username == "admin" && $password == "adminkey") {
-		$_SESSION["login"] = true;
-		$_SESSION["nombre"] = "Administrador";
-		$_SESSION["esAdmin"] = true;
-	}
+
+	header("Location: ../perfil.php");
 ?>
 
-<!-- <!DOCTYPE html> -->
-<html>
- <head>
-  	<link rel="stylesheet" type="text/css" href="estilo.css" />
-	<meta charset="utf-8">
-	<title>Hypefit | Login</title>
-
-    <link rel="icon" 
-    type="image/png" 
-    href="img/favicon.png">
-</head>
 
 <body>
 <div id="contenedor">
