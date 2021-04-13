@@ -10,7 +10,8 @@
 			
 		<?php
 			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)) {
-				echo "Bienvenido, {$_SESSION['nombre']} <a href='".RUTA_APP."/logout.php'>(salir)</a>";
+				echo "Bienvenido, {$_SESSION['nombre']} <a href='".RUTA_APP."/perfil.php'>Mi Perfil</a>
+                                                        <a href='".RUTA_APP."/logout.php'>(salir)</a>";
 			}
 			else {
 				echo "Usuario desconocido. <a href='".RUTA_APP."/login.php'>Login</a> 
