@@ -14,7 +14,7 @@ $contenidoPrincipal .= crearListaRutinas("superior");
 $contenidoPrincipal .= "<h2> ------------------- TREN INFERIOR ------------------- </h2>";
 $contenidoPrincipal .= crearListaRutinas("inferior");
 $contenidoPrincipal .= "<h2> --------------------- FULL BODY --------------------- </h2>";
-$contenidoPrincipal .= crearListaRutinas("full");
+$contenidoPrincipal .= crearListaRutinas("full body");
 $contenidoPrincipal .= "</div>";
 
 require __DIR__ . '/includes/comun/layout.php';
