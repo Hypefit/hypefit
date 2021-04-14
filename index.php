@@ -5,7 +5,7 @@ $tituloPagina= 'Hypefit | Inicio';
 $contenidoPrincipal = <<<EOS
 		
 		<div id="contenido">
-			<p>  Bienvenido a HYPEFIT</p>
+			<h1>  Bienvenido a HYPEFIT</h1>
 			<img src="img/inicio.jpg" alt="Imagen principal pagina inicio">
 			<p> CALENDARIO ACTIVIDADES</p>
 			<img src="img/calendario-abril-2021.jpg" alt="Imagen calendario provisional">
