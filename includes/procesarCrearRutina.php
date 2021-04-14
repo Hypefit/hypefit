@@ -11,6 +11,7 @@ $rutina->setRutina($rutina);
 $rutina->setCategoria($categoria);
 $rutina->setTitulo($titulo);
 
+
 $dao = new RutinaDAO();
 $id = $dao->crearRutina($rutina);
 
