@@ -24,3 +24,8 @@ function esAdmin()
 {
     return estaLogado() && isset($_SESSION['rol']) && ($_SESSION['rol'] === "admin");
 }
+
+function esEntrenador()
+{
+    return estaLogado() && isset($_SESSION['rol']) && ($_SESSION['rol'] === "entrenador");
+}

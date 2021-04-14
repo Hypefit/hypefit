@@ -8,11 +8,11 @@ $contenidoPrincipal = <<<EOS
 			<h1> RUTINAS </h1>
 
 EOS;
-$contenidoPrincipal .= "<h2> ------------------- TREN SUPERIOR ------------------- </h2>"
+$contenidoPrincipal .= "<h2> ------------------- TREN SUPERIOR ------------------- </h2>";
 $contenidoPrincipal .= crearListaRutinas(superior);
-$contenidoPrincipal .= "<h2> ------------------- TREN INFERIOR ------------------- </h2>"
+$contenidoPrincipal .= "<h2> ------------------- TREN INFERIOR ------------------- </h2>";
 $contenidoPrincipal .= crearListaRutinas(inferior);
-$contenidoPrincipal .= "<h2> --------------------- FULL BODY --------------------- </h2>"
+$contenidoPrincipal .= "<h2> --------------------- FULL BODY --------------------- </h2>";
 $contenidoPrincipal .= crearListaRutinas(full);
 $contenidoPrincipal .= "</div>";
 
