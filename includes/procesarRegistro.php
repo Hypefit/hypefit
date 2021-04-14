@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/includes/config.php';
+require_once __DIR__.'config.php';
 
 $name = htmlspecialchars(trim(strip_tags($_REQUEST["name"])));
 $password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));
@@ -13,25 +13,24 @@ if($dao->getUsuarioPorEmail($email)){
     exit();
 }
 
-#Se crea un nuevo usuario y se añade a la base de datos
 $newUser = new Usuario();
-$newUser->setId(null); //Hay que cambiar la forma de asignar ids
 $newUser->setNombre($name);
 $newUser->setEmail($email);
-$newUser->setHashPassword(hash("md5", $password)); //No se si esto es correcto
+$newUser->setHashPassword(password_hash($password, PASSWORD_DEFAULT));
 $newUser->setRol($rol);
 
-if($newUser->getRol() != "regular"){
+if($newUser->getRol() != "registrado"){
     $newUser->setAprobado(0);
 }
 else $newUser->setAprobado(1);
 
-$dao->crearUsuario($newUser);
+$id = $dao->crearUsuario($newUser);
 
 $_SESSION["login"] = true;
 $_SESSION["nombre"] = $newUser->getNombre();
 $_SESSION["rol"] = $newUser->getRol();
 $_SESSION["aprobado"] = $newUser->getAprobado();
+$_SESSION["id"] = $id;
 
 
-header("Location: ../perfil.php");
+header("Location: " . RUTA_APP . "/perfil.php");

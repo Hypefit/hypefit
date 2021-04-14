@@ -12,9 +12,9 @@ $contenidoPrincipal = <<<EOS
         <p><label>Password:</label> <input type="password" name="password" required/></p>
         <p><label>Email:</label> <input type="email" name="email" required/></p>
         <p><label>Rol:</label></p> <select name="rol" required>
-            <option value="regular" selected>Usuario Regular</option>
+            <option value="registrado" selected>Usuario Regular</option>
             <option value="entrenador">Entrenador</option>
-            <option value="cheff">Cheff</option>
+            <option value="nutricionista">Nutricionista</option>
         </select>
         <button type="submit">Entrar</button>
     </fieldset>

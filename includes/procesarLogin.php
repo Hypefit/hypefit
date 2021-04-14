@@ -6,7 +6,7 @@ require_once __DIR__.'/config.php';
 	$password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));
 
 	if(checkLogin($email, $password))
-        header("Location: ../perfil.php");
+        header("Location: " . RUTA_APP . "/perfil.php");
     else
         echo "<p>Usuario o contraseña incorrectos</p>";
 

@@ -17,9 +17,6 @@ function saludo() {
 }
 
 function checkLogin($email, $password) {
-    #$email = isset($_POST["email"]) ? $_POST["email"] : null;
-    #$password = isset($_POST["password"]) ? $_POST["password"] : null;
-
     $dao = new UsuarioDAO();
     $usuario = $dao->getUsuarioPorEmail($email);
 
