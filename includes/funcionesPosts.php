@@ -25,9 +25,8 @@ function mostrarPost($id) : string {
         $nombreCreador = $creador->getNombre();
 
         $html = "<h1>" . $post->getTitulo() . "</h1><br>";
-        $html .= "Escrito por " . $nombreCreador . "<br>";
-        #$html .= "Categoria: " . $post->getCategoria() . "<br>";
-        $html .= "<p>" . $post->getPost() . "</p>";
+        $html .= "Creado por " . $nombreCreador . "<br>";
+        $html .= mostrarComentariosPost($id);
 
         return $html;
     }
@@ -41,7 +40,7 @@ function mostrarComentariosPost($id) : string {
 
     $html = "<ul>";
     foreach($comentarios as $comentario) {
-        $user = $daoU->getUsuario($comentario->getId());
+        $user = $daoU->getUsuario($comentario->getIdUsuario());
         $html .= "<li>" . $user->getNombre() . " | " .  $comentario->getFecha() . "<br>" .
         $comentario->getComentario() ."</li>";
     }
