@@ -15,7 +15,7 @@ require_once __DIR__.'/config.php';
     }
 
     $hash = $usuario->getHashPassword();
-	if (password_verify(hash("md5", $password), $hash)){
+	if (password_verify( $password, $hash)){
 		$_SESSION["login"] = true;
 		$_SESSION["nombre"] = $usuario->getNombre();
 		$_SESSION["idUsuario"] = $usuario->getId();
