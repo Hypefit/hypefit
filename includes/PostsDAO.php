@@ -13,7 +13,8 @@ class PostsDAO extends DAO {
     }
 
     public function getPost($id) {
-        $query = "SELECT * from Rutinas where id = '$id'";
+        $idLimpio = $this->limpiarString($id);
+        $query = "SELECT * from Rutinas where id = '$idLimpio'";
         $fila = $this->select($query);
 
         return $this->crearObjetoPost($fila);

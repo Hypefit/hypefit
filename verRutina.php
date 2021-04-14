@@ -1,10 +1,9 @@
 <?php
 
 require_once __DIR__ . '/includes/config.php';
-$tituloPagina = 'Hypefit | Rutinas';
+$tituloPagina = 'Hypefit | Ver rutina';
 
-$contenidoPrincipal = '<div id="contenido">';
-$contenidoPrincipal .= mostrarRutina($_REQUEST["id"]);
-$contenidoPrincipal .= "</div>";
+$idRutina = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
+$contenidoPrincipal = mostrarRutina($idRutina);
 
 require __DIR__ . '/includes/comun/layout.php';
