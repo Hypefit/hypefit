@@ -5,10 +5,9 @@ $tituloPagina = 'Hypefit | Foro';
 $contenidoPrincipal = <<<EOS
 		
 		<div id="contenido">
-			<h1> FORO DE LA COMUNIDAD </h1>
-
+			<h1> COMUNIDAD HYPEFIT </h1>
 EOS;
-$contenidoPrincipal .= "<h2> ------------------- LISTA DE NUESTROS POSTS ------------------- </h2>"
+$contenidoPrincipal .= "<h2> ------------------- FORO ------------------- </h2>";
 $contenidoPrincipal .= crearListaPosts();
 
 $contenidoPrincipal .= "</div>";
