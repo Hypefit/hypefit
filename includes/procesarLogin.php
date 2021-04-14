@@ -7,7 +7,6 @@ require_once __DIR__.'/config.php';
 
 	$dao = new UsuarioDAO();
 	$usuario = $dao->getUsuarioPorEmail($email);
-	$hash = $usuario->getHashPassword();
 
 	#Mostrar por pantalla. No se si así funciona.
     if(!$usuario){ //si el email no esta en la bd
@@ -15,9 +14,11 @@ require_once __DIR__.'/config.php';
         exit();
     }
 
-	if (password_verify($password, $hash)){
+    $hash = $usuario->getHashPassword();
+	if (password_verify(hash("md5", $password), $hash)){
 		$_SESSION["login"] = true;
 		$_SESSION["nombre"] = $usuario->getNombre();
+		$_SESSION["idUsuario"] = $usuario->getId();
 		$_SESSION["rol"] = $usuario->getRol();
 		$_SESSION["aprobado"] = $usuario->getAprobado();
 	}

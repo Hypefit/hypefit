@@ -15,7 +15,7 @@ if($dao->getUsuarioPorEmail($email)){
 
 #Se crea un nuevo usuario y se añade a la base de datos
 $newUser = new Usuario();
-$newUser->setId(0); //Hay que cambiar la forma de asignar ids
+$newUser->setId(null); //Hay que cambiar la forma de asignar ids
 $newUser->setNombre($name);
 $newUser->setEmail($email);
 $newUser->setHashPassword(hash("md5", $password)); //No se si esto es correcto
