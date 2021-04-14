@@ -58,5 +58,9 @@ class DAO
             return NULL;
         }
     }
+
+    protected function limpiarString($string) {
+        return $this->mysqli->real_escape_string($string);
+    }
 }
 
