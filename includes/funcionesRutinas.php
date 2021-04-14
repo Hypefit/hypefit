@@ -1,8 +1,8 @@
 <?php
 
-function crearListaRutinas(): string {
+function crearListaRutinas($categoria): string {
     $dao = new RutinaDAO();
-    $lista = $dao->getAllRutinas();
+    $lista = $dao->getRutinasPorCategoria($categoria);
 
     $html = "<ul>";
     foreach($lista as $rutina) {
