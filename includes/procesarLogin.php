@@ -10,7 +10,7 @@ require_once __DIR__.'/config.php';
 
 	#Mostrar por pantalla. No se si así funciona.
     if(!$usuario){ //si el email no esta en la bd
-        echo "Usuario no registrado";
+        echo "<p>Usuario no registrado</p>";
         exit();
     }
 
