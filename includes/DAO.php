@@ -1,6 +1,5 @@
 <?php
 
-
 class DAO
 {
     private $mysqli;
@@ -57,6 +56,10 @@ class DAO
         } else {
             return NULL;
         }
+    }
+
+    protected function limpiarString($string) {
+        return $this->mysqli->real_escape_string($string);
     }
 }
 

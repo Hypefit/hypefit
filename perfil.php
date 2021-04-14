@@ -1,20 +1,17 @@
 <?php  
 require_once __DIR__.'/includes/config.php';
+require_once __DIR__.'/includes/autorizacion.php';
 
 $tituloPagina= 'Hypefit | Perfil';
 $contenidoPrincipal='';
 
-if(isset($_SESSION["login"]))
+if(estaLogado())
 {
 	$contenidoPrincipal = <<<EOS
 	<div id="contenido">
 	<h1>Tu Perfil</h1>
-    <?php
-			
-        	echo "Nombre:, {$_SESSION["nombre"]}";
-        	echo "Tu tipo de usuario:, {$_SESSION["rol"]}";
-		
-    ?> 
+        <p>Nombre:{$_SESSION["nombre"]}</p>
+        <p>Tu tipo de usuario: {$_SESSION["rol"]}</p>	
 	</div>
 EOS;
 }
