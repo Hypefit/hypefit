@@ -47,4 +47,8 @@ class RutinaDAO extends DAO {
 
         return $rutina;
     }
+
+    public function devolverUltimoId() {
+        return parent::devolverUltimoId();
+    }
 }
