@@ -2,6 +2,7 @@
 
 
 class Post {
+    private $post = "";
     private $id = 0;
     private $idCreador = 0;
     private $titulo = "";
@@ -46,6 +47,14 @@ class Post {
      */
     public function setTitulo(string $titulo): void {
         $this->titulo = $titulo;
+    }
+
+    public function getPost() : string {
+        return $this->post;
+    }
+
+    public function setPost(string $post) : void {
+        $this->post = $post;
     }
 
 }
