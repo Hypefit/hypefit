@@ -1,5 +1,11 @@
-<div id="cabecera">
-	<img src="<?=RUTA_IMGS.'/logo.png'?>" alt="Hypefit logo">
+<?php
+require_once __DIR__.'/../funcionesUsuario.php';
+require_once __DIR__.'/../config.php';
+
+?>
+
+<header>
+    <img src="<?=RUTA_IMGS.'/logo.png'?>" alt="Hypefit logo">
 	
 	<div class="saludo">
 		
@@ -9,14 +15,7 @@
 		<a href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a>
 			
 		<?php
-			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)) {
-				echo "Bienvenido, {$_SESSION['nombre']} <a href='".RUTA_APP."/perfil.php'>Mi Perfil</a>
-                                                        <a href='".RUTA_APP."/logout.php'>(salir)</a>";
-			}
-			else {
-				echo "Usuario desconocido. <a href='".RUTA_APP."/login.php'>Login</a> 
-                                           <a href='".RUTA_APP."/registro.php'>Registro</a>";
-			}
+			echo saludo();
 		?>
 	</div>
-</div>
+</header>
