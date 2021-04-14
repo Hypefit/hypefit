@@ -13,7 +13,8 @@ class RutinaDAO extends DAO {
     }
 
     public function getRutina($id) {
-        $query = "SELECT * from Rutinas where id = '$id'";
+        $id_limpio = $this->limpiarString($id);
+        $query = "SELECT * from Rutinas where id = '$id_limpio'";
         $fila = $this->select($query);
 
         if (empty($fila)) {
