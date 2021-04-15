@@ -10,9 +10,9 @@ if(estaLogado()){
     <h1> Nuevo post </h1>
     <form action="includes/procesarCrearPost.php" method="POST" enctype="multipart/form-data">
 		<fieldset>
-			<p><label>Título: </label> <input type="text" name="titulo" /></p>
-			<p><label>Mensaje:</label> <input type="text" name="mensaje" /></p>
-			<button type="submit">Entrar</button>
+			<p><label>Título: </label> <input type="text" name="titulo" required /></p>
+			<p><label>Mensaje:</label> <input type="text" name="mensaje" required /></p>
+			<button type="submit">Publicar</button>
 		</fieldset>
 	</form>
 EOS;
