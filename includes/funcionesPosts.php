@@ -3,6 +3,10 @@ require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/PostsDAO.php';
 
 
+require_once __DIR__ . '/PostsDAO.php';
+require_once __DIR__ . '/ComentarioDAO.php';
+require_once __DIR__ . '/UsuarioDAO.php';
+
 function crearListaPosts(): string {
     $dao = new PostsDAO();
     $lista = $dao->getAllPosts();
