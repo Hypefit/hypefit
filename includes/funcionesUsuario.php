@@ -6,12 +6,12 @@ require_once __DIR__ . '/UsuarioDAO.php';
 function saludo() {
     $raizApp = RUTA_APP;
     if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)) {
-        $html = "Bienvenido, ${_SESSION['nombre']} <a href='${raizApp}/perfil.php'>(salir)</a>
-                                                   <a href='".$raizApp."/logout.php'>(salir)</a>";
+        $html = "Bienvenido, ${_SESSION['nombre']} <a href='${raizApp}/perfil.php'>Perfil</a>
+                                                   <a href='${raizApp}/logout.php'>(salir)</a>";
 
     } else {
         $html = "Usuario desconocido. <a href='${raizApp}/login.php'>Login</a>
-                                      <a href='".RUTA_APP."/registro.php'>Registro</a>";
+                                      <a href='${raizApp}/registro.php'>Registro</a>";
     }
 
     return $html;

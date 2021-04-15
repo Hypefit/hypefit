@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . 'funcionesRutinas.php';
 require_once __DIR__.'/config.php';
+require_once __DIR__ .'/RutinaDAO.php';
 
 $dao = new RutinaDAO();
 
@@ -26,7 +27,7 @@ if (!move_uploaded_file(pathinfo($_FILES["archivo"]["tmp_name"]), $rutaImagen)) 
 
 $rutina = new Rutina();
 $rutina->setIdEntrenador($idEntrenador);
-$rutina->setRutina($rutina);
+$rutina->setRutina($textoRutina);
 $rutina->setCategoria($categoria);
 $rutina->setTitulo($titulo);
 $rutina->setImagen($rutaImagen);

@@ -5,7 +5,7 @@ $tituloPagina= 'Hypefit | Registro';
 
 $contenidoPrincipal = <<<EOS
 <h1>Regístrate a Hypefit</h1>
-<form action="/includes/procesarRegistro.php" method="POST">
+<form action="includes/procesarRegistro.php" method="POST">
     <fieldset>
         <legend>Usuario y contraseña</legend>
         <p><label>Name:</label> <input type="text" name="name" required/></p>
