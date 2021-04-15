@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/Comentario.php';
+require_once __DIR__ . '/DAO.php';
 
 class ComentarioDAO extends DAO {
     public function __construct() {
@@ -7,8 +9,8 @@ class ComentarioDAO extends DAO {
     }
 
     public function crearComentario(Comentario $u) {
-        $query = "INSERT into comentarios_post (idPost, idUsuario, fecha, comentario) values
-                (" . $u->getIdPost() . "," . $u->getIdUsuario() . "," . $u->getFecha() . "," . $u->getComentario() . ")";
+        $query = sprintf("INSERT into comentarios_post (idPost, idUsuario, comentario) values
+                ('%s','%s','%s')", $u->getIdPost(), $u->getIdUsuario(), $u->getComentario());
         return $this->insert($query);
     }
 
