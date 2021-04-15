@@ -5,7 +5,6 @@ class Rutina {
     private $rutina = "";
     private $idEntrenador = 0;
     private $categoria = "";
-    private $imagen = "";
     private $id = 0;
     private $titulo = "";
 
@@ -61,20 +60,6 @@ class Rutina {
      */
     public function setCategoria(string $categoria): void {
         $this->categoria = $categoria;
-    }
-
-    /**
-     * @return string
-     */
-    public function getImagen(): string {
-        return $this->imagen;
-    }
-
-    /**
-     * @param string $imagen
-     */
-    public function setImagen(string $imagen): void {
-        $this->imagen = $imagen;
     }
 
     /**
