@@ -1,24 +1,27 @@
 <?php
-require_once __DIR__.'/Post.php';
-require_once __DIR__.'/Comentario.php';
 
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/Post.php';
+require_once __DIR__ . '/PostsDAO.php';
+require_once __DIR__ . '/Comentario.php';
+require_once __DIR__ . '/ComentarioDAO.php';
+require_once __DIR__ . '/autorizacion.php';
 
-$textoPost = filter_input(INPUT_POST, 'post', FILTER_SANITIZE_SPECIAL_CHARS);
-$titulo = filter_input(INPUT_POST, 'post', FILTER_SANITIZE_SPECIAL_CHARS);
-$idUsuario = $_SESSION["idUsuario"];
-
-$post = new Post();
-$post->setIdCreador($idUsuario);
-$post->setTitulo($titulo);
-
+$texto = htmlspecialchars(trim(strip_tags($_REQUEST["mensaje"])));
+$titulo = htmlspecialchars(trim(strip_tags($_REQUEST["titulo"])));
+$idUsuario = idUsuarioLogado();
 
 $dao = new PostsDAO();
-$id = $dao->crearPost($post);
+$post = new Post();
+$post->setTitulo($titulo);
+$post->setIdCreador($idUsuario);
+$idPost = $dao->crearPost($post);
 
+$dao = new ComentarioDAO();
 $comentario = new Comentario();
-$comentario->setComentario($textoPost);
-$comentario->setIdPost($id);
-$comentario->setFecha(date_default_timezone_get());
+$comentario->setComentario($texto);
 $comentario->setIdUsuario($idUsuario);
+$comentario->setIdPost($idPost);
+$dao->crearComentario($comentario);
 
-header("Location: ../verPost.php?$id");
+header("Location:" . RUTA_APP . "/verPost.php?id=$idPost");

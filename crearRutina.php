@@ -16,7 +16,6 @@ if(esEntrenador() || esAdmin()){
 	            <option value="inferior">Superior</option>
             	<option value="full body">Full Body</option>
             </select></p>
-            <p><label>Imagen:</label><input type="file" name="archivo" required accept="image/jpeg, image/png, image/gif"/></p>
 			<button type="submit">Subir</button>
 		</fieldset>
 	</form>

@@ -8,8 +8,8 @@ class RutinaDAO extends DAO {
     }
 
     public function crearRutina(Rutina $u) {
-        $query = "INSERT into Rutinas (rutina, idEntrenador, categoria, titulo) values
-                (" . $u->getRutina() . "," . $u->getIdEntrenador() . "," . $u->getCategoria() . "," . $u->getImagen() . "," . $u->getTitulo() . ")";
+        $query = sprintf('INSERT into Rutinas (rutina, idEntrenador, categoria, titulo) values
+                ("%s","%s","%s","%s")', $u->getRutina(), $u->getIdEntrenador(), $u->getCategoria(), $u->getTitulo());
         return $this->insert($query);
     }
 
@@ -43,7 +43,6 @@ class RutinaDAO extends DAO {
         $rutina->setIdEntrenador($fila['idEntrenador']);
         $rutina->setRutina($fila['rutina']);
         $rutina->setCategoria($fila['categoria']);
-        $rutina->setImagen($fila['imagen']);
         $rutina->setTitulo($fila['titulo']);
 
         return $rutina;
