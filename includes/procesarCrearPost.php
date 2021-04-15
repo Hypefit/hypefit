@@ -5,6 +5,7 @@ require_once __DIR__ . '/Post.php';
 require_once __DIR__ . '/PostsDAO.php';
 require_once __DIR__ . '/Comentario.php';
 require_once __DIR__ . '/ComentarioDAO.php';
+require_once __DIR__ . '/autorizacion.php';
 
 $texto = htmlspecialchars(trim(strip_tags($_REQUEST["mensaje"])));
 $titulo = htmlspecialchars(trim(strip_tags($_REQUEST["titulo"])));
@@ -23,4 +24,4 @@ $comentario->setIdUsuario($idUsuario);
 $comentario->setIdPost($idPost);
 $dao->crearComentario($comentario);
 
-header("Location:" . RUTA_APP . "verPost.php?$idPost");
+header("Location:" . RUTA_APP . "/verPost.php?id=$idPost");
