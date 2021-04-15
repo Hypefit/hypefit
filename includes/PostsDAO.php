@@ -17,7 +17,7 @@ class PostsDAO extends DAO {
         $query = "SELECT * from Rutinas where id = '$idLimpio'";
         $fila = $this->select($query);
 
-        return $this->crearObjetoPost($fila);
+        return $this->crearObjetoPost($fila[0]);
     }
 
     public function getAllPosts() {

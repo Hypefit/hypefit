@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/Usuario.php';
+
 class UsuarioDAO extends DAO
 {
     public function __construct() {
@@ -16,7 +18,7 @@ class UsuarioDAO extends DAO
         $query = "SELECT * from Usuarios where id = '$id'";
         $fila = $this->select($query);
 
-        return $this->crearObjetoUsuario($fila);
+        return $this->crearObjetoUsuario($fila[0]);
     }
 
     public function getUsuarioPorEmail($email) {
@@ -26,7 +28,7 @@ class UsuarioDAO extends DAO
         if (empty($fila)) { //No existe un usuario con ese email
             return NULL;
         } else {
-            return $this->crearObjetoUsuario($fila);
+            return $this->crearObjetoUsuario($fila[0]);
         }
     }
 

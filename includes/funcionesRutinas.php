@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/RutinaDAO.php';
+require_once __DIR__ . '/UsuarioDAO.php';
 
 function crearListaRutinas($categoria): string {
     $dao = new RutinaDAO();
