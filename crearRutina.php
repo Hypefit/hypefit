@@ -9,14 +9,14 @@ if(esEntrenador() || esAdmin()){
     <h1> Nueva rutina </h1>
     <form action="includes/procesarCrearRutina.php" method="POST" enctype="multipart/form-data">
 		<fieldset>
-			<p><label>Título: </label> <input type="text" name="titulo" /></p>
-			<p><label>Contenido:</label> <input type="text" name="rutina" /></p>
+			<p><label>Título: </label> <input type="text" name="titulo" required /></p>
+			<p><label>Contenido:</label> <input type="text" name="rutina" required /></p>
 			<p><label>Categoría:</label><select name="categoria">
 	            <option value="superior">Inferior</option>
 	            <option value="inferior">Superior</option>
             	<option value="full body">Full Body</option>
             </select></p>
-            <p><label>Imagen:</label>Fichero: <input type="file" name="archivo" accept="image/jpeg, image/png, image/gif"/></p>
+            <p><label>Imagen:</label><input type="file" name="archivo" required accept="image/jpeg, image/png, image/gif"/></p>
 			<button type="submit">Entrar</button>
 		</fieldset>
 	</form>

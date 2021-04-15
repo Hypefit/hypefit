@@ -9,8 +9,8 @@ $contenidoPrincipal = <<<EOS
 		<form action="includes/procesarLogin.php" method="POST">
 		<fieldset>
 		<legend>Usuario y contraseña</legend>
-			<p><label>Email:</label> <input type="email" name="email" /></p>
-			<p><label>Contraseña:</label> <input type="password" name="password" /></p>
+			<p><label>Email:</label> <input type="email" name="email" required /></p>
+			<p><label>Contraseña:</label> <input type="password" name="password" required/></p>
 			<button type="submit">Entrar</button>
 		</fieldset>
 	</form>
