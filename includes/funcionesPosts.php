@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/PostsDAO.php';
+
 
 function crearListaPosts(): string {
     $dao = new PostsDAO();

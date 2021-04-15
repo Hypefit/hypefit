@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/includes/funcionesPosts.php';
+
 $tituloPagina = 'Hypefit | Ver post';
 
 $idPost = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
@@ -15,7 +17,7 @@ if (estaLogado()) {
 				<div><button type="submit">Crear</button></div>
 			</fieldset>
 		</form>
-	EOS;
+EOS;
 }
 
 

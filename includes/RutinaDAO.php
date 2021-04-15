@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ .'/DAO.php';
+require_once __DIR__ .'/Rutina.php';
+
 
 class RutinaDAO extends DAO {
     public function __construct() {
