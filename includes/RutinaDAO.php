@@ -2,7 +2,6 @@
 require_once __DIR__ .'/DAO.php';
 require_once __DIR__ .'/Rutina.php';
 
-
 class RutinaDAO extends DAO {
     public function __construct() {
         parent::__construct();
@@ -17,12 +16,12 @@ class RutinaDAO extends DAO {
     public function getRutina($id) {
         $id_limpio = $this->limpiarString($id);
         $query = "SELECT * from Rutinas where id = '$id_limpio'";
-        $fila = $this->select($query);
+        $filas = $this->select($query);
 
-        if (empty($fila)) {
+        if (empty($filas)) {
             return NULL;
         }
-        else return $this->crearObjetoRutina($fila);
+        else return $this->crearObjetoRutina($filas[0]);
     }
 
     public function getRutinasPorCategoria($categoria) {
