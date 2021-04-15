@@ -15,6 +15,7 @@ $contenidoPrincipal .= "<h2> ------------------- TREN INFERIOR -----------------
 $contenidoPrincipal .= crearListaRutinas("inferior");
 $contenidoPrincipal .= "<h2> --------------------- FULL BODY --------------------- </h2>";
 $contenidoPrincipal .= crearListaRutinas("full body");
+$contenidoPrincipal .= "<h3><a href='crearRutina.php'>Crea una nueva rutina</a></h3>";
 $contenidoPrincipal .= "</div>";
 
 require __DIR__ . '/includes/comun/layout.php';
