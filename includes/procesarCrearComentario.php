@@ -3,7 +3,7 @@
 
     $texto = htmlspecialchars(trim(strip_tags($_REQUEST["respuesta"])));
     $idPost = htmlspecialchars(trim(strip_tags($_REQUEST["idPost"])));
-    $idUsuario = $_SESSION['id'];
+    $idUsuario = idUsuarioLogado();
 
     $dao = new ComentarioDAO();
     $comentario = new Comentario();
