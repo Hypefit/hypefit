@@ -33,6 +33,30 @@ class UsuarioDAO extends DAO
         }
     }
 
+    public function getUsuariosSinAprobar() {
+        $query = "SELECT * from Usuarios where aprobado = 0";
+        $filas = $this->select($query);
+
+        $array_rutinas = array();
+        foreach ($filas as $fila) {
+            array_push($array_rutinas, $this->crearObjetoUsuario($fila));
+        }
+
+        return $array_rutinas;
+    }
+
+    public function aprobarUsuario($id): int {
+        $idLimpio = $this->limpiarString($id);
+        $query = "UPDATE usuarios SET aprobado=1 where id=$idLimpio";
+        return $this->modify($query);
+    }
+
+    public function eliminarUsuario($id) {
+        $idLimpio = $this->limpiarString($id);
+        $query = "DELETE FROM usuarios where id=$idLimpio";
+        return $this->modify($query);
+    }
+
     private function crearObjetoUsuario($fila) {
         $usuario = new Usuario();
         $usuario->setId($fila['id']);
