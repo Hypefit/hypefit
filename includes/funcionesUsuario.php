@@ -35,7 +35,6 @@ function checkLogin($email, $password) {
 }
 
 function logout() {
-    //Doble seguridad: unset + destroy
     unset($_SESSION["login"]);
     unset($_SESSION["rol"]);
     unset($_SESSION["nombre"]);
@@ -44,4 +43,21 @@ function logout() {
 
     session_destroy();
     session_start();
+}
+
+function mostrarUsuariosSinAprobar(): string {
+    $dao = new UsuarioDAO();
+    $usuariosSinAprobar = $dao->getUsuariosSinAprobar();
+
+    $html = "<h2>Usuarios sin aprobar</h2>";
+    $ruta = RUTA_APP . "/includes/procesarAprobar.php";
+    $html .= '<form action="' . $ruta .'" method="POST">';
+    foreach($usuariosSinAprobar as $usuario) {
+        $html .= '<input type="checkbox" name="marcados[]" value="' . $usuario->getId() . '">' . $usuario->getNombre() . ' | Rol: ' . $usuario->getRol();
+        $html .= "<br>";
+    }
+    $html .= '<input type="submit" name="aprobar" value="Aprobar" />';
+    $html .= '<input type="submit" name="eliminar" value="Eliminar" />';
+    $html .= "</form>";
+    return $html;
 }
