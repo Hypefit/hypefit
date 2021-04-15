@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__.'config.php';
+require_once __DIR__.'/config.php';
+require_once __DIR__.'/UsuarioDAO.php';
 
 $name = htmlspecialchars(trim(strip_tags($_REQUEST["name"])));
 $password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));
@@ -9,7 +10,7 @@ $rol = $_REQUEST["rol"];
 $dao = new UsuarioDAO();
 
 if($dao->getUsuarioPorEmail($email)){
-    echo "Esta dirección de email ya está registrada";
+    echo "<p>Esta dirección de email ya está registrada</p>";
     exit();
 }
 
