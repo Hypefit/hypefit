@@ -12,7 +12,7 @@ if(estaLogado()){
 		<fieldset>
 			<p><label>Título: </label> <input type="text" name="titulo" required /></p>
 			<p><label>Mensaje:</label> <input type="text" name="mensaje" required /></p>
-			<button type="submit">Entrar</button>
+			<button type="submit">Publicar</button>
 		</fieldset>
 	</form>
 EOS;

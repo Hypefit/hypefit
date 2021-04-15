@@ -3,12 +3,7 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/funcionesRutinas.php';
 $tituloPagina = 'Hypefit | Rutinas';
 
-$contenidoPrincipal = <<<EOS
-		
-		<div id="contenido">
-			<h1> RUTINAS </h1>
-
-EOS;
+$contenidoPrincipal = "<h1> RUTINAS </h1>";
 $contenidoPrincipal .= "<h2> ------------------- TREN SUPERIOR ------------------- </h2>";
 $contenidoPrincipal .= crearListaRutinas("superior");
 $contenidoPrincipal .= "<h2> ------------------- TREN INFERIOR ------------------- </h2>";
