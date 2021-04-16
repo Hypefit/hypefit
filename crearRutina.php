@@ -22,7 +22,7 @@ if( (esEntrenador() && estaAprobado()) || esAdmin()){
 EOS;
 }
 else{
-    $contenidoPrincipal = "No eres entrenador de Hypefit o tu cuenta todavía no ha sido aprobada";
+    $contenidoPrincipal = "<p>No eres entrenador de Hypefit o tu cuenta todavía no ha sido aprobada.</p>";
 }
 
 require __DIR__ . '/includes/comun/layout.php';

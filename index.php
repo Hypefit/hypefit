@@ -17,7 +17,7 @@ $contenidoPrincipal = <<<EOS
 			<img src="img/calendario-abril-2021.jpg" alt="Imagen calendario provisional">
 			<h4>¿QUIÉNES SOMOS?</h4>
             <p>Hypefit es un innovador gimnasio online que incluye tanto recetas como rutinas equilibradas y pensadas para
-            los distintas necesidades de nuestro clientes</p>
+            los distintas necesidades de nuestro clientes.</p>
             <a href="quienesSomos.php">Ver más</a>
 		</div>
 EOS;

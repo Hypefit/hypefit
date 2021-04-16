@@ -17,11 +17,11 @@ EOS;
         $contenidoPrincipal .= mostrarUsuariosSinAprobar();
     }
 	else if (!estaAprobado()) {
-	    $contenidoPrincipal .= "<p>¡Tu cuenta aún no ha sido aprobada! No podrás crear recetas ni rutinas</p>";
+	    $contenidoPrincipal .= "<p>¡Tu cuenta aún no ha sido aprobada! No podrás crear recetas ni rutinas hasta que tu cuenta sea aprobada por un administrador.</p>";
     }
 }
 else {
-    $contenidoPrincipal = "No has iniciado sesión. Puedes entrar pulsando <a href='login.php'>aquí</a>";
+    $contenidoPrincipal = "<p>No has iniciado sesión. Puedes entrar pulsando <a href='login.php'>aquí</a></p>.";
 }
 require __DIR__.'/includes/comun/layout.php';
 

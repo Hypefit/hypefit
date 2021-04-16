@@ -4,7 +4,7 @@ require __DIR__.'/includes/config.php';
 $tituloPagina= 'Hypefit | Registro';
 
 $contenidoPrincipal = <<<EOS
-<h1>Regístrate a Hypefit</h1>
+<h1>Regístrate en Hypefit</h1>
 <form action="includes/procesarRegistro.php" method="POST">
     <fieldset>
         <legend>Rellena el formulario</legend>
