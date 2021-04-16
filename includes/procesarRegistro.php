@@ -10,8 +10,7 @@ $rol = $_REQUEST["rol"];
 $dao = new UsuarioDAO();
 
 if($dao->getUsuarioPorEmail($email)){
-    echo "<p>Esta dirección de email ya está registrada</p>";
-    exit();
+    header("Location: " . RUTA_APP . "/errorRegistro.php");
 }
 
 $newUser = new Usuario();

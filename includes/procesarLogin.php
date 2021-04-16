@@ -8,5 +8,5 @@ require_once __DIR__.'/funcionesUsuario.php';
 	if(checkLogin($email, $password))
         header("Location: " . RUTA_APP . "/perfil.php");
     else
-        echo "<p>Usuario o contraseña incorrectos</p>";
+        header("Location: " . RUTA_APP . "/errorLogin.php");
 
