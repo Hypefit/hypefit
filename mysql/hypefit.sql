@@ -55,7 +55,6 @@ CREATE TABLE `rutinas` (
   `idEntrenador` int(11) NOT NULL,
   `rutina` text NOT NULL,
   `categoria` enum('superior','inferior','full body','') NOT NULL,
-  `imagen` varchar(100) NOT NULL,
   `titulo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -63,8 +62,8 @@ CREATE TABLE `rutinas` (
 -- Volcado de datos para la tabla `rutinas`
 --
 
-INSERT INTO `rutinas` (`id`, `idEntrenador`, `rutina`, `categoria`, `imagen`, `titulo`) VALUES
-(1, 2, '1. Press banca: 4 series x 8 repeticiones\r\n2. Press banca con mancuernas a 45 grados: 4 series x 12 repeticiones\r\n3. Flexiones: 3 series x fallo\r\n4. Cruce de poleas: 3 series x 15 repeticiones', 'superior', '', 'Rutina de pecho');
+INSERT INTO `rutinas` (`id`, `idEntrenador`, `rutina`, `categoria`, `titulo`) VALUES
+(1, 2, '1. Press banca: 4 series x 8 repeticiones\r\n2. Press banca con mancuernas a 45 grados: 4 series x 12 repeticiones\r\n3. Flexiones: 3 series x fallo\r\n4. Cruce de poleas: 3 series x 15 repeticiones', 'superior', 'Rutina de pecho');
 
 -- --------------------------------------------------------
 
@@ -104,7 +103,8 @@ CREATE TABLE `comentarios_post` (
 
 INSERT INTO `comentarios_post` (`id`, `idPost`, `idUsuario`, `fecha`, `comentario`) VALUES
 (1, 1, 3, '2021-04-14 16:04:36', 'Me encanta Hypefit, es la mejor web para ponerse en forma!'),
-(2, 1, 1, '2021-04-14 16:04:59', 'Muchas gracias Paco por tu apoyo :)');
+(2, 1, 1, '2021-04-14 16:04:59', 'Muchas gracias Paco por tu apoyo :)'),
+(3, 1, 1, '2021-04-15 15:17:38', 'Todos sois bienvenidos si queréis poner vuestra opinión!');
 
 -- --------------------------------------------------------
 
