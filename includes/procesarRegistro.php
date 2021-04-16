@@ -31,7 +31,7 @@ $_SESSION["login"] = true;
 $_SESSION["nombre"] = $newUser->getNombre();
 $_SESSION["rol"] = $newUser->getRol();
 $_SESSION["aprobado"] = $newUser->getAprobado();
-$_SESSION["id"] = $id;
+$_SESSION["idUsuario"] = $id;
 
 
 header("Location: " . RUTA_APP . "/perfil.php");

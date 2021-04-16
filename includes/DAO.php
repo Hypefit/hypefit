@@ -61,9 +61,5 @@ class DAO
     protected function limpiarString($string) {
         return $this->mysqli->real_escape_string($string);
     }
-
-    protected function devolverUltimoId() {
-        return $this->mysqli->insert_id;
-    }
 }
 

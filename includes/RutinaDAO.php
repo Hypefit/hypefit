@@ -8,8 +8,13 @@ class RutinaDAO extends DAO {
     }
 
     public function crearRutina(Rutina $u) {
+        $rutina = $this->limpiarString($u->getRutina());
+        $idEntrenador = $this->limpiarString($u->getIdEntrenador());
+        $categoria = $this->limpiarString($u->getCategoria());
+        $titulo = $this->limpiarString($u->getTitulo());
+
         $query = sprintf('INSERT into Rutinas (rutina, idEntrenador, categoria, titulo) values
-                ("%s","%s","%s","%s")', $u->getRutina(), $u->getIdEntrenador(), $u->getCategoria(), $u->getTitulo());
+                ("%s","%s","%s","%s")', $rutina, $idEntrenador, $categoria, $titulo);
         return $this->insert($query);
     }
 
@@ -46,9 +51,5 @@ class RutinaDAO extends DAO {
         $rutina->setTitulo($fila['titulo']);
 
         return $rutina;
-    }
-
-    public function devolverUltimoId() {
-        return parent::devolverUltimoId();
     }
 }

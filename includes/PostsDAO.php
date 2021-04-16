@@ -8,8 +8,11 @@ class PostsDAO extends DAO {
     }
 
     public function crearPost(Post $u) {
+        $creador = $this->limpiarString($u->getIdCreador());
+        $titulo = $this->limpiarString($u->getTitulo());
+
         $query = sprintf("INSERT into posts (creador, titulo) values
-                ('%s','%s')", $u->getIdCreador(), $u->getTitulo());
+                ('%s','%s')", $creador, $titulo);
         return $this->insert($query);
     }
 

@@ -10,20 +10,28 @@ class UsuarioDAO extends DAO
     }
 
     public function crearUsuario(Usuario $u) {
+        $nombre = $this->limpiarString($u->getNombre());
+        $email = $this->limpiarString($u->getEmail());
+        $hash = $this->limpiarString($u->getHashPassword());
+        $rol = $this->limpiarString($u->getRol());
+        $aprobado = $this->limpiarString($u->getAprobado());
+
         $query = sprintf("INSERT into Usuarios (nombre, email, hashPassword, rol, aprobado) values
-                ('%s','%s', '%s', '%s', '%s')", $u->getNombre() , $u->getEmail() ,$u->getHashPassword(), $u->getRol(),$u->getAprobado());
+                ('%s','%s', '%s', '%s', '%s')", $nombre , $email ,$hash, $rol,$aprobado);
         return $this->insert($query);
     }
 
     public function getUsuario($id) {
-        $query = "SELECT * from Usuarios where id = '$id'";
+        $idLimpio = $this->limpiarString($id);
+        $query = "SELECT * from Usuarios where id = '$idLimpio'";
         $fila = $this->select($query);
 
         return $this->crearObjetoUsuario($fila[0]);
     }
 
     public function getUsuarioPorEmail($email) {
-        $query = "SELECT * from Usuarios where email = '$email'";
+        $emailLimpio = $this->limpiarString($email);
+        $query = "SELECT * from Usuarios where email = '$emailLimpio'";
         $fila = $this->select($query);
 
         if (empty($fila)) { //No existe un usuario con ese email

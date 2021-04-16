@@ -9,13 +9,18 @@ class ComentarioDAO extends DAO {
     }
 
     public function crearComentario(Comentario $u) {
+        $comentario = $this->limpiarString($u->getComentario());
+        $idPost = $this->limpiarString($u->getIdPost());
+        $idUsuario = $this->limpiarString($u->getIdUsuario());
+
         $query = sprintf("INSERT into comentarios_post (idPost, idUsuario, comentario) values
-                ('%s','%s','%s')", $u->getIdPost(), $u->getIdUsuario(), $u->getComentario());
+                ('%s','%s','%s')", $idPost, $idUsuario, $comentario);
         return $this->insert($query);
     }
 
     public function getComentariosDelPost($id) {
-        $query = "SELECT * from comentarios_post where idPost = '$id' order by fecha";
+        $idLimpio = $this->limpiarString($id);
+        $query = "SELECT * from comentarios_post where idPost = '$idLimpio' order by fecha";
         $filas = $this->select($query);
 
         $comentarios = array();
