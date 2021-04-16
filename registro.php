@@ -7,9 +7,9 @@ $contenidoPrincipal = <<<EOS
 <h1>Regístrate a Hypefit</h1>
 <form action="includes/procesarRegistro.php" method="POST">
     <fieldset>
-        <legend>Usuario y contraseña</legend>
-        <p><label>Name:</label> <input type="text" name="name" required/></p>
-        <p><label>Password:</label> <input type="password" name="password" required/></p>
+        <legend>Rellena el formulario</legend>
+        <p><label>Nombre:</label> <input type="text" name="name" required/></p>
+        <p><label>Contraseña:</label> <input type="password" name="password" required/></p>
         <p><label>Email:</label> <input type="email" name="email" required/></p>
         <p><label>Rol:</label></p> <select name="rol" required>
             <option value="registrado" selected>Usuario Regular</option>
