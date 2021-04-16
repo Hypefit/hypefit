@@ -10,8 +10,8 @@ class UsuarioDAO extends DAO
     }
 
     public function crearUsuario(Usuario $u) {
-        $query = "INSERT into Usuarios (nombre, email, hashPassword, rol, aprobado) values
-                (" . $u->getNombre() . "," . $u->getEmail() . "," . $u->getHashPassword() . "," . $u->getRol() . "," . $u->getAprobado() . ")";
+        $query = sprintf("INSERT into Usuarios (nombre, email, hashPassword, rol, aprobado) values
+                ('%s','%s', '%s', '%s', '%s')", $u->getNombre() , $u->getEmail() ,$u->getHashPassword(), $u->getRol(),$u->getAprobado());
         return $this->insert($query);
     }
 
