@@ -20,15 +20,15 @@ function mostrarRutina($id) {
     $rutina = $dao->getRutina($id);
 
     if ($rutina == NULL) {
-        return "No existe ninguna rutina con el id especificado.";
+        return "<p>No existe ninguna rutina con el id especificado.</p>";
     } else {
         $dao = new UsuarioDAO();
         $usuario = $dao->getUsuario($rutina->getIdEntrenador());
         $nombreEntrenador = $usuario->getNombre();
 
-        $html = "<h1>" . $rutina->getTitulo() . "</h1><br>";
-        $html .= "Creada por " . $nombreEntrenador . "<br>";
-        $html .= "Categoria: " . $rutina->getCategoria() . "<br>";
+        $html = "<h1>" . $rutina->getTitulo() . "</h1>";
+        $html .= "Creada por: " . $nombreEntrenador . "<br>";
+        $html .= "Categoria: " . ucwords($rutina->getCategoria()) . "<br>";
         $html .= "<p>" . $rutina->getRutina() . "</p>";
 
         return $html;

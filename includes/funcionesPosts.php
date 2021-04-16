@@ -1,9 +1,6 @@
 <?php
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/PostsDAO.php';
-
-
-require_once __DIR__ . '/PostsDAO.php';
 require_once __DIR__ . '/ComentarioDAO.php';
 require_once __DIR__ . '/UsuarioDAO.php';
 
@@ -25,14 +22,14 @@ function mostrarPost($id) : string {
     $post = $dao->getPost($id);
 
     if ($post == null) {
-        return "No existe ninguna rutina con el id especificado.";
+        return "<p>No existe ningún post con el id especificado.</p>";
     } else {
         $dao = new UsuarioDAO();
         $creador = $dao->getUsuario($post->getIdCreador());
         $nombreCreador = $creador->getNombre();
 
-        $html = "<h1>" . $post->getTitulo() . "</h1><br>";
-        $html .= "Creado por " . $nombreCreador . "<br>";
+        $html = "<h1>" . $post->getTitulo() . "</h1>";
+        $html .= "Creado por: " . $nombreCreador . "<br>";
         $html .= mostrarComentariosPost($id);
 
         return $html;

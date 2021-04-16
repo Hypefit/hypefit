@@ -53,7 +53,7 @@ function mostrarUsuariosSinAprobar(): string {
     $ruta = RUTA_APP . "/includes/procesarAprobar.php";
     $html .= '<form action="' . $ruta .'" method="POST">';
     foreach($usuariosSinAprobar as $usuario) {
-        $html .= '<input type="checkbox" name="marcados[]" value="' . $usuario->getId() . '"/>' . $usuario->getNombre() . ' | Rol: ' . $usuario->getRol();
+        $html .= '<input type="checkbox" name="marcados[]" value="' . $usuario->getId() . '"/>' . $usuario->getNombre() . ' | Rol: ' . ucwords($usuario->getRol());
         $html .= "<br>";
     }
     $html .= '<input type="submit" name="aprobar" value="Aprobar" />';

@@ -8,10 +8,12 @@ $contenidoPrincipal='';
 
 if(estaLogado())
 {
-	$contenidoPrincipal = <<<EOS
-	<h1>Tu Perfil</h1>
+    $rol = ucwords($_SESSION["rol"]);
+
+    $contenidoPrincipal = <<<EOS
+	<h1>Tu perfil</h1>
         <p>Nombre: {$_SESSION["nombre"]}</p>
-        <p>Tu tipo de usuario: {$_SESSION["rol"]}</p>
+        <p>Tu tipo de usuario: {$rol}</p>
 EOS;
 	if (esAdmin()) {
         $contenidoPrincipal .= mostrarUsuariosSinAprobar();

@@ -5,14 +5,17 @@ require_once __DIR__.'/includes/funcionesUsuario.php';
 
 $tituloPagina= 'Hypefit | Logout';
 
-
-$contenidoPrincipal = <<<EOS
-	<div id="contenido">
+if (estaLogado()) {
+    $contenidoPrincipal = <<<EOS
         <h1>Desconexión</h1>			
-        <p>Hasta otra, {$_SESSION["nombre"]}</p>
-	</div>
-EOS;
-
-logout();
+            <p>Hasta otra, {$_SESSION["nombre"]}</p>
+    EOS;
+    logout();
+} else {
+    $contenidoPrincipal = <<<EOS
+        <h1>Desconexión</h1>			
+            <p>No has iniciado sesión. Puedes entrar pulsando <a href='login.php'>aquí</a>.</p>
+    EOS;
+}
 
 require __DIR__.'/includes/comun/layout.php';
