@@ -26,5 +26,5 @@ function esEntrenador(): bool {
 }
 
 function estaAprobado() : bool {
-    return estaLogado() && isset($_SESSION['rol']) && (($_SESSION['rol'] === "entrenador") || ($_SESSION['rol'] === "nutricionista")) && ($_SESSION['aprobado']);
+    return estaLogado() && isset($_SESSION['aprobado']) && ($_SESSION['aprobado']);
 }
