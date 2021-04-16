@@ -16,6 +16,9 @@ EOS;
 	if (esAdmin()) {
         $contenidoPrincipal .= mostrarUsuariosSinAprobar();
     }
+	else if (!estaAprobado()) {
+	    $contenidoPrincipal .= "<p>¡Tu cuenta aún no ha sido aprobada! No podrás crear recetas ni rutinas</p>";
+    }
 }
 else {
     $contenidoPrincipal = "No has iniciado sesión. Puedes entrar pulsando <a href='login.php'>aquí</a>";

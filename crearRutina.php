@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/autorizacion.php';
 $tituloPagina = 'Hypefit | Crear Rutina';
 
-if(esEntrenador() || esAdmin()){
+if( (esEntrenador() && estaAprobado()) || esAdmin()){
     $contenidoPrincipal = <<<EOS
     <h1> Nueva rutina </h1>
     <form action="includes/procesarCrearRutina.php" method="POST" enctype="multipart/form-data">
