@@ -9,7 +9,7 @@ function esUsuario($idUsuario): bool {
     return estaLogado() && $_SESSION['idUsuario'] === $idUsuario;
 }
 
-function idUsuarioLogado(): bool {
+function idUsuarioLogado() {
     $result = false;
     if (estaLogado()) {
         $result = $_SESSION['idUsuario'];
