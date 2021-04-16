@@ -1,18 +1,15 @@
 <?php
 
-function estaLogado()
-{
+function estaLogado(): bool {
     return isset($_SESSION['login']);
 }
 
 
-function esUsuario($idUsuario)
-{
+function esUsuario($idUsuario): bool {
     return estaLogado() && $_SESSION['idUsuario'] === $idUsuario;
 }
 
-function idUsuarioLogado()
-{
+function idUsuarioLogado(): bool {
     $result = false;
     if (estaLogado()) {
         $result = $_SESSION['idUsuario'];
@@ -20,8 +17,7 @@ function idUsuarioLogado()
     return $result;
 }
 
-function esAdmin()
-{
+function esAdmin(): bool {
     return estaLogado() && isset($_SESSION['rol']) && ($_SESSION['rol'] === "administrador");
 }
 

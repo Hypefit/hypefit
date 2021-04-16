@@ -15,7 +15,7 @@ function crearListaRutinas($categoria): string {
     return $html;
 }
 
-function mostrarRutina($id) {
+function mostrarRutina($id): string {
     $dao = new RutinaDAO();
     $rutina = $dao->getRutina($id);
 

@@ -2,12 +2,12 @@
 
 class Usuario
 {
-    private $email = "";
-    private $hashPassword = "";
-    private $rol = "";
-    private $nombre = "";
-    private $aprobado = 0;
-    private $id = 0;
+    private string $email = "";
+    private string $hashPassword = "";
+    private string $rol = "";
+    private string $nombre = "";
+    private int $aprobado = 0;
+    private int $id = 0;
 
     public function getEmail(): string {
         return $this->email;
@@ -41,8 +41,7 @@ class Usuario
         $this->aprobado = $aprobado;
     }
 
-    public function getRol()
-    {
+    public function getRol(): string {
         return $this->rol;
     }
 
@@ -51,8 +50,7 @@ class Usuario
         $this->rol = $rol;
     }
 
-    public function getId()
-    {
+    public function getId(): int {
         return $this->id;
     }
 

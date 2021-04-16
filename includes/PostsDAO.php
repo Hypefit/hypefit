@@ -16,7 +16,7 @@ class PostsDAO extends DAO {
         return $this->insert($query);
     }
 
-    public function getPost($id) {
+    public function getPost($id): Post {
         $idLimpio = $this->limpiarString($id);
         $query = "SELECT * from posts where id = '$idLimpio'";
         $fila = $this->select($query);
@@ -24,7 +24,7 @@ class PostsDAO extends DAO {
         return $this->crearObjetoPost($fila[0]);
     }
 
-    public function getAllPosts() {
+    public function getAllPosts(): array {
         $query = "SELECT * from posts";
         $filas = $this->select($query);
 

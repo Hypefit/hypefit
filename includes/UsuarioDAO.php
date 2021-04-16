@@ -21,7 +21,7 @@ class UsuarioDAO extends DAO
         return $this->insert($query);
     }
 
-    public function getUsuario($id) {
+    public function getUsuario($id): Usuario {
         $idLimpio = $this->limpiarString($id);
         $query = "SELECT * from Usuarios where id = '$idLimpio'";
         $fila = $this->select($query);
@@ -29,7 +29,7 @@ class UsuarioDAO extends DAO
         return $this->crearObjetoUsuario($fila[0]);
     }
 
-    public function getUsuarioPorEmail($email) {
+    public function getUsuarioPorEmail($email): ?Usuario {
         $emailLimpio = $this->limpiarString($email);
         $query = "SELECT * from Usuarios where email = '$emailLimpio'";
         $fila = $this->select($query);
@@ -41,7 +41,7 @@ class UsuarioDAO extends DAO
         }
     }
 
-    public function getUsuariosSinAprobar() {
+    public function getUsuariosSinAprobar(): array {
         $query = "SELECT * from Usuarios where aprobado = 0";
         $filas = $this->select($query);
 
@@ -59,13 +59,13 @@ class UsuarioDAO extends DAO
         return $this->modify($query);
     }
 
-    public function eliminarUsuario($id) {
+    public function eliminarUsuario($id): int {
         $idLimpio = $this->limpiarString($id);
         $query = "DELETE FROM usuarios where id=$idLimpio";
         return $this->modify($query);
     }
 
-    private function crearObjetoUsuario($fila) {
+    private function crearObjetoUsuario($fila): Usuario {
         $usuario = new Usuario();
         $usuario->setId($fila['id']);
         $usuario->setNombre($fila['nombre']);

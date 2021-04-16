@@ -2,11 +2,11 @@
 
 
 class Rutina {
-    private $rutina = "";
-    private $idEntrenador = 0;
-    private $categoria = "";
-    private $id = 0;
-    private $titulo = "";
+    private string $rutina = "";
+    private int $idEntrenador = 0;
+    private string $categoria = "";
+    private int $id = 0;
+    private string $titulo = "";
 
     /**
      * @return string

@@ -40,7 +40,7 @@ class DAO
         }
     }
 
-    protected function modify($sql) {
+    protected function modify($sql): int {
         if($sql != ""){
             $consulta = $this->mysqli->query($sql) or die ($this->mysqli->error. " en la línea ".(__LINE__-1));
             return $this->mysqli->affected_rows;
@@ -58,7 +58,7 @@ class DAO
         }
     }
 
-    protected function limpiarString($string) {
+    protected function limpiarString($string): string {
         return $this->mysqli->real_escape_string($string);
     }
 }

@@ -18,7 +18,7 @@ class ComentarioDAO extends DAO {
         return $this->insert($query);
     }
 
-    public function getComentariosDelPost($id) {
+    public function getComentariosDelPost($id): array {
         $idLimpio = $this->limpiarString($id);
         $query = "SELECT * from comentarios_post where idPost = '$idLimpio' order by fecha";
         $filas = $this->select($query);

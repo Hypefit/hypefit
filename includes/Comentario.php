@@ -2,11 +2,11 @@
 
 
 class Comentario {
-    private $id = 0;
-    private $idPost = 0;
-    private $idUsuario = 0;
-    private $fecha = "";
-    private $comentario = "";
+    private int $id = 0;
+    private int $idPost = 0;
+    private int $idUsuario = 0;
+    private string $fecha = "";
+    private string $comentario = "";
 
     /**
      * @return int

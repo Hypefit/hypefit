@@ -2,9 +2,9 @@
 
 
 class Post {
-    private $id = 0;
-    private $idCreador = 0;
-    private $titulo = "";
+    private int $id = 0;
+    private int $idCreador = 0;
+    private string $titulo = "";
 
     /**
      * @return int

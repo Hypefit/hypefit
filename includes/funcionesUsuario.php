@@ -3,7 +3,7 @@ require_once __DIR__.'/config.php';
 require_once __DIR__ . '/UsuarioDAO.php';
 
 
-function saludo() {
+function saludo(): string {
     $raizApp = RUTA_APP;
     if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)) {
         $html = "Bienvenido, ${_SESSION['nombre']} <a href='${raizApp}/perfil.php'>Perfil</a>
@@ -17,7 +17,7 @@ function saludo() {
     return $html;
 }
 
-function checkLogin($email, $password) {
+function checkLogin($email, $password): bool {
     $dao = new UsuarioDAO();
     $usuario = $dao->getUsuarioPorEmail($email);
 

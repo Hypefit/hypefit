@@ -18,7 +18,7 @@ class RutinaDAO extends DAO {
         return $this->insert($query);
     }
 
-    public function getRutina($id) {
+    public function getRutina($id): ?Rutina {
         $id_limpio = $this->limpiarString($id);
         $query = "SELECT * from Rutinas where id = '$id_limpio'";
         $filas = $this->select($query);
@@ -29,7 +29,7 @@ class RutinaDAO extends DAO {
         else return $this->crearObjetoRutina($filas[0]);
     }
 
-    public function getRutinasPorCategoria($categoria) {
+    public function getRutinasPorCategoria($categoria): array {
         $categoria_limpia = $this->limpiarString($categoria);
         $query = "SELECT * from Rutinas where categoria = '$categoria_limpia'";
         $filas = $this->select($query);
