@@ -5,7 +5,7 @@ require_once __DIR__.'/../config.php';
 ?>
 
 <header>
-    <img src="<?=RUTA_IMGS.'/logo.png'?>" alt="Hypefit logo">
+    <img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Hypefit logo">
 	
 	<div class="saludo">
 		
