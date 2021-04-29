@@ -1,4 +1,4 @@
-<div id="pie">
+<footer>
 	
 	<a href="index.php">Inicio</a>
 	<a href="rutinas.php">Rutinas</a>
@@ -6,4 +6,4 @@
 	<a href="comunidad.php">Comunidad</a>
 	<a href="quienesSomos.php">¿Quiénes somos?</a>
 
-</div>
+<footer>
