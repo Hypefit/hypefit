@@ -1,7 +1,9 @@
 <?php
-require_once __DIR__.'/config.php';
-require_once __DIR__ . '/UsuarioDAO.php';
 
+use hypefit\DAO\UsuarioDAO;
+use hypefit\TO\Usuario;
+
+require_once __DIR__.'/config.php';
 
 function saludo(): string {
     $raizApp = RUTA_APP;
@@ -32,6 +34,34 @@ function checkLogin($email, $password): bool {
     else{
         return false;
     }
+}
+
+function crearUsuario($email, $name, $password, $rol) {
+    $dao = new UsuarioDAO();
+    if ($dao->getUsuarioPorEmail($email)){
+        return false;
+    }
+
+    $newUser = new Usuario();
+    $newUser->setNombre($name);
+    $newUser->setEmail($email);
+    $newUser->setHashPassword(password_hash($password, PASSWORD_DEFAULT));
+    $newUser->setRol($rol);
+
+    if($newUser->getRol() != "registrado"){
+        $newUser->setAprobado(0);
+    }
+    else $newUser->setAprobado(1);
+
+    $id = $dao->crearUsuario($newUser);
+
+    $_SESSION["login"] = true;
+    $_SESSION["nombre"] = $newUser->getNombre();
+    $_SESSION["rol"] = $newUser->getRol();
+    $_SESSION["aprobado"] = $newUser->getAprobado();
+    $_SESSION["idUsuario"] = $id;
+
+    return true;
 }
 
 function logout() {
