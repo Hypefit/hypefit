@@ -6,9 +6,6 @@ use hypefit\TO\Usuario;
 
 class UsuarioDAO extends DAO
 {
-    public function __construct() {
-        parent::__construct();
-    }
 
     public function crearUsuario(Usuario $u) {
         $nombre = $this->limpiarString($u->getNombre());

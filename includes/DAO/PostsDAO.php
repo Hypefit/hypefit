@@ -5,9 +5,6 @@ namespace hypefit\DAO;
 use hypefit\TO\Post;
 
 class PostsDAO extends DAO {
-    public function __construct() {
-        parent::__construct();
-    }
 
     public function crearPost(Post $u) {
         $creador = $this->limpiarString($u->getIdCreador());

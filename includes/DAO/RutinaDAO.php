@@ -5,9 +5,6 @@ namespace hypefit\DAO;
 use hypefit\TO\Rutina;
 
 class RutinaDAO extends DAO {
-    public function __construct() {
-        parent::__construct();
-    }
 
     public function crearRutina(Rutina $u) {
         $rutina = $this->limpiarString($u->getRutina());
