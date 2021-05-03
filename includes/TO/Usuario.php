@@ -1,5 +1,7 @@
 <?php
 
+namespace hypefit\TO;
+
 class Usuario
 {
     private string $email = "";

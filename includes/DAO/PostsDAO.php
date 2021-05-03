@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__ . '/DAO.php';
-require_once __DIR__ . '/Post.php';
+
+namespace hypefit\DAO;
+
+use hypefit\TO\Post;
 
 class PostsDAO extends DAO {
     public function __construct() {

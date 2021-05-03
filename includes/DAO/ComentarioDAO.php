@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__ . '/Comentario.php';
-require_once __DIR__ . '/DAO.php';
+namespace hypefit\DAO;
+
+use hypefit\TO\Comentario;
 
 class ComentarioDAO extends DAO {
     public function __construct() {

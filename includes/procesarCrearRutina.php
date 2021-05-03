@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/funcionesRutinas.php';
 require_once __DIR__.'/config.php';
-require_once __DIR__ .'/RutinaDAO.php';
+require_once __DIR__ . '/RutinaDAO.php';
 
 $dao = new RutinaDAO();
 

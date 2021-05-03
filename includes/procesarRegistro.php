@@ -1,6 +1,6 @@
 <?php
+
 require_once __DIR__.'/config.php';
-require_once __DIR__.'/UsuarioDAO.php';
 
 $name = htmlspecialchars(trim(strip_tags($_REQUEST["name"])));
 $password = htmlspecialchars(trim(strip_tags($_REQUEST["password"])));

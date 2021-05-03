@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__ . '/Usuario.php';
-require_once __DIR__ . '/DAO.php';
+namespace hypefit\DAO;
+
+use hypefit\TO\Usuario;
 
 class UsuarioDAO extends DAO
 {

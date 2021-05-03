@@ -1,5 +1,9 @@
 <?php
 
+namespace hypefit\DAO;
+
+use mysqli;
+
 class DAO
 {
     private $mysqli;

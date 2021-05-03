@@ -1,5 +1,6 @@
 <?php
 
+namespace hypefit\TO;
 
 class Post {
     private int $id = 0;

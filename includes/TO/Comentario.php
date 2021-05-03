@@ -1,5 +1,6 @@
 <?php
 
+namespace hypefit\TO;
 
 class Comentario {
     private int $id = 0;

@@ -1,5 +1,6 @@
 <?php
 
+namespace hypefit\TO;
 
 class Rutina {
     private string $rutina = "";
