@@ -8,8 +8,6 @@ require_once __DIR__.'/../config.php';
 	<a href="<?=RUTA_APP.'/index.php'?>" title="Inicio">
         <img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio">
     </a>
-
-
 </header>
 <nav>
     <ul>

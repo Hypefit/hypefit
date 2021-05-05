@@ -9,7 +9,7 @@
           href="<?= RUTA_IMGS.'/favicon.png'?>">
 </head>
 <body>
-<div id="contenedor">
+<header id="contenedor">
     <?php
 
     require(__DIR__.'/cabecera.php');
@@ -25,6 +25,6 @@
     #require(__DIR__.'/sidebarDer.php');
     require(__DIR__.'/pie.php');
     ?>
-</div>
+</header>
 </body>
 </html>
