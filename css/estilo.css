@@ -9,10 +9,8 @@ div#contenedor {
 }
 
 header {
-    /*padding: 30px;
-    height: 100px;*/
+    height: 10%;
     color: white;
-    /*background-color: #b5c3e5;*/
 }
 
 img.logo {
