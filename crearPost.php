@@ -1,23 +1,18 @@
 <?php
 
+use hypefit\Forms\CrearPostForm;
+
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/autorizacion.php';
 
 $tituloPagina = 'Hypefit | Crear Post';
+$contenidoPrincipal = "<h1> Nuevo post </h1>";
 
-if(estaLogado()){
-    $contenidoPrincipal = <<<EOS
-    <h1> Nuevo post </h1>
-    <form action="includes/procesarCrearPost.php" method="POST" enctype="multipart/form-data">
-		<fieldset>
-			<p><label>Título: </label> <input type="text" name="titulo" required /></p>
-			<p><label>Mensaje:</label> <input type="text" name="mensaje" required /></p>
-			<button type="submit">Publicar</button>
-		</fieldset>
-	</form>
-EOS;
+if(estaLogado()) {
+	$form = new CrearPostForm();
+    $contenidoPrincipal .= $form->gestiona();
 }
-else{
+else {
     $contenidoPrincipal = "<p>No estás autenticado. Puedes entrar pulsando <a href='login.php'>aquí</a></p>";
 }
 
