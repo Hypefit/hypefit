@@ -9,12 +9,14 @@ div#contenedor {
 }
 
 header {
+    /*padding: 30px;*/
     height: 10%;
-    color: white;
+    /*color: white;*/
+    /*background-color: #b5c3e5;*/
 }
 
 img.logo {
-    width: 45%;
+    width: 30%;
     margin: auto;
     display: block;
 }
@@ -33,7 +35,7 @@ nav li {
 }
 
 nav li a {
-    displayp:block;
+    display:block;
     padding:14px 16px;
     text-align: center;
     text-decoration: none;
@@ -41,7 +43,7 @@ nav li a {
 }
 
 nav li a:hover{
-    background-color: #cdddef;
+    color: #cdddef;
 }
 
 main {
@@ -54,5 +56,12 @@ article {
 
 footer {
 
+}
+
+img.inicio {
+    height: 10%;
+    width: 80%;
+    margin: auto;
+    display: block;
 }
 
