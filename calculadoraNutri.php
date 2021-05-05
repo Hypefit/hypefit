@@ -6,7 +6,7 @@ require_once __DIR__ . '/includes/autorizacion.php';
 $tituloPagina = 'Hypefit | Calculadora Nutricional';
 
 
-    $contenidoPrincipal = <<<EOS
+$contenidoPrincipal = <<<EOS
     <h1>Calculadora Nutricional HypeFit</h1>
     <h1>Utiliza nuestra calculadora nutricional para saber si has logrado tus objetivos</h1>
     <form action="includes/procesarNutri.php" method="POST">
@@ -33,4 +33,4 @@ $tituloPagina = 'Hypefit | Calculadora Nutricional';
     </form>
     EOS;
 
-require __DIR__ . '/includes/comun/layout.php';
+require __DIR__ . '/includes/comun/layout.php';<?php
