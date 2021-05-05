@@ -16,9 +16,10 @@ header {
 }
 
 img.logo {
-    width: 30%;
-    margin: auto;
+    width: 25%;
+    padding: 1%;
     display: block;
+    float: left;
 }
 
 nav ul {
@@ -31,7 +32,7 @@ nav ul {
 
 nav li {
     float:left;
-    border-right: 2px solid #adaddc;
+    border-right: 0.1em solid #adaddc;
 }
 
 nav li a {

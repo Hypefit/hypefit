@@ -11,7 +11,11 @@ require_once __DIR__.'/../config.php';
 
 <nav>
     <ul>
-        <li><img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio"></li>
+      <li>
+          <a href="<?=RUTA_APP.'/index.php'?>" title="Inicio">
+              <img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio">
+          </a>
+      </li>
       <li><a href="<?=RUTA_APP.'/index.php'?>">Inicio</a></li>
       <li><a href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a></li>
       <li><a href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a></li>
