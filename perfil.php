@@ -1,4 +1,7 @@
-<?php  
+<?php
+
+use hypefit\Forms\AprobarUsuarioForm;
+
 require_once __DIR__.'/includes/config.php';
 require_once __DIR__.'/includes/autorizacion.php';
 require_once __DIR__.'/includes/funcionesUsuario.php';
@@ -16,7 +19,8 @@ if(estaLogado())
         <p>Tu tipo de usuario: {$rol}</p>
 EOS;
 	if (esAdmin()) {
-        $contenidoPrincipal .= mostrarUsuariosSinAprobar();
+        $form = new AprobarUsuarioForm();
+        $contenidoPrincipal .= "<h2>Usuarios sin aprobar</h2>" . $form->gestiona() ;
     }
 	else if (!estaAprobado()) {
 	    $contenidoPrincipal .= "<p>¡Tu cuenta aún no ha sido aprobada! No podrás crear recetas ni rutinas hasta que tu cuenta sea aprobada por un administrador.</p>";
