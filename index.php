@@ -4,7 +4,7 @@ $tituloPagina= 'Hypefit | Inicio';
 
 $contenidoPrincipal = <<<EOS
         <h1>Bienvenido a HYPEFIT</h1>
-        <img src="img/inicio.jpg" alt="Imagen principal pagina inicio">
+        <img class="inicio" src="img/inicio.jpg" alt="Imagen principal pagina inicio">
         <h3>RUTINAS DE ENTRENAMIENTO</h3>
         <p>Visita nuestra página de <a href="rutinas.php">rutinas</a> y mantente en forma.</p>
         <h3>RECETAS</h3>

@@ -1,104 +1,67 @@
 body {
-	background-color: #CDCDCD;
+    background-color: aliceblue;
 }
 
 div#contenedor {
-	width: 900px;
-	margin: auto;
-	border: 1px solid black;
-	background-color: #aaaaaa;
-	margin-top: 30px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
 }
 
-div#cabecera {
-	padding: 30px;
-	height: 100px;
-	background-color: #303030;
-	color: white;
+header {
+    /*padding: 30px;*/
+    height: 10%;
+    /*color: white;*/
+    /*background-color: #b5c3e5;*/
 }
 
-div#cabecera a, div#cabecera a:visited {
-	color: white;
-	font-weight: bold;
-	text-decoration: none;
-} 
-
-div#cabecera a:hover {
-	color: red;
-	font-weight: bold;
-	text-decoration: underline;
-} 
-
-
-div#sidebar-left {
-	padding: 10px;
-	float: left;
-	width: 170px;
-	height: 400px;
-	background-color: #dddddd;
+img.logo {
+    width: 30%;
+    margin: auto;
+    display: block;
 }
 
-div#sidebar-left a, div#sidebar-left a:visited {
-	color: red;
-	font-weight: bold;
-	text-decoration: none;
-} 
-
-div#sidebar-left a:hover {
-	color: red;
-	text-decoration: underline;
-} 
-
-
-div#sidebar-right {
-	padding: 10px;
-	float: right;
-	width: 170px;
-	height: 400px;
-	background-color: #dddddd;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #cddde8;
+    overflow: hidden;
 }
 
-div#contenido {
-	padding: 10px;
-	float: left;
-	min-height: 600px;
-	width: 500px;
-	background-color: white;
+nav li {
+    float:left;
+    border-right: 2px solid #adaddc;
 }
 
-div#pie {
-	clear: both;
-	padding: 20px;
-	background-color: #303030;
-	color: white;
-	text-align: center;
+nav li a {
+    display:block;
+    padding:14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: navy;
 }
 
-div.saludo {
-	width: 100%;
-	text-align: right;
+nav li a:hover{
+    color: #cdddef;
 }
 
-fieldset {
-	border: 1px solid black;
-	width: 15em;
-	margin: 0 auto;
+main {
+
 }
 
-legend {
-	color: #fff;
-	background: #303030;
-	border: 1px solid black;
-	padding: 2px 6px;
-} 
+article {
 
-label {
-	width: 4em;
-	text-align: right;
-	margin-right: 0.5em;
-	display: inline-block;
 }
 
-button {
-	margin-left: 100px;
-} 
+footer {
+
+}
+
+img.inicio {
+    height: 10%;
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
