@@ -48,6 +48,9 @@ nav li a:hover{
     color: #7dadde;
 }
 
+
+
+
 main {
 
 }
@@ -56,8 +59,24 @@ article {
 
 }
 
-footer {
+footer{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #cddde8;
+    overflow: hidden;
+}
 
+footer li{
+    float:left;
+}
+
+footer li a{
+    display:block;
+    padding:14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: navy;
 }
 
 img.inicio {
