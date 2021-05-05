@@ -5,7 +5,7 @@ require_once __DIR__ . '/includes/autorizacion.php';
 
 $tituloPagina = 'Hypefit | Calculadora Nutricional';
 
-if (estaLogado()) {
+
     $contenidoPrincipal = <<<EOS
     <h1>Calculadora Nutricional HypeFit</h1>
     <h1>Utiliza nuestra calculadora nutricional para saber si has logrado tus objetivos</h1>
@@ -22,14 +22,15 @@ if (estaLogado()) {
             
             <p><label>Calorías:</label> <input type="number" name="calorias" required/></p>
             <p><label>Proteínas:</label> <input type="number" name="proteinas" required/></p>
-            
+            <p><label>Grasas:</label> <input type="number" name="grasas" required/></p>
+            <p><label>Carbohidratos:</label> <input type="number" name="carbos" required/></p>
+
             <p><label>Ejercicio realizado:</label> <input type="text" name="ejercicio" required/></p>
-            <p><label>Tiempo de ejercicio realizado:</label> <input type="number" name="tiempo" required/></p>
+            <p><label>Tiempo de ejercicio realizado(minutos):</label> <input type="number" name="tiempo" required/></p>
 
             <button type="Calcular">Calcular</button>
         </fieldset>
     </form>
     EOS;
-
 
 require __DIR__ . '/includes/comun/layout.php';
