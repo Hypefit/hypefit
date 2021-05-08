@@ -4,14 +4,11 @@ require_once __DIR__.'/../config.php';
 ?>
 
 <header>
-	<!--<a href="<?=RUTA_APP.'/index.php'?>" title="Inicio">
-        <img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio">
-    </a>
--->
-
-<nav>
+    <img class="cabecera" src="<?=RUTA_IMGS.'/cabecera.jpg'?>" alt="Imagen cabecera">
+</header>
+    <nav>
     <ul>
-        <li>
+        <li class="logo">
           <a href="<?=RUTA_APP.'/index.php'?>" title="Inicio">
               <img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio">
           </a>
@@ -20,7 +17,6 @@ require_once __DIR__.'/../config.php';
         <li><a href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a></li>
         <li><a href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a></li>
         <li><a href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a></li>
-        <li><?php echo saludo(); ?></li>
+        <?php echo saludo(); ?>
     </ul>
 </nav>
-</header>
