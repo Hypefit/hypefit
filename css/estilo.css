@@ -58,6 +58,8 @@ nav li:hover:not(.no_link) {
 }
 
 nav li a {
+    font-family: "Segoe IU", sans-serif;
+    font-weight: bold;
     text-decoration: none;
     color: #3690d5;
     text-align: center;
@@ -72,8 +74,48 @@ article {
 
 }
 
-footer {
+h3{
+    float: left;
+    width: 100%;
+    height: 7em;
+    margin: 3px;
+    padding: 3px;
+}
 
+h2{
+    float: left;
+    width: 50%;
+    height: 7em;
+    margin: 3px;
+    padding: 3px;
+    border: black 2px solid;
+}
+
+footer{
+    font-family: "Segoe IU", sans-serif;
+    font-weight: bold;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #cddde8;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+footer li{
+    float:left;
+    height: 10%;
+    margin-left: 5%;
+    padding: 10px;
+}
+
+footer li a{
+    display:block;
+    padding:14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #0b68ac;
 }
 
 img.inicio {

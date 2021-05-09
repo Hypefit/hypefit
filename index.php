@@ -5,12 +5,17 @@ $tituloPagina= 'Hypefit | Inicio';
 $contenidoPrincipal = <<<EOS
         <h1>Bienvenido a HYPEFIT</h1>
         <img class="inicio" src="img/inicio.jpg" alt="Imagen principal pagina inicio">
-        <h3>RUTINAS DE ENTRENAMIENTO</h3>
-        <p>Visita nuestra página de <a href="rutinas.php">rutinas</a> y mantente en forma.</p>
-        <h3>RECETAS</h3>
-        <p>Un buen calendario de entrenamientos no sirve de nada sin una buena alimentación.
-        Nuestras <a href="recetas.php">recetas</a> preparadas por nutricionistas te ayudarán a conseguir 
-        tus objetivos.</p>
+        <h3>
+            <h2>
+            RUTINAS DE ENTRENAMIENTO
+            Visita nuestra página de <a href="rutinas.php">rutinas</a> y mantente en forma.
+            </h2>
+            <h2>
+            RECETAS
+            Un buen calendario de entrenamientos no sirve de nada sin una buena alimentación.
+            Nuestras <a href="recetas.php">recetas</a> preparadas por nutricionistas te ayudarán a conseguir 
+            tus objetivos.</h2>
+        </h3>
         <h4>CALENDARIO ACTIVIDADES</h4>
         <img src="img/calendario-abril-2021.jpg" alt="Imagen calendario provisional">
         <h4>¿QUIÉNES SOMOS?</h4>
