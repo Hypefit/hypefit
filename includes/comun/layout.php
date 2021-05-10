@@ -27,7 +27,6 @@
     <div id="contenedor">
         <?php
         require(__DIR__ . '/navBar.php');
-        #require(__DIR__.'/sidebarIzq.php');
         ?>
         <main>
             <article>
@@ -35,8 +34,6 @@
             </article>
         </main>
         <?php
-
-        #require(__DIR__.'/sidebarDer.php');
         require(__DIR__.'/pie.php');
         ?>
     </div>
