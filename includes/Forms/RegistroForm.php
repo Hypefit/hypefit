@@ -2,6 +2,9 @@
 
 namespace hypefit\Forms;
 
+require_once 'includes/config.php';
+require_once 'includes/funcionesUsuario.php';
+
 class RegistroForm extends Form {
     public function __construct() {
         parent::__construct('RegistroForm');
@@ -62,7 +65,7 @@ EOS;
                 $result[] = "El usuario ya existe";
 
             } else {
-                header("Location: " . RUTA_APP . "/perfil.php");
+                $result = RUTA_APP . "/perfil.php";
             }
         }
         return $result;

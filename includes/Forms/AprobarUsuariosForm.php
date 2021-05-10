@@ -4,9 +4,10 @@ namespace hypefit\Forms;
 
 use hypefit\DAO\UsuarioDAO;
 
-require_once '../autorizacion.php';
+require_once 'includes/config.php';
+require_once 'includes/autorizacion.php';
 
-class AprobarUsuarioForm extends Form {
+class AprobarUsuariosForm extends Form {
     public function __construct() {
         parent::__construct('AprobarUsuarioForm');
     }
@@ -35,6 +36,7 @@ class AprobarUsuarioForm extends Form {
         if (count($result) === 0) {
             if (!empty($marcados)) {
                 $dao = new UsuarioDAO();
+                /** @noinspection PhpWrongForeachArgumentTypeInspection */
                 foreach ($marcados as $id) {
                     if (isset($aprobar)) {
                         $dao->aprobarUsuario($id);

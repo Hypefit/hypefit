@@ -1,6 +1,6 @@
 <?php
 
-use hypefit\Forms\AprobarUsuarioForm;
+use hypefit\Forms\AprobarUsuariosForm;
 
 require_once __DIR__.'/includes/config.php';
 require_once __DIR__.'/includes/autorizacion.php';
@@ -19,7 +19,7 @@ if(estaLogado())
         <p>Tu tipo de usuario: {$rol}</p>
 EOS;
 	if (esAdmin()) {
-        $form = new AprobarUsuarioForm();
+        $form = new AprobarUsuariosForm();
         $contenidoPrincipal .= "<h2>Usuarios sin aprobar</h2>" . $form->gestiona() ;
     }
 	else if (!estaAprobado()) {

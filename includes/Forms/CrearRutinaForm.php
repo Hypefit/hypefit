@@ -5,6 +5,8 @@ namespace hypefit\Forms;
 use hypefit\DAO\RutinaDAO;
 use hypefit\TO\Rutina;
 
+require_once 'includes/config.php';
+
 class CrearRutinaForm extends Form {
     public function __construct() {
         parent::__construct('CrearRutinaForm');
@@ -48,7 +50,7 @@ EOS;
 
             $id = $dao->crearRutina($rutina);
 
-            header("Location: ../verRutina.php?id=$id");
+            $result = RUTA_APP . "/verRutina.php?id=$id";
         }
         return $result;
     }

@@ -7,7 +7,8 @@ use hypefit\TO\Post;
 use hypefit\DAO\ComentarioDAO;
 use hypefit\TO\Comentario;
 
-require_once '../autorizacion.php';
+require_once 'includes/config.php';
+require_once 'includes/autorizacion.php';
 
 class CrearPostForm extends Form {
     public function __construct() {
@@ -47,8 +48,8 @@ EOS;
             $comentario->setIdUsuario($idUsuario);
             $comentario->setIdPost($idPost);
             $dao->crearComentario($comentario);
-            
-            header("Location:" . RUTA_APP . "/verPost.php?id=$idPost");
+
+            $result = RUTA_APP . "/verPost.php?id=$idPost";
         }
         return $result;
     }

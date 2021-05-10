@@ -2,7 +2,8 @@
 
 namespace hypefit\Forms;
 
-require_once '../config.php';
+require_once 'includes/config.php';
+require_once 'includes/funcionesUsuario.php';
 
 class LoginForm extends Form {
     public function __construct() {
@@ -37,7 +38,7 @@ EOS;
         if ( ! $usuario ) {
             $result[] = "El usuario o el password no coinciden";
         } else {
-            header("Location: " . RUTA_APP . "/perfil.php");
+            $result = RUTA_APP . "/perfil.php";
         }
         return $result;
     }
