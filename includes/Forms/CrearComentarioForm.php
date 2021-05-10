@@ -10,7 +10,9 @@ require_once 'includes/autorizacion.php';
 
 class CrearComentarioForm extends Form {
     public function __construct() {
-        parent::__construct('CrearComentarioForm');
+        $idPost = $_REQUEST["id"];
+        $opciones = array( 'action' => RUTA_APP . "/verPost.php?id=" . $idPost );
+        parent::__construct('CrearComentarioForm', $opciones);
     }
 
     protected function generaCamposFormulario($datosIniciales, $errores = array())  {
@@ -21,10 +23,8 @@ class CrearComentarioForm extends Form {
         <fieldset>
             $htmlErroresGlobales
             <input type="hidden" name="idPost" value="$idPost" />
-			<fieldset>
 				<div><label for="mensaje">Respuesta: </label><input id="mensaje" type="text" name="mensaje" /></div>
 				<div><button type="submit">Crear</button></div>
-			</fieldset>
         </fieldset>
 EOS;
         return $html;
@@ -32,7 +32,7 @@ EOS;
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $texto =$datos['texto'] ?? null;
+        $texto =$datos['mensaje'] ?? null;
         $idPost =$datos['idPost'] ?? null;
 
         if (count($result) === 0) {
