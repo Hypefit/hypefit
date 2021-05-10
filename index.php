@@ -18,7 +18,7 @@ $contenidoPrincipal = <<<EOS
         ">
             <h2 class="text-uppercase text-lg-center font-weight-bold">Rutinas de entrenamiento</h2>
             <div class="text-center">
-                <h5>Mantente en forma con nuestras <a class="text-black" href="rutinas.php">rutinas</a>.</h5>
+                <h5>Mantente en forma con nuestras <a href="rutinas.php">rutinas</a>.</h5>
                 <h5>Disponemos de un amplio catálogo de rutinas divididas en grupos musculares.</h5>
             </div>
         </div>
