@@ -14,6 +14,7 @@ require_once __DIR__.'/../config.php';
         class="p-5 text-center bg-image img-fluid"
         style="
             background-image: url('<?=RUTA_IMGS.'/cabecera.jpg'?>');
+            opacity: 0.9;
             background-repeat: no-repeat;
             background-size: cover;
             margin-top: 58px;
@@ -24,8 +25,8 @@ require_once __DIR__.'/../config.php';
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
                     <h1 class="mb-3">Bienvenido a HYPEFIT</h1>
-                    <h4 class="mb-3">Todo lo que necesitas a un solo click</h4>
-                    <a class="btn btn-outline-light btn-lg" href="#!" role="button">
+                    <h4 class="mb-4">Todo lo que necesitas a un solo click</h4>
+                    <a class="btn btn-outline-light btn-lg" href="#inicio" role="button">
                         Empezar
                     </a>
                 </div>
