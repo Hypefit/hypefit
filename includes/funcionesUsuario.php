@@ -11,7 +11,7 @@ function saludo(): string {
                  <li><a href='${raizApp}/logout.php'>(salir)</a></li>";
     */
         $html = "<li class='nav-item'><a class='nav-link' href='${raizApp}/perfil.php'>Perfil</a></li>
-                 <li class='nav-item'><a class='nav-link' href='${raizApp}/logout.php'>(salir)</a></li>
+                 <li class='nav-item'><a class='nav-link' href='${raizApp}/logout.php'>Salir</a></li>
                  </ul>
                  <span class='navbar-text'>Bienvenido, ${_SESSION['nombre']}</span>";
     } else {

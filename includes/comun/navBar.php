@@ -3,20 +3,21 @@ require_once __DIR__.'/../funcionesUsuario.php';
 require_once __DIR__.'/../config.php';
 ?>
 
-<nav class="navbar navbar-expand-md" style="background-color: #cddde8;">
+<header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="<?=RUTA_APP.'/index.php'?>">
             <img src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio"
             class="d-inline-block align-top">
         </a>
         <button
-            class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
-            aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation"
-        >
-            <span class="navbar-toggler-icon" ></span>
+            class="navbar-toggler collapsed ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon d-flex justify-content-start align-items-center" ></span>
         </button>
         <div class="collapse navbar-collapse" id="toggleMobileMenu">
-            <ul class="navbar-nav text-center">
+            <ul class="navbar-nav text-center me-auto mb-2 mb-lg-0">
                 <!--<li class="logo">
                   <a href="<?=RUTA_APP.'/index.php'?>" title="Inicio">
                       <img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio">
@@ -32,3 +33,4 @@ require_once __DIR__.'/../config.php';
         </div>
     </div>
 </nav>
+<!-- Navbar -->
