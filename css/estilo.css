@@ -126,6 +126,36 @@ img.inicio {
     font-family: "Segoe IU", sans-serif;
     font-weight: bold;
     font-size: 250%;
-    color : white;
+    color : #ffffff;
     background-color: rgba(47, 86, 127, 0.8);;
+}
+
+.box {
+    width: 90%;
+    height: 150px;
+    margin-left: 3%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    padding: 25px;
+    border: 5px solid black;
+}
+
+.calendario {
+    margin-left: 3%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    width: 35%;
+    height: 50%;
+    padding: 25px;
+    border: 5px solid black;
+}
+.quienesSomos{
+
+    margin-left: 3%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    width: 35%;
+    height: 50%;
+    padding: 25px;
+    border: 5px solid black;
 }
