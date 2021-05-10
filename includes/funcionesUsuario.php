@@ -1,7 +1,9 @@
 <?php
-require_once __DIR__.'/config.php';
-require_once __DIR__ . '/UsuarioDAO.php';
 
+use hypefit\DAO\UsuarioDAO;
+use hypefit\TO\Usuario;
+
+require_once __DIR__.'/config.php';
 
 function saludo(): string {
     $raizApp = RUTA_APP;
@@ -45,6 +47,34 @@ function checkLogin($email, $password): bool {
     }
 }
 
+function crearUsuario($email, $name, $password, $rol) {
+    $dao = new UsuarioDAO();
+    if ($dao->getUsuarioPorEmail($email)){
+        return false;
+    }
+
+    $newUser = new Usuario();
+    $newUser->setNombre($name);
+    $newUser->setEmail($email);
+    $newUser->setHashPassword(password_hash($password, PASSWORD_DEFAULT));
+    $newUser->setRol($rol);
+
+    if($newUser->getRol() != "registrado"){
+        $newUser->setAprobado(0);
+    }
+    else $newUser->setAprobado(1);
+
+    $id = $dao->crearUsuario($newUser);
+
+    $_SESSION["login"] = true;
+    $_SESSION["nombre"] = $newUser->getNombre();
+    $_SESSION["rol"] = $newUser->getRol();
+    $_SESSION["aprobado"] = $newUser->getAprobado();
+    $_SESSION["idUsuario"] = $id;
+
+    return true;
+}
+
 function logout() {
     unset($_SESSION["login"]);
     unset($_SESSION["rol"]);
@@ -54,21 +84,4 @@ function logout() {
 
     session_destroy();
     session_start();
-}
-
-function mostrarUsuariosSinAprobar(): string {
-    $dao = new UsuarioDAO();
-    $usuariosSinAprobar = $dao->getUsuariosSinAprobar();
-
-    $html = "<h2>Usuarios sin aprobar</h2>";
-    $ruta = RUTA_APP . "/includes/procesarAprobar.php";
-    $html .= '<form action="' . $ruta .'" method="POST">';
-    foreach($usuariosSinAprobar as $usuario) {
-        $html .= '<input type="checkbox" name="marcados[]" value="' . $usuario->getId() . '"/>' . $usuario->getNombre() . ' | Rol: ' . ucwords($usuario->getRol());
-        $html .= "<br>";
-    }
-    $html .= '<input type="submit" name="aprobar" value="Aprobar" />';
-    $html .= '<input type="submit" name="eliminar" value="Eliminar" />';
-    $html .= "</form>";
-    return $html;
 }

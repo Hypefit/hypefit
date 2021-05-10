@@ -1,8 +1,10 @@
 <?php
+
+use hypefit\DAO\ComentarioDAO;
+use hypefit\DAO\PostsDAO;
+use hypefit\DAO\UsuarioDAO;
+
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/PostsDAO.php';
-require_once __DIR__ . '/ComentarioDAO.php';
-require_once __DIR__ . '/UsuarioDAO.php';
 
 function crearListaPosts(): string {
     $dao = new PostsDAO();
