@@ -55,7 +55,7 @@ require_once __DIR__.'/../config.php';
                             <a href="<?=RUTA_APP.'/recetas.php'?>" class="nav-link">Recetas</a>
                         </li>
                         <li>
-                            <a href="#!" class="nav-link">Completa</a>
+                            <a href="#!" class="nav-link">Sin requerimientos</a>
                         </li>
                         <li>
                             <a href="#!" class="nav-link">Vegetariana</a>
