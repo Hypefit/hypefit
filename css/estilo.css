@@ -1,49 +1,74 @@
 body {
     background-color: aliceblue;
+    margin: 0;
 }
 
 div#contenedor {
-    width: 80%;
+    max-width: 100%;
     margin: auto;
-    margin-top: 5px;
 }
 
 header {
-    /*padding: 30px;
-    height: 100px;*/
-    color: white;
-    /*background-color: #b5c3e5;*/
+    overflow: hidden;
+}
+
+img.cabecera{
+    width: 133%;
+    height: 133%;
+    opacity: 0.7;
 }
 
 img.logo {
-    width: 45%;
-    margin: auto;
     display: block;
+    float: left;
+    vertical-align: middle;
+}
+nav{
+    margin-top: -1%;
+    background-color: #cddde8;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #cddde8;
     overflow: hidden;
 }
 
 nav li {
-    float:left;
-    border-right: 2px solid #adaddc;
+    display: inline-block;
+    float: left;
+    padding:0.7em;
+    border-right: 0.1em solid #adaddc;
+    font-size: 1.1em;
+    line-height: 25px;
+}
+nav li.logo {
+    display: block;
+    margin: auto;
+}
+nav li.menu_right{
+    float:right;
+}
+nav li:last-child, nav li.menu_right{
+    border-right: none;
+}
+nav li:hover:not(.no_link) {
+    background-color: rgba(54, 144, 213, 0.24);
+    text-decoration: underline;
 }
 
 nav li a {
-    displayp:block;
-    padding:14px 16px;
-    text-align: center;
+    font-family: "Segoe IU", sans-serif;
+    font-weight: bold;
     text-decoration: none;
-    color: navy;
-}
-
-nav li a:hover{
-    background-color: #cdddef;
+    color: #3690d5;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 main {
@@ -54,7 +79,82 @@ article {
 
 }
 
-footer {
-
+footer{
+    list-style-type: none;
+    padding: 0;
+    background-color: #cddde8;
+    overflow: hidden;
+    text-align: center;
 }
 
+footer li{
+    display: inline-block;
+    float:left;
+    height: 15%;
+    margin-left: 5%;
+    padding: 10px;
+}
+
+footer li a{
+    font-family: "Segoe IU", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding:14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #3690d5;
+}
+footer li a:hover{
+    text-decoration: underline;
+}
+
+img.inicio {
+    height: 10%;
+    width: 80%;
+    margin: auto;
+    display: block;
+    margin-bottom: 0;
+}
+
+
+.centrado{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Segoe IU", sans-serif;
+    font-weight: bold;
+    font-size: 250%;
+    color : #ffffff;
+    background-color: rgba(47, 86, 127, 0.8);;
+}
+
+.box {
+    width: 90%;
+    height: 150px;
+    margin-left: 3%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    padding: 25px;
+    border: 5px solid black;
+}
+
+.calendario {
+    margin-left: 3%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    width: 35%;
+    height: 50%;
+    padding: 25px;
+    border: 5px solid black;
+}
+.quienesSomos{
+
+    margin-left: 3%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    width: 35%;
+    height: 50%;
+    padding: 25px;
+    border: 5px solid black;
+}

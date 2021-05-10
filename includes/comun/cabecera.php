@@ -1,22 +1,37 @@
 <?php
-require_once __DIR__.'/../funcionesUsuario.php';
 require_once __DIR__.'/../config.php';
-
 ?>
 
-<header>
-	<a href="<?=RUTA_APP.'/index.php'?>" title="Inicio">
-        <img class="logo" src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio">
-    </a>
-
-
+<!--<header>
+    <img class="cabecera" src="<?=RUTA_IMGS.'/cabecera.jpg'?>" alt="Imagen cabecera">
+    <div class="contenedor">
+        <div class="centrado">Bienvenido a HYPEFIT</div>
+    </div>
 </header>
-<nav>
-    <ul>
-      <li><a href="<?=RUTA_APP.'/index.php'?>">Inicio</a></li>
-      <li><a href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a></li>
-      <li><a href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a></li>
-      <li><a href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a></li>
-    <?php echo saludo(); ?>
-    </ul>
-</nav>
+-->
+    <!-- Jumbotron -->
+    <div
+        class="p-5 text-center bg-image img-fluid"
+        style="
+            background-image: url('<?=RUTA_IMGS.'/cabecera.jpg'?>');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 58px;
+            width:  auto;
+            height: 90%;
+        ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">Bienvenido a HYPEFIT</h1>
+                    <h4 class="mb-3">Todo lo que necesitas a un solo click</h4>
+                    <a class="btn btn-outline-light btn-lg" href="#!" role="button">
+                        Empezar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+</header>
+

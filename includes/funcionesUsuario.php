@@ -8,12 +8,23 @@ require_once __DIR__.'/config.php';
 function saludo(): string {
     $raizApp = RUTA_APP;
     if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)) {
-        $html = "Bienvenido, ${_SESSION['nombre']} <a href='${raizApp}/perfil.php'>Perfil</a>
-                                                   <a href='${raizApp}/logout.php'>(salir)</a>";
-
+        /*$html = "<li class='no_link menu_right' >Bienvenido, ${_SESSION['nombre']}</li>
+                 <li><a href='${raizApp}/perfil.php'>Perfil</a></li>
+                 <li><a href='${raizApp}/logout.php'>(salir)</a></li>";
+    */
+        $html = "<li class='nav-item'><a class='nav-link' href='${raizApp}/perfil.php'>Perfil</a></li>
+                 <li class='nav-item'><a class='nav-link' href='${raizApp}/logout.php'>Salir</a></li>
+                 </ul>
+                 <span class='navbar-text'>Bienvenido, ${_SESSION['nombre']}</span>";
     } else {
-        $html = "Usuario desconocido. <a href='${raizApp}/login.php'>Login</a>
-                                      <a href='${raizApp}/registro.php'>Registro</a>";
+        /*$html = "<li class='no_link menu_right'>Usuario invitado</li>
+                 <li><a href='${raizApp}/login.php'>Login</a></li>
+                 <li><a href='${raizApp}/registro.php'>Registro</a></li>";
+    */
+        $html = "<li class='nav-item'><a class='nav-link' href='${raizApp}/login.php'>Login</a></li>
+                 <li class='nav-item'><a class='nav-link' href='${raizApp}/registro.php'>Registro</a></li>
+                 </ul>
+                 <span class='navbar-text'>Usuario invitado</span>";
     }
 
     return $html;
