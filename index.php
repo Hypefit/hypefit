@@ -5,16 +5,22 @@ $tituloPagina= 'Hypefit | Inicio';
 require(__DIR__.'/includes/comun/cabecera.php');
 
 $contenidoPrincipal = <<<EOS
-
-    <div class="mt-5" id="inicio" style="height: 5%;"></div>
-    <div class="box mt-5" style="
+    <div class="bg-light" id="inicio" style="height: 10%;"></div>
+    <div class="box bg-light rounded row align-items-center justify-content-center" style="
         width:  auto;
         height: 90%;
     ">
-        <h2 class="text-uppercase text-lg-center font-weight-bold">Rutinas de entrenamiento</h2>
-        <div class="text-center">
-            <p>Mantente en forma con nuestras <a href="rutinas.php">rutinas</a>.</p>
-            <p>Disponemos de un amplio catálogo de rutinas divididas en grupos musculares.</p>
+        <div  class="center-block row align-items-center" style="
+        width:  85%;
+        height: 80%;
+        background-color: #CDDDE8FF;
+        color: rgba(0,0,0,0.64);
+        ">
+            <h2 class="text-uppercase text-lg-center font-weight-bold">Rutinas de entrenamiento</h2>
+            <div class="text-center">
+                <h5>Mantente en forma con nuestras <a class="text-black" href="rutinas.php">rutinas</a>.</h5>
+                <h5>Disponemos de un amplio catálogo de rutinas divididas en grupos musculares.</h5>
+            </div>
         </div>
     </div>
     <div class="box">
