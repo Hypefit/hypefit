@@ -18,7 +18,7 @@ if (!estaLogado()) {
                 <option value="entrenador">Entrenador</option>
                 <option value="nutricionista">Nutricionista</option>
             </select>
-            <button type="submit">Entrar</button>
+            <button type="submit" class="btn btn-outline-primary">Entrar</button>
         </fieldset>
     </form>
     EOS;

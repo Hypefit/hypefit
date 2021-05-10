@@ -2,6 +2,8 @@
 require_once __DIR__.'/includes/config.php';
 $tituloPagina= 'Hypefit | Inicio';
 
+require(__DIR__.'/includes/comun/cabecera.php');
+
 $contenidoPrincipal = <<<EOS
         <h2>
             RUTINAS DE ENTRENAMIENTO<br>

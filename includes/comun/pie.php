@@ -8,5 +8,5 @@ require_once __DIR__.'/../config.php';
         <li><a href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a></li>
         <li><a href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a></li>
         <li><a href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a></li>
-        <li><a href="<?=RUTA_APP.'/quieneSomos.php'?>">¿Quiénes somos?</a></li>
+        <li><a href="<?=RUTA_APP.'/quienesSomos.php'?>">¿Quiénes somos?</a></li>
 </footer>

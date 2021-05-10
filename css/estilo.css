@@ -1,39 +1,38 @@
 body {
     background-color: aliceblue;
-    margin : 0;
+    margin: 0;
 }
 
 div#contenedor {
     max-width: 100%;
     margin: auto;
-
 }
 
 header {
-
+    overflow: hidden;
 }
 
 img.cabecera{
-    width: 100%;
-    height: 45em;
+    width: 133%;
+    height: 133%;
+    opacity: 0.7;
 }
+
 img.logo {
     display: block;
     float: left;
     vertical-align: middle;
 }
-
 nav{
     margin-top: -1%;
     background-color: #cddde8;
     position: -webkit-sticky;
     position: sticky;
     top:0;
-
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 nav ul {
-
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -41,17 +40,16 @@ nav ul {
 }
 
 nav li {
-    margin-top: 1%;
-    margin-bottom: 1%;
     display: inline-block;
     float: left;
     padding:0.7em;
     border-right: 0.1em solid #adaddc;
     font-size: 1.1em;
+    line-height: 25px;
 }
 nav li.logo {
-    width: auto;
-    vertical-align: middle;
+    display: block;
+    margin: auto;
 }
 nav li.menu_right{
     float:right;
@@ -81,32 +79,33 @@ article {
 
 }
 
-
-
 footer{
-    font-family: "Segoe IU", sans-serif;
-    font-weight: bold;
     list-style-type: none;
     padding: 0;
     background-color: #cddde8;
     overflow: hidden;
     text-align: center;
-    text-transform: uppercase;
 }
 
 footer li{
+    display: inline-block;
     float:left;
-    height: 10%;
+    height: 15%;
     margin-left: 5%;
     padding: 10px;
 }
 
 footer li a{
-    display:block;
+    font-family: "Segoe IU", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
     padding:14px 16px;
     text-align: center;
     text-decoration: none;
-    color: #0b68ac;
+    color: #3690d5;
+}
+footer li a:hover{
+    text-decoration: underline;
 }
 
 img.inicio {

@@ -33,4 +33,4 @@ $contenidoPrincipal = <<<EOS
     </form>
     EOS;
 
-require __DIR__ . '/includes/comun/layout.php';<?php
+require __DIR__ . '/includes/comun/layout.php';
