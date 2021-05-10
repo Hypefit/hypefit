@@ -1,19 +1,21 @@
 body {
     background-color: aliceblue;
+    margin : 0;
 }
 
 div#contenedor {
     max-width: 100%;
     margin: auto;
-    margin-top: 0;
+
 }
 
 header {
 
 }
+
 img.cabecera{
     width: 100%;
-    opacity: 0.5;
+    height: 45em;
 }
 img.logo {
     display: block;
@@ -22,13 +24,16 @@ img.logo {
 }
 
 nav{
+    margin-top: -1%;
     background-color: #cddde8;
     position: -webkit-sticky;
     position: sticky;
     top:0;
+
 }
 
 nav ul {
+
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -36,6 +41,8 @@ nav ul {
 }
 
 nav li {
+    margin-top: 1%;
+    margin-bottom: 1%;
     display: inline-block;
     float: left;
     padding:0.7em;
@@ -80,7 +87,6 @@ footer{
     font-family: "Segoe IU", sans-serif;
     font-weight: bold;
     list-style-type: none;
-    margin: 0;
     padding: 0;
     background-color: #cddde8;
     overflow: hidden;
@@ -108,18 +114,13 @@ img.inicio {
     width: 80%;
     margin: auto;
     display: block;
-}
-
-.contenedor{
-    position: relative;
-    display: inline-block;
-    text-align: center;
+    margin-bottom: 0;
 }
 
 
 .centrado{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Segoe IU", sans-serif;

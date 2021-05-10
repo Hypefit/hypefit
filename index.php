@@ -3,11 +3,6 @@ require_once __DIR__.'/includes/config.php';
 $tituloPagina= 'Hypefit | Inicio';
 
 $contenidoPrincipal = <<<EOS
-        <div class="contenedor">
-            <img src="img/inicio.jpg" />
-            <div class="centrado">Bienvenido a HYPEFIT</div>
-        </div>
-        
         <h2>
             RUTINAS DE ENTRENAMIENTO<br>
             Visita nuestra página de <a href="rutinas.php">rutinas</a> y mantente en forma.
