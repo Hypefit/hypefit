@@ -2,9 +2,20 @@
 require_once __DIR__.'/../funcionesUsuario.php';
 require_once __DIR__.'/../config.php';
 ?>
+ <!--
+<footer class="text-center text-lg-start">
+        <div class="container-fluid">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="<?=RUTA_APP.'/index.php'?>">Inicio</a></li>
+                    <li><a href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a></li>
+                    <li><a href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a></li>
+                    <li><a href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a></li>
+                    <li><a href="<?=RUTA_APP.'/quienesSomos.php'?>">¿Quiénes somos?</a></li>
+                </ul>
+        </div>
+</footer>      -->
 
-
-    <footer class="bg-light text-center text-lg-start">
+<footer class="text-center text-lg-start" style="background-color: rgb(54,144,213,0.2);">
         <div class="container p-4">
             <div class="row">
                 <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
@@ -12,10 +23,10 @@ require_once __DIR__.'/../config.php';
 
                 </div>
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-0">INICIO</h5>
+                    <h5 class="text-uppercase mb-0" ">INICIO</h5>
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="<?=RUTA_APP.'/index.php'?>" class="text-dark">Inicio</a>
+                            <a href="<?=RUTA_APP.'/index.php'?>" class="nav-link">Inicio</a>
                         </li>
                     </ul>
                 </div>
@@ -24,16 +35,16 @@ require_once __DIR__.'/../config.php';
                     <h5 class="text-uppercase mb-0">RUTINAS</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <a href="<?=RUTA_APP.'/rutinas.php'?>" class="text-dark">Rutinas</a>
+                            <a href="<?=RUTA_APP.'/rutinas.php'?>" class="nav-link">Rutinas</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Full Body</a>
+                            <a href="#!" class="nav-link">Full Body</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Tren Superior</a>
+                            <a href="#!" class="nav-link">Tren Superior</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Tren Inferior</a>
+                            <a href="#!" class="nav-link">Tren Inferior</a>
                         </li>
                     </ul>
                 </div>
@@ -41,16 +52,16 @@ require_once __DIR__.'/../config.php';
                     <h5 class="text-uppercase mb-0">RECETAS</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <a href="<?=RUTA_APP.'/recetas.php'?>" class="text-dark">Recetas</a>
+                            <a href="<?=RUTA_APP.'/recetas.php'?>" class="nav-link">Recetas</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Completa</a>
+                            <a href="#!" class="nav-link">Completa</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Vegetariana</a>
+                            <a href="#!" class="nav-link">Vegetariana</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Vegana</a>
+                            <a href="#!" class="nav-link">Vegana</a>
                         </li>
                     </ul>
                 </div>
@@ -58,13 +69,13 @@ require_once __DIR__.'/../config.php';
                     <h5 class="text-uppercase mb-0">COMUNIDAD</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <a href="<?=RUTA_APP.'/comunidad.php'?>" class="text-dark">Comunidad</a>
+                            <a href="<?=RUTA_APP.'/comunidad.php'?>" class="nav-link">Comunidad</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Foro recetas</a>
+                            <a href="#!" class="nav-link">Foro recetas</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-dark">Foro rutinas</a>
+                            <a href="#!" class="nav-link">Foro rutinas</a>
                         </li>
                     </ul>
                 </div>
@@ -72,20 +83,15 @@ require_once __DIR__.'/../config.php';
                     <h5 class="text-uppercase mb-0">QUIÉNES SOMOS</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <a href="<?=RUTA_APP.'/quienesSomos.php'?>" class="text-dark">Quiénes somos</a>
+                            <a href="<?=RUTA_APP.'/quienesSomos.php'?>" class="nav-link">Quiénes somos</a>
                         </li>
                     </ul>
                 </div>
-                <!--Grid column-->
             </div>
-            <!--Grid row-->
         </div>
-        <!-- Grid container -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3">
 
     © 2021 Copyright:
     <a class="text-dark text-center" href="<?=RUTA_APP.'/index.php'?>">Hypefit</a>
   </div>
-  <!-- Copyright -->
 </footer>
-<!-- Footer -->
