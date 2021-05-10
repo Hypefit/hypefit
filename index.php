@@ -5,6 +5,7 @@ $tituloPagina= 'Hypefit | Inicio';
 require(__DIR__.'/includes/comun/cabecera.php');
 
 $contenidoPrincipal = <<<EOS
+
     <div class="box mt-5" id="inicio" style="
         width:  auto;
         height: 90%;

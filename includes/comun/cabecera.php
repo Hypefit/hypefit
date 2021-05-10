@@ -13,11 +13,11 @@ require_once __DIR__.'/../config.php';
     <div
         class="p-5 text-center bg-image img-fluid"
         style="
-            background-image: url('<?=RUTA_IMGS.'/cabecera.jpg'?>');
+            background-image: url('<?=RUTA_IMGS.'/cabecera2.jpg'?>');
             opacity: 0.9;
             background-repeat: no-repeat;
             background-size: cover;
-            margin-top: 58px;
+            margin-top: 50px;
             width:  auto;
             height: 90%;
         ">
