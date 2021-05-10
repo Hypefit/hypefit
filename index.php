@@ -6,13 +6,14 @@ require(__DIR__.'/includes/comun/cabecera.php');
 
 $contenidoPrincipal = <<<EOS
 
-    <div class="box mt-5" id="inicio" style="
+    <div class="mt-5" id="inicio" style="height: 5%;"></div>
+    <div class="box mt-5" style="
         width:  auto;
         height: 90%;
     ">
         <h2 class="text-uppercase text-lg-center font-weight-bold">Rutinas de entrenamiento</h2>
         <div class="text-center">
-            <p>Mantente en forma con nuestras <a class="text-unstyled" href="rutinas.php">rutinas</a>.</p>
+            <p>Mantente en forma con nuestras <a href="rutinas.php">rutinas</a>.</p>
             <p>Disponemos de un amplio catálogo de rutinas divididas en grupos musculares.</p>
         </div>
     </div>
