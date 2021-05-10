@@ -24,7 +24,7 @@ class RegistroForm extends Form {
         <fieldset>
             $htmlErroresGlobales
             <legend>Rellena el formulario</legend>
-            <p><label>Nombre:</label> <input type="text" name="name" value="$nombre" required/></p> $errorNombre
+            <p><label>Nombre:</label> <input type="text" name="nombre" value="$nombre" required/></p> $errorNombre
             <p><label>Email:</label> <input type="email" name="email" value="$email" required/></p> $errorEmail
             <p><label>Contraseña:</label> <input type="password" name="password" required/></p> $errorPassword
             <p><label>Confirma tu contraseña:</label> <input type="password" name="password2" required/></p> $errorPassword2
