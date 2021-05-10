@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__ . '/RutinaDAO.php';
-require_once __DIR__ . '/UsuarioDAO.php';
+
+
+use hypefit\DAO\RutinaDAO;
+use hypefit\DAO\UsuarioDAO;
 
 function crearListaRutinas($categoria): string {
     $dao = new RutinaDAO();
