@@ -102,7 +102,7 @@ $contenidoPrincipal = <<<EOS
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">Dieta vegetariana</h5>
-                                <p class="card-text">Recetas sin carne ni pesacado</p>
+                                <p class="card-text">Recetas sin carne ni pescado</p>
                             </div>
                         </div>
                     </div>
@@ -140,12 +140,22 @@ $contenidoPrincipal = <<<EOS
         </div>
     </div>
     <div class="bg-light" style="height: 9%;"></div>
-    <!--Calendario-->
-    
+    <!--Quienes Somos-->
+    <div class="bg-light" style="height: 9%;"></div>
+    <div class="container-fluid px-0">
+        <div class="bg-light row ps-0 me-0 align-items-center justify-content-center">
+            <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">¿QUIÉNES SOMOS?</h2>
+             <div class="text-center mb-3">
+                <h5>Hypefit es un innovador gimnasio online que incluye tanto recetas como rutinas </h5>
+                <h5>equilibradas y pensadas para los distintas necesidades de nuestro clientes. </h5>
+                <h5><a href="quienesSomos.php">Ver más</h5>
+             </div>
+        </div>
+    </div>
+    <div class="bg-light" style="height: 9%;"></div>
     <!--<div class="quienesSomos">
         <h4>¿QUIÉNES SOMOS?</h4>
-        <p>Hypefit es un innovador gimnasio online que incluye tanto recetas como rutinas equilibradas y pensadas para
-        los distintas necesidades de nuestro clientes. <a href="quienesSomos.php">Ver más</a></p>    
+        <p>    
     </div>-->
 EOS;
 
