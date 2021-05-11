@@ -2,16 +2,8 @@
 require_once __DIR__.'/../config.php';
 ?>
 
-<!--<header>
-    <img class="cabecera" src="<?=RUTA_IMGS.'/cabecera.jpg'?>" alt="Imagen cabecera">
-    <div class="contenedor">
-        <div class="centrado">Bienvenido a HYPEFIT</div>
-    </div>
-</header>
--->
     <!-- Jumbotron -->
-    <div
-        class="p-5 text-center bg-image img-fluid"
+    <div class="p-5 text-center bg-image img-fluid"
         style="
             background-image: url('<?=RUTA_IMGS.'/cabecera2.jpg'?>');
             opacity: 0.9;

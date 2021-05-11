@@ -12,7 +12,7 @@ require_once __DIR__.'/../config.php';
             class="d-inline-block align-top">
         </a>
         <button
-            class="navbar-toggler collapsed ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#toggleMobileMenu"
+            class="navbar-toggler collapsed ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
             aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon d-flex justify-content-start align-items-center" ></span>
         </button>
