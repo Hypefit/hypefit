@@ -11,9 +11,10 @@ class RutinaDAO extends DAO {
         $idEntrenador = $this->limpiarString($u->getIdEntrenador());
         $categoria = $this->limpiarString($u->getCategoria());
         $titulo = $this->limpiarString($u->getTitulo());
+        $descricion = $this->limpiarString($u->getDescripcion());
 
-        $query = sprintf('INSERT into Rutinas (rutina, idEntrenador, categoria, titulo) values
-                ("%s","%s","%s","%s")', $rutina, $idEntrenador, $categoria, $titulo);
+        $query = sprintf('INSERT into Rutinas (rutina, idEntrenador, categoria, titulo, descripcion) values
+                ("%s","%s","%s","%s", "%s")', $rutina, $idEntrenador, $categoria, $titulo, $descricion);
         return $this->insert($query);
     }
 
@@ -48,6 +49,7 @@ class RutinaDAO extends DAO {
         $rutina->setRutina($fila['rutina']);
         $rutina->setCategoria($fila['categoria']);
         $rutina->setTitulo($fila['titulo']);
+        $rutina->setDescripcion($fila['descripcion']);
 
         return $rutina;
     }

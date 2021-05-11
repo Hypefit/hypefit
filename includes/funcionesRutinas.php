@@ -7,14 +7,24 @@ use hypefit\DAO\UsuarioDAO;
 function crearListaRutinas($categoria): string {
     $dao = new RutinaDAO();
     $lista = $dao->getRutinasPorCategoria($categoria);
-
-    $html = "<ul>";
+    $html="";
     foreach($lista as $rutina) {
-        $html .= "<li> <a href='verRutina.php?id=" . $rutina->getId() . "'>" . $rutina->getTitulo() ."</a> </li>";
+     //   $html .= "<a href='verRutina.php?id=" . $rutina->getId() . "'></a>";
+        $html .= "
+            <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2'>
+                <div class='card h-100 border-secondary ms-2 text-center'>
+                    <h5 class='card-header text-capitalize'>" . $rutina->getTitulo() . "</h5>
+                    <div class='card-body'>
+                        <p class='card-text'>" . $rutina->getDescripcion() . "</p>
+                        <a href='verRutina.php?id=" . $rutina->getId() . "'' class='btn btn-primary'>Ver Rutina</a>
+                    </div>        
+                </div>
+            </div>
+            ";
     }
-    $html .= "</ul>";
 
     return $html;
+
 }
 
 function mostrarRutina($id): string {

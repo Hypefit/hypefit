@@ -19,3 +19,9 @@
 .recetas{
     background-color: darkgrey;
 }
+
+.mask-rutinas{
+    background-color: rgba(255,255,255,0.8);
+    width:40%;
+    color: #474646;
+}

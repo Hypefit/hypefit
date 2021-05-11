@@ -8,6 +8,7 @@ class Rutina {
     private string $categoria = "";
     private int $id = 0;
     private string $titulo = "";
+    private string $descripcion ="";
 
     /**
      * @return string
@@ -77,4 +78,15 @@ class Rutina {
         $this->id = $id;
     }
 
+    /**
+     * @return string
+     */
+    public function getDescripcion(): string {
+        return $this->descripcion;
+    }/**
+ * @param string $descripcion
+ */
+    public function setDescripcion(string $descripcion): void {
+        $this->descripcion = $descripcion;
+    }
 }
