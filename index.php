@@ -148,15 +148,11 @@ $contenidoPrincipal = <<<EOS
              <div class="text-center mb-3">
                 <h5>Hypefit es un innovador gimnasio online que incluye tanto recetas como rutinas </h5>
                 <h5>equilibradas y pensadas para los distintas necesidades de nuestro clientes. </h5>
-                <h5><a href="quienesSomos.php">Ver más</h5>
+                <h5><a href="quienesSomos.php">Ver más</a></h5>
              </div>
         </div>
     </div>
     <div class="bg-light" style="height: 9%;"></div>
-    <!--<div class="quienesSomos">
-        <h4>¿QUIÉNES SOMOS?</h4>
-        <p>    
-    </div>-->
 EOS;
 
 require __DIR__.'/includes/comun/layout.php';
