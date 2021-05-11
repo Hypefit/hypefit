@@ -5,7 +5,13 @@ $tituloPagina= 'Hypefit | Inicio';
 
 require(__DIR__.'/includes/comun/cabecera.php');
 
-$rutaImgSup=RUTA_IMGS.'/tren-superior-inicio.jfif';
+$rutaTrenSup=RUTA_IMGS.'/pressbanca.jpg';
+$rutaTrenInf=RUTA_IMGS.'/tren-superior-inicio.jfif';
+$rutaFullBody=RUTA_IMGS.'/fullbody.jpg';
+
+$rutaRecetasNormales=RUTA_IMGS.'/platosinrequerimientos.png';
+$rutaRecetasVegetarianas=RUTA_IMGS.'/plato-vegetariano.jpg';
+$rutaRecetasVeganas=RUTA_IMGS.'/plato-vegano.jpg';
 
 $contenidoPrincipal = <<<EOS
   <div class="bg-light" id="inicio" style="height: 9%;"></div>
@@ -22,7 +28,7 @@ $contenidoPrincipal = <<<EOS
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-secondary ms-2 text-center ">
                             <a href="rutinas.php">
-                                <img class="card-img-top" src="${rutaImgSup}" alt="Tren Superior" style="height: 17rem;">
+                                <img class="card-img-top" src="${rutaTrenSup}" alt="Tren Superior" style="height: 17rem;">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">Tren superior</h5>
@@ -33,7 +39,7 @@ $contenidoPrincipal = <<<EOS
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-secondary ms-2 text-center">
                             <a href="rutinas.php">
-                                <img class="card-img-top " src="${rutaImgSup}" alt="Tren Inferior" style="height: 17rem;">
+                                <img class="card-img-top " src="${rutaTrenInf}" alt="Tren Inferior" style="height: 17rem;">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">Tren inferior</h5>
@@ -44,7 +50,7 @@ $contenidoPrincipal = <<<EOS
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-secondary ms-2 text-center">
                             <a href="rutinas.php">
-                              <img class="card-img-top" src="${rutaImgSup}" alt="Full Body" style="height: 17rem;">
+                              <img class="card-img-top" src="${rutaFullBody}" alt="Full Body" style="height: 17rem;">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">Full Body</h5>
@@ -80,7 +86,7 @@ $contenidoPrincipal = <<<EOS
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  pb-2">
                         <div class="card h-100 border-dark ms-2 text-center">
                             <a href="recetas.php" >
-                                <img style="height: 17rem;" class="card-img-top" src="${rutaImgSup}" alt="sin requerimientos">
+                                <img style="height: 17rem;" class="card-img-top" src="${rutaRecetasNormales}" alt="sin requerimientos">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">Dieta sin requerimientos</h5>
@@ -92,7 +98,7 @@ $contenidoPrincipal = <<<EOS
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-dark ms-2 text-center">
                             <a href="recetas.php">
-                                <img style="height: 17rem;" class="card-img-top " src="${rutaImgSup}" alt="Vegetariana">
+                                <img style="height: 17rem;" class="card-img-top " src="${rutaRecetasVegetarianas}" alt="Vegetariana">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">Dieta vegetariana</h5>
@@ -103,7 +109,7 @@ $contenidoPrincipal = <<<EOS
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-dark ms-2 text-center">
                             <a href="recetas.php">
-                                <img style="height: 17rem;" class="card-img-top " src="${rutaImgSup}" alt="Vegana">
+                                <img style="height: 17rem;" class="card-img-top " src="${rutaRecetasVeganas}" alt="Vegana">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">Dieta vegana</h5>
