@@ -67,8 +67,8 @@ $contenidoPrincipal = <<<EOS
     <!--Rutinas-->
     
     <!--Recetas-->
-    <div class="recetas" style="height: 9%;"></div>
-    <div class="recetas container-fluid px-0">
+    <div class="recetas-index" style="height: 9%;"></div>
+    <div class="recetas-index container-fluid px-0">
         <div class=" row ps-0 me-0 align-items-center justify-content-center"">
             <div class="outer container">
                 <!--Rows-->

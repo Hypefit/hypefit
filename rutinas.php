@@ -27,8 +27,8 @@ $contenidoPrincipal  = "
 <div class='bg-light container-fluid px-3'>
     <!--Rows tren superior-->
     <div class='container py-5 '>
-        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center'>
-            <h2 class='text-uppercase'>Tren superior</h2>
+        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
+            <h2 class='text-uppercase pb-3'>Tren superior</h2>
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards tren superior-->
@@ -45,8 +45,8 @@ $contenidoPrincipal  = "
     
     <!--Rows tren inferior-->
     <div class='container pb-5'>
-        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center'>
-            <h2 class='text-uppercase'>Tren inferior</h2>
+        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
+            <h2 class='text-uppercase pb-3'>Tren inferior</h2>
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards tren inferior-->
@@ -64,8 +64,8 @@ $contenidoPrincipal  = "
     
     <!--Rows full body-->
     <div class='container pb-5'>
-        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center'>
-            <h2 class='text-uppercase'>Full body</h2>
+        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
+            <h2 class='text-uppercase pb-3'>Full body</h2>
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards full body-->
