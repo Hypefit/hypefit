@@ -23,7 +23,7 @@ require_once __DIR__.'/../config.php';
 
                 </div>
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-0" ">INICIO</h5>
+                    <h5 class="text-uppercase mb-0">INICIO</h5>
                     <ul class="list-unstyled mb-0">
                         <li>
                             <a href="<?=RUTA_APP.'/index.php'?>" class="nav-link">Inicio</a>

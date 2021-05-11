@@ -24,7 +24,7 @@ $contenidoPrincipal  = "
 <!--Cabecera-->
 
 <!--Contenido-->
-<div class='bg-light container-fluid px-3'>
+<div class='bg-light container-fluid px-3' id='trenSuperior'>
     <!--Rows tren superior-->
     <div class='container py-5 '>
         <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
@@ -44,7 +44,7 @@ $contenidoPrincipal  = "
     <!--Rows tren superior-->
     
     <!--Rows tren inferior-->
-    <div class='container pb-5'>
+    <div class='container pb-5' id='trenInferior'>
         <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
             <h2 class='text-uppercase pb-3'>Tren inferior</h2>
         </div>
@@ -63,7 +63,7 @@ $contenidoPrincipal  = "
     <!--Rows tren inferior-->
     
     <!--Rows full body-->
-    <div class='container pb-5'>
+    <div class='container pb-5' id='fullBody'>
         <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
             <h2 class='text-uppercase pb-3'>Full body</h2>
         </div>
@@ -83,7 +83,7 @@ $contenidoPrincipal  = "
     
     <div class='container pb-5'>
         <div class='bg-light row ps-0 me-0 align-items-center justify-content-center'>
-            <h3><a href='crearRutina.php'>Crea una nueva rutina</a></h3>
+            <h5><a href='crearRutina.php'>Crea una nueva rutina</a></h5>
         </div>
     </div>
     ";

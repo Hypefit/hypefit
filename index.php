@@ -62,7 +62,7 @@ $contenidoPrincipal = <<<EOS
                 </div>
                 <div class="row align-items-center justify-content-center">
                     <div class="text-center mb-3">
-                        <h5>Mantente en forma con nuestras <a href="rutinas.php">rutinas</a>.</h5>
+                        <h5>Mantente en forma con nuestras <a style="text-decoration: none;" href="rutinas.php">rutinas</a>.</h5>
                         <h5>Disponemos de un amplio catálogo de rutinas divididas en grupos musculares.</h5>
                     </div>
                 </div>
@@ -75,11 +75,11 @@ $contenidoPrincipal = <<<EOS
     <!--Recetas-->
     <div class="recetas-index" style="height: 9%;"></div>
     <div class="recetas-index container-fluid px-0">
-        <div class=" row ps-0 me-0 align-items-center justify-content-center"">
+        <div class="row ps-0 me-0 align-items-center justify-content-center"">
             <div class="outer container">
                 <!--Rows-->
-                <div class="row text-white justify-content-center align-items-center">
-                    <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">Recetas fit</h2>
+                <div class="row justify-content-center align-items-center">
+                    <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold" style="color: #e2e1e1;">Recetas fit</h2>
                 </div>
                 <div class="row ps-0 justify-content-center">
                     <!--Cards-->
@@ -119,10 +119,10 @@ $contenidoPrincipal = <<<EOS
                     </div>
                      <!--Cards-->   
                 </div>
-                <div class="row text-white align-items-center justify-content-center">
+                <div class="row align-items-center justify-content-center" style="color: #e2e1e1;">
                     <div class="text-center mb-3">
                         <h5>Un buen calendario de entrenamientos no sirve de nada sin una buena alimentación.</h5>
-                        <h5>Nuestras <a href="recetas.php">recetas</a> preparadas por nutricionistas te ayudarán a
+                        <h5>Nuestras <a href="recetas.php" style="text-decoration: none;">recetas</a> preparadas por nutricionistas te ayudarán a
                          conseguir tus objetivos.</h5>
                     </div>
                 </div>
