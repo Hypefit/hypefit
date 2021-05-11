@@ -1,7 +1,6 @@
 <?php
 
 namespace hypefit\Forms;
-
 require_once 'includes/config.php';
 require_once 'includes/funcionesUsuario.php';
 
@@ -21,20 +20,44 @@ class RegistroForm extends Form {
         $errorPassword2 = self::createMensajeError($errores, "password2");
 
         $html = <<<EOS
-        <fieldset>
-            $htmlErroresGlobales
-            <legend>Rellena el formulario</legend>
-            <p><label>Nombre:</label> <input type="text" name="nombre" value="$nombre" required/></p> $errorNombre
-            <p><label>Email:</label> <input type="email" name="email" value="$email" required/></p> $errorEmail
-            <p><label>Contraseña:</label> <input type="password" name="password" required/></p> $errorPassword
-            <p><label>Confirma tu contraseña:</label> <input type="password" name="password2" required/></p> $errorPassword2
-            <p><label>Rol:</label></p> <select name="rol" required>
-                <option value="registrado" selected>Usuario Regular</option>
-                <option value="entrenador">Entrenador</option>
-                <option value="nutricionista">Nutricionista</option>
-            </select>
-            <button type="submit">Entrar</button>
-        </fieldset>
+    <!-- Jumbotron -->
+    <div class="p-5 text-center bg-image img-fluid"
+        style="
+            background-image: url(https://s1.1zoom.me/b5249/490/Closeup_15_kg_Barbell_514746_1366x768.jpg);
+            opacity: 0.9;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:  auto;
+            height: 100%;
+            margin: 5%;
+        ">
+        <div class="mask" style="background-color: rgba(255, 255, 255, 0.6); margin: 10%;">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-black">
+                    <fieldset>
+                        $htmlErroresGlobales
+                        <p></p>
+                        <legend>Rellena el formulario</legend>
+                        <p><label class="col-sm-4">NOMBRE:</label> <input type="text" name="nombre" value="$nombre" required/></p> $errorNombre
+                        <p><label class="col-sm-4">EMAIL:</label> <input type="email" name="email" value="$email" required/></p> $errorEmail
+                        <p><label class="col-sm-4">CONTRASEÑA:</label> <input type="password" name="password" required/></p> $errorPassword
+                        <p><label class="col-sm-4">CONFIRMA TU CONTRASEÑA:</label> <input type="password" name="password2" required/></p> $errorPassword2
+                        <p><label class="col-sm-4">ROL: </label> <select name="rol" required>
+                            <option value="registrado" selected>Usuario Regular</option>
+                            <option value="entrenador">Entrenador</option>
+                            <option value="nutricionista">Nutricionista</option>
+                        </select></p>
+                        <p></p>
+                        <button type="submit">ENTRAR</button>
+                        <h5></h5>
+                        <p></p>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+        
 EOS;
         return $html;
     }
