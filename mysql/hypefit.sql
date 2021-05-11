@@ -107,6 +107,14 @@ CREATE TABLE `recetas` (
   `titulo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- datos para la tabla 'recetas'
+--
+
+INSERT INTO `recetas` (`id`, `idNutricionista`, `receta`, `categoria`, `titulo`) VALUES
+(1, 6, 'Desayuno: café con leche + 60g de pan integral con aguacate. Comida: Brócoli al vapor + Salmón al horno con patata y cebolla. Cena: Puré de Calabacín con patata + Yogur', 'normal', 'Sin requerimentos'),
+(2, 6, 'Desayuno : Vaso de leche con galletas de plátano. Comida: Judías blancas con juliana de verduras al curry. Cena: Medallones de champiñones y tartar templado de verduras con aguacate y huevo', 'vegetariana', 'Vegetariana'),
+(3, 6, 'Desayuno: 1 puñado de frutos secos 1 tostada con tomate y tofu. Comida: lentejas con arroz y verduras 1 hamburguesa vegetal. Cena: sopa de verdura 1 sandwich de verdura y seitán.', 'vegana', 'Vegana');
 -- --------------------------------------------------------
 
 --
@@ -263,7 +271,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT de la tabla `recetas`
 --
 ALTER TABLE `recetas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `rutinas`
