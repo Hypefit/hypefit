@@ -55,7 +55,7 @@ EOS;
 
     <div class="p-5 text-center bg-image img-fluid"
         style="
-            background-image: url(https://blog.grupo-pya.com/wp-content/uploads/2016/07/discussion-forums.jpg);
+            background-image: url(https://i1.wp.com/www.julianmarquina.es/wp-content/uploads/Libro-Literatura-Pixabay.jpg?resize=1024%2C683&ssl=1);
     opacity: 0.9;
             background-repeat: no-repeat;
             background-size: cover;
