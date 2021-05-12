@@ -160,7 +160,7 @@ abstract class Form
                 <input type="hidden" name="action" value="$this->formId" />
                 $htmlCamposFormularios
             </form>
-        EOS;
+EOS;
         return $htmlForm;
     }
 

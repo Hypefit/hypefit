@@ -93,7 +93,7 @@ EOS;
         $rol =$datos['rol'] ?? null;
 
         if (count($result) === 0) {
-            $resultado = crearUsuario($email, $password, $nombre, $rol);
+            $resultado = crearUsuario($email, $nombre, $password, $rol);
             if (!$resultado) {
                 $result[] = "El usuario ya existe";
 

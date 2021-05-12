@@ -20,11 +20,11 @@ class AprobarUsuariosForm extends Form {
 
         $html = $htmlErroresGlobales; 
         foreach($usuariosSinAprobar as $usuario) {
-            $html .= '<input type="checkbox" name="marcados[]" value="' . $usuario->getId() . '"/>' . $usuario->getNombre() . ' | Rol: ' . ucwords($usuario->getRol());
+            $html .= '<input class = "form-check-label"type="checkbox" name="marcados[]" style = "margin:2%" value="' . $usuario->getId() . '"/>' . $usuario->getNombre() . ' | Rol: ' . ucwords($usuario->getRol());
             $html .= "<br>";
         }
-        $html .= '<input type="submit" name="aprobar" value="Aprobar" />';
-        $html .= '<input type="submit" name="eliminar" value="Eliminar" />';
+        $html .= '<button type="submit" class="btn btn-dark" name="aprobar" value="Aprobar" style="margin: 2% ">Enviar</button>';
+        $html .= '<button type="submit" class="btn btn-dark" name="eliminar" value="Eliminar" style="margin: 2%" >Eliminar</button>';
         return $html;
     }
 
