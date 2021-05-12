@@ -52,7 +52,7 @@ class CrearPostForm extends Form {
                     </div>
                 </div>
             </div>
-        EOS;
+EOS;
         return $html;
     }
 

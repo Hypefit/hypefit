@@ -13,11 +13,11 @@ function crearListaPosts(): string {
     $html = "<ul>";
     foreach($lista as $post) {
         $html .= "
-            <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pb-12'>
+            <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pb-12 mb-5 ' style='width: 40%; margin-left: 30%;height: 50%;'>
                 <div class='card h-100 border-secondary ms-2 text-center'>
-                    <h5 class='card-header text-capitalize'>" . $post->getTitulo() . "</h5>
+                    <h5 class='card-header text-capitalize '>" . $post->getTitulo() . "</h5>
                     <div class='card-body'>
-                        <a href='verPost.php?id=" . $post->getId() . "'' class='btn btn-primary'>Ver Post</a>
+                        <a  href='verPost.php?id=" . $post->getId() . "'' class='btn btn-primary mt-4 p-3'>Ver Post</a>
                     </div>        
                 </div>
             </div>
@@ -39,7 +39,7 @@ function mostrarPost($id) : string {
         //$creador = $dao->getUsuario($post->getIdCreador());
         //$nombreCreador = $creador->getNombre();
 
-        $html = "<h1>" . $post->getTitulo() . "</h1>";
+        $html = "<h1 style='margin-left: 3%;'>" . $post->getTitulo() . "</h1>";
         //$html .= "Creado por: " . $nombreCreador . "<br>";
         $html .= mostrarComentariosPost($id);
 

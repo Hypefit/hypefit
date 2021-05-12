@@ -8,18 +8,25 @@ $rutaImg2 = RUTA_IMGS.'/pressbanca.jpg';
 $contenidoPrincipal = "<h1> ------------------- FORO ------------------- </h1>";
 $contenidoPrincipal .= crearListaPosts();
 $contenidoPrincipal .= "<h3><a href='crearPost.php'>Crea una entrada</a> en el foro</h3>";
-$contenidoPrincipal  = "
+$contenidoPrincipal  = <<<EOS
 <!--Cabecera-->
-<div class='p-5 text-center bg-image'
-    style='
-        background-image: url(${rutaImg});
-        background-size: cover;
-        margin-top: 50px;
-'>
-    <div class='mask-rutinas d-flex justify-content-center align-items-center'>
-        <div>
-            <h2 class='mb-3 text-uppercase'>Comunidad Hypefit</h2>
-            <h5 class='mb-4'>Comparte con otros deportistas apasionados en nuestro foro</h5>
+<div class="p-5 text-center bg-image img-fluid"
+        style="
+            background-image: url(https://blog.grupo-pya.com/wp-content/uploads/2016/07/discussion-forums.jpg);
+    opacity: 0.9;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:  auto;
+            height: 100%;
+            margin: 5%;
+        ">
+    <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-black">
+                <h2 class='mb-3 text-uppercase'>Comunidad Hypefit</h2>
+                <h5 class='mb-4'>Comparte con otros deportistas apasionados en nuestro foro</h5>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -34,10 +41,10 @@ $contenidoPrincipal  = "
     </div>
     <div class='row ps-0 justify-content-center'>
         <!--Posts-->
-        ";
-            $contenidoPrincipal .= crearListaPosts();
+EOS;
+        $contenidoPrincipal .= crearListaPosts();
 
-        $contenidoPrincipal .="
+        $contenidoPrincipal .= <<<EOS
             
     
          <!--Posts-->
@@ -46,19 +53,28 @@ $contenidoPrincipal  = "
 <!--Rows posts-->
 
 
-    <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pb-12'
-    <div class='card h-100 border-secondary ms-2 text-center'
-    style='
-        background-image: url(${rutaImg2});
-        background-size: cover;
-        margin-top: 50px;
-    '>
-        
-        <h5 class='card-header text-white'>Crea una entrada en el foro</h5>
-        <div class='card-body'>
-            <a href='crearPost.php' class='btn btn-primary'>Crea</a>
+    <div class="p-5 text-center bg-image img-fluid"
+        style="
+            background-image: url(https://blog.grupo-pya.com/wp-content/uploads/2016/07/discussion-forums.jpg);
+    opacity: 0.9;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:  auto;
+            height: 100%;
+            margin: 5%;
+        ">
+    <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-black">
+                <h5 class='mb-3 text-uppercase'>Crea una entrada en el foro</h5>
+                    <div class='card-body'>
+                        <a href='crearPost.php' class='btn btn-primary  p-5 '> CREAR </a>
+                    </div>
+                </div>
+            </div>
         </div>        
     </div>
 </div>
-    ";
+EOS;
+
 require __DIR__ . '/includes/comun/layout.php';
