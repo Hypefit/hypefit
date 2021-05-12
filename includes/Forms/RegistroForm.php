@@ -31,25 +31,35 @@ class RegistroForm extends Form {
             height: 100%;
             margin: 5%;
         ">
-        <div class="mask" style="background-color: rgba(255, 255, 255, 0.6); margin: 10%;">
+        <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-black">
                     <fieldset>
                         $htmlErroresGlobales
-                        <p></p>
-                        <legend>Rellena el formulario</legend>
-                        <p><label class="col-sm-4">NOMBRE:</label> <input type="text" name="nombre" value="$nombre" required/></p> $errorNombre
-                        <p><label class="col-sm-4">EMAIL:</label> <input type="email" name="email" value="$email" required/></p> $errorEmail
-                        <p><label class="col-sm-4">CONTRASEÑA:</label> <input type="password" name="password" required/></p> $errorPassword
-                        <p><label class="col-sm-4">CONFIRMA TU CONTRASEÑA:</label> <input type="password" name="password2" required/></p> $errorPassword2
-                        <p><label class="col-sm-4">ROL: </label> <select name="rol" required>
+                        <legend class="mt-4 mb-3">Rellena el formulario</legend>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre:</label> 
+                            <input  class="form-control" type="nombre" name="nombre" value="$nombre" required />
+                        </div> $errorNombre
+                        <div class="mb-3">
+                            <label class="form-label">Email:</label> 
+                            <input  class="form-control aria-describedby='emailHelp'" type="email" name="email" value="$email" required />
+                        </div> $errorEmail
+                        <div class="mb-3">
+			                <label class="form-label">Contraseña:</label> 
+			                <input class="form-control" type="password" name="password" required/>
+                        </div> $errorPassword
+                        <div class="mb-3">
+			                <label class="form-label">Repite tu contraseña:</label> 
+			                <input class="form-control" type="password" name="password2" required/>
+                        </div> $errorPassword2
+                        <div class="mb-3">Rol: </label> <select class="form-control" name="rol" required>
                             <option value="registrado" selected>Usuario Regular</option>
                             <option value="entrenador">Entrenador</option>
                             <option value="nutricionista">Nutricionista</option>
                         </select></p>
-                        <p></p>
-                        <button type="submit">ENTRAR</button>
                         <h5></h5>
+                        <button type="submit" class="btn btn-dark">Enviar</button>                  
                         <p></p>
                     </fieldset>
                 </div>
