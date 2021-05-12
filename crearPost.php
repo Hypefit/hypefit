@@ -13,7 +13,7 @@ if(estaLogado()) {
     $contenidoPrincipal .= $form->gestiona();
 }
 else {
-    $contenidoPrincipal = "<p>No estás autenticado. Puedes entrar pulsando <a href='login.php'>aquí</a></p>";
+    $contenidoPrincipal .= "<p>No estás autenticado. Puedes entrar pulsando <a href='login.php'>aquí</a></p>";
 }
 
 require __DIR__ . '/includes/comun/layout.php';
