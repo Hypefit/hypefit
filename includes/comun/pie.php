@@ -16,13 +16,13 @@ require_once __DIR__.'/../config.php';
                     <h5 class="text-uppercase mb-0">RUTINAS</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#fullBody" class="nav-link">Full Body</a>
+                            <a href="<?=RUTA_APP.'/rutinas.php'?>#fullBody" class="nav-link">Full Body</a>
                         </li>
                         <li>
-                            <a href="#trenSup" class="nav-link">Tren Superior</a>
+                            <a href="<?=RUTA_APP.'/rutinas.php'?>#trenSup" class="nav-link">Tren Superior</a>
                         </li>
                         <li>
-                            <a href="#trenInf" class="nav-link">Tren Inferior</a>
+                            <a href="<?=RUTA_APP.'/rutinas.php'?>#trenInf" class="nav-link">Tren Inferior</a>
                         </li>
                     </ul>
                 </div>

@@ -34,7 +34,8 @@ class LoginForm extends Form {
                         <legend class="mt-4 mb-3">Usuario y contraseña</legend>
                         <div class="mb-3">
                             <label class="form-label">Email:</label> 
-                            <input  class="form-control aria-describedby='emailHelp'" type="email" name="email" value="$email" />
+                            <input  class="form-control aria-describedby='emailHelp'" type="email" name="email" 
+                            placeholder="name@example.com" value="$email" />
                             <div id="emailHelp" class="form-text">
                                 <i class="fas fa-info-circle"></i>
                                 Tus datos están a salvo con nosotros.
