@@ -25,3 +25,7 @@
     width:40%;
     color: #474646;
 }
+
+.checked {
+    color: yellow;
+}

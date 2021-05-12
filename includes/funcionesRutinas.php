@@ -46,5 +46,29 @@ function mostrarRutina($id): string {
         return $html;
     }
 
+function mostrarComentariosRutina($id) : string {
+    $daoC = new ComentarioRutinaDAO();
+    $daoU = new UsuarioDAO();
+
+    $comentarios = $daoC->getComentariosDeRutina($id);
+
+    $html = "<ul>";
+    foreach($comentarios as $comentario) {
+        $user = $daoU->getUsuario($comentario->getIdUsuario());
+        $html .= "<li>" . $user->getNombre() . " | " .  $comentario->getFecha() . "<br>";
+        $valoracion = $comentario->getValoracion();
+        for ($i = 1; $i <= $valoracion; $i++) {
+            $html .= '<span class="fa fa-star checked"></span>';
+        }
+        for ($i = $valoracion + 1; $i <= 5; $i++) {
+            $html .= '<span class="fa fa-star"></span>';
+        }
+
+        $html .= $comentario->getComentario() ."</li>";
+    }
+    $html .= "</ul>";
+
+    return $html;
+}
 
 }
