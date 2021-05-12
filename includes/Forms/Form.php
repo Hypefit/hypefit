@@ -156,6 +156,7 @@ abstract class Form
          * Revisa https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
          */
         $htmlForm = <<<EOS
+            
             <form method="POST" action="$this->action" id="$this->formId" >
                 <input type="hidden" name="action" value="$this->formId" />
                 $htmlCamposFormularios
@@ -189,7 +190,6 @@ EOS;
                 foreach($clavesErroresGenerales as $clave) {
                     $html .= "<p>$errores[$clave]</p>";
                 }
-                //$html .= "</li>";
             }
             $html .= '</div>';
         }

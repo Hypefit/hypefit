@@ -31,39 +31,78 @@ class RegistroForm extends Form {
             height: 100%;
             margin: 5%;
         ">
-        <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-black">
-                    <fieldset>
+        <div class="row justify-content-center">
+        <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
+                <div class="row justify-content-center">
                         $htmlErroresGlobales
-                        <legend class="mt-4 mb-3">Rellena el formulario</legend>
-                        <div class="mb-3">
-                            <label class="form-label">Nombre:</label> 
-                            <input  class="form-control" type="nombre" name="nombre" value="$nombre" required />
+                        <h2 class="text-dark">Regístrate</h2>
+                        <p>Rellena este formulario para crear una cuenta</p>
+                        <hr>
+                        <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-address-card"></i>
+                                    </span>
+                                </div>
+                                <input title="Nombre de usuario" class="form-control" type="text" name="nombre" placeholder="Nombre"  required>
+                            </div>
                         </div> $errorNombre
-                        <div class="mb-3">
-                            <label class="form-label">Email:</label> 
-                            <input  class="form-control aria-describedby='emailHelp'" type="email" name="email" value="$email" required />
+                        <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-at"></i>
+                                    </span>
+                                </div>
+                                <input  title="Dirección email" class="form-control" type="email" name="email" placeholder="Dirección email" 
+                                required>
+                            </div>
                         </div> $errorEmail
-                        <div class="mb-3">
-			                <label class="form-label">Contraseña:</label> 
-			                <input class="form-control" type="password" name="password" required/>
-                        </div> $errorPassword
-                        <div class="mb-3">
-			                <label class="form-label">Repite tu contraseña:</label> 
-			                <input class="form-control" type="password" name="password2" required/>
-                        </div> $errorPassword2
-                        <div class="mb-3">Rol: </label> <select class="form-control" name="rol" required>
-                            <option value="registrado" selected>Usuario Regular</option>
-                            <option value="entrenador">Entrenador</option>
-                            <option value="nutricionista">Nutricionista</option>
-                        </select></p>
-                        <h5></h5>
-                        <button type="submit" class="btn btn-dark">Enviar</button>                  
-                        <p></p>
-                    </fieldset>
+                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div> 
+			                     <input title="Contraseña" class="form-control" type="password" name="password" placeholder="Contraseña" 
+			                     required>
+                            </div>
+                       </div> $errorPassword
+                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-lock"></i>
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                </div> 
+			                    <input title="Confirma la contraseña" class="form-control" type="password" name="password2" 
+			                    placeholder="Confirma la contraseña" required>
+                            </div>
+                       </div> $errorPassword2
+                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                           <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                </div>
+                                <select title="Rol" class="form-select" name="rol" required>
+                                    <option selected>Rol</option>
+                                    <option value="registrado">Usuario Regular</option>
+                                    <option value="entrenador">Entrenador</option>
+                                    <option value="nutricionista">Nutricionista</option>
+                                </select>
+                           </div>
+                       </div>
+                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <button type="submit" class="btn btn-dark">Registrarse</button>  
+                       </div>                
                 </div>
             </div>
+        </div>
         </div>
     </div>
     <!-- Jumbotron -->

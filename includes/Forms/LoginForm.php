@@ -46,7 +46,7 @@ class LoginForm extends Form {
 			                <input class="form-control" type="password" name="password" required/>
                         </div>
                         $htmlErroresGlobales
-                        <button type="submit" class="btn btn-dark">Enviar</button>
+                        <button type="submit" class="btn btn-dark">Login</button>
                         <h5></h5>
                         <p></p>
                     </fieldset>

@@ -29,6 +29,9 @@ function crearListaRutinas($categoria): string {
 function mostrarRutina($id): string {
     $dao = new RutinaDAO();
     $rutina = $dao->getRutina($id);
+    $rutaImgSup = RUTA_IMGS.'/cat-superior.jpg';
+    $rutaImgInf = RUTA_IMGS;
+    $rutaImgFull = RUTA_IMGS;
 
     if ($rutina == NULL) {
         return "<p>No existe ninguna rutina con el id especificado.</p>";
@@ -37,10 +40,30 @@ function mostrarRutina($id): string {
         $usuario = $dao->getUsuario($rutina->getIdEntrenador());
         $nombreEntrenador = $usuario->getNombre();
 
-        $html = "<h1>" . $rutina->getTitulo() . "</h1>";
-        $html .= "Creada por: " . $nombreEntrenador . "<br>";
-        $html .= "Categoria: " . ucwords($rutina->getCategoria()) . "<br>";
-        $html .= "<p>" . $rutina->getRutina() . "</p>";
+        $html = "<div class='container my-4'>
+                      <div class='row justify-content-center align-items-center py-5 text-center'>
+                          <div class='col bg-image text-center' style='
+                          background-image: url($rutaImgSup);
+                          background-size: cover;'>
+                            <h1 class=''>" . $rutina->getTitulo() . "</h1>
+                            <h5 class='text-secondary'>". $rutina->getDescripcion() . "</h5>
+                          </div>
+                      </div>
+                      <div class='row mb-4 justify-content-center'>
+                          <div class='col-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85)'>
+                              <p><span class='fw-bold'>Creada por: </span>" . $nombreEntrenador . "</br>
+                                 <span class='fw-bolder'>Categoria: </span>" . ucwords($rutina->getCategoria()) . "<p>
+                          </div>
+                      </div> 
+                    
+                      <div class='row justify-content-center'>
+                          <div class='col-8 p-5 border text-start'> 
+                            <p class='fs-5 lh-lg'>" . nl2br($rutina->getRutina()) . "</p>  
+                          </div>  
+                      </div>
+                  </div>
+                
+                 ";
 
         return $html;
     }
