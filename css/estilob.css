@@ -30,7 +30,7 @@
     color: yellow;
 }
 
-.signup-form{
+.signup-form, .login-form{
     display: block;
     border-radius: 3px;
     margin-bottom: 15px;
@@ -39,7 +39,8 @@
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 
 }
-.signup-form .form-group{
+.signup-form .form-group,
+.login-form .form-group{
     margin-bottom: 20px;
 }
 

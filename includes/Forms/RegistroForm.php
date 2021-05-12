@@ -32,77 +32,77 @@ class RegistroForm extends Form {
             margin: 5%;
         ">
         <div class="row justify-content-center">
-        <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
-                <div class="row justify-content-center">
-                        $htmlErroresGlobales
-                        <h2 class="text-dark">Regístrate</h2>
-                        <p>Rellena este formulario para crear una cuenta</p>
-                        <hr>
-                        <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-address-card"></i>
-                                    </span>
+            <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
+                    <div class="row justify-content-center">
+                            $htmlErroresGlobales
+                            <h2 class="text-dark">Regístrate</h2>
+                            <p>Rellena este formulario para crear una cuenta</p>
+                            <hr>
+                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-address-card"></i>
+                                        </span>
+                                    </div>
+                                    <input title="Nombre de usuario" class="form-control" type="text" name="nombre" placeholder="Nombre"  required>
                                 </div>
-                                <input title="Nombre de usuario" class="form-control" type="text" name="nombre" placeholder="Nombre"  required>
-                            </div>
-                        </div> $errorNombre
-                        <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-at"></i>
-                                    </span>
+                            </div> $errorNombre
+                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-at"></i>
+                                        </span>
+                                    </div>
+                                    <input  title="Dirección email" class="form-control" type="email" name="email" placeholder="Dirección email" 
+                                    required>
                                 </div>
-                                <input  title="Dirección email" class="form-control" type="email" name="email" placeholder="Dirección email" 
-                                required>
-                            </div>
-                        </div> $errorEmail
-                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fa fa-lock"></i>
-                                    </span>
-                                </div> 
-			                     <input title="Contraseña" class="form-control" type="password" name="password" placeholder="Contraseña" 
-			                     required>
-                            </div>
-                       </div> $errorPassword
-                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fa fa-lock"></i>
-                                        <i class="fa fa-check"></i>
-                                    </span>
-                                </div> 
-			                    <input title="Confirma la contraseña" class="form-control" type="password" name="password2" 
-			                    placeholder="Confirma la contraseña" required>
-                            </div>
-                       </div> $errorPassword2
-                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
-                           <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fa fa-user"></i>
-                                    </span>
+                            </div> $errorEmail
+                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div> 
+                                     <input title="Contraseña" class="form-control" type="password" name="password" placeholder="Contraseña" 
+                                     required>
                                 </div>
-                                <select title="Rol" class="form-select" name="rol" required>
-                                    <option selected>Rol</option>
-                                    <option value="registrado">Usuario Regular</option>
-                                    <option value="entrenador">Entrenador</option>
-                                    <option value="nutricionista">Nutricionista</option>
-                                </select>
+                           </div> $errorPassword
+                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-lock"></i>
+                                            <i class="fa fa-check"></i>
+                                        </span>
+                                    </div> 
+                                    <input title="Confirma la contraseña" class="form-control" type="password" name="password2" 
+                                    placeholder="Confirma la contraseña" required>
+                                </div>
+                           </div> $errorPassword2
+                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                               <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <select title="Rol" class="form-select" name="rol" required>
+                                        <option selected>Rol</option>
+                                        <option value="registrado">Usuario Regular</option>
+                                        <option value="entrenador">Entrenador</option>
+                                        <option value="nutricionista">Nutricionista</option>
+                                    </select>
+                               </div>
                            </div>
-                       </div>
-                       <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
-                            <button type="submit" class="btn btn-dark">Registrarse</button>  
-                       </div>                
+                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                <button type="submit" class="btn btn-dark">Registrarse</button>  
+                           </div>                
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
     <!-- Jumbotron -->

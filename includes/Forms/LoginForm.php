@@ -27,36 +27,50 @@ class LoginForm extends Form {
             height: 100%;
             margin: 5%;
         ">
-        <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-black">
-                    <fieldset>
-                        <legend class="mt-4 mb-3">Usuario y contraseña</legend>
-                        <div class="mb-3">
-                            <label class="form-label">Email:</label> 
-                            <input  class="form-control aria-describedby='emailHelp'" type="email" name="email" 
-                            placeholder="name@example.com" value="$email" />
+        <div class="row justify-content-center">
+            <div class="mask login-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
+                <div class="row justify-content-center">
+                    $htmlErroresGlobales
+                    <h2 class="text-dark">Login</h2>
+                        <p>Rellena el formulario para acceder a tu cuenta</p>
+                        <hr>
+                        <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-at"></i>
+                                    </span>
+                                </div>
+                                <input title="Dirección email" class="form-control aria-describedby='emailHelp'" type="email" name="email" 
+                                placeholder="Dirección email" required>
+                            </div>
                             <div id="emailHelp" class="form-text">
                                 <i class="fas fa-info-circle"></i>
                                 Tus datos están a salvo con nosotros.
                             </div>
                         </div>
-                         <div class="mb-3">
-			                <label class="form-label">Contraseña:</label> 
-			                <input class="form-control" type="password" name="password" required/>
+                        <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>  
+                                <input title="Contraseña" class="form-control" type="password" name="password" 
+                                placeholder="Contraseña" required>
+                            </div>
                         </div>
-                        $htmlErroresGlobales
-                        <button type="submit" class="btn btn-dark">Login</button>
-                        <h5></h5>
-                        <p></p>
-                    </fieldset>
+                        <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <button type="submit" class="btn btn-dark">Login</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 EOS;
     return $html;
-    }
+}
 
     protected function procesaFormulario($datos) {
         $result = array();
