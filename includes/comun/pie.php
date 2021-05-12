@@ -2,18 +2,6 @@
 require_once __DIR__.'/../funcionesUsuario.php';
 require_once __DIR__.'/../config.php';
 ?>
- <!--
-<footer class="text-center text-lg-start">
-        <div class="container-fluid">
-                <ul class="list-unstyled mb-0">
-                    <li><a href="<?=RUTA_APP.'/index.php'?>">Inicio</a></li>
-                    <li><a href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a></li>
-                    <li><a href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a></li>
-                    <li><a href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a></li>
-                    <li><a href="<?=RUTA_APP.'/quienesSomos.php'?>">¿Quiénes somos?</a></li>
-                </ul>
-        </div>
-</footer>      -->
 
 <footer class="text-center text-lg-start" style="background-color: rgb(54,144,213,0.2);">
         <div class="container p-4">
@@ -37,13 +25,13 @@ require_once __DIR__.'/../config.php';
                             <a href="<?=RUTA_APP.'/rutinas.php'?>" class="nav-link">Rutinas</a>
                         </li>
                         <li>
-                            <a href="#!" class="nav-link">Full Body</a>
+                            <a href="#fullBody" class="nav-link">Full Body</a>
                         </li>
                         <li>
-                            <a href="#!" class="nav-link">Tren Superior</a>
+                            <a href="#trenSup" class="nav-link">Tren Superior</a>
                         </li>
                         <li>
-                            <a href="#!" class="nav-link">Tren Inferior</a>
+                            <a href="#trenInf" class="nav-link">Tren Inferior</a>
                         </li>
                     </ul>
                 </div>

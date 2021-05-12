@@ -27,18 +27,25 @@ class LoginForm extends Form {
             height: 100%;
             margin: 5%;
         ">
-        <div class="mask" style="background-color: rgba(255, 255, 255, 0.6); margin: 10%;">
+        <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-black">
                     <fieldset>
+                        <legend class="mt-4 mb-3">Usuario y contraseña</legend>
+                        <div class="mb-3">
+                            <label class="form-label">Email:</label> 
+                            <input  class="form-control aria-describedby='emailHelp'" type="email" name="email" value="$email" />
+                            <div id="emailHelp" class="form-text">
+                                <i class="fas fa-info-circle"></i>
+                                Tus datos están a salvo con nosotros.
+                            </div>
+                        </div>
+                         <div class="mb-3">
+			                <label class="form-label">Contraseña:</label> 
+			                <input class="form-control" type="password" name="password" required/>
+                        </div>
                         $htmlErroresGlobales
-                        <p></p>
-                        
-                        <legend>Usuario y contraseña</legend>
-                        <p><label class="col-sm-4">Email:</label> <input type="email" name="email" value="$email" /></p> 
-			            <p><label class="col-sm-4">Contraseña:</label> <input type="password" name="password" required/></p>
-                        <p></p>
-                        <button type="submit">ENTRAR</button>
+                        <button type="submit" class="btn btn-dark">Enviar</button>
                         <h5></h5>
                         <p></p>
                     </fieldset>

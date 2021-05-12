@@ -28,7 +28,7 @@ $contenidoPrincipal  = "
     <!--Rows tren superior-->
     <div class='container py-5 '>
         <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
-            <h2 class='text-uppercase pb-3'>Tren superior</h2>
+            <h2 class='text-uppercase pb-3' id='trenSup'>Tren superior</h2>
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards tren superior-->
@@ -46,7 +46,7 @@ $contenidoPrincipal  = "
     <!--Rows tren inferior-->
     <div class='container pb-5' id='trenInferior'>
         <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
-            <h2 class='text-uppercase pb-3'>Tren inferior</h2>
+            <h2 class='text-uppercase pb-3' id='trenInf'>Tren inferior</h2>
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards tren inferior-->
@@ -63,9 +63,9 @@ $contenidoPrincipal  = "
     <!--Rows tren inferior-->
     
     <!--Rows full body-->
-    <div class='container pb-5' id='fullBody'>
+    <div class='container pb-5'>
         <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
-            <h2 class='text-uppercase pb-3'>Full body</h2>
+            <h2 class='text-uppercase pb-3' id='fullBody'>Full body</h2>
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards full body-->
