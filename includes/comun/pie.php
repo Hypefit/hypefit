@@ -30,13 +30,13 @@ require_once __DIR__.'/../config.php';
                     <h5 class="text-uppercase mb-0">RECETAS</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!" class="nav-link">Sin requerimientos</a>
+                            <a href="<?=RUTA_APP.'/recetas.php'?>#sinRequerimientos" class="nav-link">Sin requerimientos</a>
                         </li>
                         <li>
-                            <a href="#!" class="nav-link">Vegetariana</a>
+                            <a href="<?=RUTA_APP.'/recetas.php'?>#vegetariana" class="nav-link">Vegetariana</a>
                         </li>
                         <li>
-                            <a href="#!" class="nav-link">Vegana</a>
+                            <a href="<?=RUTA_APP.'/recetas.php'?>#vegana" class="nav-link">Vegana</a>
                         </li>
                     </ul>
                 </div>
