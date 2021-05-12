@@ -1,17 +1,23 @@
 <?php
 
-require_once __DIR__ . '/includes/config.php';
-require_once __DIR__ . '/includes/autorizacion.php';
+namespace hypefit\Forms;
 
-$tituloPagina = 'Hypefit | Calculadora Nutricional';
+use hypefit\DAO\RecetaDAO;
+use hypefit\TO\Receta;
 
+class CalculadoraForm extends Form
+{
+    public function __construct() {
+        parent::__construct('CalculadoraForm');
+    }
 
-$contenidoPrincipal = <<<EOS
-    <h1>Calculadora Nutricional HypeFit</h1>
-    <h1>Utiliza nuestra calculadora nutricional para saber si has logrado tus objetivos</h1>
-    <form action="includes/procesarNutri.php" method="POST">
+    protected function generaCamposFormulario($datosIniciales, $errores = array())  {
+        $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
+
+        $html = <<<EOS
         <fieldset>
-            <legend>Rellena los datos sobre tu alimentación:</legend>
+            $htmlErroresGlobales
+		            <legend>Rellena los datos sobre tu alimentación:</legend>
             <p><label>¿Cuál es tu objetivo calórico?</label></p> <select name="objetivo" required>
                 <option value="Déficit Calórico" selected> Déficit Calórico</option>
                 <option value="Equilibrio Calórico">Equilibrio Calórico</option>
@@ -51,7 +57,33 @@ $contenidoPrincipal = <<<EOS
           
             <button type="Calcular">Calcular</button>
         </fieldset>
-    </form>
 EOS;
+        return $html;
+    }
 
-require __DIR__ . '/includes/comun/layout.php';
+   protected function procesaFormulario($datos) {
+        $result = array();
+        $titulo =$datos['titulo'] ?? null;
+        $textoReceta =$datos['receta'] ?? null;
+        $categoria =$datos['categoria'] ?? null;
+        $idNutricionista = $_SESSION['idUsuario'];
+
+
+        if (count($result) === 0) {
+            $dao = new RecetaDAO();
+
+            $receta = new Receta();
+            $receta->setIdNutricionista($idNutricionista);
+            $receta->setReceta($textoReceta);
+            $receta->setCategoria($categoria);
+            $receta->setTitulo($titulo);
+
+            $id = $dao->crearReceta($receta);
+
+            $result = RUTA_APP . "/verReceta.php?id=$id";
+        }
+        return $result;
+    }
+
+
+}
