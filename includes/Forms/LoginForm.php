@@ -31,12 +31,13 @@ class LoginForm extends Form {
             <div class="mask login-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
                 <div class="row justify-content-center">
                     $htmlErroresGlobales
+                    <p></p>
                     <h2 class="text-dark">Login</h2>
                         <p>Rellena el formulario para acceder a tu cuenta</p>
                         <hr>
                         <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                             <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="input-group-prepend" style=" margin-right: 2%;">
                                     <span class="input-group-text">
                                         <i class="fas fa-at"></i>
                                     </span>
@@ -48,10 +49,11 @@ class LoginForm extends Form {
                                 <i class="fas fa-info-circle"></i>
                                 Tus datos están a salvo con nosotros.
                             </div>
+                            <p></p>
                         </div>
                         <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                             <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="input-group-prepend" style=" margin-right: 2%;" >
                                     <span class="input-group-text">
                                         <i class="fa fa-lock"></i>
                                     </span>
@@ -59,10 +61,12 @@ class LoginForm extends Form {
                                 <input title="Contraseña" class="form-control" type="password" name="password" 
                                 placeholder="Contraseña" required>
                             </div>
+                            <p></p>
                         </div>
                         <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                             <button type="submit" class="btn btn-dark">Login</button>
                         </div>
+                        <p></p>
                     </div>
                 </div>
             </div>

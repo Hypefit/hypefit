@@ -35,12 +35,13 @@ class RegistroForm extends Form {
             <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
                     <div class="row justify-content-center">
                             $htmlErroresGlobales
+                            <p></p>
                             <h2 class="text-dark">Regístrate</h2>
                             <p>Rellena este formulario para crear una cuenta</p>
                             <hr>
                             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend" style="margin-right: 5%">
                                         <span class="input-group-text">
                                             <i class="fas fa-address-card"></i>
                                         </span>
@@ -48,9 +49,10 @@ class RegistroForm extends Form {
                                     <input title="Nombre de usuario" class="form-control" type="text" name="nombre" placeholder="Nombre"  required>
                                 </div>
                             </div> $errorNombre
+                            <p></p>
                             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend" style="margin-right: 5%">
                                         <span class="input-group-text">
                                             <i class="fas fa-at"></i>
                                         </span>
@@ -59,9 +61,10 @@ class RegistroForm extends Form {
                                     required>
                                 </div>
                             </div> $errorEmail
+                            <p></p>
                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend" style="margin-right: 5%">
                                         <span class="input-group-text">
                                             <i class="fa fa-lock"></i>
                                         </span>
@@ -70,9 +73,10 @@ class RegistroForm extends Form {
                                      required>
                                 </div>
                            </div> $errorPassword
+                           <p></p>
                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend" style="margin-right: 5%">
                                         <span class="input-group-text">
                                             <i class="fa fa-lock"></i>
                                             <i class="fa fa-check"></i>
@@ -82,9 +86,10 @@ class RegistroForm extends Form {
                                     placeholder="Confirma la contraseña" required>
                                 </div>
                            </div> $errorPassword2
+                           <p></p>
                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                                <div class="input-group">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend" style="margin-right: 5%">
                                         <span class="input-group-text">
                                             <i class="fa fa-user"></i>
                                         </span>
@@ -97,9 +102,11 @@ class RegistroForm extends Form {
                                     </select>
                                </div>
                            </div>
+                           <p></p>
                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
                                 <button type="submit" class="btn btn-dark">Registrarse</button>  
-                           </div>                
+                           </div>  
+                           <p></p>              
                     </div>
                 </div>
             </div>
