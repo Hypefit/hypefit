@@ -2,8 +2,7 @@
 
 namespace hypefit\Forms;
 
-use hypefit\DAO\RecetaDAO;
-use hypefit\TO\Receta;
+require_once 'includes/config.php';
 
 class CalculadoraForm extends Form
 {
@@ -14,6 +13,7 @@ class CalculadoraForm extends Form
 
     protected function generaCamposFormulario($datosIniciales, $errores = array())  {
         $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
+        $resultado = $datosIniciales['resultado'] ?? '';
 
         $html = <<<EOS
         <fieldset>
@@ -57,6 +57,7 @@ class CalculadoraForm extends Form
             <p><label>Carbohidratos:</label> <input type="number" name="carbos5" required/></p>
           
             <button type="Calcular">Calcular</button>
+            <p>Tu resultado: $resultado</p>
         </fieldset>
 EOS;
         return $html;
@@ -64,7 +65,7 @@ EOS;
 
    protected function procesaFormulario($datos) {
         $result = array();
-        $titulo =$datos['titulo'] ?? null;
+        $carbos =$datos['carbos'] ?? null;
         $textoReceta =$datos['receta'] ?? null;
         $categoria =$datos['categoria'] ?? null;
         $idNutricionista = $_SESSION['idUsuario'];
@@ -80,6 +81,7 @@ EOS;
             $receta->setTitulo($titulo);
 
             $id = $dao->crearReceta($receta);
+            $resultado
 
             $result = RUTA_APP . "/verReceta.php?id=$id";
         }
