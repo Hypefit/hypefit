@@ -19,13 +19,40 @@ class CrearPostForm extends Form {
         $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
 
         $html = <<<EOS
-        <fieldset>
-            $htmlErroresGlobales
-			<p><label>Título: </label> <input type="text" name="titulo" required /></p>
-			<p><label>Mensaje:</label> <input type="text" name="mensaje" required /></p>
-			<button type="submit">Publicar</button>
-        </fieldset>
-EOS;
+        <!-- Jumbotron -->
+            <div class="p-5 text-center bg-image img-fluid"
+                style="
+                    background-image: url(https://s1.1zoom.me/b5249/490/Closeup_15_kg_Barbell_514746_1366x768.jpg);
+                    opacity: 0.9;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width:  auto;
+                    height: 100%;
+                    margin: 5%;
+                ">
+                <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-black">
+                            <fieldset>
+                                <legend class="mt-4 mb-3">Escribe tus pensamientos</legend>
+                                <div class="mb-3">
+                                    <label class="form-label">Titulo:</label> 
+                                    <input class="form-control" type="text" name="titulo"/>
+                                </div>
+                                 <div class="mb-3">
+                                    <label class="form-label">Texto:</label> 
+                                    <textarea class="form-control" name="mensaje"></textarea>
+                                </div>
+                                $htmlErroresGlobales
+                                <button type="submit" class="btn btn-dark">Enviar</button>
+                                <h5></h5>
+                                <p></p>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        EOS;
         return $html;
     }
 
