@@ -7,13 +7,21 @@ use hypefit\DAO\UsuarioDAO;
 function crearListaRecetas($categoria): string {
     $dao = new RecetaDAO();
     $lista = $dao->getRecetasPorCategoria($categoria);
+    $html="";
 
-    $html = "<ul>";
     foreach($lista as $receta) {
-        $html .= "<li> <a href='verReceta.php?id=" . $receta->getId() . "'>" . $receta->getTitulo() ."</a> </li>";
+        $html .= "
+            <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2'>
+                <div class='card h-100 border-secondary ms-2 text-center'>
+                    <h5 class='card-header text-capitalize'>" . $receta->getTitulo() . "</h5>
+                    <div class='card-body'>
+                        <p class='card-text'>" . $receta->getDescripcion() . "</p>
+                        <a href='verRutina.php?id=" . $receta->getId() . "'' class='btn btn-primary'>Ver Rutina</a>
+                    </div>        
+                </div>
+            </div>
+            ";
     }
-    $html .= "</ul>";
-
     return $html;
 }
 

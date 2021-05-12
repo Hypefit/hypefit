@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2021 a las 08:03:09
+-- Tiempo de generación: 12-05-2021 a las 10:57:30
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -103,7 +103,8 @@ CREATE TABLE `recetas` (
   `idNutricionista` int(11) NOT NULL,
   `receta` text NOT NULL,
   `categoria` enum('normal','vegana','vegetariana','') NOT NULL,
-  `imagen` varchar(100) NOT NULL
+  `imagen` varchar(100) NOT NULL,
+  `descripcion` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

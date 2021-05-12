@@ -2,31 +2,31 @@
 
 namespace hypefit\DAO;
 
-use hypefit\TO\ComentarioRutina;
+use hypefit\TO\ComentarioReceta;
 
-class ComentarioRutinaDAO extends DAO {
+class ComentarioRecetaDAO extends DAO {
 
-    public function crearComentarioRutina(ComentarioRutina $u) {
+    public function crearComentarioReceta(ComentarioReceta $u) {
         $texto = $this->limpiarString($u->getTexto());
-        $idRutina = $this->limpiarString($u->getIdRutina());
+        $idReceta = $this->limpiarString($u->getIdReceta());
         $idUsuario = $this->limpiarString($u->getIdUsuario());
         $valoracion = $this->limpiarString($u->getValoracion());
 
-        $query = sprintf("INSERT into comentario_rutina (idRutina, idUsuario, texto, valoracion) values
-                ('%s','%s','%s','%s')", $idRutina, $idUsuario, $texto, $valoracion);
+        $query = sprintf("INSERT into comentario_receta (idReceta, idUsuario, texto, valoracion) values
+                ('%s','%s','%s','%s')", $idReceta, $idUsuario, $texto, $valoracion);
         return $this->insert($query);
     }
 
-    public function getComentariosDeRutina($id): array {
+    public function getComentariosDeReceta($id): array {
         $idLimpio = $this->limpiarString($id);
-        $query = "SELECT * from comentario_rutina where idRutina = '$idLimpio' order by fecha";
+        $query = "SELECT * from comentario_receta where idReceta = '$idLimpio' order by fecha";
         $filas = $this->select($query);
 
         $comentarios = array();
         foreach($filas as $fila) {
-            $comentario = new ComentarioRutina();
+            $comentario = new ComentarioReceta();
             $comentario->setId($fila['id']);
-            $comentario->setIdRutina($fila['idRutina']);
+            $comentario->setIdReceta($fila['idReceta']);
             $comentario->setIdUsuario($fila['idUsuario']);
             $comentario->setFecha($fila['fecha']);
             $comentario->setValoracion($fila['valoracion']);

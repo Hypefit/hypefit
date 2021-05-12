@@ -9,7 +9,6 @@ function crearListaRutinas($categoria): string {
     $lista = $dao->getRutinasPorCategoria($categoria);
     $html="";
     foreach($lista as $rutina) {
-     //   $html .= "<a href='verRutina.php?id=" . $rutina->getId() . "'></a>";
         $html .= "
             <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2'>
                 <div class='card h-100 border-secondary ms-2 text-center'>
