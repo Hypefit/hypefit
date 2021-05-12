@@ -12,7 +12,7 @@ $idPost = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
 $contenidoPrincipal = mostrarPost($idPost);
 if (estaLogado()) {
 	$form = new CrearComentarioForm();	
-    $contenidoPrincipal .= "<h2>Responder</h2>" . $form->gestiona();
+    $contenidoPrincipal .=  $form->gestiona();
 }
 
 require __DIR__ . '/includes/comun/layout.php';
