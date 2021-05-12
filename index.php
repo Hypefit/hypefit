@@ -27,7 +27,7 @@ $contenidoPrincipal = <<<EOS
                     <!--Cards-->
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-secondary ms-2 text-center ">
-                            <a href="rutinas.php">
+                            <a href="rutinas.php#trenSup">
                                 <img class="card-img-top" src="${rutaTrenSup}" alt="Tren Superior" style="height: 17rem;">
                             </a>
                             <div class="card-body">
@@ -38,7 +38,7 @@ $contenidoPrincipal = <<<EOS
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-secondary ms-2 text-center">
-                            <a href="rutinas.php">
+                            <a href="rutinas.php#trenInf">
                                 <img class="card-img-top " src="${rutaTrenInf}" alt="Tren Inferior" style="height: 17rem;">
                             </a>
                             <div class="card-body">
@@ -49,7 +49,7 @@ $contenidoPrincipal = <<<EOS
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2">
                         <div class="card h-100 border-secondary ms-2 text-center">
-                            <a href="rutinas.php">
+                            <a href="rutinas.php#fullBody">
                               <img class="card-img-top" src="${rutaFullBody}" alt="Full Body" style="height: 17rem;">
                             </a>
                             <div class="card-body">

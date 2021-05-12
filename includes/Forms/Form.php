@@ -209,11 +209,11 @@ EOS;
     {
         $html = '';
         if (isset($errores[$idError])) {
-            $att = '';
-            foreach($atts as $key => $value) {
-                $att .= "$key=$value";
-            }
-            $html = " <$htmlElement $att>{$errores[$idError]}</$htmlElement>";
+            //$att = '';
+            //foreach($atts as $key => $value) {
+              //  $att .= "$key=$value";
+            //}
+            $html = " <$htmlElement $atts>{$errores[$idError]}</$htmlElement>";
         }
 
         return $html;

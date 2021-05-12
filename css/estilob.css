@@ -51,16 +51,20 @@
     align-items: stretch;
     width:100%
 }
+.input-group-prepend{
+    display: flex;
+    margin-right: 10px;
 
+}
 .input-group-text{
     align-items: center;
     display: flex;
     text-align: center;
     white-space: nowrap;
 }
-.fa{
+.fa, .fas{
     display: inline-block;
-    font-size: 21px;
+    font-size: 18px;
 }
 
 .fa-check {
@@ -69,8 +73,4 @@
     top: 20px;
     font-size: 7px;
     position: absolute;
-}
-.input-group-prepend{
-    display: flex;
-    margin-right: -2px;
 }

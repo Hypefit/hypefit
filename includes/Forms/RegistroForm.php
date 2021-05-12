@@ -14,10 +14,10 @@ class RegistroForm extends Form {
         $nombre =$datosIniciales['nombre'] ?? '';
 
         $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
-        $errorEmail = self::createMensajeError($errores, "email");
-        $errorNombre = self::createMensajeError($errores, "nombre");
-        $errorPassword = self::createMensajeError($errores, "password");
-        $errorPassword2 = self::createMensajeError($errores, "password2");
+        $errorEmail = self::createMensajeError($errores, "email", "span", "class='errRegForm'");
+        $errorNombre = self::createMensajeError($errores, "nombre", "span", "class='errRegForm'");
+        $errorPassword = self::createMensajeError($errores, "password", "span", "class='errRegForm'");
+        $errorPassword2 = self::createMensajeError($errores, "password2", "span", "class='errRegForm'");
 
         $html = <<<EOS
     <!-- Jumbotron -->
@@ -34,25 +34,25 @@ class RegistroForm extends Form {
         <div class="row justify-content-center">
             <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
                     <div class="row justify-content-center">
-                            $htmlErroresGlobales
                             <p></p>
                             <h2 class="text-dark">Regístrate</h2>
                             <p>Rellena este formulario para crear una cuenta</p>
                             <hr>
-                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                                 <div class="input-group">
-                                    <div class="input-group-prepend" style="margin-right: 5%">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fas fa-address-card"></i>
                                         </span>
                                     </div>
-                                    <input title="Nombre de usuario" class="form-control" type="text" name="nombre" placeholder="Nombre"  required>
+                                    <input title="Nombre de usuario" class="form-control" type="text" name="nombre" 
+                                    placeholder="Nombre"  required>
                                 </div>
-                            </div> $errorNombre
-                            <p></p>
-                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                $errorNombre
+                            </div> 
+                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                                 <div class="input-group">
-                                    <div class="input-group-prepend" style="margin-right: 5%">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fas fa-at"></i>
                                         </span>
@@ -60,11 +60,11 @@ class RegistroForm extends Form {
                                     <input  title="Dirección email" class="form-control" type="email" name="email" placeholder="Dirección email" 
                                     required>
                                 </div>
-                            </div> $errorEmail
-                            <p></p>
-                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                $errorEmail
+                            </div> 
+                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                                 <div class="input-group">
-                                    <div class="input-group-prepend" style="margin-right: 5%">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-lock"></i>
                                         </span>
@@ -72,11 +72,11 @@ class RegistroForm extends Form {
                                      <input title="Contraseña" class="form-control" type="password" name="password" placeholder="Contraseña" 
                                      required>
                                 </div>
-                           </div> $errorPassword
-                           <p></p>
-                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                $errorPassword
+                            </div> 
+                            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                                 <div class="input-group">
-                                    <div class="input-group-prepend" style="margin-right: 5%">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-lock"></i>
                                             <i class="fa fa-check"></i>
@@ -85,11 +85,11 @@ class RegistroForm extends Form {
                                     <input title="Confirma la contraseña" class="form-control" type="password" name="password2" 
                                     placeholder="Confirma la contraseña" required>
                                 </div>
-                           </div> $errorPassword2
-                           <p></p>
-                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                                $errorPassword2
+                           </div> 
+                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-4">
                                <div class="input-group">
-                                    <div class="input-group-prepend" style="margin-right: 5%">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-user"></i>
                                         </span>
@@ -102,11 +102,10 @@ class RegistroForm extends Form {
                                     </select>
                                </div>
                            </div>
-                           <p></p>
-                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7">
+                           $htmlErroresGlobales
+                           <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 mb-4">
                                 <button type="submit" class="btn btn-dark">Registrarse</button>  
                            </div>  
-                           <p></p>              
                     </div>
                 </div>
             </div>
