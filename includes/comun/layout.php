@@ -19,7 +19,7 @@
           integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
           crossorigin="anonymous">-->
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/bootstrap.css'?>" />
-    <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/estilob.css'?>" />
+    <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/estilo.css'?>" />
 
     <!--Favicon-->
     <link rel="icon"
