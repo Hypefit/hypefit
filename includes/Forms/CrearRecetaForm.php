@@ -97,8 +97,9 @@ EOS;
     protected function procesaFormulario($datos) {
         $result = array();
         $titulo =$datos['titulo'] ?? null;
-        $textoReceta =$datos['receta'] ?? null;
-        $categoria =$datos['categoria'] ?? null;
+        $descripcion = $datos['descripcion'] ?? null;
+        $textoReceta = $datos['receta'] ?? null;
+        $categoria = $datos['categoria'] ?? null;
         $idNutricionista = $_SESSION['idUsuario'];
 
 
@@ -110,6 +111,7 @@ EOS;
             $receta->setReceta($textoReceta);
             $receta->setCategoria($categoria);
             $receta->setTitulo($titulo);
+            $receta->setDescripcion($descripcion);
 
             $id = $dao->crearReceta($receta);
 

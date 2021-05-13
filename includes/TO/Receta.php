@@ -8,6 +8,7 @@ class Receta {
     private string $categoria = "";
     private int $id = 0;
     private string $titulo = "";
+    private string $descripcion="";
 
     /**
      * @return string
@@ -19,6 +20,20 @@ class Receta {
      */
     public function setTitulo(string $titulo): void {
         $this->titulo = $titulo;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDescripcion(): string {
+        return $this->descripcion;
+    }
+    /**
+    * @param string $descripcion
+    */
+    public function setDescripcion(string $descripcion): void {
+        $this->descripcion = $descripcion;
     }
 
     /**

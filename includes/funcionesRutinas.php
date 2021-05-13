@@ -41,25 +41,24 @@ function mostrarRutina($id): string {
         $usuario = $dao->getUsuario($rutina->getIdEntrenador());
         $nombreEntrenador = $usuario->getNombre();
 
-        $html = "<div class='container my-4'>
+        $html = "<div class='bg-light container-fluid p-4'>
                       <div class='row justify-content-center align-items-center py-5 text-center'>
-                          <div class='col bg-image text-center' style='
+                          <div class='bg-image' style='
                           background-image: url($rutaImgSup);
                           background-size: cover;'>
-                            <h1 class=''>" . $rutina->getTitulo() . "</h1>
-                            <h5 class='text-secondary'>". $rutina->getDescripcion() . "</h5>
+                              <div class='p-4'>
+                                  <h1 class='text-light'>" . $rutina->getTitulo() . "</h1>
+                                  <h5 class='text-secondary'>". $rutina->getDescripcion() . "</h5>
+                                  <div class='col-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85)'>
+                                      <p><span class='fw-bold'>Creada por: </span>" . $nombreEntrenador . "</br>
+                                         <span class='fw-bolder'>Categoria: </span>" . ucwords($rutina->getCategoria()) . "<p>
+                                  </div>
+                              </div>
                           </div>
                       </div>
-                      <div class='row mb-4 justify-content-center'>
-                          <div class='col-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85)'>
-                              <p><span class='fw-bold'>Creada por: </span>" . $nombreEntrenador . "</br>
-                                 <span class='fw-bolder'>Categoria: </span>" . ucwords($rutina->getCategoria()) . "<p>
-                          </div>
-                      </div> 
-                    
                       <div class='row justify-content-center'>
                           <div class='col-8 p-5 border text-start'> 
-                            <p class='fs-5 lh-lg'>" . nl2br($rutina->getRutina()) . "</p>  
+                            <p class='fs-5 lh-lg '>" . nl2br($rutina->getRutina()) . "</p>  
                           </div>  
                       </div>
                   </div>
