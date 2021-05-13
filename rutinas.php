@@ -87,11 +87,25 @@ EOS;
         </div>
     </div>
     <!--Rows full body-->
-    
-    <div class='container pb-5'>
-        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center'>
-            <h5><a href='crearRutina.php'>Crea una nueva rutina</a></h5>
-        </div>
+    <div class='p-5 text-center bg-image img-fluid'
+        style='
+            background-image: url(https://media.quincemil.com/imagenes/2020/11/09164849/shutterstock_1060003700-1706x960.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:  auto;
+            height: 100%;
+            margin: 5%;
+        '>
+    <div class='mask' style='background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%'>
+            <div class='d-flex justify-content-center align-items-center h-100'>
+                <div class='text-black'>
+                <h5 class='mb-3 text-uppercase'>Crea una entrada en el foro</h5>
+                    <div class='card-body'>
+                        <a href='crearRutina.php' class='btn btn-primary  p-5 '> CREAR </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </div>
     ";
 

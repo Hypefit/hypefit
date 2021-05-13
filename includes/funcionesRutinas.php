@@ -35,7 +35,25 @@ function mostrarRutina($id): string {
     // $rutaImgFull = RUTA_IMGS;
 
     if ($rutina == NULL) {
-        return "<p>No existe ninguna rutina con el id especificado.</p>";
+        return $ERROR = <<<EOS
+        <div class="p-4 text-center bg-image img-fluid" 
+            style="background-image: url(https://www.aurigasv.es/img/error-code.jpeg);
+            opacity: 0.9;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:  auto;
+            height: 100%;
+            margin: 5%;
+        ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin: 10%; padding: 15%">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-light">
+                    <h1> No existe ninguna rutina con el id especificado. </h1>
+                </div>  
+            </div>
+        </div>
+    </div>
+EOS;
     } else {
         $dao = new UsuarioDAO();
         $usuario = $dao->getUsuario($rutina->getIdEntrenador());
@@ -49,8 +67,8 @@ function mostrarRutina($id): string {
                               <div class='p-4'>
                                   <h1 class='text-light'>" . $rutina->getTitulo() . "</h1>
                                   <h5 class='text-secondary'>". $rutina->getDescripcion() . "</h5>
-                                  <div class='col-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85)'>
-                                      <p><span class='fw-bold'>Creada por: </span>" . $nombreEntrenador . "</br>
+                                  <div class='col-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85);margin-top: 5%;margin-left:33%;'>
+                                      <p><span class='fw-bold' >Creada por: </span>" . $nombreEntrenador . "</br>
                                          <span class='fw-bolder'>Categoria: </span>" . ucwords($rutina->getCategoria()) . "<p>
                                   </div>
                               </div>

@@ -31,7 +31,25 @@ function mostrarReceta($id): string {
     $receta = $dao->getReceta($id);
 
     if ($receta == NULL) {
-        return "<p>No existe ninguna receta con el id especificado.</p>";
+        return $ERROR = <<<EOS
+        <div class="p-4 text-center bg-image img-fluid" 
+            style="background-image: url(https://www.aurigasv.es/img/error-code.jpeg);
+            opacity: 0.9;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width:  auto;
+            height: 100%;
+            margin: 5%;
+        ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin: 10%; padding: 15%">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-light">
+                    <h1> No existe ninguna receta con el id especificado. </h1>
+                </div>  
+            </div>
+        </div>
+    </div>
+EOS;
     } else {
         $dao = new UsuarioDAO();
         $usuario = $dao->getUsuario($receta->getIdNutricionista());
