@@ -11,9 +11,10 @@ class RecetaDAO extends DAO {
         $idNutricionista = $this->limpiarString($u->getIdNutricionista());
         $categoria = $this->limpiarString($u->getCategoria());
         $titulo = $this->limpiarString($u->getTitulo());
+        $descripcion = $this->limpiarString($u->getDescripcion());
 
-        $query = sprintf('INSERT into Recetas (receta, idNutricionista, categoria, titulo) values
-                ("%s","%s","%s","%s")', $receta, $idNutricionista, $categoria, $titulo);
+        $query = sprintf('INSERT into Recetas (receta, idNutricionista, categoria, titulo, descripcion) values
+                ("%s","%s","%s","%s")', $receta, $idNutricionista, $categoria, $titulo, $descripcion);
         return $this->insert($query);
     }
 

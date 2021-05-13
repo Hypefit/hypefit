@@ -75,8 +75,8 @@ class CrearRutinaForm extends Form {
                             </div>
                             <select title="Categoria" class="form-select" name="categoria" required>
                                 <option selected>Categoría</option>
-                                <option value="superior">Inferior</option>
-                                <option value="inferior">Superior</option>
+                                <option value="superior">Superior</option>
+                                <option value="inferior">Inferior</option>
                                 <option value="full body">Full Body</option>
                             </select>
                        </div>
@@ -96,6 +96,7 @@ EOS;
     protected function procesaFormulario($datos) {
         $result = array();
         $titulo =$datos['titulo'] ?? null;
+        $descripcion = $datos['descripcion'] ?? null;
         $textoRutina =$datos['rutina'] ?? null;
         $categoria =$datos['categoria'] ?? null;
         $idEntrenador = $_SESSION['idUsuario'];
@@ -109,6 +110,7 @@ EOS;
             $rutina->setRutina($textoRutina);
             $rutina->setCategoria($categoria);
             $rutina->setTitulo($titulo);
+            $rutina->setDescripcion($descripcion);
 
             $id = $dao->crearRutina($rutina);
 

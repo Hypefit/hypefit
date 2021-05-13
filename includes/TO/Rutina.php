@@ -83,9 +83,11 @@ class Rutina {
      */
     public function getDescripcion(): string {
         return $this->descripcion;
-    }/**
- * @param string $descripcion
- */
+    }
+
+    /**
+    * @param string $descripcion
+    */
     public function setDescripcion(string $descripcion): void {
         $this->descripcion = $descripcion;
     }
