@@ -15,7 +15,7 @@ if(estaLogado()) {
 else {
     $contenidoPrincipal .= <<<EOS
 
-<div class="p-5 text-center bg-image img-fluid"
+<div class="p-4 text-center bg-image img-fluid"
         style="
             background-image: url(https://www.aurigasv.es/img/error-code.jpeg);
             opacity: 0.9;
@@ -28,7 +28,9 @@ else {
     <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 15%">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-black">
-                <h5>NO ESTÁS AUTENTICADO. PUEDES HACER LOGIN PULSANDO <a href='login.php'>AQUÍ</a></h5>
+                    <h5 class="text-uppercase">No estás autenticado. Puedes hacer login pulsando
+                        <a class="text-reset" href='login.php'>aquí</a>
+                    </h5>
                 </div>
             </div>    
         </div>

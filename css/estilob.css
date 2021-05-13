@@ -66,11 +66,14 @@
     display: inline-block;
     font-size: 18px;
 }
-
 .fa-check {
     color: #fff;
     left: 18px;
     top: 20px;
     font-size: 7px;
     position: absolute;
+}
+
+.input-group>.cont{
+    height: 50px;
 }

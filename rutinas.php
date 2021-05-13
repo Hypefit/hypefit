@@ -39,7 +39,6 @@ $contenidoPrincipal  = <<<EOS
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards tren superior-->
-            ";
 EOS;
                 $contenidoPrincipal .= crearListaRutinas("superior");
 
