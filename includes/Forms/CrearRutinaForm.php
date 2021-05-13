@@ -48,10 +48,21 @@ class CrearRutinaForm extends Form {
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
+                                    <i class="fas fa-paragraph"></i>
+                                </span>
+                            </div>
+                            <textarea title="Descripcion" class="form-control" name="descripcion" 
+                            placeholder="Subtítulo" required></textarea>
+                        </div>
+                    </div> 
+                    <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
                                     <i class="fas fa-edit"></i>
                                 </span>
                             </div>
-                            <textarea title="Contenido" class="form-control" name="rutina" 
+                            <textarea title="Contenido" class="form-control contenido" name="rutina" 
                             placeholder="Contenido" required></textarea>
                         </div>
                     </div> 
