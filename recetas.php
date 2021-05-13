@@ -46,7 +46,7 @@ $contenidoPrincipal  = <<<EOS
         <div class='row ps-0 justify-content-center'>
             <!--Cards sin requerimientos-->
 EOS;
-            $contenidoPrincipal .= crearListaRecetas("normal");
+            $contenidoPrincipal .= crearListaRecetas("sin requerimientos");
 
             $contenidoPrincipal .="
              <!--Cards sin requerimientos-->

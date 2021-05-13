@@ -51,7 +51,7 @@ class CrearRutinaForm extends Form {
                                     <i class="fas fa-edit"></i>
                                 </span>
                             </div>
-                            <textarea title="Contenido" class="form-control cont" type="text" name="rutina" 
+                            <textarea title="Contenido" class="form-control" name="rutina" 
                             placeholder="Contenido" required></textarea>
                         </div>
                     </div> 
