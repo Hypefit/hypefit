@@ -31,8 +31,8 @@ function mostrarRutina($id): string {
     $dao = new RutinaDAO();
     $rutina = $dao->getRutina($id);
     $rutaImgSup = RUTA_IMGS.'/cat-superior.jpg';
-    $rutaImgInf = RUTA_IMGS;
-    $rutaImgFull = RUTA_IMGS;
+    // $rutaImgInf = RUTA_IMGS;
+    // $rutaImgFull = RUTA_IMGS;
 
     if ($rutina == NULL) {
         return "<p>No existe ninguna rutina con el id especificado.</p>";
@@ -88,7 +88,7 @@ function mostrarComentariosRutina($id) : string {
             $html .= '<span class="fa fa-star"></span>';
         }
 
-        $html .= $comentario->getComentario() ."</li>";
+        $html .= $comentario->getTexto() ."</li>";
     }
     $html .= "</ul>";
 

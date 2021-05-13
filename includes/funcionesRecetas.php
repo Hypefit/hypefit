@@ -1,6 +1,7 @@
 <?php
 
 
+use hypefit\DAO\ComentarioRecetaDAO;
 use hypefit\DAO\RecetaDAO;
 use hypefit\DAO\UsuarioDAO;
 
@@ -45,4 +46,29 @@ function mostrarReceta($id): string {
     }
 
 
+}
+
+function mostrarComentariosReceta($id) : string {
+    $daoC = new ComentarioRecetaDAO();
+    $daoU = new UsuarioDAO();
+
+    $comentarios = $daoC->getComentariosDeReceta($id);
+
+    $html = "<ul>";
+    foreach($comentarios as $comentario) {
+        $user = $daoU->getUsuario($comentario->getIdUsuario());
+        $html .= "<li>" . $user->getNombre() . " | " .  $comentario->getFecha() . "<br>";
+        $valoracion = $comentario->getValoracion();
+        for ($i = 1; $i <= $valoracion; $i++) {
+            $html .= '<span class="fa fa-star checked"></span>';
+        }
+        for ($i = $valoracion + 1; $i <= 5; $i++) {
+            $html .= '<span class="fa fa-star"></span>';
+        }
+
+        $html .= $comentario->getTexto() ."</li>";
+    }
+    $html .= "</ul>";
+
+    return $html;
 }
