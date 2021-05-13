@@ -44,9 +44,9 @@ class ComentarioRutinaDAO extends DAO {
             array_push($idsLimpios, $this->limpiarString($id));
         }
         $in = implode(',', $idsLimpios);
-        $query = "SELECT avg(valoracion) from comentarios_rutina where idRutina in ($in)";
+        $query = "SELECT avg(valoracion) from comentario_rutina where idRutina in ($in)";
         $resultado = $this->select($query);
 
-        return $resultado['avg(valoracion)'];
+        return $resultado[0]['avg(valoracion)'];
     }
 }

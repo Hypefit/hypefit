@@ -100,10 +100,14 @@ function topUsuarios($rol) {
                 // Buscamos todas las rutinas creadas por cada usuario
                 $dao = new RutinaDAO();
                 $ids = $dao->getIdsPorEntrenador($usuario->getId());
-
-                // Pedimos la media de las valoraciones de las rutinas creadas por el usuario
-                $dao = new ComentarioRutinaDAO();
-                $valoracion = $dao->getValoracionMedia($ids);
+                if(empty($ids)) {
+                    $valoracion = 0.0;
+                }
+                else {
+                    // Pedimos la media de las valoraciones de las rutinas creadas por el usuario
+                    $dao = new ComentarioRutinaDAO();
+                    $valoracion = $dao->getValoracionMedia($ids) ?? 0.0;
+                }
 
                 //Añadimos al mapa nombre y valoración
                 $nombre = $usuario->getNombre();
@@ -113,10 +117,14 @@ function topUsuarios($rol) {
                 // Buscamos todas las recetas creadas por cada usuario
                 $dao = new RecetaDAO();
                 $ids = $dao->getIdsPorEntrenador($usuario->getId());
-
-                // Pedimos la media de las valoraciones de las recetas creadas por el usuario
-                $dao = new ComentarioRecetaDAO();
-                $valoracion = $dao->getValoracionMedia($ids);
+                if(empty($ids)) {
+                    $valoracion = 0.0;
+                }
+                else {
+                    // Pedimos la media de las valoraciones de las recetas creadas por el usuario
+                    $dao = new ComentarioRecetaDAO();
+                    $valoracion = $dao->getValoracionMedia($ids) ?? 0.0;
+                }
 
                 //Añadimos al mapa nombre y valoración
                 $nombre = $usuario->getNombre();
