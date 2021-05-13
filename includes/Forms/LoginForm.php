@@ -78,8 +78,6 @@ EOS;
         $email =$datos['email'] ?? null;
         $password = $datos['password'] ?? null;
 
-        //TODO: no habría que limpiar con htmlspecialchars?
-
         $usuario = checkLogin($email, $password);
         if ( ! $usuario ) {
             $result[] = "El usuario o el password no coinciden";
