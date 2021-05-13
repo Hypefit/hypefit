@@ -7,25 +7,28 @@ require_once __DIR__.'/../config.php';
         <div class="container p-4">
             <div class="row">
 
-                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">ENLACES DE INTERÉS</h5>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0 align-items-center">
+                    <h5 class="text-uppercase">Enlaces de interés</h5>
                 </div>
 
                 <!--Grid column-->
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-0">RUTINAS</h5>
+                    <h5 class="text-uppercase mb-0">Rutinas</h5>
                     <ul class="list-unstyled">
-                        <li>
-                            <a href="<?=RUTA_APP.'/rutinas.php'?>#fullBody" class="nav-link">Full Body</a>
-                        </li>
                         <li>
                             <a href="<?=RUTA_APP.'/rutinas.php'?>#trenSup" class="nav-link">Tren Superior</a>
                         </li>
                         <li>
                             <a href="<?=RUTA_APP.'/rutinas.php'?>#trenInf" class="nav-link">Tren Inferior</a>
                         </li>
+                        <li>
+                            <a href="<?=RUTA_APP.'/rutinas.php'?>#fullBody" class="nav-link">Full Body</a>
+                        </li>
                     </ul>
                 </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-0">RECETAS</h5>
                     <ul class="list-unstyled">
@@ -40,17 +43,20 @@ require_once __DIR__.'/../config.php';
                         </li>
                     </ul>
                 </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-0">COMUNIDAD</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!" class="nav-link">Foro recetas</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="nav-link">Foro rutinas</a>
+                            <a href="<?=RUTA_APP.'/comunidad.php'?>" class="nav-link">Foro</a>
                         </li>
                     </ul>
                 </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-0">QUIÉNES SOMOS</h5>
                     <ul class="list-unstyled">
@@ -59,10 +65,10 @@ require_once __DIR__.'/../config.php';
                         </li>
                     </ul>
                 </div>
+                <!--Grid column-->
             </div>
         </div>
   <div class="text-center p-3">
-
     © 2021 Copyright:
     <a class="text-dark text-center" href="<?=RUTA_APP.'/index.php'?>">Hypefit</a>
   </div>
