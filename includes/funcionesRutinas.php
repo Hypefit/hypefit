@@ -1,6 +1,7 @@
 <?php
 
 
+use hypefit\DAO\ComentarioRutinaDAO;
 use hypefit\DAO\RutinaDAO;
 use hypefit\DAO\UsuarioDAO;
 
@@ -67,6 +68,7 @@ function mostrarRutina($id): string {
 
         return $html;
     }
+}
 
 function mostrarComentariosRutina($id) : string {
     $daoC = new ComentarioRutinaDAO();
@@ -91,6 +93,4 @@ function mostrarComentariosRutina($id) : string {
     $html .= "</ul>";
 
     return $html;
-}
-
 }

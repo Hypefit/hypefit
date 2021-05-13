@@ -1,5 +1,9 @@
 <?php
 
+use hypefit\DAO\ComentarioRecetaDAO;
+use hypefit\DAO\ComentarioRutinaDAO;
+use hypefit\DAO\RecetaDAO;
+use hypefit\DAO\RutinaDAO;
 use hypefit\DAO\UsuarioDAO;
 use hypefit\TO\Usuario;
 
@@ -84,4 +88,51 @@ function logout() {
 
     session_destroy();
     session_start();
+}
+
+function topUsuarios($rol) {
+    $dao = new UsuarioDAO();
+    if ($rol === "entrenador" || $rol === "nutricionista") {
+        $usuarios = $dao->getUsuariosPorRolAprobados($rol);
+        $mapaUsuariosValoracion = array();
+        foreach($usuarios as $usuario) {
+            if ($rol === "entrenador") {
+                // Buscamos todas las rutinas creadas por cada usuario
+                $dao = new RutinaDAO();
+                $ids = $dao->getIdsPorEntrenador($usuario->getId());
+
+                // Pedimos la media de las valoraciones de las rutinas creadas por el usuario
+                $dao = new ComentarioRutinaDAO();
+                $valoracion = $dao->getValoracionMedia($ids);
+
+                //Añadimos al mapa nombre y valoración
+                $nombre = $usuario->getNombre();
+                $mapaUsuariosValoracion[$nombre] = round($valoracion, 1);
+            }
+            else {
+                // Buscamos todas las recetas creadas por cada usuario
+                $dao = new RecetaDAO();
+                $ids = $dao->getIdsPorEntrenador($usuario->getId());
+
+                // Pedimos la media de las valoraciones de las recetas creadas por el usuario
+                $dao = new ComentarioRecetaDAO();
+                $valoracion = $dao->getValoracionMedia($ids);
+
+                //Añadimos al mapa nombre y valoración
+                $nombre = $usuario->getNombre();
+                $mapaUsuariosValoracion[$nombre] = round($valoracion, 1);
+            }
+        }
+        arsort($mapaUsuariosValoracion);
+
+        $html = "<ul>";
+        foreach($mapaUsuariosValoracion as $usuario => $valoracion) {
+            $html .= "<li>" . $usuario . " | " . $valoracion . "</li>";
+        }
+        $html .= "</ul>";
+        return $html;
+    }
+    else {
+        return "Rol no especificado";
+    }
 }

@@ -41,6 +41,18 @@ class RecetaDAO extends DAO {
         return $array_recetas;
     }
 
+    public function getIdsPorEntrenador($idNutricionista): array {
+        $idNutricionistaLimpio = $this->limpiarString($idNutricionista);
+        $query = "SELECT id from Recetas where idEntrenador = '$idNutricionistaLimpio'";
+        $filas = $this->select($query);
+
+        $ids = array();
+        foreach ($filas as $fila) {
+            array_push($array_rutinas, $fila['id']);
+        }
+        return $ids;
+    }
+
     private function crearObjetoReceta($fila): Receta {
         $receta = new Receta();
         $receta->setId($fila['id']);

@@ -42,6 +42,18 @@ class RutinaDAO extends DAO {
         return $array_rutinas;
     }
 
+    public function getIdsPorEntrenador($idEntrenador): array {
+        $idEntrenadorLimpio = $this->limpiarString($idEntrenador);
+        $query = "SELECT id from Rutinas where idNutricionista = '$idEntrenadorLimpio'";
+        $filas = $this->select($query);
+
+        $ids = array();
+        foreach ($filas as $fila) {
+            array_push($array_rutinas, $fila['id']);
+        }
+        return $ids;
+    }
+
     private function crearObjetoRutina($fila): Rutina {
         $rutina = new Rutina();
         $rutina->setId($fila['id']);

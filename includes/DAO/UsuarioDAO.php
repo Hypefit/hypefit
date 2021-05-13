@@ -75,4 +75,16 @@ class UsuarioDAO extends DAO
         return $usuario;
     }
 
+    public function getUsuariosPorRolAprobados(string $rol) {
+        $rolLimpio = $this->limpiarString($rol);
+        $query = "SELECT * from usuarios WHERE rol=$rolLimpio AND aprobados = 1";
+        $filas = $this->select($query);
+
+        $usuarios = array();
+        foreach($filas as $fila) {
+            array_push($ids, $this->crearObjetoUsuario($fila));
+        }
+        return $usuarios;
+    }
+
 }

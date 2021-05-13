@@ -30,11 +30,23 @@ class ComentarioRutinaDAO extends DAO {
             $comentario->setIdUsuario($fila['idUsuario']);
             $comentario->setFecha($fila['fecha']);
             $comentario->setValoracion($fila['valoracion']);
-            $comentario->setComentario($fila['comentario']);
+            $comentario->setTexto($fila['texto']);
 
             array_push($comentarios, $comentario);
         }
 
         return $comentarios;
+    }
+
+    public function getValoracionMedia(array $ids) {
+        $idsLimpios = array();
+        foreach($ids as $id) {
+            array_push($idsLimpios, $this->limpiarString($id));
+        }
+        $in = implode(',', $idsLimpios);
+        $query = "SELECT avg(valoracion) from comentarios_rutina where idRutina in ($in)";
+        $resultado = $this->select($query);
+
+        return $resultado['avg(valoracion)'];
     }
 }
