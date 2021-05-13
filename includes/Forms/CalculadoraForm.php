@@ -13,12 +13,16 @@ class CalculadoraForm extends Form
 
     protected function generaCamposFormulario($datosIniciales, $errores = array())  {
         $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
-        $resultado = $datosIniciales['resultado'] ?? '';
+
+        $calorias = $errores['calorias'] ?? '';
+        $proteinas = $errores['proteinas'] ?? '';
+        $grasas = $errores['grasas'] ?? '';
+        $carbos = $errores['carbos'] ?? '';
 
         $html = <<<EOS
         <fieldset>
             $htmlErroresGlobales
-		            <legend>Rellena los datos sobre tu alimentación:</legend>
+		            <legend>Rellena los datos sobre tu alimentación en las 5 comidas del dia:</legend>
             <p><label>¿Cuál es tu objetivo calórico?</label></p> <select name="objetivo" required>
                 <option value="Déficit Calórico" selected> Déficit Calórico</option>
                 <option value="Equilibrio Calórico">Equilibrio Calórico</option>
@@ -57,7 +61,13 @@ class CalculadoraForm extends Form
             <p><label>Carbohidratos:</label> <input type="number" name="carbos5" required/></p>
           
             <button type="Calcular">Calcular</button>
-            <p>Tu resultado: $resultado</p>
+            
+            <p>Tu resultado:</p>
+            <p>Calorías consumidas: $calorias</p>
+            <p>Proteínas consumidas: $proteinas</p>
+            <p>Grasas consumidas: $grasas</p>
+            <p>Carbohidratos consumidos: $carbos</p>
+            
         </fieldset>
 EOS;
         return $html;
