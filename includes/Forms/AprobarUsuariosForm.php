@@ -20,12 +20,29 @@ class AprobarUsuariosForm extends Form {
 
         $html = $htmlErroresGlobales; 
         foreach($usuariosSinAprobar as $usuario) {
-            $html .= '<input class = "form-check-label"type="checkbox" name="marcados[]" style = "margin:2%" value="' . $usuario->getId() . '"/>' . $usuario->getNombre() . ' | Rol: ' . ucwords($usuario->getRol());
-            $html .= "<br>";
+            $html .= '
+            <div class="container">
+                <div class="row justify-content-center align-items-center"
+                    <div class="form-check">
+                        <input class="form-check-input p-0 col-3" type="checkbox" value="' . $usuario->getId() . '"
+                         id="flexCheck" name="marcados[]">
+                        
+                        <label class="form-check-label col-4 mx-0" for="flexCheck"
+                            style = "margin:2%">
+                               <p class="m-0">
+                                    <span class="fw-bold">' . $usuario->getNombre() . '</span> 
+                                    <i class="fas fa-hand-point-right px-2"></i> 
+                                    Rol: ' . ucwords($usuario->getRol()) . '</p>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-dark" name="aprobar" value="Aprobar" style="margin: 2% ">Enviar</button>
+                    <button type="submit" class="btn btn-dark" name="eliminar" value="Eliminar" style="margin: 2%" >Eliminar</button>
+                </div>
+            </div>
+            <br>
+            ';
         }
-        $html .= '<button type="submit" class="btn btn-dark" name="aprobar" value="Aprobar" style="margin: 2% ">Enviar</button>';
-        $html .= '<button type="submit" class="btn btn-dark" name="eliminar" value="Eliminar" style="margin: 2%" >Eliminar</button>';
-        return $html;
+       return $html;
     }
 
     protected function procesaFormulario($datos) {

@@ -96,17 +96,13 @@ EOS;
 	if (esAdmin()) {
         $form = new AprobarUsuariosForm();
         $contenidoPrincipal .= <<<EOS
-        <div class="p-5 text-center bg-image img-fluid"
+        <div class="p-5 text-center"
         style="
             background-color: #d7e9f7;
             opacity: 0.9;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width:  auto;
-            height: 100%;
             margin: 5%;
         ">
-            <h2>Usuarios sin aprobar</h2>
+            <h2 class="pb-2 mb-3">Usuarios sin aprobar</h2>
 EOS;
         $contenidoPrincipal .= $form->gestiona() ;
     }
