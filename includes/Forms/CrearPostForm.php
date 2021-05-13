@@ -19,7 +19,7 @@ class CrearPostForm extends Form {
         $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
 
         $html = <<<EOS
-        <!-- Jumbotron -->
+            <!-- Jumbotron -->
             <div class="p-5 text-center bg-image img-fluid"
                 style="
                     background-image: url(https://s1.1zoom.me/b5249/490/Closeup_15_kg_Barbell_514746_1366x768.jpg);
@@ -30,29 +30,43 @@ class CrearPostForm extends Form {
                     height: 100%;
                     margin: 5%;
                 ">
-                <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <div class="text-black">
-                            <fieldset>
-                                <legend class="mt-4 mb-3">Escribe tus pensamientos</legend>
-                                <div class="mb-3">
-                                    <label class="form-label">Titulo:</label> 
-                                    <input class="form-control" type="text" name="titulo"/>
-                                </div>
-                                 <div class="mb-3">
-                                    <label class="form-label">Texto:</label> 
-                                    <textarea class="form-control" name="mensaje"></textarea>
-                                </div>
-                                $htmlErroresGlobales
-                                <button type="submit" class="btn btn-dark">Enviar</button>
-                                <h5></h5>
-                                <p></p>
-                            </fieldset>
+                <div class="row justify-content-center">
+                    <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" 
+                         style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
+                        <div class="row justify-content-center">
+                            <h2 class="text-dark pt-3">Escribe tus pensamientos</h2>
+                            <p>Deja tus comentarios, preguntas y sensaciones</p>
+                            <hr>
+                            
+                             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-hand-point-right"></i>
+                                </span>
+                            </div>
+                            <input title="Título" class="form-control" type="text" name="titulo" 
+                            placeholder="Título" required>
                         </div>
-                    </div>
-                </div>
-            </div>
-EOS;
+                    </div> 
+                    <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-edit"></i>
+                                </span>
+                            </div>
+                            <textarea title="Contenido" class="form-control" name="mensaje" 
+                            placeholder="Contenido" required></textarea>
+                        </div>
+                    </div> 
+                    $htmlErroresGlobales        
+                    <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 mb-4">
+                        <button type="submit" class="btn btn-dark">Crear</button>  
+                   </div>   
+               </div>  
+           </div>  
+        EOS;
         return $html;
     }
 

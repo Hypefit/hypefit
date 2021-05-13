@@ -28,7 +28,8 @@ class CrearRecetaForm extends Form {
             margin: 5%;
         ">
         <div class="row justify-content-center">
-            <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
+            <div class="mask signup-form col-xs-12 col-sm-10 col-md-9" 
+                style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
                 <div class="row justify-content-center">
                     <h2 class="text-dark pt-3">Nueva receta</h2>
                     <p>Rellena este formulario para crear una deliciosa receta</p>

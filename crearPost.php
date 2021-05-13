@@ -6,7 +6,7 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/autorizacion.php';
 
 $tituloPagina = 'Hypefit | Crear Post';
-$contenidoPrincipal = "<h1> Nuevo post </h1>";
+$contenidoPrincipal = "";
 
 if(estaLogado()) {
 	$form = new CrearPostForm();
@@ -28,7 +28,7 @@ else {
     <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 15%">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-black">
-                    <h5 class="text-uppercase">No estás autenticado. Puedes hacer login pulsando
+                    <h5 class="text-uppercase">Debes estar autenticado para crear un post. Puedes hacer login pulsando
                         <a class="text-reset" href='login.php'>aquí</a>
                     </h5>
                 </div>
