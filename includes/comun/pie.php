@@ -3,16 +3,16 @@ require_once __DIR__.'/../funcionesUsuario.php';
 require_once __DIR__.'/../config.php';
 ?>
 
-<footer class="text-center text-lg-start" style="background-color: rgb(54,144,213,0.2);">
+<footer class="text-center text-sm-start">
         <div class="container p-4">
-            <div class="row">
+            <div class="row justify-content-center">
 
-                <div class="col-lg-2 col-md-12 mb-4 mb-md-0 align-items-center">
+                <div class="col-lg-2 col-md-12 mb-4 ">
                     <h5 class="text-uppercase">Enlaces de interés</h5>
                 </div>
 
                 <!--Grid column-->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-2 col-sm-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-0">Rutinas</h5>
                     <ul class="list-unstyled">
                         <li>
@@ -29,8 +29,8 @@ require_once __DIR__.'/../config.php';
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-0">RECETAS</h5>
+                <div class="col-lg-2 col-sm-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Recetas</h5>
                     <ul class="list-unstyled">
                         <li>
                             <a href="<?=RUTA_APP.'/recetas.php'?>#sinRequerimientos" class="nav-link">Sin requerimientos</a>
@@ -46,8 +46,8 @@ require_once __DIR__.'/../config.php';
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-0">COMUNIDAD</h5>
+                <div class="col-lg-2 col-sm-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Comunidad</h5>
                     <ul class="list-unstyled">
                         <li>
                             <a href="<?=RUTA_APP.'/comunidad.php'?>" class="nav-link">Foro</a>
@@ -57,8 +57,8 @@ require_once __DIR__.'/../config.php';
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-0">QUIÉNES SOMOS</h5>
+                <div class="col-lg-2 col-sm-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Quiénes somos</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2">
                             <a href="<?=RUTA_APP.'/quienesSomos.php'?>" class="nav-link">Quiénes somos</a>

@@ -5,7 +5,7 @@ require_once __DIR__.'/../config.php';
 
 <header>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-md fixed-top">
+<nav class="navbar navbar-expand-md shadow fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="<?=RUTA_APP.'/index.php'?>">
             <img src="<?=RUTA_IMGS.'/logo.png'?>" alt="Inicio"
