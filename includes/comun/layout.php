@@ -15,9 +15,10 @@
 
 
     <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
-          crossorigin="anonymous">
+          crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/bootstrap.css'?>" />
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/estilob.css'?>" />
 
     <!--Favicon-->
@@ -43,10 +44,11 @@
         ?>
     </div>
     <!--Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
             crossorigin="anonymous">
-    </script>
+    </script>-->
+    <script src="<?= RUTA_JS.'/bootstrap.js'?>"
 
 </body>
 </html>
