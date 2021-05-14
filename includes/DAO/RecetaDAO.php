@@ -13,14 +13,14 @@ class RecetaDAO extends DAO {
         $titulo = $this->limpiarString($u->getTitulo());
         $descripcion = $this->limpiarString($u->getDescripcion());
 
-        $query = sprintf('INSERT into Recetas (receta, idNutricionista, categoria, titulo, descripcion) values
-                ("%s","%s","%s","%s")', $receta, $idNutricionista, $categoria, $titulo, $descripcion);
+        $query = sprintf('INSERT into recetas (receta, idNutricionista, categoria, titulo, descripcion) values
+                ("%s","%s","%s","%s", "%s")', $receta, $idNutricionista, $categoria, $titulo, $descripcion);
         return $this->insert($query);
     }
 
     public function getReceta($id): ?Receta {
         $id_limpio = $this->limpiarString($id);
-        $query = "SELECT * from Recetas where id = '$id_limpio'";
+        $query = "SELECT * from recetas where id = '$id_limpio'";
         $filas = $this->select($query);
 
         if (empty($filas)) {
@@ -31,7 +31,7 @@ class RecetaDAO extends DAO {
 
     public function getRecetasPorCategoria($categoria): array {
         $categoria_limpia = $this->limpiarString($categoria);
-        $query = "SELECT * from Recetas where categoria = '$categoria_limpia'";
+        $query = "SELECT * from recetas where categoria = '$categoria_limpia'";
         $filas = $this->select($query);
 
         $array_recetas = array();
@@ -44,7 +44,7 @@ class RecetaDAO extends DAO {
 
     public function getIdsPorEntrenador($idNutricionista): array {
         $idNutricionistaLimpio = $this->limpiarString($idNutricionista);
-        $query = "SELECT id from Recetas where idNutricionista = '$idNutricionistaLimpio'";
+        $query = "SELECT id from recetas where idNutricionista = '$idNutricionistaLimpio'";
         $filas = $this->select($query);
 
         $ids = array();

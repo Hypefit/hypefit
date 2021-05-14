@@ -13,14 +13,14 @@ class RutinaDAO extends DAO {
         $titulo = $this->limpiarString($u->getTitulo());
         $descricion = $this->limpiarString($u->getDescripcion());
 
-        $query = sprintf('INSERT into Rutinas (rutina, idEntrenador, categoria, titulo, descripcion) values
+        $query = sprintf('INSERT into rutinas (rutina, idEntrenador, categoria, titulo, descripcion) values
                 ("%s","%s","%s","%s", "%s")', $rutina, $idEntrenador, $categoria, $titulo, $descricion);
         return $this->insert($query);
     }
 
     public function getRutina($id): ?Rutina {
         $id_limpio = $this->limpiarString($id);
-        $query = "SELECT * from Rutinas where id = '$id_limpio'";
+        $query = "SELECT * from rutinas where id = '$id_limpio'";
         $filas = $this->select($query);
 
         if (empty($filas)) {
@@ -31,7 +31,7 @@ class RutinaDAO extends DAO {
 
     public function getRutinasPorCategoria($categoria): array {
         $categoria_limpia = $this->limpiarString($categoria);
-        $query = "SELECT * from Rutinas where categoria = '$categoria_limpia'";
+        $query = "SELECT * from rutinas where categoria = '$categoria_limpia'";
         $filas = $this->select($query);
 
         $array_rutinas = array();
@@ -44,7 +44,7 @@ class RutinaDAO extends DAO {
 
     public function getIdsPorEntrenador($idEntrenador): array {
         $idEntrenadorLimpio = $this->limpiarString($idEntrenador);
-        $query = "SELECT id from Rutinas where idEntrenador = '$idEntrenadorLimpio'";
+        $query = "SELECT id from rutinas where idEntrenador = '$idEntrenadorLimpio'";
         $filas = $this->select($query);
 
         $ids = array();
