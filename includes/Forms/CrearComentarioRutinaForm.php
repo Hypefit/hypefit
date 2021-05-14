@@ -43,7 +43,7 @@ class CrearComentarioRutinaForm extends Form {
                 </div>
                 
                 $htmlErroresGlobales
-                <button type="submit" class="btn btn-dark mb-3">Crear</button>
+                <button type="submit" class="btn btn-dark mb-3">Enviar</button>
             </div>
         </div>
     </div>

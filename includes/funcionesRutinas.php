@@ -27,7 +27,7 @@ function crearListaRutinas($categoria): string {
 
 }
 
-function mostrarRutina($id): string {
+function mostrarRutina($id) {
     $dao = new RutinaDAO();
     $rutina = $dao->getRutina($id);
     $rutaImgSup = RUTA_IMGS.'/cat-superior.jpg';
@@ -35,7 +35,7 @@ function mostrarRutina($id): string {
     // $rutaImgFull = RUTA_IMGS;
 
     if ($rutina == NULL) {
-        return $ERROR = <<<EOS
+        $html = <<<EOS
         <div class="p-4 text-center bg-image img-fluid" 
             style="background-image: url(https://www.aurigasv.es/img/error-code.jpeg);
             opacity: 0.9;
@@ -45,15 +45,16 @@ function mostrarRutina($id): string {
             height: 100%;
             margin: 5%;
         ">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin: 10%; padding: 15%">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-light">
-                    <h1> No existe ninguna rutina con el id especificado. </h1>
-                </div>  
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin: 10%; padding: 15%">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-light">
+                        <h1> No existe ninguna rutina con el id especificado. </h1>
+                    </div>  
+                </div>
             </div>
-        </div>
-    </div>
-EOS;
+         </div>
+        EOS;
+        return array(-1, $html); //-1 indica error
     } else {
         $dao = new UsuarioDAO();
         $usuario = $dao->getUsuario($rutina->getIdEntrenador());
@@ -93,7 +94,7 @@ EOS;
                 
                  ";
 
-        return $html;
+        return array(0, $html);
     }
 }
 
