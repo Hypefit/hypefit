@@ -12,14 +12,14 @@ class ComentarioRecetaDAO extends DAO {
         $idUsuario = $this->limpiarString($u->getIdUsuario());
         $valoracion = $this->limpiarString($u->getValoracion());
 
-        $query = sprintf("INSERT into comentario_receta (idReceta, idUsuario, texto, valoracion) values
+        $query = sprintf("INSERT into comentarios_receta (idReceta, idUsuario, texto, valoracion) values
                 ('%s','%s','%s','%s')", $idReceta, $idUsuario, $texto, $valoracion);
         return $this->insert($query);
     }
 
     public function getComentariosDeReceta($id): array {
         $idLimpio = $this->limpiarString($id);
-        $query = "SELECT * from comentario_receta where idReceta = '$idLimpio' order by fecha";
+        $query = "SELECT * from comentarios_receta where idReceta = '$idLimpio' order by fecha";
         $filas = $this->select($query);
 
         $comentarios = array();
@@ -44,7 +44,7 @@ class ComentarioRecetaDAO extends DAO {
             array_push($idsLimpios, $this->limpiarString($id));
         }
         $in = implode(',', $idsLimpios);
-        $query = "SELECT avg(valoracion) from comentario_receta where idReceta in ($in)";
+        $query = "SELECT avg(valoracion) from comentarios_receta where idReceta in ($in)";
         $resultado = $this->select($query);
 
         return $resultado[0]['avg(valoracion)'];
