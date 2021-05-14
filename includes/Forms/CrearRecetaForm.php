@@ -76,7 +76,7 @@ class CrearRecetaForm extends Form {
                             </div>
                             <select title="Categoria" class="form-select" name="categoria" required>
                                 <option selected>Categoría</option>
-                                <option value="sin requerimientos">Sin requerimientos</option>
+                                <option value="normal">Sin requerimientos</option>
                                 <option value="vegetariana">Vegetariana</option>
                                 <option value="vegana">Vegana</option>
                             </select>

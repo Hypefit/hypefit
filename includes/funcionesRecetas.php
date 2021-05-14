@@ -17,7 +17,7 @@ function crearListaRecetas($categoria): string {
                     <h5 class='card-header text-capitalize'>" . $receta->getTitulo() . "</h5>
                     <div class='card-body'>
                         <p class='card-text'>" . $receta->getDescripcion() . "</p>
-                        <a href='verRutina.php?id=" . $receta->getId() . "'' class='btn btn-primary'>Ver Rutina</a>
+                        <a href='verReceta.php?id=" . $receta->getId() . "'' class='btn btn-primary'>Ver Rutina</a>
                     </div>        
                 </div>
             </div>
