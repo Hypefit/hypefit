@@ -20,48 +20,40 @@ class CrearComentarioRutinaForm extends Form {
 
         $idRutina = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
         $html = <<<EOS
-<!-- Jumbotron -->
-<div class='container-fluid p-4'>
-    <div class='row justify-content-center align-items-center justify-content-center'>
-        <div class="col-sm-8 mask border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
-            <div class=" text-center valoracion">
-                <!--De mayor a menor, en el estilo se cambia-->
-                <legend class="mt-4 mb-3">Deja tu valoración</legend>
-                <input type="radio" id="radio5" name="valoracion" value="5">
-                <label for="radio5">&#9733</label>  
-                <input type="radio" id="radio4" name="valoracion" value="4">
-                <label for="radio4">&#9733</label>
-                <input type="radio" id="radio3" name="valoracion" value="3">
-                <label for="radio3">&#9733</label>
-                <input type="radio" id="radio2" name="valoracion" value="2">
-                <label for="radio2">&#9733</label>
-                <input type="radio" id="radio1" name="valoracion" value="1">
-                <label for="radio1">&#9733</label>
-                <div class="mb-3">
-                    <input type="hidden" name="idReceta" value="$idRutina" />
-                    <textarea  title="Mensaje" class="form-control" name="mensaje" 
-                        placeholder="Mensaje" required id="mensaje"></textarea>
+        <!-- Jumbotron -->
+        <div class='container-fluid p-4'>
+            <div class='row justify-content-center align-items-center justify-content-center'>
+                <div class="col-sm-8 mask border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
+                    <div class="text-center">
+                        <!--De mayor a menor, en el estilo se cambia-->
+                        <div class="valoracion mb-3">
+                            <legend class="mt-4 mb-3">Deja tu valoración</legend>
+                            <input type="radio" id="radio5" name="valoracion" value="5">
+                            <label for="radio5"><span class="fa fa-star"></span></label>  
+                            <input type="radio" id="radio4" name="valoracion" value="4">
+                            <label for="radio4"><span class="fa fa-star"></span></label>
+                            <input type="radio" id="radio3" name="valoracion" value="3">
+                            <label for="radio3"><span class="fa fa-star"></span></label>
+                            <input type="radio" id="radio2" name="valoracion" value="2">
+                            <label for="radio2"><span class="fa fa-star"></span></label>
+                            <input type="radio" id="radio1" name="valoracion" value="1">
+                            <label for="radio1"><span class="fa fa-star"></span></label>
+                        </div>
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col col-sm-8">
+                                <input type="hidden" name="idRutina" value="$idRutina" />
+                                <textarea title="Mensaje" class="form-control" name="mensaje" 
+                                    placeholder="Mensaje" required id="mensaje"></textarea>
+                            </div>
+                        </div>
+                        
+                        $htmlErroresGlobales
+                        <button type="submit" class="btn btn-dark mb-3">Enviar</button>
+                    </div>
                 </div>
-                
-                $htmlErroresGlobales
-                <button type="submit" class="btn btn-dark mb-3">Enviar</button>
             </div>
         </div>
-    </div>
-</div>
-EOS;
-     /*
-      * <div class="p-5 text-center bg-image img-fluid"
-        style="
-            background-image: url(https://s1.1zoom.me/b5249/490/Closeup_15_kg_Barbell_514746_1366x768.jpg);
-            background-color: #d7e9f7;
-            opacity: 0.9;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width:  auto;
-            height: 100%;
-            margin: 5%;
-        ">*/
+        EOS;
 
         return $html;
     }
