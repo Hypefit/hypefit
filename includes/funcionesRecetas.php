@@ -85,7 +85,7 @@ function mostrarReceta($id) {
                       <div class='row mt-4 justify-content-center'>
                           <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'>
                                 <h4 class='text-center text-uppercase'>Comentarios</h4>
-                           " . mostrarComentariosRutina($receta->getId())."  
+                           " . mostrarComentariosReceta($receta->getId())."  
                           </div>  
                       </div>
                   </div>
