@@ -17,7 +17,7 @@ function crearListaRecetas($categoria): string {
                     <h5 class='card-header text-capitalize'>" . $receta->getTitulo() . "</h5>
                     <div class='card-body'>
                         <p class='card-text'>" . $receta->getDescripcion() . "</p>
-                        <a href='verReceta.php?id=" . $receta->getId() . "'' class='btn btn-primary'>Ver Rutina</a>
+                        <a href='verReceta.php?id=" . $receta->getId() . "'' class='btn btn-primary'>Ver Receta</a>
                     </div>        
                 </div>
             </div>
@@ -79,7 +79,7 @@ function mostrarReceta($id) {
                       </div>
                       <div class='row justify-content-center'>
                           <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'> 
-                            <p class='fs-5 lh-lg '>" . nl2br($receta->getRutina()) . "</p>  
+                            <p class='fs-5 lh-lg '>" . nl2br($receta->getReceta()) . "</p>  
                           </div>  
                       </div>
                       <div class='row mt-4 justify-content-center'>
