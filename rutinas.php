@@ -99,9 +99,9 @@ EOS;
     <div class='mask' style='background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%'>
             <div class='d-flex justify-content-center align-items-center h-100'>
                 <div class='text-black'>
-                <h5 class='mb-3 text-uppercase'>Crea una entrada en el foro</h5>
+                <h5 class='mb-3 text-uppercase'>Crea una nueva rutina</h5>
                     <div class='card-body'>
-                        <a href='crearRutina.php' class='btn btn-primary  p-5 '> CREAR </a>
+                        <a href='crearRutina.php' class='btn btn-primary p-5 text-uppercase'>Crear </a>
                     </div>
                 </div>
             </div>

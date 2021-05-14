@@ -21,32 +21,33 @@ class CrearComentarioRutinaForm extends Form {
         $idRutina = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
         $html = <<<EOS
 <!-- Jumbotron -->
-<div class="p-1 text-center rounded"
-        style="
-            margin: 0 5% 5%;
-            width: 50%;
-        ">
-   
-        <div class="mask border rounded shadow" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-black">
-                    <legend class="mt-4 mb-3">Deja tu valoración</legend>
-                    <input type="radio" id="1" name="valoracion" value="1" checked><label for="1">1</label>
-                    <input type="radio" id="2" name="valoracion" value="2"><label for="2">2</label>
-                    <input type="radio" id="3" name="valoracion" value="3"><label for="3">3</label>
-                    <input type="radio" id="4" name="valoracion" value="4"><label for="4">4</label>
-                    <input type="radio" id="5" name="valoracion" value="5"><label for="5">5</label>
-                    <div class="mb-3">
-                        <input type="hidden" name="idReceta" value="$idRutina" />
-                        <textarea  title="Mensaje" class="form-control" name="mensaje" 
-                            placeholder="Mensaje" required id="mensaje"></textarea>
-                    </div>
-                    $htmlErroresGlobales
-                    <button type="submit" class="btn btn-dark mb-3">Crear</button>
+<div class='container-fluid p-4'>
+    <div class='row justify-content-center align-items-center justify-content-center'>
+        <div class="col-sm-8 mask border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
+            <div class=" text-center valoracion">
+                <legend class="mt-4 mb-3">Deja tu valoración</legend>
+                <input type="radio" id="radio5" name="valoracion" value="5">
+                <label for="radio5">&#9733</label>  
+                <input type="radio" id="radio4" name="valoracion" value="4">
+                <label for="radio4">&#9733</label>
+                <input type="radio" id="radio3" name="valoracion" value="3">
+                <label for="radio3">&#9733</label>
+                <input type="radio" id="radio2" name="valoracion" value="2">
+                <label for="radio2">&#9733</label>
+                <input type="radio" id="radio1" name="valoracion" value="1">
+                <label for="radio1">&#9733</label>
+                <div class="mb-3">
+                    <input type="hidden" name="idReceta" value="$idRutina" />
+                    <textarea  title="Mensaje" class="form-control" name="mensaje" 
+                        placeholder="Mensaje" required id="mensaje"></textarea>
                 </div>
+                
+                $htmlErroresGlobales
+                <button type="submit" class="btn btn-dark mb-3">Crear</button>
             </div>
         </div>
     </div>
+</div>
 EOS;
      /*
       * <div class="p-5 text-center bg-image img-fluid"

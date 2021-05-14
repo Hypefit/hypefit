@@ -30,6 +30,22 @@
     color: yellow;
 }
 
+.valoracion{
+    direction: rtl;/* right to left */
+    unicode-bidi: bidi-override;/* bidi de bidireccional */
+}
+.valoracion label{
+    color: #9c9c9c;
+}
+.valoracion label:hover,
+label:hover ~ label,
+input[type = "radio"]:checked ~ label{
+    color:orange;
+}
+.valoracion input[type = "radio"]{
+    display:none;
+}
+
 .signup-form, .login-form{
     display: block;
     border-radius: 3px;
