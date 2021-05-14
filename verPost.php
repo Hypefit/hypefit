@@ -20,8 +20,10 @@ $contenidoPrincipal = <<<EOS
         ">
     <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%">
             <div class="d-flex justify-content-center align-items-center h-100">
-                <h2 class='mb-3 text-uppercase'>Comunidad Hypefit</h2>
-                <h5 class='mb-4'>Comparte con otros deportistas apasionados en nuestro foro</h5>
+                <div>
+                    <h2 class='mb-3 text-uppercase'>Comunidad Hypefit</h2>
+                    <h5 class='mb-4'>Comparte con otros deportistas apasionados en nuestro foro</h5>
+                </div>
             </div>
         </div>
     </div>

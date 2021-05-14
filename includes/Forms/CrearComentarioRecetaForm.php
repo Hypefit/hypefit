@@ -26,6 +26,7 @@ class CrearComentarioRecetaForm extends Form {
         <div class="col-sm-8 mask border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
             <div class=" text-center valoracion">
                 <legend class="mt-4 mb-3">Deja tu valoración</legend>
+                <!--De mayor a menor, en el estilo se cambia-->
                 <input type="radio" id="radio5" name="valoracion" value="5">
                 <label for="radio5">&#9733</label>  
                 <input type="radio" id="radio4" name="valoracion" value="4">

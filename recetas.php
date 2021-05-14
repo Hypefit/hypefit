@@ -112,7 +112,7 @@ $contenidoPrincipal .="
                 <div class='text-black'>
                 <h5 class='mb-3 text-uppercase'>Crea una nueva receta</h5>
                     <div class='card-body'>
-                        <a href='crearReceta.php' class='btn btn-primary p-5 text-uppercase'>Crear</a>
+                        <a href='crearReceta.php' class='btn btn-primary m-3 p-3 text-uppercase'>Crear</a>
                     </div>
                 </div>
             </div>

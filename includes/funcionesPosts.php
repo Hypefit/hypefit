@@ -17,7 +17,7 @@ function crearListaPosts(): string {
                 <div class='card h-100 border-secondary ms-2 text-center'>
                     <h5 class='card-header text-capitalize '>" . $post->getTitulo() . "</h5>
                     <div class='card-body'>
-                        <a  href='verPost.php?id=" . $post->getId() . "'' class='btn btn-primary mt-4 p-3'>Ver Post</a>
+                        <a  href='verPost.php?id=" . $post->getId() . "'' class='btn btn-outline-primary mt-4 p-3'>Ver Post</a>
                     </div>        
                 </div>
             </div>

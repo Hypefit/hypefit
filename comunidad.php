@@ -68,7 +68,7 @@ EOS;
                 <div class="text-black">
                 <h5 class='mb-3 text-uppercase'>Crea una entrada en el foro</h5>
                     <div class='card-body'>
-                        <a href='crearPost.php' class='btn btn-primary  p-5 '> CREAR </a>
+                        <a href='crearPost.php' class='btn btn-primary text-uppercase m-3 p-3 '>Crear</a>
                     </div>
                 </div>
             </div>
