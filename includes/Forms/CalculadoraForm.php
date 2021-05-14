@@ -219,10 +219,10 @@ class CalculadoraForm extends Form{
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="text-black">
                         <h3>TU RESULTADO:</h3>
-                        <h5>Calorías consumidas: $calorias</h5>
-                        <h5>Proteínas consumidas: $proteinas</h5>
-                        <h5>Grasas consumidas: $grasas</h5>
-                        <h5>Carbohidratos consumidos: $carbos</h5>
+                        <h5>Calorías consumidas: ' . $calorias . ' </h5>
+                        <h5>Proteínas consumidas: ' . $proteinas . '</h5>
+                        <h5>Grasas consumidas: '. $grasas . '</h5>
+                        <h5>Carbohidratos consumidos: '. $carbos . '</h5>
                     </div>
                 </div>
             </div>
@@ -235,37 +235,37 @@ class CalculadoraForm extends Form{
     protected function procesaFormulario($datos) {
         $result = array();
 
-        $calorias   =$datos['calorias'] ?? null;
+        $calorias1   =$datos['calorias1'] ?? null;
         $calorias2  =$datos['calorias2'] ?? null;
         $calorias3  =$datos['calorias3'] ?? null;
         $calorias4  =$datos['calorias4'] ?? null;
         $calorias5  =$datos['calorias5'] ?? null;
 
-       $result['calorias'] = $calorias + $calorias2 + $calorias3 + $calorias4 + $calorias5;
+       $result['calorias'] = $calorias1 + $calorias2 + $calorias3 + $calorias4 + $calorias5;
 
-       $proteinas  =$datos['proteinas'] ?? null;
+       $proteinas1  =$datos['proteinas1'] ?? null;
        $proteinas2 =$datos['proteinas2'] ?? null;
        $proteinas3 =$datos['proteinas3'] ?? null;
        $proteinas4 =$datos['proteinas4'] ?? null;
        $proteinas5 =$datos['proteinas5'] ?? null;
 
-       $result['proteinas'] = $proteinas + $proteinas2 + $proteinas3 + $proteinas4 + $proteinas5;
+       $result['proteinas'] = $proteinas1 + $proteinas2 + $proteinas3 + $proteinas4 + $proteinas5;
 
-       $grasas  =$datos['grasas'] ?? null;
+       $grasas1  =$datos['grasas1'] ?? null;
        $grasas2 =$datos['grasas2'] ?? null;
        $grasas3 =$datos['grasas3'] ?? null;
        $grasas4 =$datos['grasas4'] ?? null;
        $grasas5 =$datos['grasas5'] ?? null;
 
-       $result['grasas'] = $grasas + $grasas2 + $grasas3 + $grasas4 + $grasas5;
+       $result['grasas'] = $grasas1 + $grasas2 + $grasas3 + $grasas4 + $grasas5;
 
-       $carbos  =$datos['carbos'] ?? null;
+       $carbos1  =$datos['carbos1'] ?? null;
        $carbos2 =$datos['carbos2'] ?? null;
        $carbos3 =$datos['carbos3'] ?? null;
        $carbos4 =$datos['carbos4'] ?? null;
        $carbos5 =$datos['carbos5'] ?? null;
 
-       $result['carbos'] = $carbos + $carbos2 + $carbos3 + $carbos4 + $carbos5;
+       $result['carbos'] = $carbos1 + $carbos2 + $carbos3 + $carbos4 + $carbos5;
 
         return $result;
     }
