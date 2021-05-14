@@ -12,14 +12,14 @@ class ComentarioRutinaDAO extends DAO {
         $idUsuario = $this->limpiarString($u->getIdUsuario());
         $valoracion = $this->limpiarString($u->getValoracion());
 
-        $query = sprintf("INSERT into comentario_rutina (idRutina, idUsuario, texto, valoracion) values
+        $query = sprintf("INSERT into comentarios_rutina (idRutina, idUsuario, texto, valoracion) values
                 ('%s','%s','%s','%s')", $idRutina, $idUsuario, $texto, $valoracion);
         return $this->insert($query);
     }
 
     public function getComentariosDeRutina($id): array {
         $idLimpio = $this->limpiarString($id);
-        $query = "SELECT * from comentario_rutina where idRutina = '$idLimpio' order by fecha";
+        $query = "SELECT * from comentarios_rutina where idRutina = '$idLimpio' order by fecha";
         $filas = $this->select($query);
 
         $comentarios = array();
@@ -44,7 +44,7 @@ class ComentarioRutinaDAO extends DAO {
             array_push($idsLimpios, $this->limpiarString($id));
         }
         $in = implode(',', $idsLimpios);
-        $query = "SELECT avg(valoracion) from comentario_rutina where idRutina in ($in)";
+        $query = "SELECT avg(valoracion) from comentarios_rutina where idRutina in ($in)";
         $resultado = $this->select($query);
 
         return $resultado[0]['avg(valoracion)'];

@@ -61,6 +61,7 @@ class RecetaDAO extends DAO {
         $receta->setReceta($fila['receta']);
         $receta->setCategoria($fila['categoria']);
         $receta->setTitulo($fila['titulo']);
+        $receta->setDescripcion($fila['descripcion']);
 
         return $receta;
     }

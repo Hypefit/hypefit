@@ -14,14 +14,14 @@ class UsuarioDAO extends DAO
         $rol = $this->limpiarString($u->getRol());
         $aprobado = $this->limpiarString($u->getAprobado());
 
-        $query = sprintf("INSERT into Usuarios (nombre, email, hashPassword, rol, aprobado) values
+        $query = sprintf("INSERT into usuarios (nombre, email, hashPassword, rol, aprobado) values
                 ('%s','%s', '%s', '%s', '%s')", $nombre , $email ,$hash, $rol,$aprobado);
         return $this->insert($query);
     }
 
     public function getUsuario($id): Usuario {
         $idLimpio = $this->limpiarString($id);
-        $query = "SELECT * from Usuarios where id = '$idLimpio'";
+        $query = "SELECT * from usuarios where id = '$idLimpio'";
         $fila = $this->select($query);
 
         return $this->crearObjetoUsuario($fila[0]);
@@ -29,7 +29,7 @@ class UsuarioDAO extends DAO
 
     public function getUsuarioPorEmail($email): ?Usuario {
         $emailLimpio = $this->limpiarString($email);
-        $query = "SELECT * from Usuarios where email = '$emailLimpio'";
+        $query = "SELECT * from usuarios where email = '$emailLimpio'";
         $fila = $this->select($query);
 
         if (empty($fila)) { //No existe un usuario con ese email
@@ -40,7 +40,7 @@ class UsuarioDAO extends DAO
     }
 
     public function getUsuariosSinAprobar(): array {
-        $query = "SELECT * from Usuarios where aprobado = 0";
+        $query = "SELECT * from usuarios where aprobado = 0";
         $filas = $this->select($query);
 
         $array_rutinas = array();
