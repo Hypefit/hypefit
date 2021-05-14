@@ -75,6 +75,7 @@ EOS;
         ">
 EOS;
     }
+    $mensajeNoAprobado = estaAprobado() ? '' : "<p>¡Tu cuenta aún no ha sido aprobada! No podrás crear recetas ni rutinas hasta que tu cuenta sea aprobada por un administrador.</p>";
     $contenidoPrincipal .= <<<EOS
 
         <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%;">
@@ -83,6 +84,7 @@ EOS;
                     <h1>Tu perfil</h1>
                     <p>Nombre: {$_SESSION["nombre"]}</p>
                     <p>Tu tipo de usuario: {$rol}</p>
+                    {$mensajeNoAprobado}
                 </div>
             </div>
         </div>
@@ -101,9 +103,6 @@ EOS;
             <h2 class="pb-2 mb-3">Usuarios sin aprobar</h2>
 EOS;
         $contenidoPrincipal .= $form->gestiona() ;
-    }
-	else if (!estaAprobado()) {
-	    $contenidoPrincipal .= "<p>¡Tu cuenta aún no ha sido aprobada! No podrás crear recetas ni rutinas hasta que tu cuenta sea aprobada por un administrador.</p>";
     }
 }
 else {
