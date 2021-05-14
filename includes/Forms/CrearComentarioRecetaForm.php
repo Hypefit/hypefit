@@ -39,14 +39,13 @@ class CrearComentarioRecetaForm extends Form {
                             <input type="radio" id="radio1" name="valoracion" value="1">
                             <label for="radio1"><span class="fa fa-star"></label>
                         </div>
-                        <div class="mb-3 justify-content-center">
+                        <div class="mb-3 row justify-content-center">
                             <div class="col col-sm-8">
                                 <input type="hidden" name="idReceta" value="$idReceta" />
                                 <textarea  title="Mensaje" class="form-control" name="mensaje" 
                                     placeholder="Mensaje" required id="mensaje"></textarea>
                             </div>
                         </div>
-                        
                         $htmlErroresGlobales
                         <button type="submit" class="btn btn-dark mb-3">Enviar</button>
                     </div>

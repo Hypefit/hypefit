@@ -34,12 +34,7 @@ $contenidoPrincipal .= mostrarPost($idPost);
 
 if (estaLogado()) {
 	$form = new CrearComentarioForm();	
-    $contenidoPrincipal .=
-        "<div class='container'>
-            <div class='row justify-content-center'" .
-              $form->gestiona() ."
-            </div>
-        </div>";
+    $contenidoPrincipal .= $form->gestiona();
 }
 
 require __DIR__ . '/includes/comun/layout.php';
