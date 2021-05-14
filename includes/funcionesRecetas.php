@@ -79,13 +79,13 @@ function mostrarReceta($id) {
                       </div>
                       <div class='row justify-content-center'>
                           <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'> 
-                            <p class='fs-5 lh-lg '>" . nl2br($receta->getRutina()) . "</p>  
+                            <p class='fs-5 lh-lg '>" . nl2br($receta->getReceta()) . "</p>  
                           </div>  
                       </div>
                       <div class='row mt-4 justify-content-center'>
                           <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'>
                                 <h4 class='text-center text-uppercase'>Comentarios</h4>
-                           " . mostrarComentariosRutina($receta->getId())."  
+                           " . mostrarComentariosReceta($receta->getId())."  
                           </div>  
                       </div>
                   </div>
