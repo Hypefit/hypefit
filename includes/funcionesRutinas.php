@@ -53,7 +53,7 @@ function mostrarRutina($id) {
                 </div>
             </div>
          </div>
-        EOS;
+EOS;
         return array(-1, $html); //-1 indica error
     } else {
         $dao = new UsuarioDAO();
@@ -67,8 +67,8 @@ function mostrarRutina($id) {
                           background-size: cover;'>
                               <div class='p-4'>
                                   <div class='row py-3'>
-                                      <h1 class='text-light text-uppercase'>" . $rutina->getTitulo() . "</h1>
-                                      <h5 class='text-light'>". $rutina->getDescripcion() . "</h5>
+                                      <h1 class='text-black text-uppercase'>" . $rutina->getTitulo() . "</h1>
+                                      <h5 class='text-black'>". $rutina->getDescripcion() . "</h5>
                                   </div>
                                   <div class='row py-3 justify-content-center'>
                                       <div class='col-7 col-sm-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85);'>

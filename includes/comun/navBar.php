@@ -28,6 +28,7 @@ require_once __DIR__.'/../config.php';
                 <li class="nav-item"><a class="nav-link" href="<?=RUTA_APP.'/rutinas.php'?>">Rutinas</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?=RUTA_APP.'/recetas.php'?>">Recetas</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?=RUTA_APP.'/comunidad.php'?>">Comunidad</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?=RUTA_APP.'/calculadora.php'?>">Calculadora</a></li>
                 <?php echo saludo(); ?>
             </ul>
         </div>
