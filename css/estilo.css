@@ -93,6 +93,28 @@ textarea.contenido{
     position: absolute;
 }
 
+.rankingEntrenadores {
+    background-color: #f1cfaa;
+}
+
+.rankingEntrenadores .par {
+    background-color: rgba(222, 186, 131, 0.73);
+}
+.rankingEntrenadores .impar{
+    background-color: rgba(229, 204, 166, 0.98);
+}
+
+.rankingNutri {
+    background-color: rgba(182, 250, 182, 0.85);
+}
+.rankingNutri .par {
+    background-color: rgba(92, 213, 92, 0.85);
+
+}
+.rankingNutri .impar {
+    background-color: rgba(152, 227, 152, 0.85);
+}
+
 footer{
     background-color: #96d9ea;
 }

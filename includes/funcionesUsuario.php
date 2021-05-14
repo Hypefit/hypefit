@@ -90,20 +90,20 @@ function logout() {
     session_start();
 }
 
-function topUsuarios($rol) {
+function topUsuarios($rol)
+{
     $dao = new UsuarioDAO();
     if ($rol === "entrenador" || $rol === "nutricionista") {
         $usuarios = $dao->getUsuariosPorRolAprobados($rol);
         $mapaUsuariosValoracion = array();
-        foreach($usuarios as $usuario) {
+        foreach ($usuarios as $usuario) {
             if ($rol === "entrenador") {
                 // Buscamos todas las rutinas creadas por cada usuario
                 $dao = new RutinaDAO();
                 $ids = $dao->getIdsPorEntrenador($usuario->getId());
-                if(empty($ids)) {
+                if (empty($ids)) {
                     $valoracion = 0.0;
-                }
-                else {
+                } else {
                     // Pedimos la media de las valoraciones de las rutinas creadas por el usuario
                     $dao = new ComentarioRutinaDAO();
                     $valoracion = $dao->getValoracionMedia($ids) ?? 0.0;
@@ -112,15 +112,13 @@ function topUsuarios($rol) {
                 //Añadimos al mapa nombre y valoración
                 $nombre = $usuario->getNombre();
                 $mapaUsuariosValoracion[$nombre] = round($valoracion, 1);
-            }
-            else {
+            } else {
                 // Buscamos todas las recetas creadas por cada usuario
                 $dao = new RecetaDAO();
                 $ids = $dao->getIdsPorEntrenador($usuario->getId());
-                if(empty($ids)) {
+                if (empty($ids)) {
                     $valoracion = 0.0;
-                }
-                else {
+                } else {
                     // Pedimos la media de las valoraciones de las recetas creadas por el usuario
                     $dao = new ComentarioRecetaDAO();
                     $valoracion = $dao->getValoracionMedia($ids) ?? 0.0;
@@ -133,14 +131,31 @@ function topUsuarios($rol) {
         }
         arsort($mapaUsuariosValoracion);
 
-        $html = "<ul>";
-        foreach($mapaUsuariosValoracion as $usuario => $valoracion) {
-            $html .= "<li>" . $usuario . " | " . $valoracion . "</li>";
+        $html = "";
+        $i = 1;
+
+        foreach ($mapaUsuariosValoracion as $usuario => $valoracion) {
+            $html .= ' 
+            <div class="row border rounded border-white shadow '. isPar($i) .'">
+                <div class="col">
+                    <p>' . $i . '</p>
+                </div>
+                <div class="col">
+                    <p>' . $usuario . '</p>
+                </div>
+                <div class="col">
+                    <p>' . $valoracion . '</p>
+                </div>
+            </div>';
+            $i++;
         }
-        $html .= "</ul>";
         return $html;
-    }
-    else {
+    } else {
         return "Rol no especificado";
     }
+}
+
+function isPar($i){
+    if($i % 2) return "par";
+    else return "impar";
 }

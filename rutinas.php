@@ -96,7 +96,7 @@ EOS;
             height: 100%;
             margin: 5%;
         '>
-    <div class='mask' style='background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%'>
+        <div class='mask' style='background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%'>
             <div class='d-flex justify-content-center align-items-center h-100'>
                 <div class='text-black'>
                 <h5 class='mb-3 text-uppercase'>Crea una nueva rutina</h5>
@@ -105,9 +105,17 @@ EOS;
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>   
+        
+          
     </div>
-    ";
+    <div class='d-flex justify-content-center align-items-center mb-5'>
+        <div class='text-center border rounded shadow p-3 rankingEntrenadores'>
+            <h5 class='my-3 text-uppercase'>Pulsa para ver cuáles son los entrenadores Hypefit mejor valorados</h5>
+            <a href='ranking.php#rankingEntrenadores' class='btn btn-outline-danger m-3 p-3 text-uppercase'>Ranking</a>
+        </div>
+    </div>  
+";
 
 
 require __DIR__ . '/includes/comun/layout.php';

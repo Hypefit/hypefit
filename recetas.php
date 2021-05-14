@@ -3,15 +3,6 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/funcionesRecetas.php';
 $tituloPagina = 'Hypefit | Recetas';
 
-$contenidoPrincipal = "<h2> ------------------- DIETA VEGETARIANA ------------------- </h2>";
-$contenidoPrincipal .= crearListaRecetas("vegetariana");
-$contenidoPrincipal .= "<h2> ------------------- DIETA VEGANA ------------------- </h2>";
-$contenidoPrincipal .= crearListaRecetas("vegana");
-$contenidoPrincipal .= "<h3><a href='crearReceta.php'>Crea una nueva receta</a></h3>";
-$contenidoPrincipal .= "</div>";
-
-$rutaImg = RUTA_IMGS.'/header-rutinas.jpeg';
-
 $contenidoPrincipal  = <<<EOS
 <!--Cabecera-->
 <div class="p-5 text-center bg-image img-fluid"
@@ -107,7 +98,7 @@ $contenidoPrincipal .="
             height: 100%;
             margin: 5%;
         '>
-    <div class='mask' style='background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%'>
+        <div class='mask' style='background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%'>
             <div class='d-flex justify-content-center align-items-center h-100'>
                 <div class='text-black'>
                 <h5 class='mb-3 text-uppercase'>Crea una nueva receta</h5>
@@ -118,6 +109,13 @@ $contenidoPrincipal .="
             </div>
         </div>        
     </div>
-    ";
+        
+    <div class='d-flex justify-content-center align-items-center mb-5'>
+        <div class='text-center border rounded shadow p-3 rankingNutri'>
+            <h5 class='my-3 text-uppercase'>Pulsa para ver cuáles son los nutricionistas Hypefit mejor valorados</h5>
+            <a href='ranking.php#rankingNutri' class='btn btn-outline-success m-3 p-3 text-uppercase'>Ranking</a>
+        </div>
+    </div>
+        ";
 
 require __DIR__ . '/includes/comun/layout.php';
