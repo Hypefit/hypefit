@@ -29,6 +29,8 @@ function crearListaRecetas($categoria): string {
 function mostrarReceta($id) {
     $dao = new RecetaDAO();
     $receta = $dao->getReceta($id);
+    $rutaImgSup = RUTA_IMGS.'/cat-superior.jpg';
+
 
     if ($receta == NULL) {
         $html = <<<EOS
@@ -56,12 +58,41 @@ function mostrarReceta($id) {
         $usuario = $dao->getUsuario($receta->getIdNutricionista());
         $nombreNutricionista = $usuario->getNombre();
 
-        $html = "<h1>" . $receta->getTitulo() . "</h1>";
-        $html .= "Creada por: " . $nombreNutricionista . "<br>";
-        $html .= "Categoria: " . ucwords($receta->getCategoria()) . "<br>";
-        $html .= "<p>" . $receta->getReceta() . "</p>";
+        $html = "<div class='bg-light container-fluid p-4'>
+                      <div class='row justify-content-center align-items-center py-5 text-center'>
+                          <div class='bg-image' style='
+                          background-image: url($rutaImgSup);
+                          background-size: cover;'>
+                              <div class='p-4'>
+                                  <div class='row py-3'>
+                                      <h1 class='text-black text-uppercase'>" . $receta->getTitulo() . "</h1>
+                                      <h5 class='text-black'>". $receta->getDescripcion() . "</h5>
+                                  </div>
+                                  <div class='row py-3 justify-content-center'>
+                                      <div class='col-7 col-sm-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85);'>
+                                          <p><span class='fw-bold' >Creada por: </span>" . $nombreNutricionista . "</br>
+                                             <span class='fw-bolder'>Categoria: </span>" . ucwords($receta->getCategoria()) . "<p>
+                                      </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class='row justify-content-center'>
+                          <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'> 
+                            <p class='fs-5 lh-lg '>" . nl2br($receta->getRutina()) . "</p>  
+                          </div>  
+                      </div>
+                      <div class='row mt-4 justify-content-center'>
+                          <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'>
+                                <h4 class='text-center text-uppercase'>Comentarios</h4>
+                           " . mostrarComentariosRutina($receta->getId())."  
+                          </div>  
+                      </div>
+                  </div>
+                
+                 ";
 
-        return array(0,$html); //0 indica correcto
+        return array(0, $html);
     }
 
 
@@ -73,7 +104,7 @@ function mostrarComentariosReceta($id) : string {
 
     $comentarios = $daoC->getComentariosDeReceta($id);
 
-    $html = "<ul>";
+    $html = "<ul class='list-unstyled'>";
     foreach($comentarios as $comentario) {
         $user = $daoU->getUsuario($comentario->getIdUsuario());
         $html .= "<li>" . $user->getNombre() . " | " .  $comentario->getFecha() . "<br>";
