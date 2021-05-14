@@ -16,7 +16,7 @@ function crearListaRutinas($categoria): string {
                     <h5 class='card-header text-capitalize'>" . $rutina->getTitulo() . "</h5>
                     <div class='card-body'>
                         <p class='card-text'>" . $rutina->getDescripcion() . "</p>
-                        <a href='verRutina.php?id=" . $rutina->getId() . "'' class='btn btn-primary'>Ver Rutina</a>
+                        <a href='verRutina.php?id=" . $rutina->getId() . "' class='btn btn-primary'>Ver Rutina</a>
                     </div>        
                 </div>
             </div>

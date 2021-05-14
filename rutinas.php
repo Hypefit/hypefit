@@ -43,8 +43,6 @@ EOS;
                 $contenidoPrincipal .= crearListaRutinas("superior");
 
             $contenidoPrincipal .="
-                
-        
              <!--Cards tren superior-->
         </div>
     </div>    
@@ -57,13 +55,11 @@ EOS;
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards tren inferior-->
-            <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2'>
-                <div class='card h-100 border-secondary ms-2 text-center'> ";
-                    $contenidoPrincipal .= crearListaRutinas("inferior");
+            ";
+            $contenidoPrincipal .= crearListaRutinas("inferior");
 
             $contenidoPrincipal .="
-                </div>
-            </div>
+                
              <!--Cards tren inferior-->
         </div>
     </div>
@@ -76,13 +72,11 @@ EOS;
         </div>
         <div class='row ps-0 justify-content-center'>
             <!--Cards full body-->
-            <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 pb-2'>
-                <div class='card h-100 border-secondary ms-2 text-center'> ";
-                    $contenidoPrincipal .= crearListaRutinas("inferior");
+            ";
+                    $contenidoPrincipal .= crearListaRutinas("full body");
 
             $contenidoPrincipal .="
-                </div>
-            </div>
+                
              <!--Cards full body-->
         </div>
     </div>
