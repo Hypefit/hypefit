@@ -14,7 +14,7 @@ function crearListaPosts(): string {
     foreach($lista as $post) {
         $html .= "
             <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pb-12 mb-5 ' style='width: 40%; margin-left: 30%;height: 50%;'>
-                <div class='card h-100 border-secondary ms-2 text-center'>
+                <div class='card h-75 border-secondary ms-2 text-center'>
                     <h5 class='card-header text-capitalize '>" . $post->getTitulo() . "</h5>
                     <div class='card-body'>
                         <a  href='verPost.php?id=" . $post->getId() . "'' class='btn btn-outline-primary mt-4 p-3'>Ver Post</a>
@@ -34,15 +34,10 @@ function mostrarPost($id) : string {
 
     if ($post == null) {
         return "<p>No existe ningún post con el id especificado.</p>";
-    } else {
-        //$dao = new UsuarioDAO();
-        //$creador = $dao->getUsuario($post->getIdCreador());
-        //$nombreCreador = $creador->getNombre();
-
-        $html = "<h1 style='margin-left: 3%;'>" . $post->getTitulo() . "</h1>";
-        //$html .= "Creado por: " . $nombreCreador . "<br>";
+    }
+    else {
+        $html = "<h1 class='ms-3'>" . $post->getTitulo() . "</h1>";
         $html .= mostrarComentariosPost($id);
-
         return $html;
     }
 }

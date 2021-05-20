@@ -1,9 +1,8 @@
 <?php
 require_once __DIR__.'/includes/config.php';
+require_once __DIR__.'/includes/comun/jumbotron.php';
 
 $tituloPagina= 'Hypefit | Inicio';
-
-require(__DIR__.'/includes/comun/cabecera.php');
 
 $rutaTrenSup=RUTA_IMGS.'/pressbanca.jpg';
 $rutaTrenInf=RUTA_IMGS.'/tren-superior-inicio.jfif';
@@ -13,7 +12,13 @@ $rutaRecetasNormales=RUTA_IMGS.'/platosinrequerimientos.png';
 $rutaRecetasVegetarianas=RUTA_IMGS.'/plato-vegetariano.jpg';
 $rutaRecetasVeganas=RUTA_IMGS.'/plato-vegano.jpg';
 
-$contenidoPrincipal = <<<EOS
+
+//Jumbotron Cabecera
+$contenidoPrincipal = cabeceraInicio(RUTA_IMGS.'/cabecera2.jpg', "Bienvenido a HYPEFIT",
+    "Todo lo que necesitas a un solo click", "Empezar", "#inicio" );
+
+//Contenido
+$contenidoPrincipal .= <<<EOS
   <div class="bg-light" id="inicio" style="height: 9%;"></div>
     <!--Rutinas-->
     <div class="container-fluid px-0">

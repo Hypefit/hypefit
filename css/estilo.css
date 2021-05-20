@@ -12,6 +12,25 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(54,144,213, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.jumbotron {
+    background-color : darkgrey; /*Color por defecto por si imagen falla*/
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:  auto;
+    margin: 5%;
+}
+.jumbotron-inicio{
+    margin-top: 50px;
+    height: 90%;
+}
+
+.mask {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 10%;
+    padding: 5%;
+}
+
 .outer{
     color: rgb(86, 88, 88);
 }

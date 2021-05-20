@@ -4,6 +4,8 @@ use hypefit\Forms\CrearPostForm;
 
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/autorizacion.php';
+require_once __DIR__ . '/includes/comun/jumbotron.php';
+
 
 $tituloPagina = 'Hypefit | Crear Post';
 $contenidoPrincipal = "";
@@ -13,31 +15,9 @@ if(estaLogado()) {
     $contenidoPrincipal .= $form->gestiona();
 }
 else {
-    $contenidoPrincipal .= <<<EOS
-
-<div class="p-4 text-center bg-image img-fluid"
-        style="
-            background-image: url(https://www.aurigasv.es/img/error-code.jpeg);
-            opacity: 0.9;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width:  auto;
-            height: 100%;
-            margin: 5%;
-        ">
-    <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 15%">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-black">
-                    <h5 class="text-uppercase">Debes estar autenticado para crear un post. Puedes hacer login pulsando
-                        <a class="text-reset" href='login.php'>aquí</a>
-                    </h5>
-                </div>
-            </div>    
-        </div>
-    </div>
-</div>
-         
-EOS;
+    $contenidoPrincipal .= mostrarJumboBoton("https://www.aurigasv.es/img/error-code.jpeg",
+        "Debes estar autenticado para crear un post", "", "login.php",
+        "Login");
 }
 
 require __DIR__ . '/includes/comun/layout.php';

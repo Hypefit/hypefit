@@ -3,30 +3,13 @@ require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/funcionesRecetas.php';
 $tituloPagina = 'Hypefit | Recetas';
 
-$contenidoPrincipal  = <<<EOS
-<!--Cabecera-->
-<div class="p-5 text-center bg-image img-fluid"
-        style="
-            background-image: url(https://elviajerofeliz.com/wp-content/uploads/2020/01/comida-tipica-de-armenia.jpg);
-    opacity: 0.9;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width:  auto;
-            height: 100%;
-            margin: 5%;
-        ">
-    <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-black">
-                    <h2 class='mb-3 text-uppercase'>Recetas Hypefit</h2>
-                    <h5 class='mb-4'>Deliciosas recetas para acompañar tu entrenamiento y cuidar tu cuerpo</h5>
-                </div>
-            </div>    
-        </div>
-    </div>
-</div>
-<!--Cabecera-->
+$tituloJumbo ="Recetas Hypefit";
+$subtituloJumbo ="Deliciosas recetas para acompañar tu entrenamiento y cuidar tu cuerpo";
+$jumboImg = "https://elviajerofeliz.com/wp-content/uploads/2020/01/comida-tipica-de-armenia.jpg";
 
+$contenidoPrincipal = include __DIR__ . '/includes/comun/jumbotron.php';
+
+$contenidoPrincipal  = <<<EOS
 <!--Contenido-->
 <div class='bg-light container-fluid px-3'>
     <!--Rows sin requerimientos-->
