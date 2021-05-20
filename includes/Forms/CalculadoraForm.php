@@ -124,25 +124,25 @@ class CalculadoraForm extends Form{
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Calorias3" class="form-control" type="number" name="calorias3" 
-                            placeholder="Calorías 3ª Comida" required>
+                            placeholder="Calorías 3ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Proteinas3" class="form-control" type="number" name="proteinas3" 
-                            placeholder="Proteínas 3ª Comida" required>
+                            placeholder="Proteínas 3ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Grasas3" class="form-control" type="number" name="grasas3" 
-                            placeholder="Grasas 3ª Comida" required>
+                            placeholder="Grasas 3ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Carbos3" class="form-control" type="number" name="carbos3" 
-                            placeholder="Carbohidratos 3ª Comida" required>
+                            placeholder="Carbohidratos 3ª Comida" >
                         </div>
                     </div>
                     
@@ -150,25 +150,25 @@ class CalculadoraForm extends Form{
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Calorias4" class="form-control" type="number" name="calorias4" 
-                            placeholder="Calorías 4ª Comida" required>
+                            placeholder="Calorías 4ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Proteinas4" class="form-control" type="number" name="proteinas4" 
-                            placeholder="Proteínas 4ª Comida" required>
+                            placeholder="Proteínas 4ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Grasas4" class="form-control" type="number" name="grasas4" 
-                            placeholder="Grasas 4ª Comida" required>
+                            placeholder="Grasas 4ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Carbos4" class="form-control" type="number" name="carbos4" 
-                            placeholder="Carbohidratos 4ª Comida" required>
+                            placeholder="Carbohidratos 4ª Comida" >
                         </div>
                     </div>                                     
                     
@@ -176,25 +176,25 @@ class CalculadoraForm extends Form{
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Calorias5" class="form-control" type="number" name="calorias5" 
-                            placeholder="Calorías 5ª Comida" required>
+                            placeholder="Calorías 5ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Proteinas5" class="form-control" type="number" name="proteinas5" 
-                            placeholder="Proteínas 5ª Comida" required>
+                            placeholder="Proteínas 5ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Grasas5" class="form-control" type="number" name="grasas5" 
-                            placeholder="Grasas 5ª Comida" required>
+                            placeholder="Grasas 5ª Comida" >
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-sm-8 col-md-9 col-lg-6 pb-3 " style="margin-left: 25%;">
                         <div class="input-group">
                             <input title="Carbos5" class="form-control" type="number" name="carbos5" 
-                            placeholder="Carbohidratos 5ª Comida" required>
+                            placeholder="Carbohidratos 5ª Comida" >
                         </div>
                     </div>
                     
