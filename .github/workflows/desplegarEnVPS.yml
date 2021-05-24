@@ -25,14 +25,12 @@ jobs:
           sudo apt-get install vpnc
           sudo apt-get install expect
           sudo -E expect .github/scripts/configurarVPN.exp
-    - name: Crear túnel SSH
+    - name: Crear túnel SSH, enviar archivos por SCP y configurar permisos en el VPS
       run: | 
           /usr/bin/expect .github/scripts/crearTunel.exp
-    - name: Enviar archivos por SCP y configurar permisos en el VPS
-      run: |
-        zip -x ".*" -r proyecto.zip .
-        /usr/bin/expect .github/scripts/mandarArchivo.exp
-        /usr/bin/expect .github/scripts/configurarVPS.exp
+          zip -x ".*" -r proyecto.zip .
+          /usr/bin/expect .github/scripts/mandarArchivo.exp
+          /usr/bin/expect .github/scripts/configurarVPS.exp
     - name: Cerrar túnel SSH y desconectar VPN
       run: |
         pkill ssh
