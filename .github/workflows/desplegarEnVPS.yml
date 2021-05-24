@@ -22,9 +22,8 @@ jobs:
       run: |
           sudo apt-get update
           sudo apt-get install vpnc
-          echo -en "IPSEC gateway galeria.ucm.es\nIPSEC ID ucm\nIPSEC secret ucm\nXAuth username${VPN_EMAIL}\nXAuth obfuscated password ${VPN_PASSWORD}" > vpn.conf
-          sudo vpnc /home/runner/work/hypefit/hypefit/vpn
-          rm vpn.conf
+          sudo apt-get install expect
+          sudo -E expect .github/scripts/configurarVPN.exp
     - name: Crear túnel SSH
       run: | 
           sudo apt-get update
