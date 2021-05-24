@@ -3,6 +3,6 @@
 spawn scp -P 2222 proyecto.zip root@localhost:
 expect "The authenticity of this host"
 send "yes\r"
-expect "password:"
+expect "root@localhost:"
 send "$env(SSH_PASSWORD)"
 expect eof
