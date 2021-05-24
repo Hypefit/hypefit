@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     name: Patata
     steps:
-      run: pwd
+    - run: pwd
