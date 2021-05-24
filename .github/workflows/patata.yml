@@ -1,0 +1,14 @@
+name: Patata
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  Patata:
+    runs-on: ubuntu-latest
+    name: Patata
+    steps:
+      run: pwd
