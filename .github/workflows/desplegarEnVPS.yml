@@ -23,7 +23,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install vpnc
           echo -en "IPSEC gateway galeria.ucm.es\n IPSEC ID ucm\n IPSEC secret ucm\n XAuth username $VPN_EMAIL\n XAuth obfuscated password $VPN_PASSWORD" > vpn.conf
-          sudo vpnc vpn.conf
+          sudo vpnc /home/runner/vpn.conf
           rm vpn.conf
     - name: Crear túnel SSH
       run: | 
