@@ -10,14 +10,14 @@ jobs:
   desplegarEnVPS:
     runs-on: ubuntu-latest
     name: Desplegar en VPS
-    steps:
-    - uses: actions/checkout@v2.3.4
-      env:
+    env:
         VPN_EMAIL = ${{ secrets.VPN_EMAIL }}
         VPN_PASSWORD = ${{ secrets.VPN_PASSWORD }}
         HOP_SERVER = ${{ secrets.HOP_SERVER }}
         HOP_PASSWORD = ${{ secrets.HOP_PASSWORD }}
         SSH_PASSWORD = ${{ secrets.SSH_PASSWORD }}
+    steps:
+    - uses: actions/checkout@v2.3.4
     - name: Instalar VPNC
       run: |
           sudo apt-get update
