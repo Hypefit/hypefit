@@ -19,5 +19,4 @@ jobs:
         SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
     - name: Instalar VPNC
       run: |
-          echo -en "IPSEC gateway galeria.ucm.es\n IPSEC ID ucm\n IPSEC secret ucm\n XAuth username $VPN_EMAIL\n XAuth obfuscated password $VPN_PASSWORD" > vpn.conf
-          cat vpn.conf
+          echo $VPN_EMAIL
