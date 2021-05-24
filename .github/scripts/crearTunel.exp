@@ -1,0 +1,8 @@
+#!/usr/bin/expect
+
+spawn ssh -L $env(HOP_SERVER) -f -N hop@containers.fdi.ucm.es
+expect "The authenticity of this host"
+send "yes\r"
+expect "password:"
+send "$env(HOP_PASSWORD)\r"
+expect eof

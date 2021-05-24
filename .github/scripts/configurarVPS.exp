@@ -1,0 +1,6 @@
+#!/usr/bin/expect
+
+spawn ssh -p 2222 root@localhost: ./comandos.sh
+expect "password:"
+send "$env(SSH_PASSWORD)"
+expect eof
