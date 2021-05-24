@@ -14,8 +14,8 @@ jobs:
     - uses: actions/checkout@v2.3.4
     - name: Instalar VPNC
       env:
-        VPN_EMAIL = ${{secrets.VPN_EMAIL}}
-        VPN_PASSWORD = ${{secrets.VPN_PASSWORD}}
+        VPN_EMAIL = ${{ secrets.VPN_EMAIL }}
+        VPN_PASSWORD = ${{ secrets.VPN_PASSWORD }}
       run: |
           sudo apt-get update
           sudo apt-get install vpnc
@@ -23,15 +23,15 @@ jobs:
           sudo vpnc
     - name: Crear túnel SSH
       env: 
-        HOP_SERVER = ${{secrets.HOP_SERVER}}
-        HOP_PASSWORD = ${{secrets.HOP_PASSWORD}}
+        HOP_SERVER = ${{ secrets.HOP_SERVER }}
+        HOP_PASSWORD = ${{ secrets.HOP_PASSWORD }}
       run: | 
           sudo apt-get update
           sudo apt-get install expect
           /usr/bin/expect .github/scripts/crearTunel.exp
     - name: Enviar archivos por SCP y configurar permisos en el VPS
       env:
-        SSH_PASSWORD = ${{secrets.SSH_PASSWORD}}
+        SSH_PASSWORD = ${{ secrets.SSH_PASSWORD }}
       run: |
         zip -x ".*" -r proyecto.zip .
         /usr/bin/expect .github/scripts/mandarArchivo.exp
