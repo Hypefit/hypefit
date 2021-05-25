@@ -53,3 +53,21 @@ function mostrarJumboBoton($jumboBImg, $tituloBJumbo, $subtituloBJumbo, $hrefJum
     EOS;
     return $html;
 }
+
+function customizableJumbo($jumboImg, $tituloJumbo, $subtituloJumbo, $textoCustom, $buttonCustom){
+    $html = <<<EOS
+    
+    <div class="jumbotron p-5 text-center bg-image img-fluid"
+         style="background-image: url({$jumboImg});">
+        <div class="row justify-content-center align-items-center">
+            <div class="mask col-9">
+                {$tituloJumbo}
+                {$subtituloJumbo}
+                {$textoCustom}
+                {$buttonCustom}
+            </div>
+        </div>
+    </div>
+    EOS;
+    return $html;
+}

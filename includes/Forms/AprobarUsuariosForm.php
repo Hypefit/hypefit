@@ -21,25 +21,34 @@ class AprobarUsuariosForm extends Form {
         $html = $htmlErroresGlobales; 
         foreach($usuariosSinAprobar as $usuario) {
             $html .= '
-            <div class="container">
-                <div class="row justify-content-center align-items-center"
-                    <div class="form-check">
-                        <input class="form-check-input p-0 col-3" type="checkbox" value="' . $usuario->getId() . '"
-                         id="flexCheck" name="marcados[]">
-                        
-                        <label class="form-check-label col-4 mx-0" for="flexCheck"
-                            style = "margin:2%">
-                               <p class="m-0">
-                                    <span class="fw-bold">' . $usuario->getNombre() . '</span> 
-                                    <i class="fas fa-hand-point-right px-2"></i> 
-                                    Rol: ' . ucwords($usuario->getRol()) . '</p>
+            <div class="container py-5  text-center my-5 rounded shadow"
+                style="background-color: rgba(215,233,247,0.85);">
+                <h2 class="pb-2 mb-3">Usuarios sin aprobar</h2>
+                
+                <!--Row-->
+                <div class="row justify-content-center align-items-center">
+                    <div class="form-check col-10 col-sm-6">                       
+                        <label class="form-check-label " for="flexCheck">
+                            <input class="form-check-input me-2" type="checkbox" value="' . $usuario->getId() . '"
+                                 id="flexCheck" name="marcados[]"/>
+                            <p class="ms-1">
+                                 <span class="fw-bold">' . $usuario->getNombre() . '</span> 
+                                 <i class="fas fa-hand-point-right px-2"></i> 
+                                 Rol: ' . ucwords($usuario->getRol()) . '
+                            </p>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-dark" name="aprobar" value="Aprobar" style="margin: 2% ">Enviar</button>
-                    <button type="submit" class="btn btn-dark" name="eliminar" value="Eliminar" style="margin: 2%" >Eliminar</button>
                 </div>
-            </div>
-            <br>
+                <!--Row-->
+                
+                <!--Row-->
+                <div class="row justify-content-center align-items-center mt-5">
+                    <button type="submit" class="btn btn-dark mx-2 col-3" name="aprobar" value="Aprobar">Enviar</button>
+                    <button type="submit" class="btn btn-dark mx-2 col-3" name="eliminar" value="Eliminar">Eliminar</button>
+                </div>
+                <!--Row-->
+                 
+             </div>
             ';
         }
        return $html;
