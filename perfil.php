@@ -31,7 +31,7 @@ if(estaLogado())
                     <p>Tu tipo de usuario: {$rol}</p>
                     {$mensajeNoAprobado}";
 
-    $contenidoPrincipal = customizableJumbo($img, $titulo, "", $customText, "");
+    $contenidoPrincipal = customizableJumbo($img, $titulo, "", $customText, "", "", "");
 
 	if (esAdmin()) {
         $form = new AprobarUsuariosForm();

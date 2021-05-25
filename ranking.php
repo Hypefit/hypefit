@@ -1,32 +1,16 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/funcionesUsuario.php';
+require_once __DIR__ . '/includes/comun/jumbotron.php';
+
 $tituloPagina = 'Hypefit | Ranking';
 
-$contenidoPrincipal  = <<<EOS
-<!--Cabecera-->
-<div class="p-5 text-center bg-image img-fluid"
-        style="
-            background-image: url(https://estaticos.qdq.com/swdata/home_photos/974/974410946/27a74a23544f44fbb2cf3a3416de476a.jpg);
-    opacity: 0.9;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width:  auto;
-            height: 100%;
-            margin: 5%;
-        ">
-    <div class="mask" style="background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-black">
-                    <h2 class='mb-3 text-uppercase'>Ranking Hypefit</h2>
-                    <h5 class='mb-4'>El top definitivo de los mejores nutricionistas y entrenadores Hypefit</h5>
-                </div>
-            </div>    
-        </div>
-    </div>
-</div>
-<!--Cabecera-->
+//Jumbo
+$contenidoPrincipal = mostrarJumbo("https://estaticos.qdq.com/swdata/home_photos/974/974410946/27a74a23544f44fbb2cf3a3416de476a.jpg",
+"Ranking Hypefit", "El top definitivo de los mejores nutricionistas y entrenadores Hypefit");
 
+//Contenido
+$contenidoPrincipal  .= <<<EOS
 <!--Contenido-->
 <div class='container-fluid p-3 mb-4'>
     <!--Ranking entrenadores-->

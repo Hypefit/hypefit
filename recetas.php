@@ -1,15 +1,15 @@
 <?php
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/funcionesRecetas.php';
+require_once __DIR__ . '/includes/comun/jumbotron.php';
 $tituloPagina = 'Hypefit | Recetas';
 
-$tituloJumbo ="Recetas Hypefit";
-$subtituloJumbo ="Deliciosas recetas para acompañar tu entrenamiento y cuidar tu cuerpo";
-$jumboImg = "https://elviajerofeliz.com/wp-content/uploads/2020/01/comida-tipica-de-armenia.jpg";
+//Jumbotron
+$contenidoPrincipal = mostrarJumbo("https://elviajerofeliz.com/wp-content/uploads/2020/01/comida-tipica-de-armenia.jpg",
+    "Recetas Hypefit", "Deliciosas recetas para acompañar tu entrenamiento y cuidar tu cuerpo");
 
-$contenidoPrincipal = include __DIR__ . '/includes/comun/jumbotron.php';
-
-$contenidoPrincipal  = <<<EOS
+//Contenido
+$contenidoPrincipal  .= <<<EOS
 <!--Contenido-->
 <div class='bg-light container-fluid px-3'>
     <!--Rows sin requerimientos-->
