@@ -17,8 +17,11 @@
     <!--Bootstrap-->
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/bootstrap.css'?>" />
 
+    <!--CSS-->
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/estilo.css'?>" />
 
+    <!--JS-->
+    <script src="<?= RUTA_JS.'/validation.js'?>"></script>
 
     <!--Favicon-->
     <link rel="icon"
@@ -44,7 +47,8 @@
         ?>
     </div>
     <!--Bootstrap-->
-    <script src="<?= RUTA_JS.'/bootstrap.js'?>"
+    <script src="<?= RUTA_JS.'/bootstrap.js'?>"></script>
+    <script src="<?= RUTA_JS.'/validation.js'?>"></script>
 
 </body>
 </html>

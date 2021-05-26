@@ -82,7 +82,7 @@ function mostrarReceta($id) {
                             <p class='fs-5 lh-lg '>" . nl2br($receta->getReceta()) . "</p>  
                           </div>  
                       </div>
-                      <div class='row mt-4 justify-content-center'>
+                      <div class='row mt-4 justify-content-center' id='ComentariosReceta'>
                           <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'>
                                 <h4 class='text-center text-uppercase'>Comentarios</h4>
                            " . mostrarComentariosReceta($receta->getId())."  
