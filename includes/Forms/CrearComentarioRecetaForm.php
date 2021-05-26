@@ -20,24 +20,24 @@ class CrearComentarioRecetaForm extends Form {
 
         $idReceta = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
         $html = <<<EOS
-        <!-- Jumbotron -->
-        <div class='container-fluid p-4'>
+        <!--Caja de valoracion-->
+        <div class='container-fluid p-4' id="ValoracionReceta">
             <div class='row justify-content-center align-items-center justify-content-center'>
-                <div class="col-sm-8 mask border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
+                <div class="col-sm-8 border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
                     <div class=" text-center">
                         <legend class="mt-4 mb-3">Deja tu valoración</legend>
                         <!--De mayor a menor, en el estilo se cambia-->
                         <div class="valoracion mb-3">
-                            <input type="radio" id="radio5" name="valoracion" value="5">
-                            <label for="radio5"><span class="fa fa-star"></label>  
-                            <input type="radio" id="radio4" name="valoracion" value="4">
-                            <label for="radio4"><span class="fa fa-star"></label>
-                            <input type="radio" id="radio3" name="valoracion" value="3">
-                            <label for="radio3"><span class="fa fa-star"></label>
-                            <input type="radio" id="radio2" name="valoracion" value="2">
-                            <label for="radio2"><span class="fa fa-star"></label>
-                            <input type="radio" id="radio1" name="valoracion" value="1">
-                            <label for="radio1"><span class="fa fa-star"></label>
+                            <input type="radio" id="radio5Receta" name="valoracionRutina" value="5" />
+                            <label for="radio5" class="fa fa-star"></label>
+                            <input type="radio" id="radio4Receta" name="valoracionRutina" value="4" />
+                            <label for="radio4" class="fa fa-star"></label>
+                            <input type="radio" id="radio3Receta" name="valoracionRutina" value="3" />
+                            <label for="radio3" class="fa fa-star"></label>
+                            <input type="radio" id="radio2Receta" name="valoracionRutina" value="2" />
+                            <label for="radio2" class="fa fa-star"></label>
+                            <input type="radio" id="radio1Receta" name="valoracionRutina" value="1" checked/>
+                            <label for="radio1" class="fa fa-star"></label>
                         </div>
                         <div class="mb-3 row justify-content-center">
                             <div class="col col-sm-8">
@@ -47,7 +47,9 @@ class CrearComentarioRecetaForm extends Form {
                             </div>
                         </div>
                         $htmlErroresGlobales
-                        <button type="submit" class="btn btn-dark mb-3">Enviar</button>
+                        <div class="mb-3">
+                             <button type="submit" class="btn btn-dark mb-3">Enviar</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,7 +63,7 @@ class CrearComentarioRecetaForm extends Form {
         $result = array();
         $texto =$datos['mensaje'] ?? null;
         $idReceta =$datos['idReceta'] ?? null;
-        $valoracion = $datos['valoracion'];
+        $valoracion = $datos['valoracionReceta'] ?? null;
 
         if (count($result) === 0) {
             $idUsuario = idUsuarioLogado();
@@ -74,7 +76,7 @@ class CrearComentarioRecetaForm extends Form {
             $comentario->setValoracion($valoracion);
             $dao->crearComentarioReceta($comentario);
 
-            $result = RUTA_APP . "/verReceta.php?id=$idReceta";
+            $result = RUTA_APP . "/verReceta.php?id=$idReceta#ComentariosReceta";
         }
         return $result;
     }
