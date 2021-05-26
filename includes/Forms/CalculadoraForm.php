@@ -43,15 +43,15 @@ class CalculadoraForm extends Form{
                         placeholder="{$macros[$pos+1]} {$i}ª Comida" {$required}>
                     </div>
                </div>
-               EOS;
+EOS;
                $pos +=2;
            }
         }
         $form .=<<<EOS
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 mb-4">
-                <button type="submit" class="btn btn-dark">Calcular</button>  
+                <button type="submit" class="btn btn-dark" href="#resultadoCalculadora">Calcular</button>  
             </div>
-            EOS;
+EOS;
         $html .= formJumbo("https://muysaludable.sanitas.es/wp-content/uploads/2018/09/6_tabla-nutricional2.jpg",
         "Rellena los datos sobre tu alimentación","",$form);
 
