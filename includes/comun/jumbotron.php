@@ -19,7 +19,7 @@ function cabeceraInicio($img, $titulo, $subtitulo, $boton, $href)
             </div>
         </div>
     </div>
-    EOS;
+EOS;
     return $html;
 }
 
@@ -35,7 +35,7 @@ function mostrarJumbo($jumboImg, $tituloJumbo, $subtituloJumbo)
             </div>
         </div>
     </div>
-    EOS;
+EOS;
     return $html;
 }
 
@@ -52,7 +52,7 @@ function mostrarJumboBoton($jumboBImg, $tituloBJumbo, $subtituloBJumbo, $hrefJum
             </div>
         </div>
     </div>
-    EOS;
+EOS;
     return $html;
 }
 
@@ -89,6 +89,6 @@ function customizableJumbo($jumboImg, $tituloJumbo, $subtituloJumbo, $textoCusto
             </div>
         </div>
     </div>
-    EOS;
+EOS;
     return $html;
 }
