@@ -1,0 +1,40 @@
+name: Desplegar en VPS
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+env:
+  VPN_EMAIL: ${{ secrets.VPN_EMAIL }}
+  VPN_PASSWORD: ${{ secrets.VPN_PASSWORD }}
+  HOP_SERVER: ${{ secrets.HOP_SERVER }}
+  HOP_PASSWORD: ${{ secrets.HOP_PASSWORD }}
+  SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+
+jobs:
+  desplegarEnVPS:
+    runs-on: ubuntu-latest
+    name: Desplegar en VPS
+    steps:
+    - uses: actions/checkout@v2.3.4
+    - name: Instalar VPNC
+      run: |
+          sudo apt-get update
+          sudo apt-get install vpnc
+          sudo apt-get install expect
+          sudo -E expect .github/scripts/configurarVPN.exp
+    - name: Crear túnel SSH, enviar archivos por SCP y configurar permisos en el VPS
+      run: | 
+          /usr/bin/expect .github/scripts/crearTunel.exp
+          zip -x ".*" -r proyecto.zip .
+          /usr/bin/expect .github/scripts/mandarArchivo.exp
+          /usr/bin/expect .github/scripts/configurarVPS.exp
+    - name: Cerrar túnel SSH y desconectar VPN
+      run: |
+        pkill ssh
+        sudo vpnc-disconnect
+    - name: Setup tmate session
+      if: ${{ failure() }}
+      uses: mxschmitt/action-tmate@v3.5

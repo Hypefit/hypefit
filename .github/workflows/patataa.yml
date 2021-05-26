@@ -1,0 +1,22 @@
+name: Patata
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+env:
+  VPN_EMAIL: ${{ secrets.VPN_EMAIL }}
+  VPN_PASSWORD: ${{ secrets.VPN_PASSWORD }}
+  HOP_SERVER: ${{ secrets.HOP_SERVER }}
+  HOP_PASSWORD: ${{ secrets.HOP_PASSWORD }}
+  SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+
+jobs:
+  desplegarEnVPS:
+    runs-on: ubuntu-latest
+    name: Patata
+    steps:
+    - name: Instalar VPNC
+      run: |
+          echo $VPN_EMAIL

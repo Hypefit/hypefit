@@ -1,0 +1,17 @@
+#!/usr/bin/expect
+
+set EMAIL $env(VPN_EMAIL)
+set PASS $env(VPN_PASSWORD)
+
+spawn vpnc 
+expect "Enter IPSEC gateway address:"
+send "galeria.ucm.es\r"
+expect "Enter IPSEC ID:"
+send "ucm\r"
+expect "Enter IPSEC secret:"
+send "ucm\r"
+expect "Enter username"
+send "$EMAIL\r"
+expect "Enter password"
+send "$PASS\r"
+expect eof
