@@ -8,12 +8,18 @@ require_once __DIR__ . '/includes/funcionesRutinas.php';
 
 $tituloPagina = 'Hypefit | Ver rutina';
 
+$contenidoPrincipal = "";
 $idRutina = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
+$aux = mostrarRutina($idRutina) ;
 
-list($num ,$contenidoPrincipal) = mostrarRutina($idRutina) ;
+if($aux==-1){
+    header('Location:'.RUTA_APP.'/rutinas.php');
+}
+else{
+    $contenidoPrincipal=$aux;
+}
 
-
-if (estaLogado() && $num != -1) {
+if (estaLogado() && $aux != -1) {
     $form = new CrearComentarioRutinaForm();
     $contenidoPrincipal .= $form->gestiona() ;
 }

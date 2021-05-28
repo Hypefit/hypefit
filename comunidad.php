@@ -12,33 +12,31 @@ $contenidoPrincipal = mostrarJumbo("https://blog.grupo-pya.com/wp-content/upload
     "Comunidad Hypefit", "Comparte con otros deportistas apasionados en nuestro foro");
 
 $contenidoPrincipal  .= <<<EOS
-<!--Contenido-->
-<div class='bg-light container-fluid px-3'>
-    <!--Rows posts-->
-    <div class='container py-5 '>
-        <div class='bg-light row ps-0 me-0 align-items-center justify-content-center text-center'>
-            <h2 class='text-uppercase pb-3' id='posCom'>Posts Comunidad</h2>
-        </div>
-        <div class='row ps-0 justify-content-center'>
-            <!--Posts-->
-EOS;
-        $contenidoPrincipal .= crearListaPosts();
+    <!--Contenido-->
+    <div class='bg-light container-fluid justify-content-center py-3'>
+        <div class='py-2 mx-5'>
+            <div class='text-uppercase pb-2'>
+                <h2>Posts Comunidad</h2>
+            </div>
+            <!--Rows posts-->
+            <div class='row align-items-center'>
+                <!--Posts-->
+    EOS;
+                $contenidoPrincipal .= crearListaPosts();
 
-        $contenidoPrincipal .= <<<EOS
-         <!--Posts-->
+                $contenidoPrincipal .= <<<EOS
+                 <!--/Posts-->
+            </div>
+            <!--/Rows posts-->
         </div>
-    </div>    
-    <!--Rows posts-->
-
+    </div>
     <!--Jumbotron-->
-EOS;
-
-    $contenidoPrincipal .= mostrarJumboBoton("https://i1.wp.com/www.julianmarquina.es/wp-content/uploads/Libro-Literatura-Pixabay.jpg",
+    EOS;
+        $contenidoPrincipal .= mostrarJumboBoton("https://i1.wp.com/www.julianmarquina.es/wp-content/uploads/Libro-Literatura-Pixabay.jpg",
         "Crea una entrada en el foro", "", "crearPost.php", "Crear");
 
-    $contenidoPrincipal .=<<<EOS
-    <!--Jumbotron-->
-</div>";
-EOS;
+        $contenidoPrincipal .=
+        "<!--/Jumbotron-->";
+
 
 require __DIR__ . '/includes/comun/layout.php';

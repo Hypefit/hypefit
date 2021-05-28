@@ -75,7 +75,7 @@ class CrearComentarioRutinaForm extends Form {
             $comentario->setValoracion($valoracion);
             $dao->crearComentarioRutina($comentario);
 
-            $result = RUTA_APP . "/verRutina.php?id=$idRutina";
+            $result = RUTA_APP . "/verRutina.php?id=$idRutina#ComentariosRutina";
         }
         return $result;
     }

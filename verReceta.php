@@ -8,12 +8,18 @@ require_once __DIR__ . '/includes/funcionesRecetas.php';
 
 $tituloPagina = 'Hypefit | Ver receta';
 
+$contenidoPrincipal = "";
 $idReceta = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
+$aux = mostrarReceta($idReceta);
 
-list($num, $contenidoPrincipal) = mostrarReceta($idReceta);
+if($aux==-1){
+    header('Location:'.RUTA_APP.'/recetas.php');
+}
+else{
+    $contenidoPrincipal = $aux;
+}
 
-
-if (estaLogado() && $num != -1) {
+if (estaLogado() && $aux != -1) {
     $form = new CrearComentarioRecetaForm();
     $contenidoPrincipal .= $form->gestiona();
 }

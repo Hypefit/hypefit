@@ -9,16 +9,21 @@ require_once __DIR__ . '/includes/comun/jumbotron.php';
 
 $tituloPagina = 'Hypefit | Ver post';
 
-$contenidoPrincipal = mostrarJumbo("https://blog.grupo-pya.com/wp-content/uploads/2016/07/discussion-forums.jpg",
-    "Comunidad", "Comparte con otros deportistas apasionados en nuestro foro");
-
-
 $idPost = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
-$contenidoPrincipal .= mostrarPost($idPost);
+$aux = mostrarPost($idPost);
 
-if (estaLogado()) {
-	$form = new CrearComentarioForm();	
-    $contenidoPrincipal .= $form->gestiona();
+if($aux == -1){
+    header('Location:'.RUTA_APP.'/comunidad.php');
 }
+else {
+    $contenidoPrincipal = mostrarJumbo("https://blog.grupo-pya.com/wp-content/uploads/2016/07/discussion-forums.jpg",
+        "Comunidad", "Comparte con otros deportistas apasionados en nuestro foro");
 
+    $contenidoPrincipal .= $aux;
+
+    if (estaLogado()) {
+        $form = new CrearComentarioForm();
+        $contenidoPrincipal .= $form->gestiona();
+    }
+}
 require __DIR__ . '/includes/comun/layout.php';

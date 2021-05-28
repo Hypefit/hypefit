@@ -15,12 +15,13 @@ class PostsDAO extends DAO {
         return $this->insert($query);
     }
 
-    public function getPost($id): Post {
+    public function getPost($id) {
         $idLimpio = $this->limpiarString($id);
         $query = "SELECT * from posts where id = '$idLimpio'";
         $fila = $this->select($query);
-
-        return $this->crearObjetoPost($fila[0]);
+        if(count($fila) > 0)
+            return $this->crearObjetoPost($fila[0]);
+        else return null;
     }
 
     public function getAllPosts(): array {

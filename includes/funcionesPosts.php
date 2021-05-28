@@ -9,21 +9,20 @@ require_once __DIR__ . '/config.php';
 function crearListaPosts(): string {
     $dao = new PostsDAO();
     $lista = $dao->getAllPosts();
+    $html="";
 
-    $html = "<ul>";
     foreach($lista as $post) {
         $html .= "
-            <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pb-12 mb-5 ' style='width: 40%; margin-left: 30%;height: 50%;'>
-                <div class='card h-75 border-secondary ms-2 text-center'>
-                    <h5 class='card-header text-capitalize '>" . $post->getTitulo() . "</h5>
-                    <div class='card-body'>
-                        <a  href='verPost.php?id=" . $post->getId() . "'' class='btn btn-outline-primary mt-4 p-3'>Ver Post</a>
+            <div class='col-xs-12 col-sm-6 col-md-4 mb-4'>
+                <div class='card h-100 border-secondary text-center'>
+                    <h5 class='card-header text-capitalize'>" . $post->getTitulo() . "</h5>
+                    <div class='card-body align-items-end'>
+                        <a  href='verPost.php?id=" . $post->getId() . "' class='btn btn-outline-secondary'>Ver Post</a>
                     </div>        
                 </div>
             </div>
             ";
     }
-    $html .= "</ul>";
 
     return $html;
 }
@@ -33,10 +32,16 @@ function mostrarPost($id) : string {
     $post = $dao->getPost($id);
 
     if ($post == null) {
-        return "<p>No existe ningún post con el id especificado.</p>";
+        return -1;
+
     }
     else {
-        $html = "<h1 class='ms-3'>" . $post->getTitulo() . "</h1>";
+        $html = <<<EOS
+        <div class="m-2">
+            <div class="m-3 ms-5">
+                <h1> {$post->getTitulo()} </h1>
+            </div>
+        EOS;
         $html .= mostrarComentariosPost($id);
         return $html;
     }
@@ -47,37 +52,35 @@ function mostrarComentariosPost($id) : string {
     $daoU = new UsuarioDAO();
 
     $comentarios = $daoC->getComentariosDelPost($id);
+    $html = <<<EOS
+    <div class="container-fluid">
+        <div class="row ms-3">
+            <div class="col-12 col-md-9">
+    EOS;
 
-    $html = "<ul>";
     foreach($comentarios as $comentario) {
         $user = $daoU->getUsuario($comentario->getIdUsuario());
-        $comentario->getComentario() ."</li>";
-        //$html .= "<li>" . $user->getNombre() . " | " .  $comentario->getFecha() . "<br>" .
+        $comentario->getComentario();
         $fecha = $comentario->getFecha();
         $texto = $comentario->getComentario();
         $username = $user->getNombre();
-        
         $html .= <<<EOS
-<div class="container-fluid mt-100">
-<div class="row">
-    <div class="col-md-12">
-        <div class="card mb-4">
-            <div class="card-header">  
-                    <div class="media-body ml-3">"$username"</a>
-                        <div class="text-muted small">"$fecha"</div>
-                    </div>  
+                <div class="card mb-4">
+                    <div class="card-header">  
+                        <p class="mb-0">$username</p>
+                        <p class="text-muted small">$fecha</p>
+                    </div>
+                    <div class="card-body">
+                        <p>$texto</p>
+                    </div>
+                </div>
+        EOS;
+    }
+    $html .= "
             </div>
-            <div class="card-body">
-                <p>"$texto"</p>
-            </div>
-            
         </div>
     </div>
-</div>
-</div>
-EOS;
-    }
-    $html .= "</ul>";
+</div>";
 
     return $html;
 }
