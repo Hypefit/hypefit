@@ -62,6 +62,7 @@ function mostrarComentariosPost($id) : string {
         $user = $daoU->getUsuario($comentario->getIdUsuario());
         $comentario->getComentario();
         $fecha = $comentario->getFecha();
+        $idComentario = $comentario->getId();
         $texto = $comentario->getComentario();
         $username = $user->getNombre();
         $html .= <<<EOS
@@ -72,8 +73,10 @@ function mostrarComentariosPost($id) : string {
                     </div>
                     <div class="card-body">
                         <p>$texto</p>
+                        <a href="formularioRespuestaComentario.php?id={$idComentario}" data-idComentario="$idComentario" class="btn btn-primary ajax-link">Responder</a>
                     </div>
                 </div>
+                <div id="$idComentario"> </div>
         EOS;
     }
     $html .= "

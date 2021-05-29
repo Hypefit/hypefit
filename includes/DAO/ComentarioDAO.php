@@ -10,9 +10,11 @@ class ComentarioDAO extends DAO {
         $comentario = $this->limpiarString($u->getComentario());
         $idPost = $this->limpiarString($u->getIdPost());
         $idUsuario = $this->limpiarString($u->getIdUsuario());
+        $idComentarioPadre = $this->limpiarString($u->getidComentarioPadre());
 
-        $query = sprintf("INSERT into comentarios_post (idPost, idUsuario, comentario) values
-                ('%s','%s','%s')", $idPost, $idUsuario, $comentario);
+
+        $query = sprintf("INSERT into comentarios_post (idPost, idUsuario, comentario, idComentarioPadre) values
+                ('%s','%s','%s','%s')", $idPost, $idUsuario, $comentario, $idComentarioPadre);
         return $this->insert($query);
     }
 
@@ -29,6 +31,8 @@ class ComentarioDAO extends DAO {
             $comentario->setIdUsuario($fila['idUsuario']);
             $comentario->setFecha($fila['fecha']);
             $comentario->setComentario($fila['comentario']);
+            $comentario->setidComentarioPadre($fila['idComentarioPadre']);
+
 
             array_push($comentarios, $comentario);
         }

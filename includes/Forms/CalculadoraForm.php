@@ -13,7 +13,6 @@ class CalculadoraForm extends Form{
         parent::__construct('CalculadoraForm', $opciones);
     }
 
-
     protected function generaCamposFormulario($datosIniciales, $errores = array())  {
         $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
 

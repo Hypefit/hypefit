@@ -9,7 +9,11 @@ require_once 'includes/config.php';
 require_once 'includes/autorizacion.php';
 
 class CrearComentarioForm extends Form {
-    public function __construct() {
+
+    private $idComentarioPadre;
+
+    public function __construct($idComentarioPadre) {
+        $this->idComentarioPadre = $idComentarioPadre;
         $idPost = $_REQUEST["id"];
         $opciones = array( 'action' => RUTA_APP . "/verPost.php?id=" . $idPost );
         parent::__construct('CrearComentarioForm', $opciones);
@@ -29,6 +33,7 @@ class CrearComentarioForm extends Form {
                         <div class="mb-3 row justify-content-center">
                             <div class="col col-sm-8">
                                 <input type="hidden" name="idPost" value="$idPost" />
+                                <input type="hidden" name="idComentarioPadre" value="$this->idComentarioPadre" />
                                 <textarea  title="Mensaje" class="form-control" name="mensaje" 
                                     placeholder="Mensaje" required id="mensaje"></textarea>
                             </div>
@@ -47,6 +52,8 @@ class CrearComentarioForm extends Form {
         $result = array();
         $texto  = $datos['mensaje'] ?? null;
         $idPost = $datos['idPost'] ?? null;
+        $idComentarioPadre = $datos['idComentarioPadre'] ?? null;
+
 
         if (count($result) === 0) {
             $idUsuario = idUsuarioLogado();
@@ -56,6 +63,7 @@ class CrearComentarioForm extends Form {
             $comentario->setComentario($texto);
             $comentario->setIdUsuario($idUsuario);
             $comentario->setIdPost($idPost);
+            $comentario->setidComentarioPadre($idComentarioPadre);
             $dao->crearComentario($comentario);
 
             $result = RUTA_APP . "/verPost.php?id=$idPost";
