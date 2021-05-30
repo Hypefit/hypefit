@@ -50,8 +50,15 @@
     <script src="<?= RUTA_JS.'/bootstrap.js'?>"></script>
     <script src="<?= RUTA_JS.'/validation.js'?>"></script>
 
-    <!---jQuery-->
+    <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <?php
+        if(isset($scripts)) {
+            foreach ($scripts as $url) {
+                echo "<script src=$url></script>";
+            }
+        }
+    ?>
 </body>
 </html>

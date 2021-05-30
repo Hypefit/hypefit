@@ -5,6 +5,7 @@ use hypefit\DAO\PostsDAO;
 use hypefit\DAO\UsuarioDAO;
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/autorizacion.php';
 
 function crearListaPosts(): string {
     $dao = new PostsDAO();
@@ -65,6 +66,8 @@ function mostrarComentariosPost($id) : string {
         $idComentario = $comentario->getId();
         $texto = $comentario->getComentario();
         $username = $user->getNombre();
+
+        $botonRespuesta = estaLogado() ? '<a href="formularioRespuestaComentario.php" data-idComentario="' . $idComentario . '" data-idPost="' . $id . '" class="btn btn-primary ajax-link">Responder</a>' : '';
         $html .= <<<EOS
                 <div class="card mb-4">
                     <div class="card-header">  
@@ -73,7 +76,7 @@ function mostrarComentariosPost($id) : string {
                     </div>
                     <div class="card-body">
                         <p>$texto</p>
-                        <a href="formularioRespuestaComentario.php?id={$idComentario}" data-idComentario="$idComentario" class="btn btn-primary ajax-link">Responder</a>
+                        $botonRespuesta
                     </div>
                 </div>
                 <div id="$idComentario"> </div>

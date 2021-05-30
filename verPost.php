@@ -22,8 +22,11 @@ else {
     $contenidoPrincipal .= $aux;
 
     if (estaLogado()) {
-        $form = new CrearComentarioForm();
+        $form = new CrearComentarioForm($idPost, null);
         $contenidoPrincipal .= $form->gestiona();
     }
+
+    $scripts = array();
+    array_push($scripts, 'js/respuestaComentario.js');
 }
 require __DIR__ . '/includes/comun/layout.php';

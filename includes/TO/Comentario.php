@@ -8,7 +8,7 @@ class Comentario {
     private int $idUsuario = 0;
     private string $fecha = "";
     private string $comentario = "";
-    private int $idComentarioPadre = 0;
+    private $idComentarioPadre;
 
 
     /**
@@ -82,17 +82,15 @@ class Comentario {
     }
 
 
-    /**
-     * @return int
-     */
-    public function getidComentarioPadre(): int {
+
+    public function getidComentarioPadre() {
         return $this->idComentarioPadre;
     }
 
     /**
-     * @param int $idComentarioPadre
+     * @param $idComentarioPadre
      */
-    public function setidComentarioPadre(int $idComentarioPadre): void {
+    public function setidComentarioPadre($idComentarioPadre): void {
         $this->idComentarioPadre = $idComentarioPadre;
     }
 

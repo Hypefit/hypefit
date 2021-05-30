@@ -10,11 +10,12 @@ require_once 'includes/autorizacion.php';
 
 class CrearComentarioForm extends Form {
 
+    private $idPost;
     private $idComentarioPadre;
 
-    public function __construct($idComentarioPadre) {
+    public function __construct($idPost, $idComentarioPadre) {
+        $this->idPost = $idPost;
         $this->idComentarioPadre = $idComentarioPadre;
-        $idPost = $_REQUEST["id"];
         $opciones = array( 'action' => RUTA_APP . "/verPost.php?id=" . $idPost );
         parent::__construct('CrearComentarioForm', $opciones);
     }
@@ -22,7 +23,6 @@ class CrearComentarioForm extends Form {
     protected function generaCamposFormulario($datosIniciales, $errores = array())  {
         $htmlErroresGlobales = self::generaListaErroresGlobales($errores);
 
-        $idPost = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
         $html = <<<EOS
         <!--Caja de respuesta-->
         <div class='container-fluid p-4'>
@@ -32,8 +32,6 @@ class CrearComentarioForm extends Form {
                         <legend class="mt-4 mb-3">Escribe tu respuesta</legend>
                         <div class="mb-3 row justify-content-center">
                             <div class="col col-sm-8">
-                                <input type="hidden" name="idPost" value="$idPost" />
-                                <input type="hidden" name="idComentarioPadre" value="$this->idComentarioPadre" />
                                 <textarea  title="Mensaje" class="form-control" name="mensaje" 
                                     placeholder="Mensaje" required id="mensaje"></textarea>
                             </div>
@@ -51,9 +49,6 @@ class CrearComentarioForm extends Form {
     protected function procesaFormulario($datos) {
         $result = array();
         $texto  = $datos['mensaje'] ?? null;
-        $idPost = $datos['idPost'] ?? null;
-        $idComentarioPadre = $datos['idComentarioPadre'] ?? null;
-
 
         if (count($result) === 0) {
             $idUsuario = idUsuarioLogado();
@@ -62,11 +57,11 @@ class CrearComentarioForm extends Form {
             $comentario = new Comentario();
             $comentario->setComentario($texto);
             $comentario->setIdUsuario($idUsuario);
-            $comentario->setIdPost($idPost);
-            $comentario->setidComentarioPadre($idComentarioPadre);
+            $comentario->setIdPost($this->idPost);
+            $comentario->setidComentarioPadre($this->idComentarioPadre);
             $dao->crearComentario($comentario);
 
-            $result = RUTA_APP . "/verPost.php?id=$idPost";
+            $result = RUTA_APP . "/verPost.php?id=$this->idPost";
         }
         return $result;
     }
