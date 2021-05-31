@@ -52,7 +52,7 @@ class UsuarioDAO extends DAO
     }
     public function existeNombreUsuario($user): bool {
         $userLimpio = $this->limpiarString($user);
-        $query = "SELECT * from usuarios where user = '$userLimpio'";
+        $query = "SELECT * from usuarios where nombre = '$userLimpio'";
         $fila = $this->select($query);
 
         if (empty($fila)) { //No existe el nombre usuario en BD

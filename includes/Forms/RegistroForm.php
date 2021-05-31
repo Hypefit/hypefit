@@ -18,6 +18,7 @@ class RegistroForm extends Form {
         $errorNombre = self::createMensajeError($errores, "nombre");
         $errorPassword = self::createMensajeError($errores, "password");
         $errorPassword2 = self::createMensajeError($errores, "password2");
+        $errorRol = self::createMensajeError($errores, "rol");
 
         $form = <<<EOS
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
@@ -54,7 +55,7 @@ class RegistroForm extends Form {
                      <input title="Contraseña" class="form-control" type="password" name="password" 
                      placeholder="Contraseña" id="passwordRegistro">
                 </div>
-                $errorPassword
+                <p id="errorPass" class="m-0 mt-1 text-danger">$errorPassword</p>
             </div> 
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                 <div class="input-group">
@@ -67,7 +68,7 @@ class RegistroForm extends Form {
                     <input title="Confirma la contraseña" class="form-control" type="password" name="password2" 
                     placeholder="Confirma la contraseña" id="password2Registro">
                 </div>
-                $errorPassword2
+                <p id="errorPass2" class="m-0 mt-1 text-danger">$errorPassword2</p>
             </div> 
             <div class="form-group  col-sm-10 col-md-9 col-lg-7 pb-4">
                 <div class="input-group">
@@ -76,15 +77,16 @@ class RegistroForm extends Form {
                             <i class="fa fa-user"></i>
                         </span>
                     </div>
-                    <select title="Rol" class="form-select" name="rol" required>
-                        <option selected>Rol</option>
+                    <select id="rolRegistro" title="Rol" class="form-select" name="rol" required>
+                        <option value = "rol" selected>Rol</option>
                         <option value="registrado">Usuario Regular</option>
                         <option value="entrenador">Entrenador</option>
                         <option value="nutricionista">Nutricionista</option>
                     </select>
                 </div>
-            </div>
-           $htmlErroresGlobales
+                <p id="errorRol" class="m-0 mt-1 text-danger">$errorRol</p>
+           </div>
+           <h5 id="errorSubmit" class="m-0 mb-3 text-danger">$htmlErroresGlobales</h5>
            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 mb-4">
                 <button type="submit" class="btn btn-dark">Registrarse</button>  
            </div>  
@@ -114,7 +116,10 @@ class RegistroForm extends Form {
         if ( empty($password2) || strcmp($password, $password2) !== 0 ) {
             $result['password2'] = "Los passwords deben coincidir";
         }
-        $rol =$datos['rol'] ?? null;
+        $rol = $datos['rol'] ?? null;
+        if($rol == 'rol'){
+            $result['rol']="Selecciona un rol";
+        }
 
         if (count($result) === 0) {
             $resultado = crearUsuario($email, $nombre, $password, $rol);
