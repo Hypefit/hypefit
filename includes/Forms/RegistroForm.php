@@ -20,6 +20,7 @@ class RegistroForm extends Form {
         $errorPassword2 = self::createMensajeError($errores, "password2");
 
         $form = <<<EOS
+        <form id="formRegistro">
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -28,9 +29,9 @@ class RegistroForm extends Form {
                         </span>
                     </div>
                     <input title="Nombre de usuario" class="form-control" type="text" name="nombre" 
-                    placeholder="Nombre"  required>
+                    placeholder="Nombre" id="nombreRegistro">
                 </div>
-                $errorNombre
+                <p id="errorUser" class="m-0 mt-1 text-danger">$errorNombre</p>
             </div> 
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                 <div class="input-group">
@@ -39,10 +40,10 @@ class RegistroForm extends Form {
                             <i class="fas fa-at"></i>
                         </span>
                     </div>
-                    <input  title="Dirección email" class="form-control" type="email" name="email" placeholder="Dirección email" 
-                    required>
+                    <input  title="Dirección email" class="form-control" type="email" name="email" 
+                    placeholder="Dirección email" id="emailRegistro">
                 </div>
-                $errorEmail
+                <p id="errorEmail" class="m-0 mt-1 text-danger">$errorEmail</p>
             </div> 
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                 <div class="input-group">
@@ -51,8 +52,8 @@ class RegistroForm extends Form {
                             <i class="fa fa-lock"></i>
                         </span>
                     </div> 
-                     <input title="Contraseña" class="form-control" type="password" name="password" placeholder="Contraseña" 
-                     required>
+                     <input title="Contraseña" class="form-control" type="password" name="password" 
+                     placeholder="Contraseña" id="passwordRegistro">
                 </div>
                 $errorPassword
             </div> 
@@ -63,13 +64,13 @@ class RegistroForm extends Form {
                             <i class="fa fa-lock"></i>
                             <i class="fa fa-check"></i>
                         </span>
-                    </div> 
+                    </div>
                     <input title="Confirma la contraseña" class="form-control" type="password" name="password2" 
-                    placeholder="Confirma la contraseña" required>
+                    placeholder="Confirma la contraseña" id="password2Registro">
                 </div>
                 $errorPassword2
             </div> 
-            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-4">
+            <div class="form-group  col-sm-10 col-md-9 col-lg-7 pb-4">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">
@@ -88,6 +89,7 @@ class RegistroForm extends Form {
            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 mb-4">
                 <button type="submit" class="btn btn-dark">Registrarse</button>  
            </div>  
+        </form>
         EOS;
 
         $html = formJumbo("https://s1.1zoom.me/b5249/490/Closeup_15_kg_Barbell_514746_1366x768.jpg",

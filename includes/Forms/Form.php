@@ -204,7 +204,7 @@ abstract class Form
      * @param string   $htmlElement (opcional) Etiqueta HTML a crear para mostrar el error.
      * @param array    $atts        (opcional) Tabla asociativa con los atributos a añadir a la etiqueta que mostrará el error.
      */
-    protected static function createMensajeError($errores=array(), $idError='', $htmlElement='span', $atts = array())
+    protected static function createMensajeError($errores=array(), $idError='', $htmlElement='span', $atts="")
     {
         $html = '';
         if (isset($errores[$idError])) {

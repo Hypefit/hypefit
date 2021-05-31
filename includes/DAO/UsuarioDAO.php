@@ -39,6 +39,29 @@ class UsuarioDAO extends DAO
         }
     }
 
+    public function existeEmail($email): bool {
+        $emailLimpio = $this->limpiarString($email);
+        $query = "SELECT * from usuarios where email = '$emailLimpio'";
+        $fila = $this->select($query);
+
+        if (empty($fila)) { //No existe email en BD
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public function existeNombreUsuario($user): bool {
+        $userLimpio = $this->limpiarString($user);
+        $query = "SELECT * from usuarios where user = '$userLimpio'";
+        $fila = $this->select($query);
+
+        if (empty($fila)) { //No existe el nombre usuario en BD
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public function getUsuariosSinAprobar(): array {
         $query = "SELECT * from usuarios where aprobado = 0";
         $filas = $this->select($query);
