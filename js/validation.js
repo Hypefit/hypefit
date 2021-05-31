@@ -67,8 +67,11 @@
             });
         });
 
-        $("#formRegistro").on('submit', function(event){
+        $("#RegistroForm").on('submit', function(event){
+
             event.preventDefault();
+
+            $("#errorEmail").load("/hypefit/includes/validation.php", {email: $("#emailRegistro").val()});
 
             $defaultVacio= "Este campo no puede estar vacío";
             if(correo[0] || !correo[1]|| !correo[2] || !is_userValid) {

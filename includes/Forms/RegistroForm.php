@@ -20,7 +20,6 @@ class RegistroForm extends Form {
         $errorPassword2 = self::createMensajeError($errores, "password2");
 
         $form = <<<EOS
-        <form id="formRegistro">
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 pb-3">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -89,7 +88,6 @@ class RegistroForm extends Form {
            <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 mb-4">
                 <button type="submit" class="btn btn-dark">Registrarse</button>  
            </div>  
-        </form>
         EOS;
 
         $html = formJumbo("https://s1.1zoom.me/b5249/490/Closeup_15_kg_Barbell_514746_1366x768.jpg",
