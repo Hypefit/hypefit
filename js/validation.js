@@ -20,17 +20,23 @@
                 else
                     correo[0]=false; //no vacío
             }*/
-            $("#errorEmail").load("../includes/validation.php", {email: $("#emailRegistro").val()});
+           $("#errorEmail").load("/hypefit/includes/validation.php", {email: $("#emailRegistro").val()});
 
-            //var url= ".?email=" + $("#emailRegistro").val();
-            //$.get(url,function(data) {
-              //  if (data === "disponible") {
-                //    correo[2]=true; //disponible
-                //} else if (data === "existe") {
-                  //  correo[2]=false; //no disponible
-                //}
-            //});
-           /* if(correo[0] || !correo[1] || !correo[2]){
+            /*$.ajax({
+                url: "/hypefit/includes/validation.php",
+                type: "POST",
+                data: {email: $("#emailRegistro").val()},
+                success:
+            });*/
+            /*var url= "../includes/validation.php?email=" + $("#emailRegistro").val();
+            $.get(url,function(data) {
+                if (data === "disponible") {
+                    correo[2]=true; //disponible
+                } else if (data === "existe") {
+                    correo[2]=false; //no disponible
+                }
+            });
+            if(correo[0] || !correo[1] || !correo[2]){
                 $("#emailRegistro").addClass("border-danger");
                 if(correo[0]) $("#errorEmail").text("");
                 else if(!correo[1]) $("#errorEmail").text("Correo no válido");

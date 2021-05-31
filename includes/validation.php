@@ -1,16 +1,15 @@
 <?php
 
 use hypefit\DAO\UsuarioDAO;
-
-require_once __DIR__.'/DAO/UsuarioDAO.php';
+require_once __DIR__ .'/config.php';
 
      if (isset($_GET["user"])) {
         if ($_GET["user"] == "elpepe" | $_GET["user"] == "")
             echo "existe";
         else
             echo "disponible";
-     } else
-        echo "userNotSet";
+     }
+
 
     if (isset($_POST["email"])) {
         $email = $_POST["email"];

@@ -21,9 +21,9 @@
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/estilo.css'?>" />
 
 
-        <!--jQuery
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-        <script src="<?= RUTA_JS.'/jquery-3.6.0.min.js'?>"></script>
+        <!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!--<script src="<?= RUTA_JS.'/jquery-3.6.0.min.js'?>"></script>-->
     <!--JS-->
     <script src="<?= RUTA_JS.'/validation.js'?>"></script>
 
@@ -52,10 +52,10 @@
     </div>
     <!--Bootstrap-->
     <script src="<?= RUTA_JS.'/bootstrap.js'?>"></script>
-    <script src="<?= RUTA_JS.'/validation.js'?>"></script>
+    <!--<script src="<?= RUTA_JS.'/validation.js'?>"></script>-->
 
-    <!--jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--jQuery
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
 
     <?php
         if(isset($scripts)) {
