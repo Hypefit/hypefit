@@ -2,6 +2,7 @@
 
 use hypefit\Aplicacion;
 
+define('__ROOT__', dirname(dirname(__FILE__)));
 define('RUTA_APP', '/hypefit');
 define('RUTA_IMGS', RUTA_APP.'/img');
 define('RUTA_CSS', RUTA_APP.'/css');
