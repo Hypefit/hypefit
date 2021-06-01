@@ -1,14 +1,14 @@
 <?php
 
-use hypefit\Forms\CrearComentarioForm;
+require_once "../config.php";
 
-require_once __DIR__ . '/includes/config.php';
+use hypefit\Forms\CrearRespuestaComentarioForm;
 
 $idComentarioPadre = htmlspecialchars(trim(strip_tags($_GET["idComentarioPadre"])));
 $idPost = htmlspecialchars(trim(strip_tags($_GET["idPost"])));
 
 $array = array();
-$form = new CrearComentarioForm($idPost, $idComentarioPadre);
+$form = new CrearRespuestaComentarioForm($idPost, $idComentarioPadre);
 $array["html"] = $form->gestiona();
 echo json_encode($array);
 

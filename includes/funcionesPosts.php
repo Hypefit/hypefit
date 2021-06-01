@@ -67,7 +67,7 @@ function mostrarComentariosPost($id) : string {
         $texto = $comentario->getComentario();
         $username = $user->getNombre();
 
-        $botonRespuesta = estaLogado() ? '<a href="formularioRespuestaComentario.php" data-idComentario="' . $idComentario . '" data-idPost="' . $id . '" class="btn btn-primary ajax-link">Responder</a>' : '';
+        $botonRespuesta = estaLogado() ? '<a href="#" data-idComentario="' . $idComentario . '" data-idPost="' . $id . '" class="btn btn-primary ajax-link">Responder</a>' : '';
         $html .= <<<EOS
                 <div class="card mb-4">
                     <div class="card-header">  
