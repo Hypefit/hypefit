@@ -67,10 +67,9 @@ require_once __DIR__ .'/config.php';
         $enoughRegex = "/^(?=.{8,}).*$/";
 
         if (strlen($pass) == 0) {
-            //errorPassword.innerHTML = 'Type Password';
-            echo "<span>Este campo no puede estar vacío</span>";
             $passModif = true;
             $passError = true;
+            echo "<span>Este campo no puede estar vacío</span>";
         }
         else if (preg_match($strongRegex, $pass)) {
             $passModif = true;
@@ -92,9 +91,6 @@ require_once __DIR__ .'/config.php';
             $passError = true;
             echo '<span class = "text-danger">La contraseña debe tener mínimo 8 caracteres</span>';
         }
-    }
-    else if(isset($_POST["rol"])) {
-
     }
 ?>
     <script>
