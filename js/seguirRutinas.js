@@ -11,16 +11,28 @@ $(function() {
     }
 
     $("#empezarSeguir").click( function () {
-        cambiarASiguiendo();
+        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "seguir", idRutina: $(".dropdown").data("rutina")}, function () {
+            cambiarASiguiendo();
+        })
+            .fail( errorCambioEstado )
     });
     $("#dejarSeguir").click( function () {
-        cambiarASinSeguir();
+        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "dejarSeguir", idRutina: $(".dropdown").data("rutina")}, function () {
+            cambiarASinSeguir();
+        })
+            .fail( errorCambioEstado )
     });
     $("#marcarCompletada").click( function () {
-        cambiarACompletada();
+        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "completar", idRutina: $(".dropdown").data("rutina")}, function () {
+            cambiarACompletada();
+        })
+            .fail( errorCambioEstado )
     });
     $("#desmarcarCompletada").click( function () {
-        cambiarASinSeguir();
+        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "dejarSeguir", idRutina: $(".dropdown").data("rutina")}, function () {
+            cambiarASinSeguir();
+        })
+            .fail( errorCambioEstado )
     });
 });
 
@@ -75,3 +87,6 @@ function cambiarACompletada() {
     $(".dropdown").data("estado", "completada");
 }
 
+function errorCambioEstado() {
+    alert("Ha habido un error a la hora de cambiar de estado");
+}

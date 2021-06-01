@@ -146,7 +146,7 @@ function generarBotonSeguir($idRutina) {
         }
         return <<<EOS
         <!-- Botón de seguir -->
-        <div class="dropdown" data-estado="$estado">
+        <div class="dropdown" data-estado="$estado" data-rutina="$idRutina">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="botonSeguir" data-bs-toggle="dropdown" aria-expanded="false">
             Seguir
           </button>
