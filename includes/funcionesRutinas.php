@@ -3,6 +3,7 @@
 
 use hypefit\DAO\ComentarioRutinaDAO;
 use hypefit\DAO\RutinaDAO;
+use hypefit\DAO\RutinasUsuariosDAO;
 use hypefit\DAO\UsuarioDAO;
 
 function crearListaRutinas($categoria): string {
@@ -61,6 +62,11 @@ function mostrarRutina($id) {
                             <p>
                         </div>
                     </div>
+            EOS;
+
+            if (estaLogado()) $html .= generarBotonSeguir($id);
+
+            $html .=<<<EOS
                 </div>
                 <!--/Jumbotron-->
                 <!--Rutina-->
@@ -123,4 +129,37 @@ function mostrarComentariosRutina($id) : string {
     }
 
     return $html;
+}
+
+function generarBotonSeguir($idRutina) {
+    if (estaLogado()) {
+        $dao = new RutinasUsuariosDAO();
+        $to = $dao->buscarRutinaPorUsuario(idUsuarioLogado(), $idRutina);
+        if ($to === 0) {
+            $estado = "sin-seguir";
+        }
+        else if ($to->getCompletada()) {
+            $estado = "completada";
+        }
+        else {
+            $estado = "siguiendo";
+        }
+        return <<<EOS
+        <!-- Botón de seguir -->
+        <div class="dropdown" data-estado="$estado">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="botonSeguir" data-bs-toggle="dropdown" aria-expanded="false">
+            Seguir
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#" id="empezarSeguir">Empezar a seguir</a></li>
+            <li><a class="dropdown-item" href="#" id="dejarSeguir">Dejar de seguir</a></li>
+            <li><a class="dropdown-item" href="#" id="marcarCompletada">Marcar como completada</a></li>
+            <li><a class="dropdown-item" href="#" id="desmarcarCompletada">Desmarcar como completada</a></li>
+          </ul>
+        </div>
+        EOS;
+    }
+    else {
+        return '';
+    }
 }

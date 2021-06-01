@@ -24,4 +24,8 @@ if (estaLogado() && $aux != -1) {
     $contenidoPrincipal .= $form->gestiona() ;
 }
 
+$scripts = array();
+$ruta = RUTA_JS . "/seguirRutinas.js";
+array_push($scripts, $ruta);
+
 require __DIR__ . '/includes/comun/layout.php';
