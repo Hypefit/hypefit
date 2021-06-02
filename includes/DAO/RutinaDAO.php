@@ -65,4 +65,10 @@ class RutinaDAO extends DAO {
 
         return $rutina;
     }
+
+    public function getNumRutinas() {
+        $query = "SELECT * FROM rutinas";
+        $resultado = $this->select($query);
+        return count($resultado);
+    }
 }

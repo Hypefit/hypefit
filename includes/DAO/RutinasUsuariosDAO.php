@@ -36,4 +36,10 @@ class RutinasUsuariosDAO extends DAO {
         $query = sprintf("DELETE from rutinas_usuarios WHERE idUsuario = '%s' AND idRutina = '%s'", $this->limpiarString($idUsuario), $this->limpiarString($idRutina));
         $this->modify($query);
     }
+
+    public function getNumRutinasCompletadas(int $idUsuario) {
+        $query = sprintf("SELECT * FROM rutinas_usuarios WHERE idUsuario = '%s'", $this->limpiarString($idUsuario));
+        $resultado = $this->select($query);
+        return count($resultado);
+    }
 }

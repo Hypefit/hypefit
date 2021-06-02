@@ -25,6 +25,7 @@ $(function() {
     $("#marcarCompletada").click( function () {
         $.post("includes/ajax/seguirRutina.php", {estado: "completar", idRutina: $(".dropdown").data("rutina")}, function () {
             cambiarACompletada();
+            insigniaCompletada();
         })
             .fail( errorCambioEstado )
     });
@@ -89,4 +90,31 @@ function cambiarACompletada() {
 
 function errorCambioEstado() {
     alert("Ha habido un error a la hora de cambiar de estado");
+}
+
+function insigniaCompletada() {
+    $.post('includes/AJAX/insignias.php', {nombreInsignia: "Primera rutina completada", peticion: "buscar"}, function (data) {
+        if (!data.existe) {
+            $.post('includes/AJAX/comprobarNumRutinasCompletadas.php', function (data) {
+                if (data.primeraRutina) {
+                    $.post('includes/AJAX/insignias.php', {nombreInsignia: "Primera rutina completada", peticion: "insertar"}, function () {
+                        $("#notificacionPrimeraCompletada").toast("show");
+                    }, 'json');
+                }
+            }, 'json');
+        }
+        else {
+            $.post('includes/AJAX/insignias.php', {nombreInsignia: "Todas las rutinas completadas", peticion: "buscar"}, function (data) {
+                if (!data.existe) {
+                    $.post('includes/AJAX/comprobarNumRutinasCompletadas.php', function (data) {
+                        if (data.todasCompletadas) {
+                            $.post('includes/AJAX/insignias.php', {nombreInsignia: "Todas las rutinas completadas", peticion: "insertar"}, function () {
+                                $("#notificacionTodasCompletadas").toast("show");
+                            }, 'json');
+                        }
+                    }, 'json');
+                }
+            }, 'json');
+        }
+    }, 'json');
 }
