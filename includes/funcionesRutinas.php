@@ -32,7 +32,7 @@ function crearListaRutinas($categoria): string {
 function mostrarRutina($id) {
     $dao = new RutinaDAO();
     $rutina = $dao->getRutina($id);
-    $rutaImgSup = RUTA_IMGS.'/cat-superior.jpg';
+    $rutaImgSup = RUTA_IMGS.'/tren-superior-inicio.jpg';
 
     if ($rutina == NULL) {
         return -1; //-1 indica error
