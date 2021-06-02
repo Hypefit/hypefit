@@ -6,17 +6,17 @@
 
         $(inputs[0]).keyup(function(){ //input nombre
             modif=true;
-            errores[0] = ($("#errorUser").load("/hypefit/includes/validationRegistro.php", {user: $(inputs[0]).val()}).val().length > 0);
+            errores[0] = ($("#errorUser").load("/hypefit/includes/AJAX/validationRegistro.php", {user: $(inputs[0]).val()}).val().length > 0);
         });
 
         $(inputs[1]).keyup(function(){ //input email
             modif=true;
-            errores[1] = $("#errorEmail").load("/hypefit/includes/validationRegistro.php", {email: $(inputs[1]).val()}).val().length > 0;
+            errores[1] = $("#errorEmail").load("/hypefit/includes/AJAX/validationRegistro.php", {email: $(inputs[1]).val()}).val().length > 0;
         });
 
         $(inputs[2]).keyup(function (){//input password
             modif=true;
-            errores[2] = $("#errorPass").load("/hypefit/includes/validationRegistro.php", {pass: $(inputs[2]).val()}).val().length > 0;
+            errores[2] = $("#errorPass").load("/hypefit/includes/AJAX/validationRegistro.php", {pass: $(inputs[2]).val()}).val().length > 0;
         });
 
         $(inputs[3]).keyup(function (){ //input password2

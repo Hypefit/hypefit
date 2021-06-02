@@ -1,7 +1,7 @@
 <?php
 
 use hypefit\DAO\UsuarioDAO;
-require_once __DIR__ .'/config.php';
+require_once "../config.php";
 
     $dao = new UsuarioDAO();
     $nombreError = false;
