@@ -5,6 +5,7 @@ use hypefit\DAO\ComentarioRutinaDAO;
 use hypefit\DAO\RecetaDAO;
 use hypefit\DAO\RutinaDAO;
 use hypefit\DAO\UsuarioDAO;
+use hypefit\DAO\EventoDAO;
 use hypefit\TO\Usuario;
 
 require_once __DIR__.'/config.php';

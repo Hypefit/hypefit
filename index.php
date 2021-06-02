@@ -141,7 +141,9 @@ $contenidoPrincipal .= <<<EOS
     <div class="container-fluid px-0">
         <div class="bg-light row ps-0 me-0 align-items-center justify-content-center">
             <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">Calendario de actividades</h2>
-             <img src="img/calendario-abril-2021.jpg" alt="Imagen calendario provisional" style="width: 50%;">
+               <div class="container">
+                    <div id="calendar"></div>
+               </div>
         </div>
     </div>
     <div class="bg-light" style="height: 9%;"></div>
