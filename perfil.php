@@ -33,6 +33,26 @@ if(estaLogado())
 
     $contenidoPrincipal = customizableJumbo($img, $titulo, "", $customText, "", "", "");
 
+    $contenidoPrincipal .= <<<EOS
+        <div class="container">
+            <div class="row ms-3">
+                <div class="col-xs-12 col-md-4">
+                    <h4>Tus insignias</h4>
+                    
+                </div>
+                 <div class="col-xs-12 col-md-4">
+                    <h4>Rutinas que sigues</h4>
+                    
+                </div>
+                 <div class="col-xs-12 col-md-4">
+                    <h4>Rutinas completadas</h4>
+                    
+                </div>
+            </div>
+        </div>
+    EOS;
+
+
 	if (esAdmin()) {
         $form = new AprobarUsuariosForm();
         $contenidoPrincipal .= $form->gestiona() ;

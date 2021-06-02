@@ -81,7 +81,7 @@ function mostrarComentariosRecursivo(&$comentarios, &$html, $id, $indentLevel) {
 
         $botonRespuesta = estaLogado() ? '<a href="#" data-idComentario="' . $idComentario . '" data-idPost="' . $id . '" class="btn btn-primary ajax-link">Responder</a>' : '';
         $html .= <<<EOS
-                <div class="card mb-4 ps-{$indentLevel}">
+                <div class="card mb-4 level-{$indentLevel}">
                     <div class="card-header">  
                         <p class="mb-0">$username</p>
                         <p class="text-muted small">$fecha</p>

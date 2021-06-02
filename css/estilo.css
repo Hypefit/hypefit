@@ -119,7 +119,6 @@ textarea.contenido{
 .rankingEntrenadores {
     background-color: #f1cfaa;
 }
-
 .rankingEntrenadores .par {
     background-color: rgba(222, 186, 131, 0.73);
 }
@@ -136,6 +135,16 @@ textarea.contenido{
 }
 .rankingNutri .impar {
     background-color: rgba(152, 227, 152, 0.85);
+}
+
+.level-1{
+    margin-left: 5%;
+}
+.level-2{
+    margin-left: 10%;
+}
+.level-3{
+    margin-left: 15%;
 }
 
 footer{
