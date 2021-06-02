@@ -31,7 +31,7 @@ class CrearComentarioForm extends Form {
                 <input type="hidden" name="idComentarioPadre" value="$this->idComentarioPadre">
                 <div class = "mb-3 ms-5">
                     <div class = "mb-2 w-75">
-                        <textarea title="RespuestaMensaje" class="form-control" name="respuestaMensaje" 
+                        <textarea title="RespuestaMensaje" class="form-control" name="mensaje" 
                         placeholder="Deja tu respuesta..." required id="respuestaMensaje"></textarea>
                     </div>
                     <button type="submit" class="btn btn-dark">Comentar</button>
