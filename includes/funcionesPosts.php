@@ -50,15 +50,27 @@ EOS;
 
 function mostrarComentariosPost($id) : string {
     $daoC = new ComentarioDAO();
-    $daoU = new UsuarioDAO();
-
-    $comentarios = $daoC->getComentariosDelPost($id);
     $html = <<<EOS
-    <div class="container-fluid">
-        <div class="row ms-3">
-            <div class="col-12 col-md-9">
-EOS;
+        <div class="container-fluid">
+            <div class="row ms-3">
+                <div class="col-12 col-md-9">
+    EOS;
 
+    $comentarios = $daoC->getComentariosPadreDelPost($id);
+    mostrarComentariosRecursivo($comentarios, $html, $id, 0);
+
+    $html .= "
+            </div>
+        </div>
+    </div>
+</div>";
+
+    return $html;
+}
+
+function mostrarComentariosRecursivo(&$comentarios, &$html, $id, $indentLevel) {
+    $daoC = new ComentarioDAO();
+    $daoU = new UsuarioDAO();
     foreach($comentarios as $comentario) {
         $user = $daoU->getUsuario($comentario->getIdUsuario());
         $comentario->getComentario();
@@ -69,7 +81,7 @@ EOS;
 
         $botonRespuesta = estaLogado() ? '<a href="#" data-idComentario="' . $idComentario . '" data-idPost="' . $id . '" class="btn btn-primary ajax-link">Responder</a>' : '';
         $html .= <<<EOS
-                <div class="card mb-4">
+                <div class="card mb-4 ps-{$indentLevel}">
                     <div class="card-header">  
                         <p class="mb-0">$username</p>
                         <p class="text-muted small">$fecha</p>
@@ -81,12 +93,7 @@ EOS;
                 </div>
                 <div id="$idComentario"> </div>
 EOS;
+        $comentariosHijo = $daoC->getComentariosHijo($idComentario);
+        mostrarComentariosRecursivo($comentariosHijo, $html, $id, $indentLevel + 1);
     }
-    $html .= "
-            </div>
-        </div>
-    </div>
-</div>";
-
-    return $html;
 }

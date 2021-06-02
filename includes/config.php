@@ -31,6 +31,14 @@ spl_autoload_register(function ($class) {
         require $file;
     }
 });
+
+$datosBD = array();
+$datosBD['host'] = host;
+$datosBD['user'] = user;
+$datosBD['pass'] = pass;
+$datosBD['bd'] = bd;
+Aplicacion::getSingleton()->init($datosBD);
+/*
 function resolveContentNegotiation(string $acceptRules, array $supported, string $default = null){
 
     // Accept header is case insensitive, and whitespace isn't important.
@@ -124,7 +132,7 @@ set_exception_handler(function (\Throwable $e) {
         /**
          * Verificamos si el error lo tiene que procesar javascript -> application/json o lo va a ver directamente
          * el usuario final -> text/html
-         */
+
         $mime = resolveContentNegotiation($_SERVER['HTTP_ACCEPT'], array('text/html', 'application/json'), 'text/html');
         switch($mime) {
             case 'application/json':
@@ -153,10 +161,4 @@ set_exception_handler(function (\Throwable $e) {
     exit;
 });
 
-$datosBD = array();
-$datosBD['host'] = host;
-$datosBD['user'] = user;
-$datosBD['pass'] = pass;
-$datosBD['bd'] = bd;
-Aplicacion::getSingleton()->init($datosBD);
-
+*/
