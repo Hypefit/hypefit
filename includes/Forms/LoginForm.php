@@ -24,7 +24,7 @@ class LoginForm extends Form {
                         </span>
                     </div>
                     <input title="Dirección email" class="form-control aria-describedby='emailHelp'" 
-                    type="email" name="email"  placeholder="Dirección email" required>
+                    type="email" name="email"  id="emailLogin" placeholder="Dirección email">
                 </div>
                 <div id="emailHelp" class="form-text">
                     <i class="fas fa-info-circle"></i>
@@ -38,11 +38,11 @@ class LoginForm extends Form {
                             <i class="fa fa-lock"></i>
                         </span>
                     </div>  
-                    <input title="Contraseña" class="form-control" type="password" name="password" 
-                    placeholder="Contraseña" required>
+                    <input title="Contraseña" class="form-control" type="password" name="password" id="passwordLogin"
+                    placeholder="Contraseña">
                 </div>
             </div>
-            $htmlErroresGlobales
+            <h5 id="errorLogin" class="m-0 mb-3 text-danger">$htmlErroresGlobales</h5>
             <div class="form-group col-xs-12 col-sm-10 col-md-9 col-lg-7 mb-3">
                 <button type="submit" class="btn btn-dark">Login</button>
             </div>       
