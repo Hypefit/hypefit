@@ -12,8 +12,9 @@
         <meta http-equiv="Last-Modified" content="0">
         <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
         <meta http-equiv="Pragma" content="no-cache">
-
-
+    <!--Estilo calendario-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
     <!--Bootstrap-->
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/bootstrap.css'?>" />
 
@@ -32,6 +33,12 @@
 
     <!--Font Awesome (iconos chulos)-->
     <script src="https://kit.fontawesome.com/c4984e3c67.js" crossorigin="anonymous"></script>
+
+    <!--Calendario -->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
 
 </head>
 <body>

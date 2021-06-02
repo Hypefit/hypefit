@@ -54,7 +54,7 @@ function mostrarReceta($id) {
                                 <span class='fw-bold' >Creada por: </span>{$nombreNutricionista}
                                 </br>
                                 <span class='fw-bolder'>Categoria: </span>
-        EOS;
+EOS;
                                     $html .= ucwords($receta->getCategoria());
         $html .= <<<EOS
                             <p>
@@ -67,7 +67,7 @@ function mostrarReceta($id) {
                     <h3 class="text-uppercase text-center mb-3">Pasos</h3>
                     <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'> 
                         <p class='fs-5 lh-lg'>
-        EOS;
+EOS;
                             $html .= nl2br($receta->getReceta());
         $html .= <<<EOS
                         </p>  
@@ -78,14 +78,14 @@ function mostrarReceta($id) {
                 <div class='row py-5 justify-content-center' id='ComentariosReceta'>
                     <h4 class='text-center text-uppercase mb-3'>Comentarios</h4>
                     <div class='col-12 col-sm-10 col-md-8 px-5 py-2 border text-start'>
-        EOS;
+EOS;
         $html .= mostrarComentariosReceta($receta->getId());
         $html .= <<<EOS
                     </div>  
                 </div>
                 <!--/Sección comentarios-->
             </div>
-        EOS;
+EOS;
 
         return $html;
     }

@@ -42,7 +42,7 @@ function mostrarPost($id) : string {
             <div class="m-3 ms-5">
                 <h1> {$post->getTitulo()} </h1>
             </div>
-        EOS;
+EOS;
         $html .= mostrarComentariosPost($id);
         return $html;
     }
@@ -57,7 +57,7 @@ function mostrarComentariosPost($id) : string {
     <div class="container-fluid">
         <div class="row ms-3">
             <div class="col-12 col-md-9">
-    EOS;
+EOS;
 
     foreach($comentarios as $comentario) {
         $user = $daoU->getUsuario($comentario->getIdUsuario());
@@ -80,7 +80,7 @@ function mostrarComentariosPost($id) : string {
                     </div>
                 </div>
                 <div id="$idComentario"> </div>
-        EOS;
+EOS;
     }
     $html .= "
             </div>

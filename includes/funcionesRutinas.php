@@ -56,13 +56,13 @@ function mostrarRutina($id) {
                                 <span class='fw-bold' >Creada por: </span>{$nombreEntrenador}
                                 </br>
                                 <span class='fw-bolder'>Categoria: </span>
-            EOS;
+EOS;
                                    $html .= ucwords($rutina->getCategoria());
             $html .= <<<EOS
                             <p>
                         </div>
                     </div>
-            EOS;
+EOS;
 
             if (estaLogado()) $html .= generarBotonSeguir($id);
 
@@ -74,7 +74,7 @@ function mostrarRutina($id) {
                     <h3 class="text-uppercase text-center mb-3">Ejercicios</h3>
                     <div class='col-12 col-sm-10 col-md-8 p-5 border text-start'> 
                         <p class='fs-5 lh-lg'>
-            EOS;
+EOS;
                         $html .= nl2br($rutina->getRutina());
             $html .= <<<EOS
                         </p>  
@@ -85,14 +85,14 @@ function mostrarRutina($id) {
                 <div class='row py-5 justify-content-center' id='ComentariosRutina'>
                     <h4 class='text-center text-uppercase mb-3'>Comentarios</h4>
                     <div class='col-12 col-sm-10 col-md-8 px-5 py-2 border text-start'>
-            EOS;
+EOS;
                        $html .= mostrarComentariosRutina($rutina->getId());
             $html .= <<<EOS
                     </div>  
                 </div>
                 <!--/Sección Comentarios-->
             </div>
-        EOS;
+EOS;
 
         return $html;
     }
@@ -111,7 +111,7 @@ function mostrarComentariosRutina($id) : string {
             <div>   
                 <p class="mb-0"><span class="fw-bold">{$user->getNombre()}</span>  |  {$comentario->getFecha()}</p>
                 <p>
-        EOS;
+EOS;
         $valoracion = $comentario->getValoracion();
         for ($i = 1; $i <= $valoracion; $i++) {
             $html .= '<span class="fa fa-star checked"></span>';
@@ -125,7 +125,7 @@ function mostrarComentariosRutina($id) : string {
                 </p>
                 <hr class='bg-secondary border-2 border-top'>
             </div>
-        EOS;
+EOS;
     }
 
     return $html;
@@ -157,7 +157,7 @@ function generarBotonSeguir($idRutina) {
             <li><a class="dropdown-item" href="#" id="desmarcarCompletada">Desmarcar como completada</a></li>
           </ul>
         </div>
-        EOS;
+EOS;
     }
     else {
         return '';

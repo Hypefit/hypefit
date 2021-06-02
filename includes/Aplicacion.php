@@ -7,7 +7,10 @@ use mysqli;
 class Aplicacion {
     private static $instancia;
     private $bdDatosConexion;
+    private $rutaRaizApp;
+    private $dirInstalacion;
     private $conn;
+
 
     public static function getSingleton() {
         if (!self::$instancia instanceof self) {
