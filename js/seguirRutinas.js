@@ -11,25 +11,25 @@ $(function() {
     }
 
     $("#empezarSeguir").click( function () {
-        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "seguir", idRutina: $(".dropdown").data("rutina")}, function () {
+        $.post("includes/ajax/seguirRutina.php", {estado: "seguir", idRutina: $(".dropdown").data("rutina")}, function () {
             cambiarASiguiendo();
         })
             .fail( errorCambioEstado )
     });
     $("#dejarSeguir").click( function () {
-        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "dejarSeguir", idRutina: $(".dropdown").data("rutina")}, function () {
+        $.post("includes/ajax/seguirRutina.php", {estado: "dejarSeguir", idRutina: $(".dropdown").data("rutina")}, function () {
             cambiarASinSeguir();
         })
             .fail( errorCambioEstado )
     });
     $("#marcarCompletada").click( function () {
-        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "completar", idRutina: $(".dropdown").data("rutina")}, function () {
+        $.post("includes/ajax/seguirRutina.php", {estado: "completar", idRutina: $(".dropdown").data("rutina")}, function () {
             cambiarACompletada();
         })
             .fail( errorCambioEstado )
     });
     $("#desmarcarCompletada").click( function () {
-        $.post("/hypefit/includes/ajax/seguirRutina.php", {estado: "dejarSeguir", idRutina: $(".dropdown").data("rutina")}, function () {
+        $.post("includes/ajax/seguirRutina.php", {estado: "dejarSeguir", idRutina: $(".dropdown").data("rutina")}, function () {
             cambiarASinSeguir();
         })
             .fail( errorCambioEstado )
@@ -81,7 +81,7 @@ function cambiarACompletada() {
     }
     button.addClass("btn-success");
     $("#empezarSeguir").hide();
-    $("#dejarSeguir").show();
+    $("#dejarSeguir").hide();
     $("#marcarCompletada").hide();
     $("#desmarcarCompletada").show();
     $(".dropdown").data("estado", "completada");

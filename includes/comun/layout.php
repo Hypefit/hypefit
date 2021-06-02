@@ -50,7 +50,7 @@
     </div>
 
     <!--Bootstrap-->
-    <script src="<?= RUTA_JS.'/bootstrap.js'?>"></script>
+    <script src="<?= RUTA_JS.'/bootstrap.bundle.js'?>"></script>
 
     <!--JS-->
     <script src="<?= RUTA_JS.'/validationRegistro.js'?>"></script>

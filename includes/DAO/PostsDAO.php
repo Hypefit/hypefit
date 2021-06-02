@@ -36,6 +36,13 @@ class PostsDAO extends DAO {
         return $array_posts;
     }
 
+    public function getNumPostsPorCreador(int $creador) {
+        $creador = $this->limpiarString($creador);
+        $query = "SELECT * from posts where creador = '$creador'";
+        $resultado = $this->select($query);
+        return count($resultado);
+    }
+
     private function crearObjetoPost($fila): Post {
         $post = new Post();
         $post->setId($fila['id']);

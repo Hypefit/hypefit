@@ -26,7 +26,25 @@ else {
         $contenidoPrincipal .= $form->gestiona();
     }
 
+    //Notificación mostrada al obtener insignia "Primer post"
+    $contenidoPrincipal .=<<<EOS
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+        <div id="notificacionPrimerPost" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="img/insignias/notificacion.png" class="rounded me-2" alt="Icono de notificación">
+                <strong class="me-auto">Nueva insignia</strong>
+                <small>justo ahora</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                ¡Acabas de obtener la insignia "Primer post"! <a href="perfil.php">Pulsa aquí para verla</a>
+            </div>
+        </div>
+    </div>
+    EOS;
+
     $scripts = array();
     array_push($scripts, 'js/respuestaComentario.js');
+    array_push($scripts, 'js/insigniaCrearPost.js');
 }
 require __DIR__ . '/includes/comun/layout.php';
