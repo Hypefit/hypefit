@@ -182,15 +182,15 @@ abstract class Form
 
         $numErrores = count($clavesErroresGenerales);
         if ($numErrores > 0) {
-            $html = "<div class= 'text-danger fs-5 \"$classAtt\"'>";
+            $html = "";
             if (  $numErrores == 1 ) {
-                $html .= "<p>$errores[0]</p>";
+                $html .= "<span>$errores[0]</span>";
             } else {
                 foreach($clavesErroresGenerales as $clave) {
-                    $html .= "<p>$errores[$clave]</p>";
+                    $html .= "<span>$errores[$clave]</span>";
                 }
             }
-            $html .= '</div>';
+            //$html .= '</div>';
         }
         return $html;
     }
