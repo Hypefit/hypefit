@@ -2,10 +2,10 @@
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: vm18.db.swarm.test
--- Tiempo de generación: 14-05-2021 a las 16:53:16
--- Versión del servidor: 10.5.9-MariaDB-1:10.5.9+maria~focal
--- Versión de PHP: 7.4.15
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-06-2021 a las 11:55:26
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `hypefit`
 --
+CREATE DATABASE IF NOT EXISTS `hypefit` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `hypefit`;
 
 -- --------------------------------------------------------
 
@@ -32,17 +34,18 @@ CREATE TABLE `comentarios_post` (
   `idPost` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `comentario` text NOT NULL
+  `comentario` text NOT NULL,
+  `idComentarioPadre` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `comentarios_post`
 --
 
-INSERT INTO `comentarios_post` (`id`, `idPost`, `idUsuario`, `fecha`, `comentario`) VALUES
-(1, 1, 3, '2021-04-14 16:04:36', 'Me encanta Hypefit, es la mejor web para ponerse en forma!'),
-(2, 1, 1, '2021-04-14 16:04:59', 'Muchas gracias Paco por tu apoyo :)'),
-(3, 2, 5, '2021-05-14 10:24:48', 'No os perdáis las nuevas rutinas de full body que hemos preparado. ¡A ponerse en forma!');
+INSERT INTO `comentarios_post` (`id`, `idPost`, `idUsuario`, `fecha`, `comentario`, `idComentarioPadre`) VALUES
+(1, 1, 3, '2021-04-14 16:04:36', 'Me encanta Hypefit, es la mejor web para ponerse en forma!', NULL),
+(2, 1, 1, '2021-06-01 14:57:41', 'Muchas gracias Paco por tu apoyo :)', 1),
+(3, 2, 5, '2021-05-14 10:24:48', 'No os perdáis las nuevas rutinas de full body que hemos preparado. ¡A ponerse en forma!', NULL);
 
 -- --------------------------------------------------------
 
@@ -187,6 +190,13 @@ CREATE TABLE `rutinas_usuarios` (
   `completada` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `rutinas_usuarios`
+--
+
+INSERT INTO `rutinas_usuarios` (`idUsuario`, `idRutina`, `completada`) VALUES
+(2, 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -212,7 +222,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `email`, `hashPassword`, `rol`, `aprobad
 (3, 'Paco Fernández', 'pacofernandez@gmail.com', '$2y$10$Rl8EHx/EQ1zh40PEQv8k.e0M7PzVidrb.muCgtvbsLJIeov6W31am', 'registrado', 1),
 (4, 'Laura', 'laura@gmail.com', '$2y$10$qWhzrQItsw453xSq35ltHe3q2NwGULzhuB23Vh/bdef7Dke5Qsc4e', 'registrado', 1),
 (5, 'Juan', 'juan@gmail.com', '$2y$10$VE2iJ4cHETpDgUEVi8v4XefldjYMqvu4.JlotnSQOkIrNDsaIRRTu', 'entrenador', 1),
-(6, 'Adrián Sánchez', 'adriansanchez@gmail.com', '$2y$10$FdKBs18eJzwHxym4tkozbOIzEzJZAYoD7foAc6OjYCn8mHEdTazSC', 'nutricionista', 0),
+(6, 'Adrián Sánchez', 'adriansanchez@gmail.com', '$2y$10$FdKBs18eJzwHxym4tkozbOIzEzJZAYoD7foAc6OjYCn8mHEdTazSC', 'nutricionista', 1),
 (7, 'Paula Pérez', 'paulaperez@gmail.com', '$2y$10$hi9muNv961AE2rix0FBo8u2QrY0TMNqULjBkCwm.w829SDWE.Tpi6', 'nutricionista', 1);
 
 --
@@ -225,7 +235,8 @@ INSERT INTO `usuarios` (`id`, `nombre`, `email`, `hashPassword`, `rol`, `aprobad
 ALTER TABLE `comentarios_post`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idPost` (`idPost`),
-  ADD KEY `idUsuario` (`idUsuario`);
+  ADD KEY `idUsuario` (`idUsuario`),
+  ADD KEY `comentarios_post_ibfk_3` (`idComentarioPadre`);
 
 --
 -- Indices de la tabla `comentarios_receta`
@@ -275,6 +286,7 @@ ALTER TABLE `rutinas`
 -- Indices de la tabla `rutinas_usuarios`
 --
 ALTER TABLE `rutinas_usuarios`
+  ADD PRIMARY KEY (`idUsuario`,`idRutina`),
   ADD KEY `rutinas_usuarios_ibfk_1` (`idUsuario`),
   ADD KEY `rutinas_usuarios_ibfk_2` (`idRutina`);
 
@@ -293,19 +305,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios_post`
 --
 ALTER TABLE `comentarios_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios_receta`
 --
 ALTER TABLE `comentarios_receta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios_rutina`
 --
 ALTER TABLE `comentarios_rutina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
@@ -323,13 +335,13 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT de la tabla `recetas`
 --
 ALTER TABLE `recetas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `rutinas`
 --
 ALTER TABLE `rutinas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -346,7 +358,8 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `comentarios_post`
   ADD CONSTRAINT `comentarios_post_ibfk_1` FOREIGN KEY (`idPost`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `comentarios_post_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `comentarios_post_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comentarios_post_ibfk_3` FOREIGN KEY (`idComentarioPadre`) REFERENCES `comentarios_post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `comentarios_receta`
