@@ -20,7 +20,7 @@ $(document).ready(function() {
                     "title" : title
                 };
                 $.ajax({
-                    url:"/hypefit/includes/AJAX/eventos.php",
+                    url:"/hypefit/includes/ajax/eventos.php",
                     type:"POST",
                     contentType: 'application/json; charset=utf-8',
                     dataType: "json",

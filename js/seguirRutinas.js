@@ -93,9 +93,9 @@ function errorCambioEstado() {
 }
 
 function insigniaCompletada() {
-    $.post('includes/AJAX/insignias.php', {nombreInsignia: "Primera rutina completada", peticion: "buscar"}, function (data) {
+    $.post('includes/ajax/insignias.php', {nombreInsignia: "Primera rutina completada", peticion: "buscar"}, function (data) {
         if (!data.existe) {
-            $.post('includes/AJAX/comprobarNumRutinasCompletadas.php', function (data) {
+            $.post('includes/ajax/comprobarNumRutinasCompletadas.php', function (data) {
                 if (data.primeraRutina) {
                     $.post('includes/AJAX/insignias.php', {nombreInsignia: "Primera rutina completada", peticion: "insertar"}, function () {
                         $("#notificacionPrimeraCompletada").toast("show");
@@ -104,11 +104,11 @@ function insigniaCompletada() {
             }, 'json');
         }
         else {
-            $.post('includes/AJAX/insignias.php', {nombreInsignia: "Todas las rutinas completadas", peticion: "buscar"}, function (data) {
+            $.post('includes/ajax/insignias.php', {nombreInsignia: "Todas las rutinas completadas", peticion: "buscar"}, function (data) {
                 if (!data.existe) {
-                    $.post('includes/AJAX/comprobarNumRutinasCompletadas.php', function (data) {
+                    $.post('includes/ajax/comprobarNumRutinasCompletadas.php', function (data) {
                         if (data.todasCompletadas) {
-                            $.post('includes/AJAX/insignias.php', {nombreInsignia: "Todas las rutinas completadas", peticion: "insertar"}, function () {
+                            $.post('includes/ajax/insignias.php', {nombreInsignia: "Todas las rutinas completadas", peticion: "insertar"}, function () {
                                 $("#notificacionTodasCompletadas").toast("show");
                             }, 'json');
                         }
