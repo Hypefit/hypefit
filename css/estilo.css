@@ -137,6 +137,12 @@ textarea.contenido{
     background-color: rgba(152, 227, 152, 0.85);
 }
 
+.img-insignia{
+    height: 60px;
+    width: auto;
+    float: left;
+}
+
 .level-1{
     margin-left: 5%;
 }
@@ -145,6 +151,9 @@ textarea.contenido{
 }
 .level-3{
     margin-left: 15%;
+}
+.level-4{
+    margin-left: 20%;
 }
 
 footer{

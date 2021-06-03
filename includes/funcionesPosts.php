@@ -94,6 +94,7 @@ function mostrarComentariosRecursivo(&$comentarios, &$html, $id, $indentLevel) {
                 <div id="$idComentario"> </div>
 EOS;
         $comentariosHijo = $daoC->getComentariosHijo($idComentario);
-        mostrarComentariosRecursivo($comentariosHijo, $html, $id, $indentLevel + 1);
+        if($indentLevel < 4) $indentLevel++;
+        mostrarComentariosRecursivo($comentariosHijo, $html, $id, $indentLevel);
     }
 }
