@@ -134,8 +134,17 @@ CREATE TABLE `noticias` (
   `id` int(11) NOT NULL,
   `idAutor` int(11) NOT NULL,
   `titulo` varchar(200) NOT NULL,
-  `texto` text NOT NULL
+  `texto` text NOT NULL,
+  `filename` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `noticias`
+--
+
+INSERT INTO `noticias` (`id`, `idAutor`, `titulo`, `texto`, `filename`) VALUES
+(1, 2, 'La falta de ejercicio fisico', 'En concreto, la actividad física diaria disminuyó 43,3 minutos; las conductas sedentarias aumentaron 50,2 minutos; y la calidad del sueño se redujo un 2,09%. El periodo de confinamiento también aumentó de manera negativa las conductas antisociales, de ansiedad y las relacionadas con la depresión.', 'Sleep.jpg');
+
 
 -- --------------------------------------------------------
 

@@ -69,6 +69,11 @@ input[type = "radio"]:checked ~ label{
     display:none;
 }
 
+#img-noticia{
+    height: 60vh;
+    overflow: scroll;
+}
+
 .signup-form, .login-form{
     display: block;
     border-radius: 3px;
@@ -141,6 +146,25 @@ textarea.contenido{
     height: 60px;
     width: auto;
     float: left;
+}
+
+#rutinasCompletadasPerfil li,
+#rutinasSeguidasPerfil li{
+    list-style-type: none;
+    list-style: none;
+
+}
+#rutinasSeguidasPerfil li:before{
+    font-family: 'FontAwesome';
+    content: "\f06e";
+    margin-right: 10px;
+    color: deepskyblue;
+}
+#rutinasCompletadasPerfil li:before{
+    font-family: 'FontAwesome';
+    content: "\f00c";
+    margin-right: 10px;
+    color: limegreen;
 }
 
 .level-1{

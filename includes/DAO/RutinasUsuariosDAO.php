@@ -42,4 +42,16 @@ class RutinasUsuariosDAO extends DAO {
         $resultado = $this->select($query);
         return count($resultado);
     }
+
+    public function getRutinasSeguidasPorUsuario(int $idUsuario){
+        $query = sprintf("SELECT * FROM rutinas_usuarios WHERE idUsuario = '%s'", $this->limpiarString($idUsuario));
+        $resultado = $this->select($query);
+        return $resultado;
+    }
+
+    public function getRutinasCompletadasPorUsuario(int $idUsuario){
+        $query = sprintf("SELECT * FROM rutinas_usuarios WHERE idUsuario = '%s' AND completada=1", $this->limpiarString($idUsuario));
+        $resultado = $this->select($query);
+        return $resultado;
+    }
 }
