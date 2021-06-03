@@ -3,6 +3,9 @@
 use hypefit\Forms\AprobarUsuariosForm;
 use hypefit\DAO\InsigniasUsuariosDAO;
 use hypefit\DAO\InsigniasDAO;
+use hypefit\DAO\RutinasUsuariosDAO;
+use hypefit\DAO\RutinaDAO;
+
 
 require_once __DIR__.'/includes/config.php';
 require_once __DIR__.'/includes/autorizacion.php';
@@ -36,22 +39,33 @@ if(estaLogado())
     $contenidoPrincipal = customizableJumbo($img, $titulo, "", $customText, "", "", "");
 
     //Columnas logros
-    $daoInsigniasUsuario = new InsigniasUsuariosDAO();
-    $listaInsigniasUsuario = $daoInsigniasUsuario->getInsigniasUsuario($_SESSION["idUsuario"]);
+    $idUsuario = $_SESSION["idUsuario"];
 
     $daoInsignias = new InsigniasDAO();
+    $daoRutina = new RutinaDAO();
+
+    $daoInsigniasUsuario = new InsigniasUsuariosDAO();
+    $listaInsigniasUsuario = $daoInsigniasUsuario->getInsigniasUsuario($idUsuario);
+
+    $daoRutinasUsuario = new RutinasUsuariosDAO();
+    $listaRutinasSeguidasUsuario = $daoRutinasUsuario->getRutinasSeguidasPorUsuario($idUsuario);
+    $listaRutinasCompletadasUsuario = $daoRutinasUsuario->getRutinasCompletadasPorUsuario($idUsuario);
 
     $contenidoPrincipal .= <<<EOS
         <div class="container">
             <div class="row mb-4">
-                <div class="col-xs-12 col-md-4 px-3 ">
+                <div class="col-xs-12 col-md-4 ">
                     <h4 class="mb-4">Tus insignias</h4>
-                    <div>
+                    
         EOS;
 
+        if(sizeof($listaInsigniasUsuario) == 0){
+            $contenidoPrincipal.= '<p class="text-secondary">Cuando consigas una insignia la verás aquí</p>';
+        }
+
         foreach($listaInsigniasUsuario as $insigniaUsuario ){
-            $id = $insigniaUsuario["idInsignia"];
-            $insignia = $daoInsignias->buscarInsigniaPorId($id);
+            $idInsignia = $insigniaUsuario["idInsignia"];
+            $insignia = $daoInsignias->buscarInsigniaPorId($idInsignia);
 
             $contenidoPrincipal.= <<< EOS
                 <div>
@@ -62,15 +76,55 @@ if(estaLogado())
             EOS;
         }
         $contenidoPrincipal .= <<<EOS
-                    </div>
-                </div>
-                 <div class="col-xs-12 col-md-4">
-                    <h4>Rutinas que sigues</h4>
                     
                 </div>
-                 <div class="col-xs-12 col-md-4">
-                    <h4>Rutinas completadas</h4>
-                    
+                
+                <div class="col-xs-12 col-md-4">
+                    <h4 class="mb-4">Rutinas que sigues</h4>
+        EOS;
+                    if(sizeof($listaRutinasSeguidasUsuario) == 0){
+                        $contenidoPrincipal.= '<p class="text-secondary">Empieza a seguir una rutina para verla aquí</p>';
+                    }
+                    else {
+                        $contenidoPrincipal .= '<ul id="rutinasSeguidasPerfil" class="ps-2">';
+                        foreach ($listaRutinasSeguidasUsuario as $rutinaSeguidaUsuario) {
+                            $idRutina = $rutinaSeguidaUsuario["idRutina"];
+                            $rutinaSeguida = $daoRutina->getRutina($idRutina);
+
+                            $contenidoPrincipal .= <<<EOS
+                        <li class="mb-3">
+                            {$rutinaSeguida->getTitulo()}
+                        </li>
+                        EOS;
+                        }
+                        $contenidoPrincipal .= "</ul>";
+                    }
+                        $contenidoPrincipal .= <<<EOS
+                </div>
+                
+                <div class="col-xs-12 col-md-4">
+                    <h4 class="mb-4">Rutinas completadas</h4>
+        EOS;
+                    if(sizeof($listaRutinasCompletadasUsuario) == 0){
+                        $contenidoPrincipal.= '<p class="text-secondary">Completa una rutina para verla aquí</p>';
+                    }
+                    else {
+                        $contenidoPrincipal .= '<ul id="rutinasCompletadasPerfil" class="ps-2">';
+                        foreach ($listaRutinasCompletadasUsuario as $rutinaCompletaUsuario) {
+                            $idRutina = $rutinaCompletaUsuario["idRutina"];
+                            $rutinaCompletada = $daoRutina->getRutina($idRutina);
+
+                            $contenidoPrincipal .= <<<EOS
+                        <li class=" mb-3">
+                            {$rutinaCompletada->getTitulo()}
+                        </li>
+                        EOS;
+
+                        }
+                        $contenidoPrincipal .= "</ul>";
+                    }
+        $contenidoPrincipal .= <<<EOS
+                    </ul>
                 </div>
             </div>
         </div>

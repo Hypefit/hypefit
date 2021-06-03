@@ -143,6 +143,25 @@ textarea.contenido{
     float: left;
 }
 
+#rutinasCompletadasPerfil li,
+#rutinasSeguidasPerfil li{
+    list-style-type: none;
+    list-style: none;
+
+}
+#rutinasSeguidasPerfil li:before{
+    font-family: 'FontAwesome';
+    content: "\f06e";
+    margin-right: 10px;
+    color: deepskyblue;
+}
+#rutinasCompletadasPerfil li:before{
+    font-family: 'FontAwesome';
+    content: "\f00c";
+    margin-right: 10px;
+    color: limegreen;
+}
+
 .level-1{
     margin-left: 5%;
 }
