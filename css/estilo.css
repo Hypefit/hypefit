@@ -69,6 +69,11 @@ input[type = "radio"]:checked ~ label{
     display:none;
 }
 
+#img-noticia{
+    height: 60vh;
+    overflow: scroll;
+}
+
 .signup-form, .login-form{
     display: block;
     border-radius: 3px;

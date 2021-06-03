@@ -73,9 +73,8 @@ function mostrarTextoNoticia($id) : string {
                     </div>
                     <div class="card-body">
                         <p>$texto</p>
-                        <img src="${rutaImg}">
                     </div>
-                    
+                    <img class="card-img-bottom p-4" src="${rutaImg}">
                 </div>
         EOS;
     $html .= "
