@@ -246,22 +246,22 @@ $contenidoPrincipal .=<<<EOS
                     <div class="row">
                             <div id="title-group" class="form-group">
                                 <label class="control-label" for="title">Título</label>
-                                <input type="text" class="form-control" id="titulo" name="titulo">
+                                <input type="text" class="form-control" id="editartitulo" name="titulo">
                                 <!-- errors will go here -->
                             </div>
                             <div id="startdate-group" class="form-group">
                                 <label class="control-label" for="startDate">Fecha de inicio (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="fechaInicio" name="fechaInicio">
+                                <input type="text" class="form-control" id="editarfechaInicio" name="fechaInicio">
                                 <!-- errors will go here -->
                             </div>
                             <div id="enddate-group" class="form-group">
                                 <label class="control-label" for="endDate">Fecha de fin (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="fechaFin" name="fechaInicio">
+                                <input type="text" class="form-control" id="editarfechaFin" name="fechaInicio">
                                 <!-- errors will go here -->
                             </div>                       
                             <div id="description-group" class="form-group">
                                 <label class="control-label" for="descripcion">Descripcion</label>
-                                <input type="text" class="form-control" id="descripcion" name="descripcion">
+                                <input type="text" class="form-control" id="editardescripcion" name="descripcion">
                                 <!-- errors will go here -->
                             </div>                   
                     </div>   
@@ -269,14 +269,13 @@ $contenidoPrincipal .=<<<EOS
                     </div>
 
                 </div>
-
-            </div>
-
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
               <button type="submit" class="btn btn-primary">Actualizar</button>
               <button type="button" class="btn btn-danger" id="deleteEvent" data-id>Eliminar evento</button>
             </div>
+            </div>         
+            
 
         </form>
         </div><!-- /.modal-content -->

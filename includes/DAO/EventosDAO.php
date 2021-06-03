@@ -15,6 +15,8 @@ class EventosDAO extends DAO {
             $evento->setFechaInicio($fila['fechaInicio']);
             $evento->setFechaFin($fila['fechaFin']);
             $evento->setDescripcion($fila['descripcion']);
+            $evento->setTitulo($fila['titulo']);
+            $evento->setIdCreador($fila['idCreador']);
             array_push($eventos, $evento);
         }
         return $eventos;
@@ -31,6 +33,8 @@ class EventosDAO extends DAO {
             $evento->setFechaInicio($fila['fechaInicio']);
             $evento->setFechaFin($fila['fechaFin']);
             $evento->setDescripcion($fila['descripcion']);
+            $evento->setTitulo($fila['titulo']);
+            $evento->setIdCreador($fila['idCreador']);
             array_push($eventos, $evento);
         }
         return $eventos;
@@ -46,6 +50,7 @@ class EventosDAO extends DAO {
     public function eliminarEvento(int $id) {
         $id = $this->limpiarString($id);
         $query = "DELETE FROM eventos where id = '$id'";
+        $this->modify($query);
     }
 
     public function crearEvento(Evento $e) {
@@ -64,6 +69,6 @@ class EventosDAO extends DAO {
             $this->limpiarString($e->getDescripcion()),
             $this->limpiarString($e->getIdCreador()),
             $this->limpiarString($e->getId()));
-        return $this->insert($query);
+        return $this->modify($query);
     }
 }
