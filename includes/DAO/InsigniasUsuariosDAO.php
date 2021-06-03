@@ -18,4 +18,10 @@ class InsigniasUsuariosDAO extends DAO {
         $query = sprintf("INSERT into insignias_usuarios values ('%s', '%s')", $this->limpiarString($idInsignia), $this->limpiarString($idUsuario));
         return $this->insert($query);
     }
+
+    public function getInsigniasUsuario(int $idUsuario){
+        $query = sprintf("SELECT * FROM insignias_usuarios WHERE idUsuario = '%s'", $this->limpiarString($idUsuario));
+        $resultado = $this->select($query);
+        return $resultado;
+    }
 }

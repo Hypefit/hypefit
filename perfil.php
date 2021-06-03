@@ -1,6 +1,8 @@
 <?php
 
 use hypefit\Forms\AprobarUsuariosForm;
+use hypefit\DAO\InsigniasUsuariosDAO;
+use hypefit\DAO\InsigniasDAO;
 
 require_once __DIR__.'/includes/config.php';
 require_once __DIR__.'/includes/autorizacion.php';
@@ -33,12 +35,34 @@ if(estaLogado())
 
     $contenidoPrincipal = customizableJumbo($img, $titulo, "", $customText, "", "", "");
 
+    //Columnas logros
+    $daoInsigniasUsuario = new InsigniasUsuariosDAO();
+    $listaInsigniasUsuario = $daoInsigniasUsuario->getInsigniasUsuario($_SESSION["idUsuario"]);
+
+    $daoInsignias = new InsigniasDAO();
+
     $contenidoPrincipal .= <<<EOS
         <div class="container">
-            <div class="row ms-3">
-                <div class="col-xs-12 col-md-4">
-                    <h4>Tus insignias</h4>
-                    
+            <div class="row mb-4">
+                <div class="col-xs-12 col-md-4 px-3 ">
+                    <h4 class="mb-4">Tus insignias</h4>
+                    <div>
+        EOS;
+
+        foreach($listaInsigniasUsuario as $insigniaUsuario ){
+            $id = $insigniaUsuario["idInsignia"];
+            $insignia = $daoInsignias->buscarInsigniaPorId($id);
+
+            $contenidoPrincipal.= <<< EOS
+                <div>
+                    <img src="{$insignia->getRutaImagen()}" class="img-insignia me-3" alt="Imagen insignia"/>
+                    <p class="mb-0 fw-bold">{$insignia->getTitulo()}</p>
+                    <p>{$insignia->getDescripcion()}</p>
+                </div>
+            EOS;
+        }
+        $contenidoPrincipal .= <<<EOS
+                    </div>
                 </div>
                  <div class="col-xs-12 col-md-4">
                     <h4>Rutinas que sigues</h4>
