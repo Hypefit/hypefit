@@ -134,7 +134,8 @@ CREATE TABLE `noticias` (
   `id` int(11) NOT NULL,
   `idAutor` int(11) NOT NULL,
   `titulo` varchar(200) NOT NULL,
-  `texto` text NOT NULL
+  `texto` text NOT NULL,
+  `filename` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
