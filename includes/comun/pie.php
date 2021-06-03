@@ -44,7 +44,18 @@ require_once __DIR__.'/../config.php';
                     </ul>
                 </div>
                 <!--Grid column-->
-
+                       
+                <!--Grid column-->
+                <div class="col-lg-2 col-sm-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-0">Noticias</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="<?=RUTA_APP.'/noticias.php'?>" class="nav-link">Nuevas Noticias</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column--> 
+                
                 <!--Grid column-->
                 <div class="col-lg-2 col-sm-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase mb-0">Comunidad</h5>
