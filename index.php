@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__.'/includes/config.php';
 require_once __DIR__.'/includes/comun/jumbotron.php';
+require_once __DIR__.'/includes/autorizacion.php';
 
 $tituloPagina= 'Hypefit | Inicio';
 
@@ -16,6 +17,8 @@ $rutaRecetasVeganas=RUTA_IMGS.'/plato-vegano.jpg';
 //Jumbotron Cabecera
 $contenidoPrincipal = cabeceraInicio(RUTA_IMGS.'/cabecera2.jpg', "Bienvenido a HYPEFIT",
     "Todo lo que necesitas a un solo click", "Empezar", "#inicio" );
+
+$botonCrearEvento = (esAdmin() || ((esEntrenador() || esNutricionista()) && estaAprobado())) ? '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearEventoModal"> Crear evento </button>' : '';
 
 //Contenido
 $contenidoPrincipal .= <<<EOS
@@ -142,7 +145,10 @@ $contenidoPrincipal .= <<<EOS
         <div class="bg-light row ps-0 me-0 align-items-center justify-content-center">
             <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">Calendario de actividades</h2>
                <div class="container">
-                    <div id="calendar"></div>
+                    <div id="calendar"></div>                    
+                    <div class="col text-center">
+                        {$botonCrearEvento}                    
+                    </div>                 
                </div>
         </div>
     </div>
@@ -161,5 +167,124 @@ $contenidoPrincipal .= <<<EOS
     </div>
     <div class="bg-light" style="height: 9%;"></div>
 EOS;
+
+$idCreador = idUsuarioLogado();
+$contenidoPrincipal .=<<<EOS
+<div class="modal fade" id="crearEventoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Crear evento</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="container-fluid">
+
+                    <form id="createEvent" class="form-horizontal">
+
+                    <div class="row">
+                            <div id="title-group" class="form-group">
+                                <label class="control-label" for="title">Título</label>
+                                <input type="text" class="form-control" name="titulo">
+                                <!-- errors will go here -->
+                            </div>
+                            <div id="startdate-group" class="form-group">
+                                <label class="control-label" for="startDate">Fecha de inicio (formato DD-MM-AAAA HH:MM:SS)</label>
+                                <input type="text" class="form-control" id="fechaInicio" name="fechaInicio">
+                                <!-- errors will go here -->
+                            </div>
+                            <div id="enddate-group" class="form-group">
+                                <label class="control-label" for="endDate">Fecha de fin (formato DD-MM-AAAA HH:MM:SS)</label>
+                                <input type="text" class="form-control" id="fechaFin" name="fechaFin">
+                                <!-- errors will go here -->
+                            </div>                       
+                            <div id="description-group" class="form-group">
+                                <label class="control-label" for="descripcion">Descripcion</label>
+                                <input type="text" class="form-control" name="descripcion">
+                                <input type="hidden" class="form-control" id="idCreador" name="idCreador" value="{$idCreador}">
+                                <!-- errors will go here -->
+                            </div>                   
+                    </div>                   
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
+              <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="editarEventoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar evento</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="container-fluid">
+
+                    <form id="editEvent" class="form-horizontal">
+                    <input type="hidden" id="editEventId" name="editEventId" value="">
+
+                    <div class="row">
+                            <div id="title-group" class="form-group">
+                                <label class="control-label" for="title">Título</label>
+                                <input type="text" class="form-control" id="titulo" name="titulo">
+                                <!-- errors will go here -->
+                            </div>
+                            <div id="startdate-group" class="form-group">
+                                <label class="control-label" for="startDate">Fecha de inicio (formato DD-MM-AAAA HH:MM:SS)</label>
+                                <input type="text" class="form-control" id="fechaInicio" name="fechaInicio">
+                                <!-- errors will go here -->
+                            </div>
+                            <div id="enddate-group" class="form-group">
+                                <label class="control-label" for="endDate">Fecha de fin (formato DD-MM-AAAA HH:MM:SS)</label>
+                                <input type="text" class="form-control" id="fechaFin" name="fechaInicio">
+                                <!-- errors will go here -->
+                            </div>                       
+                            <div id="description-group" class="form-group">
+                                <label class="control-label" for="descripcion">Descripcion</label>
+                                <input type="text" class="form-control" id="descripcion" name="descripcion">
+                                <!-- errors will go here -->
+                            </div>                   
+                    </div>   
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
+              <button type="button" class="btn btn-danger" id="deleteEvent" data-id>Eliminar evento</button>
+            </div>
+
+        </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+EOS;
+
+$scripts = array();
+array_push($scripts, 'js/calendarioEventos.js');
 
 require __DIR__.'/includes/comun/layout.php';

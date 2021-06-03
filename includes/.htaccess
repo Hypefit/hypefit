@@ -1,2 +1,0 @@
-SetEnvIfNoCase X-Requested-With XMLHttpRequest ajax
-Require env ajax

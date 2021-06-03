@@ -23,7 +23,11 @@
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/jquery-ui.min.css'?>" />
 
     <!--FullCalendar-->
-    <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/fullcalendar.main.min.css'?>" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.2/main.min.css"></script>
+    <<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.4.2/main.min.css"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.4.2/main.min.css"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fullcalendar/list@4.4.2/main.min.css"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap@4.4.2/main.min.css"></script>
 
 
     <!--Bootstrap-->
@@ -36,7 +40,12 @@
     <script src="<?= RUTA_JS.'/jquery-ui.min.js'?>"></script>
 
     <!--FullCalendar-->
-    <script src="<?= RUTA_JS.'/fullcalendar.main.min.js'?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.4.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.4.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.4.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@4.4.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap@4.4.2/main.min.js"></script>
 
     <!--Favicon-->
     <link rel="icon"

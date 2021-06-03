@@ -7,8 +7,6 @@ use mysqli;
 class Aplicacion {
     private static $instancia;
     private $bdDatosConexion;
-    private $rutaRaizApp;
-    private $dirInstalacion;
     private $conn;
 
 
