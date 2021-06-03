@@ -12,19 +12,31 @@
         <meta http-equiv="Last-Modified" content="0">
         <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
         <meta http-equiv="Pragma" content="no-cache">
-    <!--Estilo calendario-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+
     <!--Bootstrap-->
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/bootstrap.css'?>" />
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/estilo.css'?>" />
 
+    <!--jQuery UI-->
+    <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/jquery-ui.min.css'?>" />
 
-        <!--jQuery-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-        <script src="<?= RUTA_JS.'/jquery-3.6.0.min.js'?>"></script>
+    <!--FullCalendar-->
+    <link rel="stylesheet" type="text/css" href="<?= RUTA_CSS.'/fullcalendar.main.min.css'?>" />
+
+
+    <!--Bootstrap-->
+    <script src="<?= RUTA_JS.'/bootstrap.bundle.js'?>"></script>
+
+    <!--jQuery-->
+    <script src="<?= RUTA_JS.'/jquery-3.6.0.min.js'?>"></script>
+
+    <!--jQuery UI-->
+    <script src="<?= RUTA_JS.'/jquery-ui.min.js'?>"></script>
+
+    <!--FullCalendar-->
+    <script src="<?= RUTA_JS.'/fullcalendar.main.min.js'?>"></script>
 
     <!--Favicon-->
     <link rel="icon"
@@ -33,13 +45,6 @@
 
     <!--Font Awesome (iconos chulos)-->
     <script src="https://kit.fontawesome.com/c4984e3c67.js" crossorigin="anonymous"></script>
-
-    <!--Calendario -->
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-
 </head>
 <body>
     <div id="contenedor">
@@ -56,13 +61,9 @@
         ?>
     </div>
 
-    <!--Bootstrap-->
-    <script src="<?= RUTA_JS.'/bootstrap.bundle.js'?>"></script>
-
     <!--JS-->
     <script src="<?= RUTA_JS.'/validationRegistro.js'?>"></script>
     <script src="<?= RUTA_JS.'/validationLogin.js'?>"></script>
-
 
     <?php
         if(isset($scripts)) {
