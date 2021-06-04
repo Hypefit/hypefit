@@ -35,7 +35,9 @@ require_once "../config.php";
                 echo "<span>Nombre de usuario no disponible</span>";
                 $nombreError = true;
             }
-            else $nombreError = false;
+            else {
+                $nombreError = false;
+            }
         }
     }
 
@@ -57,7 +59,9 @@ require_once "../config.php";
             echo "<span>Correo no disponible</span>";
             $emailError = true;
         }
-        else $emailError = false;
+        else {
+            $emailError = false;
+        }
     }
     else if(isset($_POST["pass"])) { //Campo contraseña
         $pass = $_POST["pass"];
@@ -92,47 +96,6 @@ require_once "../config.php";
             echo '<span class = "text-danger">La contraseña debe tener mínimo 8 caracteres</span>';
         }
     }
-?>
-    <script>
-        var nombreError = "<?php echo $nombreError; ?>";
-        var nombreModif = "<?php echo $nombreModif; ?>";
-        var emailError = "<?php echo $emailError; ?>";
-        var emailModif = "<?php echo $emailModif; ?>";
-        var passError = "<?php echo $passError; ?>";
-        var passModif = "<?php echo $passModif; ?>";
 
-        if(nombreModif) {
-            $("#nombreRegistro").addClass("border border-2");
-            if(nombreError){
-                $("#nombreRegistro").removeClass("border-success");
-                $("#nombreRegistro").addClass("border-danger");
-            }
-            else{
-                $("#nombreRegistro").removeClass("border-danger");
-                $("#nombreRegistro").addClass("border-success");
-            }
-        }
-        if(emailModif) {
-            $("#emailRegistro").addClass("border border-2");
-            if(emailError){
-                $("#emailRegistro").removeClass("border-success");
-                $("#emailRegistro").addClass("border-danger");
-            }
-            else{
-                $("#emailRegistro").removeClass("border-danger");
-                $("#emailRegistro").addClass("border-success");
-            }
-        }
-        if(passModif){
-            $("#passwordRegistro").addClass("border border-2");
-            if(passError){
-                $("#passwordRegistro").removeClass("border-success");
-                $("#passwordRegistro").addClass("border-danger");
-            }
-            else{
-                $("#passwordRegistro").removeClass("border-danger");
-                $("#passwordRegistro").addClass("border-success");
-            }
-        }
-    </script>
+
 
