@@ -193,13 +193,13 @@ $contenidoPrincipal .=<<<EOS
                                 <!-- errors will go here -->
                             </div>
                             <div id="startdate-group" class="form-group">
-                                <label class="control-label" for="startDate">Fecha de inicio (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" required>
+                                <label class="control-label" for="startDate">Fecha de inicio</label>
+                                <input type="text" class="form-control datetimepicker-input" data-toggle="datetimepicker" data-target="#fechaInicio" id="fechaInicio" name="fechaInicio" required>
                                 <!-- errors will go here -->
                             </div>
                             <div id="enddate-group" class="form-group">
-                                <label class="control-label" for="endDate">Fecha de fin (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="fechaFin" name="fechaFin" required>
+                                <label class="control-label" for="endDate">Fecha de fin</label>
+                                <input type="text" class="form-control datetimepicker-input" data-toggle="datetimepicker" data-target="#fechaFin" id="fechaFin" name="fechaFin" required>
                                 <!-- errors will go here -->
                             </div>                       
                             <div id="description-group" class="form-group">
@@ -249,12 +249,12 @@ $contenidoPrincipal .=<<<EOS
                             </div>
                             <div id="startdate-group" class="form-group">
                                 <label class="control-label" for="startDate">Fecha de inicio (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="editarfechaInicio" name="fechaInicio" required>
+                                <input type="text" class="form-control datetimepicker-input" data-toggle="datetimepicker" data-target="#editarfechaInicio" id="editarfechaInicio" name="fechaInicio" required>
                                 <!-- errors will go here -->
                             </div>
                             <div id="enddate-group" class="form-group">
                                 <label class="control-label" for="endDate">Fecha de fin (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="editarfechaFin" name="fechaInicio" required>
+                                <input type="text" class="form-control datetimepicker-input" data-toggle="datetimepicker" data-target="#editarfechaFin" id="editarfechaFin" name="fechaFin" required>
                                 <!-- errors will go here -->
                             </div>                       
                             <div id="description-group" class="form-group">
@@ -283,5 +283,6 @@ EOS;
 
 $scripts = array();
 array_push($scripts, 'js/calendarioEventos.js');
+array_push($scripts, 'js/dateTimePicker.js');
 
 require __DIR__.'/includes/comun/layout.php';

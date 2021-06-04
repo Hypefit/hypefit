@@ -29,8 +29,8 @@ if (isset($_POST['id'])) {
     if (! isset($error)) {
 
         //reformat date
-        $start = date('Y-m-d H:i:s', strtotime($start));
-        $end = date('Y-m-d H:i:s', strtotime($end));
+        $start = date('Y-m-d H:i:s', strtotime(str_replace('/', '-', $start)));
+        $end = date('Y-m-d H:i:s', strtotime(str_replace('/', '-', $end)));
         
         $data['success'] = true;
         $data['message'] = 'Success!';
