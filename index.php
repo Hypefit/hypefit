@@ -202,7 +202,7 @@ $contenidoPrincipal .=<<<EOS
                                 <!-- errors will go here -->
                             </div>                       
                             <div id="description-group" class="form-group">
-                                <label class="control-label" for="descripcion">Descripcion</label>
+                                <label class="control-label" for="descripcion">Descripción</label>
                                 <input type="text" class="form-control" name="descripcion" required>
                                 <input type="hidden" class="form-control" id="idCreador" name="idCreador" value="{$idCreador}">
                                 <!-- errors will go here -->

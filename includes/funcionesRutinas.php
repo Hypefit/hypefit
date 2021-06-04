@@ -1,5 +1,6 @@
 <?php
 
+require_once "autorizacion.php";
 
 use hypefit\DAO\ComentarioRutinaDAO;
 use hypefit\DAO\RutinaDAO;
@@ -162,4 +163,11 @@ EOS;
     else {
         return '';
     }
+}
+
+function esCreador($idRutina) {
+    $dao = new RutinaDAO();
+    $rutina = $dao->getRutina($idRutina);
+    $idCreador = (int) $rutina->getIdEntrenador();
+    return $idCreador === idUsuarioLogado();
 }

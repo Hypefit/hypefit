@@ -1,5 +1,6 @@
 <?php
 
+require_once "autorizacion.php";
 
 use hypefit\DAO\ComentarioRecetaDAO;
 use hypefit\DAO\RecetaDAO;
@@ -124,4 +125,11 @@ function mostrarComentariosReceta($id) : string {
     }
 
     return $html;
+}
+
+function esCreador($idReceta) {
+    $dao = new RecetaDAO();
+    $receta = $dao->getReceta($idReceta);
+    $idCreador = (int) $receta->getIdNutricionista();
+    return $idCreador === idUsuarioLogado();
 }

@@ -19,7 +19,7 @@ else{
     $contenidoPrincipal = $aux;
 }
 
-if (estaLogado() && $aux != -1) {
+if (estaLogado() && $aux != -1 && !esCreador($idReceta)) {
     $form = new CrearComentarioRecetaForm();
     $contenidoPrincipal .= $form->gestiona();
 }

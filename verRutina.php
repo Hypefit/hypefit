@@ -19,9 +19,9 @@ else{
     $contenidoPrincipal=$aux;
 }
 
-if (estaLogado() && $aux != -1) {
+if (estaLogado() && $aux != -1 && !esCreador($idRutina)) {
     $form = new CrearComentarioRutinaForm();
-    $contenidoPrincipal .= $form->gestiona() ;
+    $contenidoPrincipal .= $form->gestiona();
 }
 
 //Notificaciones mostradas al obtener insignias "Primera rutina completada" y "Todas las rutinas completadas"
