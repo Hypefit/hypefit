@@ -15,5 +15,8 @@ if (!estaLogado()) {
     $contenidoPrincipal .= mostrarJumbo("https://www.aurigasv.es/img/error-code.jpeg",
         "¡Ya has iniciado sesión!", "Sigue descubriendo nuestra web...");
 }
+
+$scripts = array();
+array_push($scripts, 'js/validacionLogin.js');
 	
 require __DIR__.'/includes/comun/layout.php';

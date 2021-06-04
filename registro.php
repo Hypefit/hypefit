@@ -17,4 +17,7 @@ if (!estaLogado()) {
         "¡Ya has iniciado sesión!", "Sigue descubriendo nuestra web...");
 }
 
+$scripts = array();
+array_push($scripts, 'js/validacionRegistro.js');
+
 require __DIR__.'/includes/comun/layout.php';

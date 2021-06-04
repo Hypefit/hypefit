@@ -106,11 +106,11 @@ class RegistroForm extends Form {
         }
         $nombre = htmlspecialchars(trim(strip_tags($datos['nombre']))) ?? null;
         if ( empty($nombre) || mb_strlen($nombre) < 5 ) {
-            $result['nombre'] = "El nombre tiene que tener una longitud de al menos 5 caracteres.";
+            $result['nombre'] = "El nombre tiene que tener una longitud de al menos 6 caracteres.";
         }
         $password = htmlspecialchars(trim(strip_tags($datos['password']))) ?? null;
         if ( empty($password) || mb_strlen($password) < 5 ) {
-            $result['password'] = "El password tiene que tener una longitud de al menos 5 caracteres.";
+            $result['password'] = "El password tiene que tener una longitud de al menos 8 caracteres.";
         }
         $password2 = htmlspecialchars(trim(strip_tags($datos['password2']))) ?? null;
         if ( empty($password2) || strcmp($password, $password2) !== 0 ) {

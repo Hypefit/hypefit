@@ -20,8 +20,6 @@
                     errores[0] = false;
                 }
             });
-            //$("#errorUser").load("/hypefit/includes/ajax/validationRegistro.php", {user: $(inputs[0]).val()});
-                //errores[0] = $("#errorUser").text() !== "";
         });
 
         $(inputs[1]).keyup(function(){ //input email
@@ -40,8 +38,6 @@
                     errores[1] = false;
                 }
             });
-            //$("#errorEmail").load("/hypefit/includes/ajax/validationRegistro.php", {email: $(inputs[1]).val()});
-            //errores[1] = $("#errorEmail").text() !== "";
         });
 
         $(inputs[2]).keyup(function (){//input password
@@ -61,10 +57,6 @@
                     errores[2] = false;
                 }
             });
-
-            //$("#errorPass").load("/hypefit/includes/ajax/validationRegistro.php", {pass: $(inputs[2]).val()});
-            //errores[2] = $("#errorPass").text() === "<span>Este campo no puede estar vacío</span>"
-              //  || $("#errorPass").text() === "<span class = 'text-danger'>La contraseña debe tener mínimo 8 caracteres</span>";
         });
 
         $(inputs[3]).keyup(function (){ //input password2
@@ -102,12 +94,6 @@
         });
 
         $("#RegistroForm").submit(function(event){
-            /*if(modif === false) {
-                event.preventDefault();
-                $("#errorSubmit").text("¡Rellena el formulario!");
-                $("#nombreRegistro, #emailRegistro, #passwordRegistro, #password2Registro, #rolRegistro").addClass("border border-2 border-danger");
-            }
-            else{*/
                 var hay_error = false;
                 for(var i=0; i < errores.length; i++){
                     if(errores[i]){
@@ -119,6 +105,5 @@
                     event.preventDefault();
                     $("#errorSubmit").text("Revisa los campos erróneos");
                 }
-
         });
     });
