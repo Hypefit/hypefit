@@ -46,6 +46,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.4.2/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@4.4.2/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap@4.4.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.2/locales/es.js"></script>
 
     <!--Favicon-->
     <link rel="icon"

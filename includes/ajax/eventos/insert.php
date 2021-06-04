@@ -5,7 +5,7 @@ use hypefit\TO\Evento;
 
 include("../../config.php");
 
-if (isset($_POST['title'])) {
+if (isset($_POST['titulo'])) {
 
     $error      = null;
     $title      = htmlspecialchars(trim(strip_tags($_POST['titulo'])));

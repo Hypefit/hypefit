@@ -12,55 +12,81 @@ document.addEventListener('DOMContentLoaded',function() {
         themeSystem: 'bootstrap',
         navLinks: true, // can click day/week names to navigate views
         businessHours: true, // display business hours
-        editable: true,
+        editable: false,
+        aspectRatio: 3,
+        locale: 'es',
         events: 'includes/ajax/eventos/load.php',
+        eventRender: function(info) {
+            var start = info.event.start;
+            var end = info.event.end;
+            var startTime;
+            var endTime;
+
+            if (!start) {
+                startTime = '';
+            } else {
+                startTime = start;
+            }
+
+            if (!end) {
+                endDate = '';
+            } else {
+                endTime = end;
+            }
+
+            var title = info.event.title;
+
+            $(info.el).popover({
+                title: title,
+                placement:'top',
+                trigger : 'hover',
+                content: info.event.extendedProps.descripcion,
+                container:'body'
+            }).popover('show');
+        },
         eventClick: function(arg) {
             var id = arg.event.id;
 
-            var esCreador = true;
             $.ajax({
                 url: 'includes/ajax/eventos/comprobarCreadorEvento.php',
                 data: {id: id},
                 type: "POST",
                 dataType: 'json',
                 success: function (data) {
-                    if (!data.esCreador) {
-                        esCreador = false;
+                    if (data.esCreador) {
+                        $('#editEventId').val(id);
+                        $('#deleteEvent').attr('data-id', id);
+
+                        var myModal = new bootstrap.Modal(document.getElementById('editarEventoModal'));
+                        $.post("includes/ajax/eventos/getevent.php", {id: id}, "json")
+                            .done(function (data) {
+                                json = JSON.parse(data);
+                                $('#editartitulo').val(json.title);
+                                $('#editarfechaInicio').val(json.start);
+                                $('#editarfechaFin').val(json.end);
+                                $('#editardescripcion').val(json.descripcion);
+                                myModal.show();
+                            });
+
+                        $('body').on('click', '#deleteEvent', function () {
+                            if (confirm("¿Seguro que quieres borrar este evento?")) {
+                                $.ajax({
+                                    url: "includes/ajax/eventos/delete.php",
+                                    type: "POST",
+                                    data: {id: arg.event.id},
+                                });
+
+                                //close model
+                                myModal.hide();
+
+                                //refresh calendar
+                                calendar.refetchEvents();
+                            }
+                        });
                     }
                 }
             });
-
-            $('#editEventId').val(id);
-            $('#deleteEvent').attr('data-id', id);
-
-            var myModal = new bootstrap.Modal(document.getElementById('editarEventoModal'));
-            $.post("includes/ajax/eventos/getevent.php", {id: id}, "json")
-                .done(function (data) {
-                    $('#editartitulo').val(data.title);
-                    $('#editarfechaInicio').val(data.start);
-                    $('#editarfechaFin').val(data.end);
-                    $('#editardescripcion').val(data.descripcion);
-                    myModal.show();
-                });
-
-            $('body').on('click', '#deleteEvent', function () {
-                if (confirm("¿Seguro que quieres borrar este evento?")) {
-                    $.ajax({
-                        url: "includes/ajax/eventos/delete.php",
-                        type: "POST",
-                        data: {id: arg.event.id},
-                    });
-
-                    //close model
-                    myModal.hide();
-
-                    //refresh calendar
-                    calendar.refetchEvents();
-                }
-            });
-
-            calendar.refetchEvents();
-         }
+        },
     });
 
     calendar.render();
@@ -74,13 +100,14 @@ document.addEventListener('DOMContentLoaded',function() {
 
         $.post("includes/ajax/eventos/insert.php", $(this).serialize(), "json")
             .done(function (data) {
-                if (data.success) {
+                var json = JSON.parse(data);
+                if (json.success) {
 
                     //remove any form data
                     $('#createEvent').trigger("reset");
 
                     //close model
-                    $('#crearEventoModal').modal('hide');
+                    $("#crearEventoModal .btn-close").click()
 
                     //refresh calendar
                     calendar.refetchEvents();
@@ -112,10 +139,10 @@ document.addEventListener('DOMContentLoaded',function() {
 
         //form data
         var id = $('#editEventId').val();
-        var title = $('#titulo').val();
-        var start= $('#fechaInicio').val();
-        var end = $('#fechaFin').val();
-        var descripcion = $('#descripcion').val();
+        var title = $('#editartitulo').val();
+        var start= $('#editarfechaInicio').val();
+        var end = $('#editarfechaFin').val();
+        var descripcion = $('#editardescripcion').val();
         var idCreador = $('#idCreador').val();
 
         // process the form
@@ -141,7 +168,7 @@ document.addEventListener('DOMContentLoaded',function() {
                 $('#editEvent').trigger("reset");
 
                 //close model
-                $('#editeventmodal').modal('hide');
+                $("#editarEventoModal .btn-close").click()
 
                 //refresh calendar
                 calendar.refetchEvents();
@@ -149,12 +176,12 @@ document.addEventListener('DOMContentLoaded',function() {
             } else {
 
                 //if error exists update html
-                if (data.errors.date) {
+                if (json.errors.date) {
                     $('#date-group').addClass('has-error');
                     $('#date-group').append('<div class="help-block">' + data.errors.date + '</div>');
                 }
 
-                if (data.errors.title) {
+                if (json.errors.title) {
                     $('#title-group').addClass('has-error');
                     $('#title-group').append('<div class="help-block">' + data.errors.title + '</div>');
                 }

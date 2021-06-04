@@ -176,8 +176,7 @@ $contenidoPrincipal .=<<<EOS
 
             <div class="modal-header">
                 <h5 class="modal-title">Crear evento</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
 
@@ -190,22 +189,22 @@ $contenidoPrincipal .=<<<EOS
                     <div class="row">
                             <div id="title-group" class="form-group">
                                 <label class="control-label" for="title">Título</label>
-                                <input type="text" class="form-control" name="titulo">
+                                <input type="text" class="form-control" name="titulo" required>
                                 <!-- errors will go here -->
                             </div>
                             <div id="startdate-group" class="form-group">
                                 <label class="control-label" for="startDate">Fecha de inicio (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="fechaInicio" name="fechaInicio">
+                                <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" required>
                                 <!-- errors will go here -->
                             </div>
                             <div id="enddate-group" class="form-group">
                                 <label class="control-label" for="endDate">Fecha de fin (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="fechaFin" name="fechaFin">
+                                <input type="text" class="form-control" id="fechaFin" name="fechaFin" required>
                                 <!-- errors will go here -->
                             </div>                       
                             <div id="description-group" class="form-group">
                                 <label class="control-label" for="descripcion">Descripcion</label>
-                                <input type="text" class="form-control" name="descripcion">
+                                <input type="text" class="form-control" name="descripcion" required>
                                 <input type="hidden" class="form-control" id="idCreador" name="idCreador" value="{$idCreador}">
                                 <!-- errors will go here -->
                             </div>                   
@@ -231,8 +230,7 @@ $contenidoPrincipal .=<<<EOS
 
             <div class="modal-header">
                 <h5 class="modal-title">Actualizar evento</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                 </button>
             </div>
 
@@ -246,22 +244,22 @@ $contenidoPrincipal .=<<<EOS
                     <div class="row">
                             <div id="title-group" class="form-group">
                                 <label class="control-label" for="title">Título</label>
-                                <input type="text" class="form-control" id="editartitulo" name="titulo">
+                                <input type="text" class="form-control" id="editartitulo" name="titulo" required>
                                 <!-- errors will go here -->
                             </div>
                             <div id="startdate-group" class="form-group">
                                 <label class="control-label" for="startDate">Fecha de inicio (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="editarfechaInicio" name="fechaInicio">
+                                <input type="text" class="form-control" id="editarfechaInicio" name="fechaInicio" required>
                                 <!-- errors will go here -->
                             </div>
                             <div id="enddate-group" class="form-group">
                                 <label class="control-label" for="endDate">Fecha de fin (formato DD-MM-AAAA HH:MM:SS)</label>
-                                <input type="text" class="form-control" id="editarfechaFin" name="fechaInicio">
+                                <input type="text" class="form-control" id="editarfechaFin" name="fechaInicio" required>
                                 <!-- errors will go here -->
                             </div>                       
                             <div id="description-group" class="form-group">
-                                <label class="control-label" for="descripcion">Descripcion</label>
-                                <input type="text" class="form-control" id="editardescripcion" name="descripcion">
+                                <label class="control-label" for="descripcion">Descripción</label>
+                                <input type="text" class="form-control" id="editardescripcion" name="descripcion" required>
                                 <!-- errors will go here -->
                             </div>                   
                     </div>   
