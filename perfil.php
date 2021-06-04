@@ -92,8 +92,8 @@ if(estaLogado())
                             $rutinaSeguida = $daoRutina->getRutina($idRutina);
 
                             $contenidoPrincipal .= <<<EOS
-                        <li class="mb-3">
-                            {$rutinaSeguida->getTitulo()}
+                        <li class="pb-3">
+                            <a href="verRutina.php?id={$idRutina}" class="enlaceRutinasPerfil">{$rutinaSeguida->getTitulo()}</a>
                         </li>
                         EOS;
                         }
@@ -116,7 +116,7 @@ if(estaLogado())
 
                             $contenidoPrincipal .= <<<EOS
                         <li class=" mb-3">
-                            {$rutinaCompletada->getTitulo()}
+                            <a href="verRutina.php?id={$idRutina}" class="enlaceRutinasPerfil">{$rutinaCompletada->getTitulo()}</a>
                         </li>
                         EOS;
 
