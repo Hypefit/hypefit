@@ -18,7 +18,9 @@ $rutaRecetasVeganas=RUTA_IMGS.'/plato-vegano.jpg';
 $contenidoPrincipal = cabeceraInicio(RUTA_IMGS.'/cabecera2.jpg', "Bienvenido a HYPEFIT",
     "Todo lo que necesitas a un solo click", "Empezar", "#inicio" );
 
-$botonCrearEvento = (esAdmin() || ((esEntrenador() || esNutricionista()) && estaAprobado())) ? '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearEventoModal"> Crear evento </button>' : '';
+$botonCrearEvento = (esAdmin() || ((esEntrenador() || esNutricionista()) && estaAprobado())) ?
+    '<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#crearEventoModal">
+            Crear evento </button>' : '';
 
 //Contenido
 $contenidoPrincipal .= <<<EOS
@@ -140,22 +142,19 @@ $contenidoPrincipal .= <<<EOS
     </div>
     
     <!--Calendario-->
-    <div class="bg-light" style="height: 9%;"></div>
-    <div class="container-fluid px-0">
-        <div class="bg-light row ps-0 me-0 align-items-center justify-content-center">
+    <div class="container-fluid">
+        <div class="row px-5 my-5 align-items-center justify-content-center">
             <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">Calendario de actividades</h2>
                <div class="container">
                     <div id="calendar" class="m-4"></div>                    
-                    <div class="col text-center">
+                    <div class="col text-center pt-3">
                         {$botonCrearEvento}                    
                     </div>                 
                </div>
         </div>
     </div>
-    <div class="bg-light" style="height: 9%;"></div>
     <!--Quienes Somos-->
-    <div class="bg-light" style="height: 9%;"></div>
-    <div class="container-fluid px-0">
+    <div class="bg-light container-fluid px-0">
         <div class="bg-light row ps-0 me-0 align-items-center justify-content-center">
             <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">¿QUIÉNES SOMOS?</h2>
              <div class="text-center mb-3">

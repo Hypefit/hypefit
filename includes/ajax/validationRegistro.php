@@ -88,7 +88,7 @@ require_once "../config.php";
         else if (preg_match($enoughRegex, $pass)) {
             $passModif = true;
             $passError = false;
-           echo "<span class = 'text-danger'>Contraseña débil</span>";
+           echo "<span class = 'text-primary'>Se recomienda una contraseña más segura</span>";
         }
         else {
             $passModif = true;
