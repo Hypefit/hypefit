@@ -26,7 +26,7 @@ if (estaLogado() && $aux != -1 && !esCreador($idRutina)) {
 
 //Notificaciones mostradas al obtener insignias "Primera rutina completada" y "Todas las rutinas completadas"
 $contenidoPrincipal .=<<<EOS
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div class="position-fixed bottom-0 end-0 p-3 notificacion-insignia">
         <div id="notificacionPrimeraCompletada" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <img src="img/insignias/notificacion.png" class="rounded me-2" alt="Icono de notificación">
@@ -39,7 +39,7 @@ $contenidoPrincipal .=<<<EOS
             </div>
         </div>
     </div>
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div class="position-fixed bottom-0 end-0 p-3 notificacion-insignia">
         <div id="notificacionTodasCompletadas" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <img src="img/insignias/notificacion.png" class="rounded me-2" alt="Icono de notificación">

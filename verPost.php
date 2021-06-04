@@ -28,7 +28,7 @@ else {
 
     //Notificación mostrada al obtener insignia "Primer post"
     $contenidoPrincipal .=<<<EOS
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div class="position-fixed bottom-0 end-0 p-3 notificacion-inignia">
         <div id="notificacionPrimerPost" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <img src="img/insignias/notificacion.png" class="rounded me-2" alt="Icono de notificación">

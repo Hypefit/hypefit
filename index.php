@@ -154,17 +154,16 @@ $contenidoPrincipal .= <<<EOS
         </div>
     </div>
     <!--Quienes Somos-->
-    <div class="bg-light container-fluid px-0">
-        <div class="bg-light row ps-0 me-0 align-items-center justify-content-center">
-            <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">¿QUIÉNES SOMOS?</h2>
-             <div class="text-center mb-3">
+    <div class="bg-light container-fluid">
+        <div class="bg-light row align-items-center justify-content-center">
+            <h2 class="text-uppercase my-4 text-center font-weight-bold">¿QUIÉNES SOMOS?</h2>
+             <div class="text-center mb-4">
                 <h5>Hypefit es un innovador gimnasio online que incluye tanto recetas como rutinas </h5>
                 <h5>equilibradas y pensadas para los distintas necesidades de nuestro clientes. </h5>
                 <h5><a href="quienesSomos.php">Ver más</a></h5>
              </div>
         </div>
     </div>
-    <div class="bg-light" style="height: 9%;"></div>
 EOS;
 
 $idCreador = idUsuarioLogado();

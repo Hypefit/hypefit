@@ -106,27 +106,32 @@ function mostrarComentariosRutina($id) : string {
     $comentarios = $daoC->getComentariosDeRutina($id);
 
     $html = "";
-    foreach($comentarios as $comentario) {
-        $user = $daoU->getUsuario($comentario->getIdUsuario());
-        $html .= <<<EOS
+    if(sizeof($comentarios) == 0){
+        $html .= '<h6 class=" mt-3 fw-normal">Sé el primero en comentar...</h6>';
+    }
+    else {
+        foreach ($comentarios as $comentario) {
+            $user = $daoU->getUsuario($comentario->getIdUsuario());
+            $html .= <<<EOS
             <div>   
                 <p class="mb-0"><span class="fw-bold">{$user->getNombre()}</span>  |  {$comentario->getFecha()}</p>
                 <p>
-EOS;
-        $valoracion = $comentario->getValoracion();
-        for ($i = 1; $i <= $valoracion; $i++) {
-            $html .= '<span class="fa fa-star checked"></span>';
-        }
-        for ($i = $valoracion + 1; $i <= 5; $i++) {
-            $html .= '<span class="fa fa-star"></span>';
-        }
+            EOS;
+            $valoracion = $comentario->getValoracion();
+            for ($i = 1; $i <= $valoracion; $i++) {
+                $html .= '<span class="fa fa-star checked"></span>';
+            }
+            for ($i = $valoracion + 1; $i <= 5; $i++) {
+                $html .= '<span class="fa fa-star"></span>';
+            }
 
-        $html .= <<<EOS
+            $html .= <<<EOS
                 <span class="ms-2">{$comentario->getTexto()}</span>
                 </p>
                 <hr class='bg-secondary border-2 border-top'>
             </div>
-EOS;
+            EOS;
+        }
     }
 
     return $html;
