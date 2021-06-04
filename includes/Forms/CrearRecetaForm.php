@@ -79,10 +79,10 @@ class CrearRecetaForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $titulo =$datos['titulo'] ?? null;
-        $descripcion = $datos['descripcion'] ?? null;
-        $textoReceta = $datos['receta'] ?? null;
-        $categoria = $datos['categoria'] ?? null;
+        $titulo =htmlspecialchars(trim(strip_tags($datos['titulo']))) ?? null;
+        $descripcion = htmlspecialchars(trim(strip_tags($datos['descripcion']))) ?? null;
+        $textoReceta = htmlspecialchars(trim(strip_tags($datos['receta']))) ?? null;
+        $categoria = htmlspecialchars(trim(strip_tags($datos['categoria']))) ?? null;
         $idNutricionista = $_SESSION['idUsuario'];
 
 

@@ -58,8 +58,8 @@ class CrearPostForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $titulo =$datos['titulo'] ?? null;
-        $mensaje =$datos['mensaje'] ?? null;
+        $titulo = htmlspecialchars(trim(strip_tags($datos['titulo']))) ?? null;
+        $mensaje = htmlspecialchars(trim(strip_tags($datos['mensaje']))) ?? null;
         $idUsuario = idUsuarioLogado();
 
         if (count($result) === 0) {

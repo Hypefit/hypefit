@@ -145,7 +145,7 @@ $contenidoPrincipal .= <<<EOS
         <div class="bg-light row ps-0 me-0 align-items-center justify-content-center">
             <h2 class="text-uppercase mt-3 mb-4 text-center font-weight-bold">Calendario de actividades</h2>
                <div class="container">
-                    <div id="calendar"></div>                    
+                    <div id="calendar" class="m-4"></div>                    
                     <div class="col text-center">
                         {$botonCrearEvento}                    
                     </div>                 

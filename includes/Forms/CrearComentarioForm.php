@@ -68,9 +68,9 @@ class CrearComentarioForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $texto  = $datos['mensaje'] ?? null;
-        $idPost  = $datos['idPost'] ?? null;
-        $idComentarioPadre  = $datos['idComentarioPadre'] ?? null;
+        $texto  = htmlspecialchars(trim(strip_tags($datos['mensaje']))) ?? null;
+        $idPost  = htmlspecialchars(trim(strip_tags($datos['idPost']))) ?? null;
+        $idComentarioPadre  = htmlspecialchars(trim(strip_tags($datos['idComentarioPadre']))) ?? null;
 
         if (count($result) === 0) {
             $idUsuario = idUsuarioLogado();

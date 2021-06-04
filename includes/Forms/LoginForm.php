@@ -56,8 +56,8 @@ class LoginForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $email =$datos['email'] ?? null;
-        $password = $datos['password'] ?? null;
+        $email = htmlspecialchars(trim(strip_tags($datos['email']))) ?? null;
+        $password = htmlspecialchars(trim(strip_tags($datos['password']))) ?? null;
 
         $usuario = checkLogin($email, $password);
         if ( ! $usuario ) {

@@ -71,12 +71,12 @@ class CrearNoticiaForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $titulo =$datos['titulo'] ?? null;
-        $texto =$datos['texto'] ?? null;
+        $titulo = htmlspecialchars(trim(strip_tags($datos['titulo']))) ?? null;
+        $texto = htmlspecialchars(trim(strip_tags($datos['texto']))) ?? null;
         //$filename = $datos['filename'] ?? null;
-        $filename = $_FILES["filename"]["name"];
+        $filename =  htmlspecialchars(trim(strip_tags($_FILES["filename"]["name"])));
         $idUsuario = idUsuarioLogado();
-        $tempname = $_FILES["filename"]["tmp_name"];
+        $tempname =  htmlspecialchars(trim(strip_tags($_FILES["filename"]["tmp_name"])));
         echo $tempname;
         if (count($result) === 0) {
             $dao = new NoticiasDAO();

@@ -60,9 +60,9 @@ class CrearComentarioRutinaForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $texto =$datos['mensaje'] ?? null;
-        $idRutina =$datos['idRutina'] ?? null;
-        $valoracion = $datos['valoracionRutina'];
+        $texto = htmlspecialchars(trim(strip_tags($datos['mensaje']))) ?? null;
+        $idRutina = htmlspecialchars(trim(strip_tags($datos['idRutina']))) ?? null;
+        $valoracion = htmlspecialchars(trim(strip_tags($datos['valoracionRutina'])));
 
         if (count($result) === 0) {
             $idUsuario = idUsuarioLogado();

@@ -56,8 +56,8 @@ class AprobarUsuariosForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $marcados = $datos['marcados'] ?? null;
-        $aprobar = $datos['aprobar'] ?? null;
+        $marcados = htmlspecialchars(trim(strip_tags($datos['marcados']))) ?? null;
+        $aprobar = htmlspecialchars(trim(strip_tags($datos['aprobar']))) ?? null;
 
         if (count($result) === 0) {
             if (!empty($marcados)) {

@@ -61,9 +61,9 @@ class CrearComentarioRecetaForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $texto =$datos['mensaje'] ?? null;
-        $idReceta =$datos['idReceta'] ?? null;
-        $valoracion = $datos['valoracionReceta'] ?? null;
+        $texto = htmlspecialchars(trim(strip_tags($datos['mensaje']))) ?? null;
+        $idReceta = htmlspecialchars(trim(strip_tags($datos['idReceta']))) ?? null;
+        $valoracion = htmlspecialchars(trim(strip_tags($datos['valoracionReceta']))) ?? null;
 
         if (count($result) === 0) {
             $idUsuario = idUsuarioLogado();

@@ -78,10 +78,10 @@ class CrearRutinaForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $titulo =$datos['titulo'] ?? null;
-        $descripcion = $datos['descripcion'] ?? null;
-        $textoRutina =$datos['rutina'] ?? null;
-        $categoria =$datos['categoria'] ?? null;
+        $titulo = htmlspecialchars(trim(strip_tags($datos['titulo']))) ?? null;
+        $descripcion = htmlspecialchars(trim(strip_tags($datos['descripcion']))) ?? null;
+        $textoRutina = htmlspecialchars(trim(strip_tags($datos['rutina']))) ?? null;
+        $categoria = htmlspecialchars(trim(strip_tags($datos['categoria']))) ?? null;
         $idEntrenador = $_SESSION['idUsuario'];
 
 

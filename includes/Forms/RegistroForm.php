@@ -100,23 +100,23 @@ class RegistroForm extends Form {
 
     protected function procesaFormulario($datos) {
         $result = array();
-        $email =$datos['email'] ?? null;
+        $email = htmlspecialchars(trim(strip_tags($datos['email']))) ?? null;
         if ( empty($email) || ! filter_var($email, FILTER_VALIDATE_EMAIL) ) {
             $result['email'] = "Debe introducir un email válido";
         }
-        $nombre =$datos['nombre'] ?? null;
+        $nombre = htmlspecialchars(trim(strip_tags($datos['nombre']))) ?? null;
         if ( empty($nombre) || mb_strlen($nombre) < 5 ) {
             $result['nombre'] = "El nombre tiene que tener una longitud de al menos 5 caracteres.";
         }
-        $password =$datos['password'] ?? null;
+        $password = htmlspecialchars(trim(strip_tags($datos['password']))) ?? null;
         if ( empty($password) || mb_strlen($password) < 5 ) {
             $result['password'] = "El password tiene que tener una longitud de al menos 5 caracteres.";
         }
-        $password2 =$datos['password2'] ?? null;
+        $password2 = htmlspecialchars(trim(strip_tags($datos['password2']))) ?? null;
         if ( empty($password2) || strcmp($password, $password2) !== 0 ) {
             $result['password2'] = "Los passwords deben coincidir";
         }
-        $rol = $datos['rol'] ?? null;
+        $rol = htmlspecialchars(trim(strip_tags($datos['rol']))) ?? null;
         if($rol == 'rol'){
             $result['rol']="Selecciona un rol";
         }
