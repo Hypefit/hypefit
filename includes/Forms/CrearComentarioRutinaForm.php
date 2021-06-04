@@ -29,15 +29,15 @@ class CrearComentarioRutinaForm extends Form {
                         <!--De mayor a menor, en el estilo se cambia-->
                         <div class="valoracion mb-3">
                             <input type="radio" id="radio5Rutina" name="valoracionReceta" value="5" />
-                            <label for="radio5" class="fa fa-star"></label>  
+                            <label for="radio5Rutina" class="fa fa-star"></label>  
                             <input type="radio" id="radio4Rutina" name="valoracionReceta" value="4" />
-                            <label for="radio4" class="fa fa-star"></label>
+                            <label for="radio4Rutina" class="fa fa-star"></label>
                             <input type="radio" id="radio3Rutina" name="valoracionReceta" value="3" />
-                            <label for="radio3" class="fa fa-star"></label>
+                            <label for="radio3Rutina" class="fa fa-star"></label>
                             <input type="radio" id="radio2Rutina" name="valoracionReceta" value="2" />
-                            <label for="radio2" class="fa fa-star"></label>
+                            <label for="radio2Rutina" class="fa fa-star"></label>
                             <input type="radio" id="radio1Rutina" name="valoracionReceta" value="1" checked />
-                            <label for="radio1" class="fa fa-star"></label>
+                            <label for="radio1Rutina" class="fa fa-star"></label>
                         </div>
                         <div class="mb-3 row justify-content-center">
                             <div class="col col-sm-8">

@@ -28,16 +28,16 @@ class CrearComentarioRecetaForm extends Form {
                         <legend class="mt-4 mb-3">Deja tu valoración</legend>
                         <!--De mayor a menor, en el estilo se cambia-->
                         <div class="valoracion mb-3">
-                            <input type="radio" id="radio5Receta" name="valoracionRutina" value="5" />
-                            <label for="radio5" class="fa fa-star"></label>
-                            <input type="radio" id="radio4Receta" name="valoracionRutina" value="4" />
-                            <label for="radio4" class="fa fa-star"></label>
-                            <input type="radio" id="radio3Receta" name="valoracionRutina" value="3" />
-                            <label for="radio3" class="fa fa-star"></label>
-                            <input type="radio" id="radio2Receta" name="valoracionRutina" value="2" />
-                            <label for="radio2" class="fa fa-star"></label>
-                            <input type="radio" id="radio1Receta" name="valoracionRutina" value="1" checked/>
-                            <label for="radio1" class="fa fa-star"></label>
+                            <input type="radio" id="radio5Receta" name="valoracionReceta" value="5" />
+                            <label for="radio5Receta" class="fa fa-star"></label>
+                            <input type="radio" id="radio4Receta" name="valoracionReceta" value="4" />
+                            <label for="radio4Receta" class="fa fa-star"></label>
+                            <input type="radio" id="radio3Receta" name="valoracionReceta" value="3" />
+                            <label for="radio3Receta" class="fa fa-star"></label>
+                            <input type="radio" id="radio2Receta" name="valoracionReceta" value="2" />
+                            <label for="radio2Receta" class="fa fa-star"></label>
+                            <input type="radio" id="radio1Receta" name="valoracionReceta" value="1" checked/>
+                            <label for="radio1Receta" class="fa fa-star"></label>
                         </div>
                         <div class="mb-3 row justify-content-center">
                             <div class="col col-sm-8">
