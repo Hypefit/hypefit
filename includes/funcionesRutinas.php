@@ -45,14 +45,13 @@ function mostrarRutina($id) {
         $html = <<<EOS
             <div class='bg-light container-fluid px-4'>
                 <!--Jumbotron-->
-                <div class='bg-image jumbotron text-center p-4' style='
-                  background-image: url($rutaImgSup);'>
+                <div class='bg-image jumbotron text-center p-4' style='background-image: url($rutaImgSup);'>
                     <div class='row my-4 text-light'>
                         <h1 class=' text-uppercase'>{$rutina->getTitulo()}</h1>
                         <h5 >{$rutina->getDescripcion()}</h5>
                     </div>
                     <div class='row py-3 justify-content-center'>
-                        <div class='col-7 col-sm-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.85);'>
+                        <div class='col-7 col-sm-4 shadow border rounded border-secondary info-rutina'>
                             <p>
                                 <span class='fw-bold' >Creada por: </span>{$nombreEntrenador}
                                 </br>

@@ -56,36 +56,23 @@ EOS;
         <div class='row ps-0 justify-content-center'>
             <!--Cards full body-->
             ";
-                    $contenidoPrincipal .= crearListaRutinas("full body");
+                $contenidoPrincipal .= crearListaRutinas("full body");
 
             $contenidoPrincipal .="
-                
              <!--Cards full body-->
         </div>
     </div>
     <!--Rows full body-->
-    <div class='p-5 text-center bg-image img-fluid'
-        style='
-            background-image: url(https://media.quincemil.com/imagenes/2020/11/09164849/shutterstock_1060003700-1706x960.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            width:  auto;
-            height: 100%;
-            margin: 5%;
-        '>
-        <div class='mask' style='background-color: rgba(255, 255, 255, 0.7); margin: 10%; padding: 5%'>
-            <div class='d-flex justify-content-center align-items-center h-100'>
-                <div class='text-black'>
-                <h5 class='mb-3 text-uppercase'>Crea una nueva rutina</h5>
-                    <div class='card-body'>
-                        <a href='crearRutina.php' class='btn btn-primary m-3 p-3 text-uppercase'>Crear</a>
-                    </div>
-                </div>
-            </div>
-        </div>   
-        
-          
-    </div>
+    ";
+            $jumboImg = "https://media.quincemil.com/imagenes/2020/11/09164849/shutterstock_1060003700-1706x960.jpg";
+            $jumboTitulo = "Crea una nueva rutina";
+            $jumboSubtitulo = "";
+            $jumboHref = "crearRutina.php";
+            $jumboTextoBoton = "Crear";
+            $contenidoPrincipal .= mostrarJumboBoton($jumboImg, $jumboTitulo, $jumboSubtitulo, $jumboHref,$jumboTextoBoton);
+
+            $contenidoPrincipal .= "
+
     <div class='d-flex justify-content-center align-items-center mb-5'>
         <div class='text-center border rounded shadow p-3 rankingEntrenadores'>
             <h5 class='my-3 text-uppercase'>Pulsa para ver cuáles son los entrenadores Hypefit mejor valorados</h5>

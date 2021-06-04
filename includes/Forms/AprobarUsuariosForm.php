@@ -21,8 +21,7 @@ class AprobarUsuariosForm extends Form {
         $html = $htmlErroresGlobales; 
         foreach($usuariosSinAprobar as $usuario) {
             $html .= '
-            <div class="container py-5  text-center my-5 rounded shadow"
-                style="background-color: rgba(215,233,247,0.85);">
+            <div class="container py-5  text-center my-5 rounded shadow aprobar-usuarios">
                 <h2 class="pb-2 mb-3">Usuarios sin aprobar</h2>
                 
                 <!--Row-->

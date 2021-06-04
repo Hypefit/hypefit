@@ -23,7 +23,7 @@ class CrearComentarioRutinaForm extends Form {
         <!-- Caja de valoracion -->
         <div class='container-fluid p-4'>
             <div class='row justify-content-center align-items-center justify-content-center'>
-                <div class="col-sm-8 mask border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
+                <div class="col-sm-8 mask border rounded shadow m-5 crear-comentario">
                     <div class="text-center">
                         <legend class="mt-4 mb-3">Deja tu valoración</legend>
                         <!--De mayor a menor, en el estilo se cambia-->

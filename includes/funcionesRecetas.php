@@ -50,7 +50,7 @@ function mostrarReceta($id) {
                         <h5>{$receta->getDescripcion()}</h5>
                     </div>
                     <div class='row py-3 my-5 justify-content-center'>
-                        <div class='col-7 col-sm-4 shadow border rounded border-secondary' style='background-color: rgba(186,212,236,0.9);'>
+                        <div class='col-7 col-sm-4 shadow border rounded border-secondary info-receta'>
                             <p>
                                 <span class='fw-bold' >Creada por: </span>{$nombreNutricionista}
                                 </br>

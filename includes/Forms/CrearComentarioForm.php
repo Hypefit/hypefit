@@ -46,7 +46,7 @@ class CrearComentarioForm extends Form {
             <input type="hidden" name="idComentarioPadre" value="$this->idComentarioPadre">
             <div class='container-fluid p-4'>
                 <div class='row justify-content-center align-items-center justify-content-center'>
-                    <div class="col-sm-8 mask border rounded shadow m-5" style="background-color: rgba(255, 255, 255, 0.7);">
+                    <div class="col-sm-8 mask border rounded shadow m-5 crear-comentario">
                         <div class=" text-center">
                             <legend class="mt-4 mb-3">Escribe tu respuesta</legend>
                             <div class="mb-3 row justify-content-center">

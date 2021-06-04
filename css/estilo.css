@@ -42,7 +42,20 @@
 .recetas-index{
     background-color: darkgrey;
 }
+.recetas-index h2, .recetas-index h5 {
+    color: #e2e1e1;
+}
 
+.info-receta, .info-rutina{
+    background-color: rgba(186,212,236,0.9);
+}
+.aprobar-usuarios{
+    background-color: rgba(215,233,247,0.85);
+}
+
+.crear-comentario{
+    background-color: rgba(255, 255, 255, 0.7);
+}
 .mask-rutinas{
     background-color: rgba(255,255,255,0.8);
     width:40%;
@@ -69,14 +82,14 @@ input[type = "radio"]:checked ~ label{
     display:none;
 }
 
-#img-noticia{
-    height: 60vh;
-    overflow: scroll;
+.img-cards-index{
+    height: 17rem;
 }
 
 .notificacion-inignia{
     z-index: 5;
 }
+
 #insignia-primer-post {
     z-index: 5;
 }
