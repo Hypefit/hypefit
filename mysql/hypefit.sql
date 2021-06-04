@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2021 a las 12:45:08
+-- Tiempo de generación: 04-06-2021 a las 10:21:44
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -94,6 +94,21 @@ INSERT INTO `comentarios_rutina` (`id`, `idUsuario`, `idRutina`, `fecha`, `valor
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `eventos`
+--
+
+CREATE TABLE `eventos` (
+  `id` int(11) NOT NULL,
+  `fechaInicio` datetime NOT NULL,
+  `fechaFin` datetime NOT NULL,
+  `titulo` text NOT NULL,
+  `descripcion` text NOT NULL,
+  `idCreador` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `insignias`
 --
 
@@ -124,6 +139,13 @@ CREATE TABLE `insignias_usuarios` (
   `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `insignias_usuarios`
+--
+
+INSERT INTO `insignias_usuarios` (`idInsignia`, `idUsuario`) VALUES
+(2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -144,7 +166,6 @@ CREATE TABLE `noticias` (
 
 INSERT INTO `noticias` (`id`, `idAutor`, `titulo`, `texto`, `filename`) VALUES
 (1, 2, 'La falta de ejercicio fisico', 'En concreto, la actividad física diaria disminuyó 43,3 minutos; las conductas sedentarias aumentaron 50,2 minutos; y la calidad del sueño se redujo un 2,09%. El periodo de confinamiento también aumentó de manera negativa las conductas antisociales, de ansiedad y las relacionadas con la depresión.', 'Sleep.jpg');
-
 
 -- --------------------------------------------------------
 
@@ -288,6 +309,13 @@ ALTER TABLE `comentarios_rutina`
   ADD KEY `idRutina` (`idRutina`);
 
 --
+-- Indices de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idCreador` (`idCreador`);
+
+--
 -- Indices de la tabla `insignias`
 --
 ALTER TABLE `insignias`
@@ -366,6 +394,12 @@ ALTER TABLE `comentarios_rutina`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `insignias`
 --
 ALTER TABLE `insignias`
@@ -375,7 +409,7 @@ ALTER TABLE `insignias`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `posts`
@@ -426,6 +460,12 @@ ALTER TABLE `comentarios_receta`
 ALTER TABLE `comentarios_rutina`
   ADD CONSTRAINT `comentarios_rutina_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comentarios_rutina_ibfk_3` FOREIGN KEY (`idRutina`) REFERENCES `rutinas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  ADD CONSTRAINT `relacion` FOREIGN KEY (`idCreador`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `insignias_usuarios`
