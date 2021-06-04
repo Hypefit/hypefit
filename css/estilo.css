@@ -86,7 +86,7 @@ input[type = "radio"]:checked ~ label{
     height: 17rem;
 }
 
-.notificacion-inignia{
+.notificacion-insignia{
     z-index: 5;
 }
 
