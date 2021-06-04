@@ -10,7 +10,7 @@ require_once __DIR__ . '/includes/comun/jumbotron.php';
 $tituloPagina = 'Hypefit | Crear Noticia';
 $contenidoPrincipal = "";
 
-if(estaLogado()) {
+if(esAdmin() || ((esEntrenador() || esNutricionista()) && estaAprobado())) {
 	$form = new CrearNoticiaForm();
     $contenidoPrincipal .= $form->gestiona();
 }
